@@ -114,7 +114,7 @@ $ASSIGNATURE_CARDS = [
     [
         'subject' => 'Ciencias Sociales',
         'icon' => '', // Icono eliminado
-        'color' => 'hover:bg-yellow-50 border-yellow-500'
+        'color' => 'hover:bg-red-50 border-red-500'
     ],
     [
         'subject' => 'Otro tipo de asesorías',
