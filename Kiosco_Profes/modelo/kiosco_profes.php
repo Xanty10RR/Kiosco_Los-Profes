@@ -945,6 +945,10 @@ function render_subject_cards($cards)
 
     <style>
         /* Contenedor Grid optimizado para Kiosco */
+        * {
+            margin: 0;
+            padding: 0;
+        }
         body {
             display: flex;
             flex-direction: column;
