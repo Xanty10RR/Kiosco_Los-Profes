@@ -957,11 +957,20 @@ function render_subject_cards($cards)
             display: grid;
             gap: 20px;
             padding: 0px;
+            grid-template-columns: 1fr; /* xs, sm: Una sola columna */
         }
 
+        /* md, lg: Dos columnas */
         @media (min-width: 768px) {
             .subjects-grid {
                 grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* xl, 2xl: Tres columnas */
+        @media (min-width: 1280px) {
+            .subjects-grid {
+                grid-template-columns: repeat(3, 1fr);
             }
         }
 
