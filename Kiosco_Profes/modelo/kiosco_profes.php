@@ -114,12 +114,12 @@ $ASSIGNATURE_CARDS = [
     [
         'subject' => 'Ciencias Sociales',
         'icon' => '', // Icono eliminado
-        'color' => 'hover:bg-yellow-50 border-yellow-600'
+        'color' => 'hover:bg-yellow-50 border-yellow-500'
     ],
     [
         'subject' => 'Otro tipo de asesorías',
         'icon' => '', // Icono eliminado
-        'color' => 'hover:bg-gray-100 border-gray-500'
+        'color' => 'hover:bg-pink-50 border-pink-500'
     ],
 ];
 // --- Acción para verificar estado de la cita vía AJAX ---
