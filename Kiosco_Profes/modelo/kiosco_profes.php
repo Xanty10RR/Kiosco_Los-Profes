@@ -968,7 +968,7 @@ function render_subject_cards($cards)
         .kiosk-card {
             position: relative;
             height: 160px;
-            border-radius: 2.5rem;
+            border-radius: 2.0rem;
             display: flex;
             flex-direction: column;
             align-items: center;
