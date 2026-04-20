@@ -83,7 +83,7 @@ $ASSIGNATURES = [
 $ASSIGNATURE_CARDS = [
     [
         'subject' => 'Matemáticas',
-        'icon' => '', // Icono eliminado
+        'icon' => '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-number-123"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M3 10l2 -2v8" /><path d="M9 8h3a1 1 0 0 1 1 1v2a1 1 0 0 1 -1 1h-2a1 1 0 0 0 -1 1v2a1 1 0 0 0 1 1h3" /><path d="M17 8h2.5a1.5 1.5 0 0 1 1.5 1.5v1a1.5 1.5 0 0 1 -1.5 1.5h-1.5h1.5a1.5 1.5 0 0 1 1.5 1.5v1a1.5 1.5 0 0 1 -1.5 1.5h-2.5" /></svg>', // Icono eliminado
         'color' => 'hover:bg-blue-50 border border-blue-500'
     ],
     [
@@ -117,7 +117,7 @@ $ASSIGNATURE_CARDS = [
         'color' => 'hover:bg-red-50 border-red-500'
     ],
     [
-        'subject' => 'Otro tipo de asesorías',
+        'subject' => 'Otro Tipo de Asesorías',
         'icon' => '', // Icono eliminado
         'color' => 'hover:bg-pink-50 border-pink-500'
     ],
@@ -1075,6 +1075,15 @@ function render_subject_cards($cards)
             padding: 0 1rem;
             line-height: 1;
         }
+
+        /* Estilo para los iconos SVG */
+        .kiosk-card svg {
+            width: 48px;
+            height: 48px;
+            margin-bottom: 5px;
+            z-index: 10;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+        }
     </style>
     
 
@@ -1095,6 +1104,8 @@ function render_subject_cards($cards)
                 onclick="selectSubject('<?php echo addslashes($card['subject']); ?>')">
 
                 <div class="absolute top-3 right-5 w-8 h-8 bg-white/20 rounded-full blur-lg"></div>
+
+                <?php echo $card['icon']; ?>
 
                 <span class="card-text">
                     <?php echo htmlspecialchars($card['subject']); ?>
