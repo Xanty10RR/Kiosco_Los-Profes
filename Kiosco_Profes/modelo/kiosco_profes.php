@@ -759,7 +759,7 @@ function render_slider_show($images)
 {
     if (empty($images)) return;
 ?>
-    <div id="slider-container" class="max-w-4xl mx-auto mb-10 relative overflow-hidden rounded-xl shadow-2xl">
+    <div id="slider-container" class="max-w-4xl mx-auto relative overflow-hidden">
         <div id="slider-track" class="flex transition-transform duration-500 ease-in-out">
             <?php foreach ($images as $index => $image): ?>
                 <div class="slider-item flex-shrink-0 w-full aspect-video md:aspect-[21/9] relative" data-index="<?php echo $index; ?>">
@@ -767,7 +767,6 @@ function render_slider_show($images)
                     <img src="<?php echo htmlspecialchars($image['url']); ?>"
                         alt="<?php echo htmlspecialchars($image['caption']); ?>"
                         class="absolute inset-0 w-full h-full object-cover opacity-70">
-                    <img src="..." class="absolute inset-0 w-full h-full object-cover opacity-70">
 
                     <div class="absolute inset-0 <?php echo htmlspecialchars($image['color']); ?> opacity-70"></div>
 
@@ -1678,13 +1677,8 @@ function render_subject_cards($cards)
 
                     <div class="max-w-6xl mx-auto space-y-12">
 
-                        <div class="relative p-2 rounded-[3.5rem] bg-gradient-to-tr from-white/20 to-transparent shadow-[0_0_50px_rgba(255,255,255,0.1)]">
-
-                            <div class="rounded-[3rem] overflow-hidden border-4 border-white/10 shadow-2xl">
-                                <br>
-                                <br>
-                                <?php render_slider_show($SLIDER_IMAGES); ?>
-                            </div>
+                        <div class="relative">
+                            <?php render_slider_show($SLIDER_IMAGES); ?>
                         </div>
 
                         <div class="bg-[#080809] p-10 rounded-[4rem] border border-white/5 shadow-2xl">
