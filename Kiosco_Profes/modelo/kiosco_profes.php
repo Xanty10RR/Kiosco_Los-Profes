@@ -1047,9 +1047,9 @@ function render_subject_cards($cards)
         }
 
         .glow-yellow {
-            background: linear-gradient(135deg, #c0c31c, #f2f24c);
+            background: linear-gradient(135deg, #BBC039, #F4FF28);
             box-shadow: 0 0 25px rgba(199, 199, 18, 0.5);
-            border-color: #f6ff00 !important;
+            border-color: #f8f9ae !important;
 
         }
 
