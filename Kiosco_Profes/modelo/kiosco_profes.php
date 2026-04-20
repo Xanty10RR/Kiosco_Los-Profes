@@ -1050,7 +1050,12 @@ function render_subject_cards($cards)
             background: linear-gradient(135deg, #BBC039, #F4FF28);
             box-shadow: 0 0 25px rgba(199, 199, 18, 0.5);
             border-color: #f8f9ae !important;
+        }
 
+        .glow-cyan {
+            background: linear-gradient(135deg, #0890b2f4, #06b6d4);
+            box-shadow: 0 0 25px rgba(6, 182, 212, 0.5);
+            border-color: #22d3ee !important;
         }
 
         /* Efecto al tocar (Feedback táctil fuerte) */
@@ -1084,7 +1089,8 @@ function render_subject_cards($cards)
             elseif (strpos($color, 'orange') !== false || strpos($color, 'glow-yellow') !== false) $glow_class = 'glow-orange';
             elseif (strpos($color, 'red') !== false) $glow_class = 'glow-red';
             elseif (strpos($color, 'yellow') !== false) $glow_class = 'glow-yellow';
-        ?>
+            elseif (strpos($color, 'cyan') !== false) $glow_class = 'glow-cyan';
+       ?>
             <div class="kiosk-card <?php echo $glow_class; ?>"
                 onclick="selectSubject('<?php echo addslashes($card['subject']); ?>')">
 
