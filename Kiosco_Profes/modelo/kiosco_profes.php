@@ -1598,7 +1598,13 @@ function render_subject_cards($cards)
                     --kiosk-bg: #000000;
                     --kiosk-surface: #0a0a0b;
                     --neon-indigo: #6366f1;
+                    --neon-orange: #f97316;
+                    --neon-green: #22c55e;
+                    --neon-purple: #b917eaf9;
+                    --neon-cyan: #06b6d4;
                     --neon-yellow: #fbbf24;
+                    --neon-red: #fa2c2c;
+                    --neon-pink: #ec4899;
                 }
 
                 .schedule-bg {
