@@ -1632,14 +1632,14 @@ function render_subject_cards($cards)
 
                 .subject-card-premium:active {
                     transform: scale(0.92);
-                    border-color: var(--neon-indigo) !important;
+                    border-color: var(--accent-color, #6366f1) !important;
                     box-shadow: 0 0 25px rgba(99, 102, 241, 0.4);
                 }
 
                 /* Formulario Android 14 */
                 .android-sheet {
                     background: #050505 !important;
-                    border-top: 2px solid var(--neon-indigo);
+                    border-top: 2px solid var(--accent-color, #6366f1) !important;
                     box-shadow: 0 -20px 50px rgba(0, 0, 0, 0.9);
                     padding: 14px;
                 }
@@ -1657,7 +1657,7 @@ function render_subject_cards($cards)
                 }
 
                 .kiosk-input-pro:focus {
-                    border-color: var(--neon-indigo) !important;
+                    border-color: var(--accent-color, #6366f1) !important;
                     background: #161618 !important;
                 }
 
