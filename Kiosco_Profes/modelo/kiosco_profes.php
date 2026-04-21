@@ -1717,7 +1717,7 @@ function render_subject_cards($cards)
                             </div>
 
                             <div class="px-10 pb-12 overflow-y-auto">
-                                <div class="flex justify-between items-center mb-10">
+                                <div class="block justify-between items-center mb-10">
                                     <div>
                                         <h2 class="text-4xl font-black text-white italic" id="selected_subject_title">AGENDAR</h2>
                                         <p class="text-indigo-400 font-bold text-sm tracking-widest uppercase">Completa los datos </p>
