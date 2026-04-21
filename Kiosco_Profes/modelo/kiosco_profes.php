@@ -1679,7 +1679,7 @@ function render_subject_cards($cards)
                         <h1 class="text-5xl md:text-7xl font-black tracking-tighter uppercase italic">
                             Kiosco <span class="text-yellow-400 drop-shadow-[0_0_10px_rgba(250,204,21,0.3)]">Los Profe’s</span>
                         </h1>
-                        <p class="mt-4 text-indigo-400 font-bold uppercase tracking-[0.4em] text-xs">
+                        <p class="mt-4 text-indigo-400 font-bold uppercase tracking-[0.4em] text-sm">
                             Asesorías Académicas de Alto Nivel
                         </p>
                     </div>
