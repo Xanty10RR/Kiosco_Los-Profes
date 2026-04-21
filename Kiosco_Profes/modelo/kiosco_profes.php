@@ -1796,22 +1796,22 @@ function render_subject_cards($cards)
 
                                     <div class="grid grid-cols-2 gap-3">
                                         <div class="relative">
-                                            <label class="text-[8px] font-black text-indigo-400 absolute -top-2 left-4 bg-black px-1 z-10 uppercase tracking-tighter">Fecha</label>
+                                            <label class="text-[8px] font-black text-[var(--accent-color)] absolute -top-2 left-4 bg-black px-1 z-10 uppercase tracking-tighter">Fecha</label>
                                             <input type="date" name="date" class="kiosk-input-sm" required>
                                         </div>
                                         <div class="relative">
-                                            <label class="text-[8px] font-black text-indigo-400 absolute -top-2 left-4 bg-black px-1 z-10 uppercase tracking-tighter">Hora</label>
+                                            <label class="text-[8px] font-black text-[var(--accent-color)] absolute -top-2 left-4 bg-black px-1 z-10 uppercase tracking-tighter">Hora</label>
                                             <input type="time" name="time" class="kiosk-input-sm" required>
                                         </div>
                                     </div>
 
                                     <div class="relative">
-                                        <label class="text-[8px] font-black text-indigo-400 absolute -top-2 left-4 bg-black px-1 z-10 uppercase tracking-tighter">Estudiante</label>
+                                        <label class="text-[8px] font-black text-[var(--accent-color)] absolute -top-2 left-4 bg-black px-1 z-10 uppercase tracking-tighter">Estudiante</label>
                                         <input type="text" name="student_name" placeholder="Tu nombre..." class="kiosk-input-sm" required>
                                     </div>
 
                                     <div class="relative">
-                                        <label class="text-[8px] font-black text-indigo-400 absolute -top-2 left-4 bg-black px-1 z-10 uppercase tracking-tighter">WhatsApp</label>
+                                        <label class="text-[8px] font-black text-[var(--accent-color)] absolute -top-2 left-4 bg-black px-1 z-10 uppercase tracking-tighter">WhatsApp</label>
                                         <input type="tel" name="student_contact" placeholder="Número de contacto" class="kiosk-input-sm" required>
                                     </div>
 
