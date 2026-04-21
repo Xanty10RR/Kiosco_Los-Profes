@@ -1512,7 +1512,6 @@ function render_subject_cards($cards)
                 /* Resplandor exterior (Glow) - Crucial para bajo brillo */
                 box-shadow: 0 0 15px rgba(124, 58, 237, 0.6),
                     inset 0 0 10px rgba(255, 255, 255, 0.2);
-
                 position: fixed;
                 transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
                 display: flex;
@@ -1570,11 +1569,7 @@ function render_subject_cards($cards)
     <?php elseif ($is_admin): // Botón de Logout Admin flotante 
     ?>
         <a href="?action=admin_logout"
-            class="fixed top-4 right-4 md:top-8 md:right-8 bg-red-600 text-white p-3 rounded-full shadow-xl hover:bg-red-700 transition duration-
-            
-            
-            
-            z-50 transform hover:scale-105"
+            class="fixed top-4 right-4 md:top-8 md:right-8 bg-red-600 text-white p-3 rounded-full shadow-xl hover:bg-red-700 transition duration-z-50 transform hover:scale-105"
             aria-label="Cerrar Sesión Administrador"
             title="Cerrar Sesión">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
