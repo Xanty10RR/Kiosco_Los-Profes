@@ -1750,7 +1750,7 @@ function render_subject_cards($cards)
 
                                     .kiosk-input-sm:focus {
                                         border-color: var(--accent-color, #6366f1) !important;
-                                        box-shadow: 0 0 15px var(--accent-color, #6366f1);
+                                        box-shadow: 0 0 5px var(--accent-color, #6366f1);
                                     }
 
                                     /* Botón compacto */
@@ -1760,7 +1760,7 @@ function render_subject_cards($cards)
                                         font-size: 1.3rem;
                                         border-radius: 1.5rem;
                                         background: linear-gradient(135deg, var(--accent-color, #6366f1));
-                                        box-shadow: 0 8px 25px -5px var(--accent-color, #6366f1);
+                                        box-shadow: 0 8px 10px -5px var(--accent-color, #6366f1);
                                         border: 1px solid rgba(255, 255, 255, 0.1);
                                     }
 
