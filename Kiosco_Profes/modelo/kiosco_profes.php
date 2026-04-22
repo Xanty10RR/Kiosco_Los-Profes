@@ -1757,7 +1757,7 @@ function render_subject_cards($cards)
                                     .btn-kiosk-sm {
                                         height: 65px;
                                         /* Reducido de 75px a 65px */
-                                        font-size: 1.3rem;
+                                        font-size: 1rem;
                                         border-radius: 1.5rem;
                                         background: linear-gradient(135deg, var(--accent-color, #6366f1));
                                         box-shadow: 0 8px 10px -5px var(--accent-color, #6366f1);
