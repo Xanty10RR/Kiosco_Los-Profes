@@ -1721,6 +1721,12 @@ function render_subject_cards($cards)
                                 <div class="block justify-between items-center mb-10">
                                     <div>
                                         <h2 class="text-4xl font-black text-[var(--accent-color)] p-6 italic" id="selected_subject_title">AGENDAR</h2>
+                                        <button type="button" onclick="hideForm()" class="flex items-center gap-2 bg-white/5 border border-white/10 px-4 py-2 rounded-2xl active:scale-95 active:bg-[var(--accent-color)] transition-all group">
+                                            <svg class="w-5 h-5 text-[var(--accent-color)] group-active:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                                            </svg>
+                                        <span class="text-xs font-black text-white uppercase">Regresar</span>
+                                        </button>
                                         <p class="text-[var(--accent-color)] font-bold text-sm tracking-widest uppercase">Completa los datos </p>
                                     </div>
                                 </div>
@@ -1776,12 +1782,7 @@ function render_subject_cards($cards)
                                         margin-bottom: 0.5rem;
                                     }
                                 </style>
-                                <button type="button" onclick="hideForm()" class="flex items-center gap-2 bg-white/5 border border-white/10 px-4 py-2 rounded-2xl active:scale-95 active:bg-[var(--accent-color)] transition-all group">
-                                    <svg class="w-5 h-5 text-[var(--accent-color)] group-active:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-                                    </svg>
-                                    <span class="text-xs font-black text-white uppercase">Regresar</span>
-                                </button>
+                                
 
                                 <form method="POST" class="space-y-4 max-w-md mx-auto">
                                     <input type="hidden" name="action" value="schedule">
