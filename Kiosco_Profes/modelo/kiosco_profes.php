@@ -1782,8 +1782,8 @@ function render_subject_cards($cards)
                                     }
                                 </style>
                                 
-                                <p class="text-[var(--accent-color)] font-bold text-sm tracking-widest uppercase">Completa los datos </p>
                                 <form method="POST" class="space-y-4 max-w-md mx-auto">
+                                    <p class="text-[var(--accent-color)] font-bold text-sm tracking-widest uppercase">Completa los datos </p>
                                     <input type="hidden" name="action" value="schedule">
                                     <input type="hidden" id="subject" name="subject">
 
