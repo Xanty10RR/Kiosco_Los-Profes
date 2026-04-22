@@ -76,50 +76,50 @@ $ASSIGNATURES = [
     'Biología',
     'Comprensión Lectora',
     'Ciencias Sociales',
-    'Otro tipo de asesorías'
+    'Otro Tipo de Asesorías'
 ];
 
 // NUEVO: Definición de las tarjetas para la vista interactiva
 $ASSIGNATURE_CARDS = [
     [
         'subject' => 'Matemáticas',
-        'icon' => '', // Icono eliminado
-        'color' => 'hover:bg-indigo-50 border-indigo-500'
+        'icon' => '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-math-symbols"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M3 12l18 0" /><path d="M12 3l0 18" /><path d="M16.5 4.5l3 3" /><path d="M19.5 4.5l-3 3" /><path d="M6 4l0 4" /><path d="M4 6l4 0" /><path d="M18 16l.01 0" /><path d="M18 20l.01 0" /><path d="M4 18l4 0" /></svg>', // Icono eliminado
+        'color' => 'hover:bg-indigo-50 border border-indigo-500'
     ],
     [
         'subject' => 'Inglés',
-        'icon' => '', // Icono eliminado
-        'color' => 'hover:bg-red-50 border-red-500'
+        'icon' => '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-language"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M9 6.371c0 4.418 -2.239 6.629 -5 6.629" /><path d="M4 6.371h7" /><path d="M5 9c0 2.144 2.252 3.908 6 4" /><path d="M12 20l4 -9l4 9" /><path d="M19.1 18h-6.2" /><path d="M6.694 3l.793 .582" /></svg>', // Icono eliminado
+        'color' => 'orange'
     ],
     [
         'subject' => 'Química',
-        'icon' => '', // Icono eliminado
-        'color' => 'hover:bg-green-50 border-green-500'
+        'icon' => '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="icon icon-tabler icons-tabler-filled icon-tabler-flask"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M15 2a1 1 0 0 1 0 2v4.826l3.932 10.814l.034 .077a1.7 1.7 0 0 1 -.002 1.193l-.07 .162a1.7 1.7 0 0 1 -1.213 .911l-.181 .017h-11l-.181 -.017a1.7 1.7 0 0 1 -1.285 -2.266l.039 -.09l3.927 -10.804v-4.823a1 1 0 1 1 0 -2h6zm-2 2h-2v4h2v-4z" /></svg>', // Icono eliminado
+        'color' => 'green'
     ],
     [
         'subject' => 'Física',
-        'icon' => '', // Icono eliminado
-        'color' => 'hover:bg-blue-50 border-blue-500'
+        'icon' => '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="icon icon-tabler icons-tabler-filled icon-tabler-bulb"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M4 11a1 1 0 0 1 .117 1.993l-.117 .007h-1a1 1 0 0 1 -.117 -1.993l.117 -.007h1z" /><path d="M12 2a1 1 0 0 1 .993 .883l.007 .117v1a1 1 0 0 1 -1.993 .117l-.007 -.117v-1a1 1 0 0 1 1 -1z" /><path d="M21 11a1 1 0 0 1 .117 1.993l-.117 .007h-1a1 1 0 0 1 -.117 -1.993l.117 -.007h1z" /><path d="M4.893 4.893a1 1 0 0 1 1.32 -.083l.094 .083l.7 .7a1 1 0 0 1 -1.32 1.497l-.094 -.083l-.7 -.7a1 1 0 0 1 0 -1.414z" /><path d="M17.693 4.893a1 1 0 0 1 1.497 1.32l-.083 .094l-.7 .7a1 1 0 0 1 -1.497 -1.32l.083 -.094l.7 -.7z" /><path d="M14 18a1 1 0 0 1 1 1a3 3 0 0 1 -6 0a1 1 0 0 1 .883 -.993l.117 -.007h4z" /><path d="M12 6a6 6 0 0 1 3.6 10.8a1 1 0 0 1 -.471 .192l-.129 .008h-6a1 1 0 0 1 -.6 -.2a6 6 0 0 1 3.6 -10.8z" /></svg>', // Icono eliminado
+        'color' => 'purple'
     ],
     [
         'subject' => 'Biología',
-        'icon' => '', // Icono eliminado
-        'color' => 'hover:bg-teal-50 border-teal-500'
+        'icon' => '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="icon icon-tabler icons-tabler-filled icon-tabler-microscope"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M15.707 4.293l3 3a1 1 0 0 1 0 1.414l-1.553 1.555a7 7 0 0 1 -.256 9.74l2.102 -.002a1 1 0 0 1 0 2h-14a1 1 0 0 1 0 -2h1v-1a1 1 0 0 1 0 -2h2a1 1 0 0 1 0 2v1h4a5 5 0 0 0 3.737 -8.323l-3.03 3.03a1 1 0 0 1 -1.414 0l-.793 -.792l-.793 .792a1 1 0 1 1 -1.414 -1.414l.792 -.793l-.792 -.793a1 1 0 0 1 0 -1.414l6 -6a1 1 0 0 1 1.414 0m2 -2l3 3a1 1 0 1 1 -1.414 1.414l-3 -3a1 1 0 1 1 1.414 -1.414" /></svg>', // Icono eliminado
+        'color' => 'cyan'
     ],
     [
         'subject' => 'Comprensión Lectora',
-        'icon' => '', // Icono eliminado
-        'color' => 'hover:bg-purple-50 border-purple-500'
+        'icon' => '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="icon icon-tabler icons-tabler-filled icon-tabler-book"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M21.5 5.134a1 1 0 0 1 .493 .748l.007 .118v13a1 1 0 0 1 -1.5 .866a8 8 0 0 0 -7.5 -.266v-15.174a10 10 0 0 1 8.5 .708m-10.5 -.707l.001 15.174a8 8 0 0 0 -7.234 .117l-.327 .18l-.103 .044l-.049 .016l-.11 .026l-.061 .01l-.117 .006h-.042l-.11 -.012l-.077 -.014l-.108 -.032l-.126 -.056l-.095 -.056l-.089 -.067l-.06 -.056l-.073 -.082l-.064 -.089l-.022 -.036l-.032 -.06l-.044 -.103l-.016 -.049l-.026 -.11l-.01 -.061l-.004 -.049l-.002 -13.068a1 1 0 0 1 .5 -.866a10 10 0 0 1 8.5 -.707" /></svg>', // Icono eliminado
+        'color' => 'yellow'
     ],
     [
         'subject' => 'Ciencias Sociales',
-        'icon' => '', // Icono eliminado
-        'color' => 'hover:bg-yellow-50 border-yellow-600'
+        'icon' => '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="icon icon-tabler icons-tabler-filled icon-tabler-globe"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M11 4a5 5 0 1 1 -4.995 5.217l-.005 -.217l.005 -.217a5 5 0 0 1 4.995 -4.783z" /><path d="M14.133 1.502a1 1 0 0 1 1.365 -.369a9.015 9.015 0 1 1 -10.404 14.622a1 1 0 1 1 1.312 -1.51a7.015 7.015 0 1 0 8.096 -11.378a1 1 0 0 1 -.369 -1.365z" /><path d="M11 16a1 1 0 0 1 .993 .883l.007 .117v4a1 1 0 0 1 -1.993 .117l-.007 -.117v-4a1 1 0 0 1 1 -1z" /><path d="M15 20a1 1 0 0 1 .117 1.993l-.117 .007h-8a1 1 0 0 1 -.117 -1.993l.117 -.007h8z" /></svg>', // Icono eliminado
+        'color' => 'red'
     ],
     [
-        'subject' => 'Otro tipo de asesorías',
-        'icon' => '', // Icono eliminado
-        'color' => 'hover:bg-gray-100 border-gray-500'
+        'subject' => 'Otro Tipo de Asesorías',
+        'icon' => '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="icon icon-tabler icons-tabler-filled icon-tabler-zoom-question"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M14 3.072a8 8 0 0 1 2.32 11.834l5.387 5.387a1 1 0 0 1 -1.414 1.414l-5.388 -5.387a8 8 0 0 1 -12.905 -6.32l.005 -.285a8 8 0 0 1 11.995 -6.643m-4 8.928a1 1 0 0 0 -.993 .883l-.007 .127a1 1 0 0 0 1.993 .117l.007 -.127a1 1 0 0 0 -1 -1m-1.9 -5.123a1 1 0 0 0 1.433 1.389l.088 -.09a.5 .5 0 1 1 .379 .824a1 1 0 0 0 -.002 2a2.5 2.5 0 1 0 -1.9 -4.123" /></svg>', // Icono eliminado
+        'color' => 'pink'
     ],
 ];
 // --- Acción para verificar estado de la cita vía AJAX ---
@@ -759,7 +759,7 @@ function render_slider_show($images)
 {
     if (empty($images)) return;
 ?>
-    <div id="slider-container" class="max-w-4xl mx-auto mb-10 relative overflow-hidden rounded-xl shadow-2xl">
+    <div id="slider-container" class="max-w-4xl mx-auto relative overflow-hidden">
         <div id="slider-track" class="flex transition-transform duration-500 ease-in-out">
             <?php foreach ($images as $index => $image): ?>
                 <div class="slider-item flex-shrink-0 w-full aspect-video md:aspect-[21/9] relative" data-index="<?php echo $index; ?>">
@@ -767,7 +767,6 @@ function render_slider_show($images)
                     <img src="<?php echo htmlspecialchars($image['url']); ?>"
                         alt="<?php echo htmlspecialchars($image['caption']); ?>"
                         class="absolute inset-0 w-full h-full object-cover opacity-70">
-                    <img src="..." class="absolute inset-0 w-full h-full object-cover opacity-70">
 
                     <div class="absolute inset-0 <?php echo htmlspecialchars($image['color']); ?> opacity-70"></div>
 
@@ -811,8 +810,10 @@ function render_slider_show($images)
 function render_subject_cards($cards)
 {
 ?>
+    <!--
     <style>
         /* Contenedor con perspectiva para efecto 3D */
+        /* XANTY: ESTILOS DE LN 817 A 941 NO SIRVEN PARA NADA */
         .grid-cards {
             perspective: 1000px;
         }
@@ -937,29 +938,36 @@ function render_subject_cards($cards)
             word-wrap: break-word;
             max-width: 200%;
             display: block;
-        }
+        } 
     </style>
+    -->
 
     <style>
         /* Contenedor Grid optimizado para Kiosco */
-        .subjects-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
-            padding: 10px;
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            background: #050505;
+            color: #f5f5f5;
         }
 
-        @media (min-width: 768px) {
-            .subjects-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
+        .subjects-grid {
+           display: grid;
+           grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+           gap: 18px;
+           padding: 20px;
         }
 
         /* Tarjeta Base Estilo "Glass-Neon" */
         .kiosk-card {
             position: relative;
             height: 160px;
-            border-radius: 2.5rem;
+            border-radius: 2.0rem;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -1001,7 +1009,7 @@ function render_subject_cards($cards)
         }
 
         /* Colores de Alto Brillo (Fluorescentes) */
-        .glow-blue {
+        .glow-indigo {
             background: linear-gradient(135deg, #1e40af, #3b82f6);
             box-shadow: 0 0 25px rgba(59, 130, 246, 0.5);
             border-color: #60a5fa !important;
@@ -1037,6 +1045,28 @@ function render_subject_cards($cards)
             border-color: #f87171 !important;
         }
 
+        .glow-yellow {
+            background: linear-gradient(135deg, #BBC039, #f4ff28df);
+            box-shadow: 0 0 25px rgba(199, 199, 18, 0.5);
+            border-color: #f8f9ae !important;
+        }
+
+        .glow-cyan {
+            background: linear-gradient(135deg, #0890b2f4, #06b6d4);
+            box-shadow: 0 0 25px rgba(6, 182, 212, 0.5);
+            border-color: #22d3ee !important;
+        }
+
+        /* Efecto Hover SOLO para dispositivos con Mouse (PC) */
+        @media (hover: hover) {
+            .kiosk-card:hover {
+                transform: translateY(-10px) scale(1.02);
+                filter: brightness(1.15);
+                box-shadow: 0 25px 50px rgba(0, 0, 0, 0.7);
+                cursor: pointer;
+            }
+        }
+
         /* Efecto al tocar (Feedback táctil fuerte) */
         .kiosk-card:active {
             transform: scale(0.9) brightness(1.5);
@@ -1054,6 +1084,15 @@ function render_subject_cards($cards)
             padding: 0 1rem;
             line-height: 1;
         }
+
+        /* Estilo para los iconos SVG */
+        .kiosk-card svg {
+            width: 48px;
+            height: 48px;
+            margin-bottom: 5px;
+            z-index: 10;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+        }
     </style>
     
 
@@ -1061,25 +1100,25 @@ function render_subject_cards($cards)
         <?php foreach ($cards as $card):
             $color = strtolower($card['color']);
             // Mapeo dinámico de colores de alto contraste
-            $glow_class = 'glow-blue';
+            $glow_class = 'glow-indigo';
             if (strpos($color, 'purple') !== false) $glow_class = 'glow-purple';
             elseif (strpos($color, 'pink') !== false) $glow_class = 'glow-pink';
             elseif (strpos($color, 'green') !== false) $glow_class = 'glow-green';
-            elseif (strpos($color, 'orange') !== false || strpos($color, 'yellow') !== false) $glow_class = 'glow-orange';
+            elseif (strpos($color, 'orange') !== false || strpos($color, 'glow-yellow') !== false) $glow_class = 'glow-orange';
             elseif (strpos($color, 'red') !== false) $glow_class = 'glow-red';
-        ?>
+            elseif (strpos($color, 'yellow') !== false) $glow_class = 'glow-yellow';
+            elseif (strpos($color, 'cyan') !== false) $glow_class = 'glow-cyan';
+       ?>
             <div class="kiosk-card <?php echo $glow_class; ?>"
                 onclick="selectSubject('<?php echo addslashes($card['subject']); ?>')">
 
                 <div class="absolute top-3 right-5 w-8 h-8 bg-white/20 rounded-full blur-lg"></div>
 
+                <?php echo $card['icon']; ?>
+
                 <span class="card-text">
                     <?php echo htmlspecialchars($card['subject']); ?>
                 </span>
-
-                <div class="absolute bottom-4 bg-black/30 px-4 py-1 rounded-full border border-white/10">
-                    <span class="text-[10px] font-black tracking-[0.2em]">TOCAR</span>
-                </div>
             </div>
         <?php endforeach; ?>
     </div>
@@ -1473,7 +1512,6 @@ function render_subject_cards($cards)
                 /* Resplandor exterior (Glow) - Crucial para bajo brillo */
                 box-shadow: 0 0 15px rgba(124, 58, 237, 0.6),
                     inset 0 0 10px rgba(255, 255, 255, 0.2);
-
                 position: fixed;
                 transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
                 display: flex;
@@ -1531,11 +1569,7 @@ function render_subject_cards($cards)
     <?php elseif ($is_admin): // Botón de Logout Admin flotante 
     ?>
         <a href="?action=admin_logout"
-            class="fixed top-4 right-4 md:top-8 md:right-8 bg-red-600 text-white p-3 rounded-full shadow-xl hover:bg-red-700 transition duration-
-            
-            
-            
-            z-50 transform hover:scale-105"
+            class="fixed top-4 right-4 md:top-8 md:right-8 bg-red-600 text-white p-3 rounded-full shadow-xl hover:bg-red-700 transition duration-z-50 transform hover:scale-105"
             aria-label="Cerrar Sesión Administrador"
             title="Cerrar Sesión">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -1564,7 +1598,13 @@ function render_subject_cards($cards)
                     --kiosk-bg: #000000;
                     --kiosk-surface: #0a0a0b;
                     --neon-indigo: #6366f1;
+                    --neon-orange: #f97316;
+                    --neon-green: #22c55e;
+                    --neon-purple: #b917eaf9;
+                    --neon-cyan: #06b6d4;
                     --neon-yellow: #fbbf24;
+                    --neon-red: #fa2c2c;
+                    --neon-pink: #ec4899;
                 }
 
                 .schedule-bg {
@@ -1592,15 +1632,16 @@ function render_subject_cards($cards)
 
                 .subject-card-premium:active {
                     transform: scale(0.92);
-                    border-color: var(--neon-indigo) !important;
+                    border-color: var(--accent-color, #6366f1) !important;
                     box-shadow: 0 0 25px rgba(99, 102, 241, 0.4);
                 }
 
                 /* Formulario Android 14 */
                 .android-sheet {
                     background: #050505 !important;
-                    border-top: 2px solid var(--neon-indigo);
+                    border-top: 2px solid var(--accent-color, #6366f1) !important;
                     box-shadow: 0 -20px 50px rgba(0, 0, 0, 0.9);
+                    padding: 14px;
                 }
 
                 .kiosk-input-pro {
@@ -1616,7 +1657,7 @@ function render_subject_cards($cards)
                 }
 
                 .kiosk-input-pro:focus {
-                    border-color: var(--neon-indigo) !important;
+                    border-color: var(--accent-color, #6366f1) !important;
                     background: #161618 !important;
                 }
 
@@ -1639,7 +1680,7 @@ function render_subject_cards($cards)
                         <h1 class="text-5xl md:text-7xl font-black tracking-tighter uppercase italic">
                             Kiosco <span class="text-yellow-400 drop-shadow-[0_0_10px_rgba(250,204,21,0.3)]">Los Profe’s</span>
                         </h1>
-                        <p class="mt-4 text-indigo-400 font-bold uppercase tracking-[0.4em] text-xs">
+                        <p class="mt-4 text-indigo-400 font-bold uppercase tracking-[0.4em] text-sm">
                             Asesorías Académicas de Alto Nivel
                         </p>
                     </div>
@@ -1648,20 +1689,15 @@ function render_subject_cards($cards)
 
                     <div class="max-w-6xl mx-auto space-y-12">
 
-                        <div class="relative p-2 rounded-[3.5rem] bg-gradient-to-tr from-white/20 to-transparent shadow-[0_0_50px_rgba(255,255,255,0.1)]">
-
-                            <div class="rounded-[3rem] overflow-hidden border-4 border-white/10 shadow-2xl">
-                                <br>
-                                <br>
-                                <?php render_slider_show($SLIDER_IMAGES); ?>
-                            </div>
+                        <div class="relative">
+                            <?php render_slider_show($SLIDER_IMAGES); ?>
                         </div>
 
                         <div class="bg-[#080809] p-10 rounded-[4rem] border border-white/5 shadow-2xl">
-                            <div class="flex items-center gap-6 mb-10">
-                                <div class="h-12 w-3 bg-indigo-500 rounded-full shadow-[0_0_15px_rgba(99,102,241,0.5)]"></div>
-                                <h2 class="text-3xl md:text-5xl font-black text-white drop-shadow-[0_4px_8px_rgba(0,0,0,0.5)] mb-10 text-center uppercase tracking-tighter">
-                                    ✨ Paso 1: Selecciona la Asesoría que Necesitas
+                            <div class="flex items-center gap-5 mb-10">
+                                <div class="h-14 w-4 bg-indigo-500 rounded-full shadow-[0_0_15px_rgba(99,102,241,0.5)]"></div>
+                                <h2 class="md:pl[100px] md:pr[100px] xl:pr[100px] xl:pl-[100px] 2xl:pr-[100px] 2xl:pl-[100px] text-3xl md:text-5xl font-black text-white drop-shadow-[0_4px_8px_rgba(0,0,0,0.5)] mb-10 text-center uppercase tracking-tighter">
+                                    ✨ Paso 1: ¡Selecciona la asesoría que necesitas y agenda tu sesión ahora!
                                 </h2>
                             </div>
 
@@ -1681,13 +1717,12 @@ function render_subject_cards($cards)
                                 <div class="w-24 h-2 bg-white/20 rounded-full"></div>
                             </div>
 
-                            <div class="px-10 pb-12 overflow-y-auto">
-                                <div class="flex justify-between items-center mb-10">
+                            <div class="pb-12 overflow-y-auto">
+                                <div class="block justify-between items-center mb-10">
                                     <div>
                                         <h2 class="text-4xl font-black text-white italic" id="selected_subject_title">AGENDAR</h2>
-                                        <p class="text-indigo-400 font-bold text-sm tracking-widest uppercase">Completa los datos </p>
+                                        <p class="text-[var(--accent-color)] font-bold text-sm tracking-widest uppercase">Completa los datos </p>
                                     </div>
-
                                 </div>
 
                                 <style>
@@ -1714,8 +1749,8 @@ function render_subject_cards($cards)
                                     }
 
                                     .kiosk-input-sm:focus {
-                                        border-color: #6366f1 !important;
-                                        box-shadow: 0 0 12px rgba(99, 102, 241, 0.4);
+                                        border-color: var(--accent-color, #6366f1) !important;
+                                        box-shadow: 0 0 15px var(--accent-color, #6366f1);
                                     }
 
                                     /* Botón compacto */
@@ -1724,24 +1759,24 @@ function render_subject_cards($cards)
                                         /* Reducido de 75px a 65px */
                                         font-size: 1.3rem;
                                         border-radius: 1.5rem;
-                                        background: linear-gradient(135deg, #6366f1, #4338ca);
-                                        box-shadow: 0 8px 15px rgba(67, 56, 202, 0.4);
+                                        background: linear-gradient(135deg, var(--accent-color, #6366f1));
+                                        box-shadow: 0 8px 25px -5px var(--accent-color, #6366f1);
                                         border: 1px solid rgba(255, 255, 255, 0.1);
                                     }
 
                                     /* Badge de materia compacto */
                                     .subject-badge-sm {
-                                        background: linear-gradient(to right, rgba(99, 102, 241, 0.15), rgba(99, 102, 241, 0.05));
-                                        border: 2px solid #6366f1;
+                                        background: linear-gradient(to right, rgba(255, 255, 255, 0.1), transparent);
+                                        border: 2px solid var(--accent-color, #6366f1);
                                         padding: 0.8rem;
                                         /* Reducido de 1.2rem */
                                         border-radius: 1.5rem;
-                                        text-shadow: 0 0 8px rgba(99, 102, 241, 0.6);
+                                        text-shadow: 0 0 12px var(--accent-color, #6366f1);
                                         margin-bottom: 0.5rem;
                                     }
                                 </style>
-                                <button type="button" onclick="hideForm()" class="flex items-center gap-2 bg-white/5 border border-white/10 px-4 py-2 rounded-2xl active:scale-95 active:bg-red-500/20 transition-all group">
-                                    <svg class="w-5 h-5 text-indigo-400 group-active:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <button type="button" onclick="hideForm()" class="flex items-center gap-2 bg-white/5 border border-white/10 px-4 py-2 rounded-2xl active:scale-95 active:bg-[var(--accent-color)] transition-all group">
+                                    <svg class="w-5 h-5 text-[var(--accent-color)] group-active:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
                                     </svg>
                                     <span class="text-xs font-black text-white uppercase">Regresar</span>
@@ -1761,22 +1796,22 @@ function render_subject_cards($cards)
 
                                     <div class="grid grid-cols-2 gap-3">
                                         <div class="relative">
-                                            <label class="text-[8px] font-black text-indigo-400 absolute -top-2 left-4 bg-black px-1 z-10 uppercase tracking-tighter">Fecha</label>
+                                            <label class="text-[8px] font-black text-[var(--accent-color)] absolute -top-2 left-4 bg-black px-1 z-10 uppercase tracking-tighter">Fecha</label>
                                             <input type="date" name="date" class="kiosk-input-sm" required>
                                         </div>
                                         <div class="relative">
-                                            <label class="text-[8px] font-black text-indigo-400 absolute -top-2 left-4 bg-black px-1 z-10 uppercase tracking-tighter">Hora</label>
+                                            <label class="text-[8px] font-black text-[var(--accent-color)] absolute -top-2 left-4 bg-black px-1 z-10 uppercase tracking-tighter">Hora</label>
                                             <input type="time" name="time" class="kiosk-input-sm" required>
                                         </div>
                                     </div>
 
                                     <div class="relative">
-                                        <label class="text-[8px] font-black text-indigo-400 absolute -top-2 left-4 bg-black px-1 z-10 uppercase tracking-tighter">Estudiante</label>
+                                        <label class="text-[8px] font-black text-[var(--accent-color)] absolute -top-2 left-4 bg-black px-1 z-10 uppercase tracking-tighter">Estudiante</label>
                                         <input type="text" name="student_name" placeholder="Tu nombre..." class="kiosk-input-sm" required>
                                     </div>
 
                                     <div class="relative">
-                                        <label class="text-[8px] font-black text-indigo-400 absolute -top-2 left-4 bg-black px-1 z-10 uppercase tracking-tighter">WhatsApp</label>
+                                        <label class="text-[8px] font-black text-[var(--accent-color)] absolute -top-2 left-4 bg-black px-1 z-10 uppercase tracking-tighter">WhatsApp</label>
                                         <input type="tel" name="student_contact" placeholder="Número de contacto" class="kiosk-input-sm" required>
                                     </div>
 
@@ -2838,6 +2873,22 @@ function render_subject_cards($cards)
      * Maneja la selección de la asignatura desde la tarjeta.
      */
     function selectSubject(subject) {
+        // Mapeo de colores neón por materia
+        const colorMap = {
+            'Matemáticas': '#6366f1',
+            'Inglés': '#f97316',
+            'Química': '#22c55e',
+            'Física': '#b917eaf9',
+            'Biología': '#06b6d4',
+            'Comprensión Lectora': '#fbbf24',
+            'Ciencias Sociales': '#fa2c2c',
+            'Otro Tipo de Asesorías': '#ec4899'
+        };
+
+        // Aplicar el color correspondiente al contenedor del formulario
+        const accentColor = colorMap[subject] || '#6366f1';
+        formContainer.style.setProperty('--accent-color', accentColor);
+
         // 1. Ocultar todas las tarjetas y el título de selección
         subjectCards.forEach(card => card.style.display = 'none');
 
