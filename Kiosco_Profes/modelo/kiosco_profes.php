@@ -2302,30 +2302,7 @@ function render_subject_cards($cards)
                         </div>
                     </div>
                 </div>
-
-                <script>
-                    const toggleBtn = document.getElementById("themeToggle");
-                    const currentTheme = localStorage.getItem("theme");
-
-                    // Cargar tema guardado
-                    if (currentTheme) {
-                        document.documentElement.setAttribute("data-theme", currentTheme);
-                    }
-
-                    // Evento toggle
-                    toggleBtn.addEventListener("click", () => {
-                        let theme = document.documentElement.getAttribute("data-theme");
-
-                        if (theme === "dark") {
-                            document.documentElement.setAttribute("data-theme", "light");
-                            localStorage.setItem("theme", "light");
-                        } else {
-                            document.documentElement.setAttribute("data-theme", "dark");
-                            localStorage.setItem("theme", "dark");
-                        }
-                    });
-                </script>
-            <?
+            <?php
 
         // ===============================================
         // VISTA: Dashboard de Administrador
@@ -2429,6 +2406,83 @@ function render_subject_cards($cards)
                     </div>
                 <?php endforeach; ?>
             </div>
+            <!-- Fin Panel de Conteo de Asesorías -->
+
+            <?php
+            // Detectamos la vista
+            $view = $_GET['view'] ?? '';
+            ?>
+
+            <div class="container-fluid <?php echo ($view !== 'admin_dashboard') ? 'schedule-bg' : ''; ?>">
+            </div>
+            <!-- Filtros (Se mantiene el bloque de filtros original para la compatibilidad y visibilidad del filtro activo) -->
+            <div class="mb-6 flex space-x-3 items-center">
+                <span class="font-semibold text-gray-700">Filtrar por Estado:</span>
+                <?php foreach ($filters as $status_key => $status_text):
+                    $isActive = $filter === $status_key;
+                    $button_class = $isActive
+                        ? "bg-indigo-600 text-white font-bold"
+                        : "bg-gray-200 text-gray-700 hover:bg-gray-300";
+                ?>
+                    <a href="?view=<?php echo $VIEWS['ADMIN_DASHBOARD']; ?>&filter=<?php echo $status_key; ?>"
+                        class="py-2 px-4 rounded-lg text-sm transition-colors <?php echo $button_class; ?>">
+                        <?php echo $status_text; ?>
+                    </a>
+                <?php endforeach; ?>
+            </div>
+
+            <div class="flex flex-col md:flex-row justify-between items-center mb-8 bg-gradient-to-r from-white to-gray-50 p-4 md:p-6 shadow-md rounded-2xl border border-gray-100 overflow-hidden relative">
+                <div class="absolute -right-10 -top-10 w-32 h-32 bg-indigo-50 rounded-full opacity-50"></div>
+
+                <div class="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6 relative z-10">
+                    <div class="flex-shrink-0 bg-white p-2 rounded-xl shadow-sm border border-gray-100">
+                        <img src="logo2.png" alt="Logo" class="h-16 md:h-20 w-auto object-contain">
+                    </div>
+                    <div class="text-center md:text-left">
+                        <h1 class="text-xl md:text-2xl font-black text-gray-800 leading-tight">
+                            ¡Bienvenido, <span class="text-indigo-600"><?php echo htmlspecialchars($_SESSION['admin_nombre'] ?? 'Admin'); ?></span>!
+                        </h1>
+                        <p class="text-gray-500 text-xs md:text-sm font-medium mt-1">Gestión centralizada de asesorías académicas</p>
+                    </div>
+
+                </div>
+                <div class="mb-6 relative group">
+                    <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                        <svg class="w-5 h-5 text-indigo-500 group-focus-within:text-indigo-600 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                        </svg>
+                    </div>
+                    <input type="text" id="smartSearch"
+                        placeholder="Buscar por estudiante, asignatura o ID..."
+                        class="w-full pl-12 pr-4 py-4 bg-white border-2 border-gray-100 rounded-2xl shadow-sm outline-none focus:border-indigo-500 focus:ring-4 focus:ring-indigo-100 transition-all text-gray-700 font-medium placeholder-gray-400"
+                        onkeyup="filterTable()">
+                </div>
+
+            </div>
+            <div class="flex justify-end mb-4">
+                <button type="button" onclick="descargarInforme()"
+                    class="w-full md:w-auto bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 px-6 rounded-2xl shadow-lg transition-all active:scale-95 flex items-center justify-center gap-2">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                    Descargar Informe CSV
+                </button>
+
+                <script>
+                    function descargarInforme() {
+                        // 1. Obtener el texto del buscador inteligente (ajusta el ID si es diferente)
+                        const buscador = document.getElementById('smartSearch').value;
+
+                        // 2. Obtener el filtro de estado actual de la URL (si existe)
+                        const urlParams = new URLSearchParams(window.location.search);
+                        const filtroEstado = urlParams.get('filter') || 'ALL';
+
+                        // 3. Redirigir enviando ambos filtros
+                        window.location.href = `?action=export_csv&filter=${filtroEstado}&search=${encodeURIComponent(buscador)}`;
+                    }
+                </script>
+            </div>
+
             <div class="bg-transparent">
 
                 <div class="overflow-x-auto bg-white shadow-2xl shadow-gray-200/50 rounded-[2rem] border border-gray-100 mb-8 scrollbar-hide touch-pan-x">
