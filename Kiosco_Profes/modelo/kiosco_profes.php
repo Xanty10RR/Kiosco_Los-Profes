@@ -2272,14 +2272,14 @@ function render_subject_cards($cards)
                             <input type="hidden" name="action" value="admin_login">
 
                             <div>
-                                <label for="admin_email" class="block text-sm font-medium text-gray-700">Email</label>
+                                <label for="admin_email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label>
                                 <input type="email" id="admin_email" name="email" value=""
                                     class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-purple-500 focus:ring-purple-500 p-2"
                                     required>
                             </div>
 
                             <div>
-                                <label for="admin_password" class="block text-sm font-medium text-gray-700">Contraseña</label>
+                                <label for="admin_password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Contraseña</label>
                                 <input type="password" id="admin_password" name="password" value=""
                                     class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-purple-500 focus:ring-purple-500 p-2"
                                     required>
