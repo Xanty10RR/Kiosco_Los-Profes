@@ -2266,7 +2266,7 @@ function render_subject_cards($cards)
                     style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('por.jpg');">
 
                     <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
-                        <h2 class="text-3xl font-extrabold text-purple-700 mb-6 border-b pb-2 text-center">Acceso Administrador</h2>
+                        <h2 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">Acceso Administrador</h2>
 
                         <form method="POST" action="" class="space-y-4">
                             <input type="hidden" name="action" value="admin_login">
