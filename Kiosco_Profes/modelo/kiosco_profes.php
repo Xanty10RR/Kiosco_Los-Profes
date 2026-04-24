@@ -948,6 +948,7 @@ function render_subject_cards($cards)
             margin: 0;
             padding: 0;
         }
+
         body {
             display: flex;
             flex-direction: column;
@@ -957,10 +958,10 @@ function render_subject_cards($cards)
         }
 
         .subjects-grid {
-           display: grid;
-           grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-           gap: 18px;
-           padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 18px;
+            padding: 20px;
         }
 
         /* Tarjeta Base Estilo "Glass-Neon" */
@@ -1091,10 +1092,10 @@ function render_subject_cards($cards)
             height: 48px;
             margin-bottom: 5px;
             z-index: 10;
-            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+            filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
         }
     </style>
-    
+
 
     <div class="subjects-grid">
         <?php foreach ($cards as $card):
@@ -1108,7 +1109,7 @@ function render_subject_cards($cards)
             elseif (strpos($color, 'red') !== false) $glow_class = 'glow-red';
             elseif (strpos($color, 'yellow') !== false) $glow_class = 'glow-yellow';
             elseif (strpos($color, 'cyan') !== false) $glow_class = 'glow-cyan';
-       ?>
+        ?>
             <div class="kiosk-card <?php echo $glow_class; ?>"
                 onclick="selectSubject('<?php echo addslashes($card['subject']); ?>')">
 
@@ -1725,7 +1726,7 @@ function render_subject_cards($cards)
                                             <svg class="w-5 h-5 text-[var(--accent-color)] group-active:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
                                             </svg>
-                                        <span class="text-xs font-black text-white uppercase">Regresar</span>
+                                            <span class="text-xs font-black text-white uppercase">Regresar</span>
                                         </button>
                                     </div>
                                 </div>
@@ -1781,7 +1782,7 @@ function render_subject_cards($cards)
                                         margin-bottom: 0.5rem;
                                     }
                                 </style>
-                            
+
                                 <form method="POST" class="space-y-4 max-w-md mx-auto">
                                     <p class="text-[var(--accent-color)] font-bold text-sm tracking-widest uppercase">Completa los datos </p>
                                     <input type="hidden" name="action" value="schedule">
@@ -2262,6 +2263,11 @@ function render_subject_cards($cards)
         // VISTA: Login de Administrador
         // ===============================================
         elseif ($current_view === $VIEWS['ADMIN_LOGIN']): ?>
+
+                <button id="themeToggle">
+                    🌙 / ☀️
+                </button>
+
                 <div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700"
                     style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('por.jpg');">
 
@@ -2286,7 +2292,7 @@ function render_subject_cards($cards)
                             </div>
 
                             <button type="submit"
-                                class="w-full py-3 px-4 border border-transparent rounded-lg shadow-lg text-base font-medium text-white bg-purple-600 hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-purple-500 transition duration-150 ease-in-out transform hover:scale-[1.01]">
+                                class="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
                                 Iniciar Sesión
                             </button>
                         </form>
@@ -2297,8 +2303,29 @@ function render_subject_cards($cards)
                     </div>
                 </div>
 
+                <script>
+                    const toggleBtn = document.getElementById("themeToggle");
+                    const currentTheme = localStorage.getItem("theme");
 
-            <?php
+                    // Cargar tema guardado
+                    if (currentTheme) {
+                        document.documentElement.setAttribute("data-theme", currentTheme);
+                    }
+
+                    // Evento toggle
+                    toggleBtn.addEventListener("click", () => {
+                        let theme = document.documentElement.getAttribute("data-theme");
+
+                        if (theme === "dark") {
+                            document.documentElement.setAttribute("data-theme", "light");
+                            localStorage.setItem("theme", "light");
+                        } else {
+                            document.documentElement.setAttribute("data-theme", "dark");
+                            localStorage.setItem("theme", "dark");
+                        }
+                    });
+                </script>
+            <?
 
         // ===============================================
         // VISTA: Dashboard de Administrador
@@ -2346,53 +2373,34 @@ function render_subject_cards($cards)
             }
             ?>
 
-                <div class="mt-4 py-3 border-l-4 border-indigo-500 pl-4 bg-gray-50/80 rounded-r-2xl shadow-sm flex items-center justify-between">
-                    <div class="flex items-center gap-4">
-                        <div class="relative">
-                            <div class="w-12 h-12 bg-gradient-to-tr from-indigo-600 to-purple-500 rounded-full flex items-center justify-center text-white text-xl font-bold shadow-md">
-                                <?php echo strtoupper(substr($_SESSION['admin_nombre'] ?? 'A', 0, 1)); ?>
-                            </div>
-                            <span class="absolute bottom-0 right-0 flex h-3 w-3">
-                                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                                <span class="relative inline-flex rounded-full h-3 w-3 bg-green-500 border-2 border-white"></span>
+            <div class="mt-4 py-3 border-l-4 border-indigo-500 pl-4 bg-gray-50/80 rounded-r-2xl shadow-sm flex items-center justify-between">
+                <div class="flex items-center gap-4">
+                    <div class="relative">
+                        <div class="w-12 h-12 bg-gradient-to-tr from-indigo-600 to-purple-500 rounded-full flex items-center justify-center text-white text-xl font-bold shadow-md">
+                            <?php echo strtoupper(substr($_SESSION['admin_nombre'] ?? 'A', 0, 1)); ?>
+                        </div>
+                        <span class="absolute bottom-0 right-0 flex h-3 w-3">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-3 w-3 bg-green-500 border-2 border-white"></span>
+                        </span>
+                    </div>
+                    <div class="flex flex-col">
+                        <div class="flex items-center gap-2">
+                            <p class="text-[10px] text-gray-400 uppercase tracking-[0.2em] font-bold">Sesión activa</p>
+                        </div>
+                        <p class="text-lg font-semibold text-gray-800 leading-tight">
+                            <?php echo htmlspecialchars($_SESSION['admin_nombre'] ?? 'Administrador'); ?>
+                        </p>
+                        <div class="mt-1">
+                            <span class="bg-indigo-100 text-indigo-700 text-[10px] px-2 py-0.5 rounded-full font-black uppercase tracking-wider">
+                                <?php echo htmlspecialchars($_SESSION['admin_rol'] ?? 'Invitado'); ?>
                             </span>
                         </div>
-
-                        <div class="flex flex-col">
-                            <div class="flex items-center gap-2">
-                                <p class="text-[10px] text-gray-400 uppercase tracking-[0.2em] font-bold">Sesión activa</p>
-                            </div>
-                            <p class="text-lg font-semibold text-gray-800 leading-tight">
-                                <?php echo htmlspecialchars($_SESSION['admin_nombre'] ?? 'Administrador'); ?>
-                            </p>
-                            <div class="mt-1">
-                                <span class="bg-indigo-100 text-indigo-700 text-[10px] px-2 py-0.5 rounded-full font-black uppercase tracking-wider">
-                                    <?php echo htmlspecialchars($_SESSION['admin_rol'] ?? 'Invitado'); ?>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <h1 class="text-4xl font-extrabold text-gray-900 mb-6 border-b pb-2">Panel de Administración</h1>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 p-4">
-
-
-                    <div class="flex flex-wrap gap-3">
-                        <?php
-                        $subs = $pdo->query("SELECT * FROM subjects_list WHERE is_active = 1")->fetchAll();
-                        foreach ($subs as $m): ?>
-                            <div class="flex items-center gap-2 px-4 py-2 rounded-full border-2 border-gray-100 font-bold text-xs" style="color: <?php echo $m['color_hex']; ?>">
-                                <?php echo $m['name']; ?>
-                                <form method="POST" class="inline">
-                                    <input type="hidden" name="delete_type" value="subject">
-                                    <input type="hidden" name="id" value="<?php echo $m['id']; ?>">
-                                    <button type="submit" class="ml-1 text-gray-300 hover:text-red-500">×</button>
-                                </form>
-                            </div>
-                        <?php endforeach; ?>
                     </div>
                 </div>
             </div>
+
+            <h1 class="text-4xl font-extrabold text-gray-900 mb-6 border-b pb-2">Panel de Administración</h1>
 
             <!-- Panel de Conteo de Asesorías -->
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 mb-8">
@@ -2408,101 +2416,18 @@ function render_subject_cards($cards)
                 foreach ($count_cards as $key => $card): ?>
                     <div class="<?php echo $card['color']; ?> p-6 rounded-2xl text-white shadow-xl flex items-center justify-between transform hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 cursor-pointer group relative overflow-hidden"
                         onclick="window.location.href='?view=<?php echo $VIEWS['ADMIN_DASHBOARD']; ?>&filter=<?php echo $key; ?>'">
-
                         <div class="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
-
                         <div class="relative z-10">
-                            <p class="text-4xl font-black tracking-tight mb-1">
-                                <?php echo $card['count']; ?>
-                            </p>
-                            <p class="text-xs font-bold uppercase tracking-widest opacity-90 group-hover:opacity-100 transition-opacity">
-                                <?php echo $card['title']; ?>
-                            </p>
+                            <p class="text-4xl font-black tracking-tight mb-1"><?php echo $card['count']; ?></p>
+                            <p class="text-xs font-bold uppercase tracking-widest opacity-90"><?php echo $card['title']; ?></p>
                         </div>
-
-                        <div class="relative z-10 bg-white/20 p-3 rounded-lg backdrop-blur-sm group-hover:bg-white/30 transition-colors duration-300">
-                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <div class="relative z-10 bg-white/20 p-3 rounded-lg backdrop-blur-sm">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="<?php echo $card['icon']; ?>"></path>
                             </svg>
                         </div>
                     </div>
                 <?php endforeach; ?>
-            </div>
-            <!-- Fin Panel de Conteo de Asesorías -->
-
-            <?php
-            // Detectamos la vista
-            $view = $_GET['view'] ?? '';
-            ?>
-
-            <div class="container-fluid <?php echo ($view !== 'admin_dashboard') ? 'schedule-bg' : ''; ?>">
-            </div>
-            <!-- Filtros (Se mantiene el bloque de filtros original para la compatibilidad y visibilidad del filtro activo) -->
-            <div class="mb-6 flex space-x-3 items-center">
-                <span class="font-semibold text-gray-700">Filtrar por Estado:</span>
-                <?php foreach ($filters as $status_key => $status_text):
-                    $isActive = $filter === $status_key;
-                    $button_class = $isActive
-                        ? "bg-indigo-600 text-white font-bold"
-                        : "bg-gray-200 text-gray-700 hover:bg-gray-300";
-                ?>
-                    <a href="?view=<?php echo $VIEWS['ADMIN_DASHBOARD']; ?>&filter=<?php echo $status_key; ?>"
-                        class="py-2 px-4 rounded-lg text-sm transition-colors <?php echo $button_class; ?>">
-                        <?php echo $status_text; ?>
-                    </a>
-                <?php endforeach; ?>
-            </div>
-
-            <div class="flex flex-col md:flex-row justify-between items-center mb-8 bg-gradient-to-r from-white to-gray-50 p-4 md:p-6 shadow-md rounded-2xl border border-gray-100 overflow-hidden relative">
-                <div class="absolute -right-10 -top-10 w-32 h-32 bg-indigo-50 rounded-full opacity-50"></div>
-
-                <div class="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6 relative z-10">
-                    <div class="flex-shrink-0 bg-white p-2 rounded-xl shadow-sm border border-gray-100">
-                        <img src="logo2.png" alt="Logo" class="h-16 md:h-20 w-auto object-contain">
-                    </div>
-                    <div class="text-center md:text-left">
-                        <h1 class="text-xl md:text-2xl font-black text-gray-800 leading-tight">
-                            ¡Bienvenido, <span class="text-indigo-600"><?php echo htmlspecialchars($_SESSION['admin_nombre'] ?? 'Admin'); ?></span>!
-                        </h1>
-                        <p class="text-gray-500 text-xs md:text-sm font-medium mt-1">Gestión centralizada de asesorías académicas</p>
-                    </div>
-
-                </div>
-                <div class="mb-6 relative group">
-                    <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                        <svg class="w-5 h-5 text-indigo-500 group-focus-within:text-indigo-600 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                        </svg>
-                    </div>
-                    <input type="text" id="smartSearch"
-                        placeholder="Buscar por estudiante, asignatura o ID..."
-                        class="w-full pl-12 pr-4 py-4 bg-white border-2 border-gray-100 rounded-2xl shadow-sm outline-none focus:border-indigo-500 focus:ring-4 focus:ring-indigo-100 transition-all text-gray-700 font-medium placeholder-gray-400"
-                        onkeyup="filterTable()">
-                </div>
-
-            </div>
-            <div class="flex justify-end mb-4">
-                <button type="button" onclick="descargarInforme()"
-                    class="w-full md:w-auto bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 px-6 rounded-2xl shadow-lg transition-all active:scale-95 flex items-center justify-center gap-2">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                    </svg>
-                    Descargar Informe CSV
-                </button>
-
-                <script>
-                    function descargarInforme() {
-                        // 1. Obtener el texto del buscador inteligente (ajusta el ID si es diferente)
-                        const buscador = document.getElementById('smartSearch').value;
-
-                        // 2. Obtener el filtro de estado actual de la URL (si existe)
-                        const urlParams = new URLSearchParams(window.location.search);
-                        const filtroEstado = urlParams.get('filter') || 'ALL';
-
-                        // 3. Redirigir enviando ambos filtros
-                        window.location.href = `?action=export_csv&filter=${filtroEstado}&search=${encodeURIComponent(buscador)}`;
-                    }
-                </script>
             </div>
             <div class="bg-transparent">
 
