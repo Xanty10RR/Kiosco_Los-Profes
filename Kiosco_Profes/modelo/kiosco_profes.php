@@ -2262,7 +2262,7 @@ function render_subject_cards($cards)
         // VISTA: Login de Administrador
         // ===============================================
         elseif ($current_view === $VIEWS['ADMIN_LOGIN']): ?>
-                <div class="min-h-screen flex items-center justify-center bg-cover bg-center bg-no-repeat"
+                <div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700"
                     style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('por.jpg');">
 
                     <div class="p-8 bg-white/95 backdrop-blur-sm shadow-2xl rounded-xl max-w-sm mx-auto w-full border-t-8 border-purple-600">
