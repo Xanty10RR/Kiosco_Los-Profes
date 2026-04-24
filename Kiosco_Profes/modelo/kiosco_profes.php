@@ -2263,11 +2263,9 @@ function render_subject_cards($cards)
         // VISTA: Login de Administrador
         // ===============================================
         elseif ($current_view === $VIEWS['ADMIN_LOGIN']): ?>
-
                 <button id="themeToggle">
                     🌙 / ☀️
                 </button>
-
                 <div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700"
                     style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('por.jpg');">
 
@@ -2376,8 +2374,26 @@ function render_subject_cards($cards)
                     </div>
                 </div>
             </div>
-
             <h1 class="text-4xl font-extrabold text-gray-900 mb-6 border-b pb-2">Panel de Administración</h1>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 p-4">
+
+
+                    <div class="flex flex-wrap gap-3">
+                        <?php
+                        $subs = $pdo->query("SELECT * FROM subjects_list WHERE is_active = 1")->fetchAll();
+                        foreach ($subs as $m): ?>
+                            <div class="flex items-center gap-2 px-4 py-2 rounded-full border-2 border-gray-100 font-bold text-xs" style="color: <?php echo $m['color_hex']; ?>">
+                                <?php echo $m['name']; ?>
+                                <form method="POST" class="inline">
+                                    <input type="hidden" name="delete_type" value="subject">
+                                    <input type="hidden" name="id" value="<?php echo $m['id']; ?>">
+                                    <button type="submit" class="ml-1 text-gray-300 hover:text-red-500">×</button>
+                                </form>
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
+                </div>
+            </div>
 
             <!-- Panel de Conteo de Asesorías -->
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 mb-8">
