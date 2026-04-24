@@ -2265,7 +2265,7 @@ function render_subject_cards($cards)
                 <div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700"
                     style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('por.jpg');">
 
-                    <div class="p-8 bg-white/95 backdrop-blur-sm shadow-2xl rounded-xl max-w-sm mx-auto w-full border-t-8 border-purple-600">
+                    <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
                         <h2 class="text-3xl font-extrabold text-purple-700 mb-6 border-b pb-2 text-center">Acceso Administrador</h2>
 
                         <form method="POST" action="" class="space-y-4">
