@@ -2297,7 +2297,7 @@ function render_subject_cards($cards)
 
                     <div class="w-full bg-white/95 backdrop-blur-sm rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800/95 dark:border-gray-700">
                         <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
-                            <h2 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white text-center space-x-2">Acceso Administrador</h2>
+                            <h2 class="text-xl font-bold leading-relaxed tracking-tight text-gray-900 md:text-2xl dark:text-white text-center">Acceso Administrador</h2>
 
                             <form method="POST" class="space-y-4 md:space-y-6" action="">
                                 <input type="hidden" name="action" value="admin_login">
