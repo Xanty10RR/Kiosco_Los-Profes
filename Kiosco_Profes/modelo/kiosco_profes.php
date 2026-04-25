@@ -2281,7 +2281,7 @@ function render_subject_cards($cards)
                 </script>
                 <div class="min-h-screen bg-gray-100 dark:bg-gray-900 flex items-center justify-center bg-cover bg-center bg-no-repeat" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('por.jpg');">
                     <button id="CambiarModo"
-                        class="fixed top-4 left-4 p-3 rounded-full bg-gray-200 dark:bg-gray-800 transition duration-300 z-[110] hover:scale-110">
+                        class="fixed top-4 right-4 p-3 rounded-full bg-gray-200 dark:bg-gray-800 transition duration-300 z-[110] hover:scale-110">
 
                         <!-- Icono modo oscuro -->
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 text-gray-800 dark:hidden">
