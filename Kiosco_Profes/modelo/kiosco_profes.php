@@ -2264,20 +2264,6 @@ function render_subject_cards($cards)
         // ===============================================
         elseif ($current_view === $VIEWS['ADMIN_LOGIN']): ?>
 
-        <style>
-            body {
-background-color: white;
-
-            }
-        /* Estilos para el botón de toggle */
-        #themeToggle {
-            position: fixed;
-            top: 1rem;
-            left: 1rem;
-            z-index: 110;
-        }
-        </style>
-
         <script>
         tailwind.config = {
             darkMode: 'class'
@@ -2293,18 +2279,18 @@ background-color: white;
             document.documentElement.classList.remove('dark');
         }
         </script>
-                
-                <button id="themeToggle"
+                <!-- Boton para cambiar modo de color -->
+                <button id="CambiarModo"
                 class="fixed top-4 left-4 p-3 rounded-full bg-gray-200 dark:bg-gray-700 transition duration-300 z-[110] hover:scale-110">
             
-                <!-- 🌙 Icono modo oscuro -->
+                <!-- Icono modo oscuro -->
                 <svg id="iconMoon" xmlns="http://www.w3.org/2000/svg"
                     class="w-6 h-6 text-gray-800 dark:hidden"
                     fill="currentColor" viewBox="0 0 20 20">
                     <path d="M17.293 13.293A8 8 0 016.707 2.707a8 8 0 1010.586 10.586z"/>
                 </svg>
             
-                <!-- ☀️ Icono modo claro -->
+                <!-- Icono modo claro -->
                 <svg id="iconSun" xmlns="http://www.w3.org/2000/svg"
                     class="w-6 h-6 text-yellow-400 hidden dark:block"
                     fill="currentColor" viewBox="0 0 20 20">
@@ -2349,7 +2335,7 @@ background-color: white;
 
                 <script>
                 // Mover el listener aquí abajo para asegurar que el botón ya existe
-                document.getElementById("themeToggle").addEventListener("click", () => {
+                document.getElementById("CambiarModo").addEventListener("click", () => {
                     const html = document.documentElement;
                     const isDark = html.classList.toggle("dark");
                     
