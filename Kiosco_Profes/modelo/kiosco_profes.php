@@ -2263,9 +2263,55 @@ function render_subject_cards($cards)
         // VISTA: Login de Administrador
         // ===============================================
         elseif ($current_view === $VIEWS['ADMIN_LOGIN']): ?>
-                <button id="themeToggle">
-                    🌙 / ☀️
+
+        <style>
+            body {
+background-color: white;
+
+            }
+        /* Estilos para el botón de toggle */
+        #themeToggle {
+            position: fixed;
+            top: 1rem;
+            left: 1rem;
+            z-index: 110;
+        }
+        </style>
+
+        <script>
+        tailwind.config = {
+            darkMode: 'class'
+        }
+        </script>
+        <script>
+        if (
+            localStorage.getItem('theme') === 'dark' ||
+            (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)
+        ) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+        </script>
+                
+                <button id="themeToggle"
+                class="fixed top-4 left-4 p-3 rounded-full bg-gray-200 dark:bg-gray-700 transition duration-300 z-[110] hover:scale-110">
+            
+                <!-- 🌙 Icono modo oscuro -->
+                <svg id="iconMoon" xmlns="http://www.w3.org/2000/svg"
+                    class="w-6 h-6 text-gray-800 dark:hidden"
+                    fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M17.293 13.293A8 8 0 016.707 2.707a8 8 0 1010.586 10.586z"/>
+                </svg>
+            
+                <!-- ☀️ Icono modo claro -->
+                <svg id="iconSun" xmlns="http://www.w3.org/2000/svg"
+                    class="w-6 h-6 text-yellow-400 hidden dark:block"
+                    fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M10 3.22l.61 1.83a1 1 0 00.95.69h1.93l-1.56 1.13a1 1 0 00-.36 1.12l.6 1.83-1.56-1.13a1 1 0 00-1.18 0l-1.56 1.13.6-1.83a1 1 0 00-.36-1.12L6.51 5.74h1.93a1 1 0 00.95-.69L10 3.22z"/>
+                </svg>
                 </button>
+
                 <div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700"
                     style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('por.jpg');">
 
@@ -2300,6 +2346,17 @@ function render_subject_cards($cards)
                         </div>
                     </div>
                 </div>
+
+                <script>
+                // Mover el listener aquí abajo para asegurar que el botón ya existe
+                document.getElementById("themeToggle").addEventListener("click", () => {
+                    const html = document.documentElement;
+                    const isDark = html.classList.toggle("dark");
+                    
+                    // Guardar preferencia
+                    localStorage.setItem("theme", isDark ? "dark" : "light");
+                });
+                </script>
             <?php
 
         // ===============================================
