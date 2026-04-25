@@ -2264,84 +2264,86 @@ function render_subject_cards($cards)
         // ===============================================
         elseif ($current_view === $VIEWS['ADMIN_LOGIN']): ?>
 
-        <script>
-        tailwind.config = {
-            darkMode: 'class'
-        }
-        </script>
-        <script>
-        if (
-            localStorage.getItem('theme') === 'dark' ||
-            (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)
-        ) {
-            document.documentElement.classList.add('dark');
-        } else {
-            document.documentElement.classList.remove('dark');
-        }
-        </script>
+                <script>
+                    tailwind.config = {
+                        darkMode: 'class'
+                    }
+                </script>
+                <script>
+                    if (
+                        localStorage.getItem('theme') === 'dark' ||
+                        (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)
+                    ) {
+                        document.documentElement.classList.add('dark');
+                    } else {
+                        document.documentElement.classList.remove('dark');
+                    }
+                </script>
                 <!-- Boton para cambiar modo de color -->
-                <button id="CambiarModo"
-                class="fixed top-4 left-4 p-3 rounded-full bg-gray-200 dark:bg-gray-700 transition duration-300 z-[110] hover:scale-110">
-            
-                <!-- Icono modo oscuro -->
-                <svg id="iconMoon" xmlns="http://www.w3.org/2000/svg"
-                    class="w-6 h-6 text-gray-800 dark:hidden"
-                    fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M17.293 13.293A8 8 0 016.707 2.707a8 8 0 1010.586 10.586z"/>
-                </svg>
-            
-                <!-- Icono modo claro -->
-                <svg id="iconSun" xmlns="http://www.w3.org/2000/svg"
-                    class="w-6 h-6 text-yellow-400 hidden dark:block"
-                    fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M10 3.22l.61 1.83a1 1 0 00.95.69h1.93l-1.56 1.13a1 1 0 00-.36 1.12l.6 1.83-1.56-1.13a1 1 0 00-1.18 0l-1.56 1.13.6-1.83a1 1 0 00-.36-1.12L6.51 5.74h1.93a1 1 0 00.95-.69L10 3.22z"/>
-                </svg>
-                </button>
+                <div class="min-h-screen bg-gray-100 dark:bg-gray-900 flex items-center justify-center">
+                    <button id="CambiarModo"
+                        class="fixed top-4 left-4 p-3 rounded-full bg-gray-200 dark:bg-gray-700 transition duration-300 z-[110] hover:scale-110">
 
-                <div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700"
-                    style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('por.jpg');">
+                        <!-- Icono modo oscuro -->
+                        <svg id="iconMoon" xmlns="http://www.w3.org/2000/svg"
+                            class="w-6 h-6 text-gray-800 dark:hidden"
+                            fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M17.293 13.293A8 8 0 016.707 2.707a8 8 0 1010.586 10.586z" />
+                        </svg>
 
-                    <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
-                        <h2 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">Acceso Administrador</h2>
+                        <!-- Icono modo claro -->
+                        <svg id="iconSun" xmlns="http://www.w3.org/2000/svg"
+                            class="w-6 h-6 text-yellow-400 hidden dark:block"
+                            fill="currentColor" viewBox="0 0 20 20">
+                            <path d="M10 3.22l.61 1.83a1 1 0 00.95.69h1.93l-1.56 1.13a1 1 0 00-.36 1.12l.6 1.83-1.56-1.13a1 1 0 00-1.18 0l-1.56 1.13.6-1.83a1 1 0 00-.36-1.12L6.51 5.74h1.93a1 1 0 00.95-.69L10 3.22z" />
+                        </svg>
+                    </button>
 
-                        <form method="POST" class="space-y-4 md:space-y-6" action="" class="space-y-4">
-                            <input type="hidden" name="action" value="admin_login">
+                    <div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700"
+                        style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('por.jpg');">
 
-                            <div>
-                                <label for="admin_email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label>
-                                <input type="email" id="admin_email" name="email" value=""
-                                    class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="admin@gmail.com"
-                                    required>
+                        <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
+                            <h2 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">Acceso Administrador</h2>
+
+                            <form method="POST" class="space-y-4 md:space-y-6" action="" class="space-y-4">
+                                <input type="hidden" name="action" value="admin_login">
+
+                                <div>
+                                    <label for="admin_email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label>
+                                    <input type="email" id="admin_email" name="email" value=""
+                                        class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="admin@gmail.com"
+                                        required>
+                                </div>
+
+                                <div>
+                                    <label for="admin_password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Contraseña</label>
+                                    <input type="password" id="admin_password" name="password" value=""
+                                        class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="••••••••"
+                                        required>
+                                </div>
+
+                                <button type="submit"
+                                    class="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
+                                    Iniciar Sesión
+                                </button>
+                            </form>
+
+                            <div class="mt-6 text-center">
+                                <a href="?" class="text-sm text-indigo-600 hover:text-indigo-800 font-semibold">Volver a Agendar Asesoria</a>
                             </div>
-
-                            <div>
-                                <label for="admin_password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Contraseña</label>
-                                <input type="password" id="admin_password" name="password" value=""
-                                    class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="••••••••"
-                                    required>
-                            </div>
-
-                            <button type="submit"
-                                class="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
-                                Iniciar Sesión
-                            </button>
-                        </form>
-
-                        <div class="mt-6 text-center">
-                            <a href="?" class="text-sm text-indigo-600 hover:text-indigo-800 font-semibold">Volver a Agendar Asesoria</a>
                         </div>
                     </div>
                 </div>
 
                 <script>
-                // Mover el listener aquí abajo para asegurar que el botón ya existe
-                document.getElementById("CambiarModo").addEventListener("click", () => {
-                    const html = document.documentElement;
-                    const isDark = html.classList.toggle("dark");
-                    
-                    // Guardar preferencia
-                    localStorage.setItem("theme", isDark ? "dark" : "light");
-                });
+                    // Mover el listener aquí abajo para asegurar que el botón ya existe
+                    document.getElementById("CambiarModo").addEventListener("click", () => {
+                        const html = document.documentElement;
+                        const isDark = html.classList.toggle("dark");
+
+                        // Guardar preferencia
+                        localStorage.setItem("theme", isDark ? "dark" : "light");
+                    });
                 </script>
             <?php
 
@@ -2391,34 +2393,34 @@ function render_subject_cards($cards)
             }
             ?>
 
-            <div class="mt-4 py-3 border-l-4 border-indigo-500 pl-4 bg-gray-50/80 rounded-r-2xl shadow-sm flex items-center justify-between">
-                <div class="flex items-center gap-4">
-                    <div class="relative">
-                        <div class="w-12 h-12 bg-gradient-to-tr from-indigo-600 to-purple-500 rounded-full flex items-center justify-center text-white text-xl font-bold shadow-md">
-                            <?php echo strtoupper(substr($_SESSION['admin_nombre'] ?? 'A', 0, 1)); ?>
-                        </div>
-                        <span class="absolute bottom-0 right-0 flex h-3 w-3">
-                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                            <span class="relative inline-flex rounded-full h-3 w-3 bg-green-500 border-2 border-white"></span>
-                        </span>
-                    </div>
-                    <div class="flex flex-col">
-                        <div class="flex items-center gap-2">
-                            <p class="text-[10px] text-gray-400 uppercase tracking-[0.2em] font-bold">Sesión activa</p>
-                        </div>
-                        <p class="text-lg font-semibold text-gray-800 leading-tight">
-                            <?php echo htmlspecialchars($_SESSION['admin_nombre'] ?? 'Administrador'); ?>
-                        </p>
-                        <div class="mt-1">
-                            <span class="bg-indigo-100 text-indigo-700 text-[10px] px-2 py-0.5 rounded-full font-black uppercase tracking-wider">
-                                <?php echo htmlspecialchars($_SESSION['admin_rol'] ?? 'Invitado'); ?>
+                <div class="mt-4 py-3 border-l-4 border-indigo-500 pl-4 bg-gray-50/80 rounded-r-2xl shadow-sm flex items-center justify-between">
+                    <div class="flex items-center gap-4">
+                        <div class="relative">
+                            <div class="w-12 h-12 bg-gradient-to-tr from-indigo-600 to-purple-500 rounded-full flex items-center justify-center text-white text-xl font-bold shadow-md">
+                                <?php echo strtoupper(substr($_SESSION['admin_nombre'] ?? 'A', 0, 1)); ?>
+                            </div>
+                            <span class="absolute bottom-0 right-0 flex h-3 w-3">
+                                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                                <span class="relative inline-flex rounded-full h-3 w-3 bg-green-500 border-2 border-white"></span>
                             </span>
+                        </div>
+                        <div class="flex flex-col">
+                            <div class="flex items-center gap-2">
+                                <p class="text-[10px] text-gray-400 uppercase tracking-[0.2em] font-bold">Sesión activa</p>
+                            </div>
+                            <p class="text-lg font-semibold text-gray-800 leading-tight">
+                                <?php echo htmlspecialchars($_SESSION['admin_nombre'] ?? 'Administrador'); ?>
+                            </p>
+                            <div class="mt-1">
+                                <span class="bg-indigo-100 text-indigo-700 text-[10px] px-2 py-0.5 rounded-full font-black uppercase tracking-wider">
+                                    <?php echo htmlspecialchars($_SESSION['admin_rol'] ?? 'Invitado'); ?>
+                                </span>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <h1 class="text-4xl font-extrabold text-gray-900 mb-6 border-b pb-2">Panel de Administración</h1>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 p-4">
+                <h1 class="text-4xl font-extrabold text-gray-900 mb-6 border-b pb-2">Panel de Administración</h1>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 p-4">
 
 
                     <div class="flex flex-wrap gap-3">
