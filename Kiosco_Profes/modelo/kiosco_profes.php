@@ -2280,7 +2280,8 @@ function render_subject_cards($cards)
                     }
                 </script>
                 <!-- Boton para cambiar modo de color -->
-                <div class="min-h-screen bg-gray-100 dark:bg-gray-900 flex items-center justify-center">
+                <!-- 2. Movemos la imagen al contenedor principal para que la tarjeta pueda cambiar de color -->
+                <div class="min-h-screen bg-gray-100 dark:bg-gray-900 flex items-center justify-center bg-cover bg-center bg-no-repeat" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('por.jpg');">
                     <button id="CambiarModo"
                         class="fixed top-4 left-4 p-3 rounded-full bg-gray-200 dark:bg-gray-700 transition duration-300 z-[110] hover:scale-110">
 
@@ -2291,42 +2292,43 @@ function render_subject_cards($cards)
 
 
                         <!-- Icono modo claro -->
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6 text-yellow-400 hidden dark:block">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="size-6 text-gray-900 hidden dark:block">
                             <path d="M12 2.25a.75.75 0 0 1 .75.75v2.25a.75.75 0 0 1-1.5 0V3a.75.75 0 0 1 .75-.75ZM7.5 12a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM18.894 6.166a.75.75 0 0 0-1.06-1.06l-1.591 1.59a.75.75 0 1 0 1.06 1.061l1.591-1.59ZM21.75 12a.75.75 0 0 1-.75.75h-2.25a.75.75 0 0 1 0-1.5H21a.75.75 0 0 1 .75.75ZM17.834 18.894a.75.75 0 0 0 1.06-1.06l-1.59-1.591a.75.75 0 1 0-1.061 1.06l1.59 1.591ZM12 18a.75.75 0 0 1 .75.75V21a.75.75 0 0 1-1.5 0v-2.25A.75.75 0 0 1 12 18ZM7.758 17.303a.75.75 0 0 0-1.061-1.06l-1.591 1.59a.75.75 0 0 0 1.06 1.061l1.591-1.59ZM6 12a.75.75 0 0 1-.75.75H3a.75.75 0 0 1 0-1.5h2.25A.75.75 0 0 1 6 12ZM6.697 7.757a.75.75 0 0 0 1.06-1.06l-1.59-1.591a.75.75 0 0 0-1.061 1.06l1.59 1.591Z" />
                         </svg>
                     </button>
 
-                    <div class="w-full bg-white rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800 dark:border-gray-700"
-                        style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('por.jpg');">
+                    <!-- 3. Quitamos el style de la tarjeta para que brille el modo oscuro de Tailwind -->
+                    <div class="w-full bg-white/95 backdrop-blur-sm rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800/95 dark:border-gray-700">
 
                         <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
-                            <h2 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white">Acceso Administrador</h2>
+                            <h2 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white text-center">Acceso Administrador</h2>
 
+                            <!-- Corregido: eliminado class duplicado -->
                             <form method="POST" class="space-y-4 md:space-y-6" action="">
                                 <input type="hidden" name="action" value="admin_login">
 
                                 <div>
                                     <label for="admin_email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label>
                                     <input type="email" id="admin_email" name="email" value=""
-                                        class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="admin@gmail.com"
+                                        class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-indigo-600 focus:border-indigo-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="admin@gmail.com"
                                         required>
                                 </div>
 
                                 <div>
                                     <label for="admin_password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Contraseña</label>
                                     <input type="password" id="admin_password" name="password" value=""
-                                        class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="••••••••"
+                                        class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-indigo-600 focus:border-indigo-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-indigo-500 dark:focus:border-indigo-500" placeholder="••••••••"
                                         required>
                                 </div>
 
                                 <button type="submit"
-                                    class="w-full text-white bg-primary-600 hover:bg-primary-700 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">
+                                    class="w-full text-white bg-indigo-600 hover:bg-indigo-700 focus:ring-4 focus:outline-none focus:ring-indigo-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indigo-800">
                                     Iniciar Sesión
                                 </button>
                             </form>
 
                             <div class="mt-6 text-center">
-                                <a href="?" class="text-sm text-indigo-600 hover:text-indigo-800 font-semibold">Volver a Agendar Asesoria</a>
+                                <a href="?" class="text-sm text-indigo-600 hover:text-indigo-800 font-semibold text hover:underline">Volver a Agendar Asesoria</a>
                             </div>
                         </div>
                     </div>
