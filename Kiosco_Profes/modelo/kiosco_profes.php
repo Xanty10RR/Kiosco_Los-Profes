@@ -1579,7 +1579,7 @@ function render_subject_cards($cards)
         </a>
     <?php endif; ?>
 
-    <div class="p-4 md:p-8">
+    <div class="<?php echo in_array($current_view, [$VIEWS['ADMIN_LOGIN'], $VIEWS['SCHEDULE_VIEW']]) ? '' : 'p-4 md:p-8'; ?>">
         <?php if (isset($error_message) && $error_message): ?>
             <div class="max-w-4xl mx-auto bg-red-100 border-l-4 border-red-500 text-red-700 p-4 mb-6 rounded-lg shadow-md" role="alert">
                 <p class="font-bold">Error del Sistema / Permisos:</p>
