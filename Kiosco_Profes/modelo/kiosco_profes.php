@@ -2281,7 +2281,7 @@ function render_subject_cards($cards)
                 </script>
                 <div class="min-h-screen bg-gray-100 dark:bg-gray-900 flex items-center justify-center bg-cover bg-center bg-no-repeat" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('por.jpg');">
                     <button id="CambiarModo"
-                        class="fixed top-4 left-4 p-3 rounded-full bg-gray-200 dark:bg-gray-700 transition duration-300 z-[110] hover:scale-110">
+                        class="fixed top-4 left-4 p-3 rounded-full bg-gray-200 dark:bg-gray-600 transition duration-300 z-[110] hover:scale-110">
 
                         <!-- Icono modo oscuro -->
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 text-gray-800 dark:hidden">
@@ -2297,7 +2297,7 @@ function render_subject_cards($cards)
 
                     <div class="w-full bg-white/95 backdrop-blur-sm rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800/95 dark:border-gray-700">
                         <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
-                            <h2 class="text-xl font-bold leading-relaxed tracking-tight text-gray-900 md:text-2xl dark:text-white text-center">Acceso Administrador</h2>
+                            <h2 class="text-xl font-bold leading-loose tracking-widest text-gray-900 md:text-2xl dark:text-white text-center">Acceso Administrador</h2>
 
                             <form method="POST" class="space-y-4 md:space-y-6" action="">
                                 <input type="hidden" name="action" value="admin_login">
