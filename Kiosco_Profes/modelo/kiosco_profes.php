@@ -2328,7 +2328,7 @@ function render_subject_cards($cards)
                             </form>
 
                             <div class="mt-6 text-center">
-                                <a href="?" class="text-sm text-indigo-600 hover:text-indigo-800 font-semibold text hover:underline">Volver a Agendar Asesoria</a>
+                                <a href="?" class="text-sm text-indigo-600 hover:text-indigo-800 font-semibold text hover:underline dark:text-indigo-500 dark:hover:text-indigo-400">Volver a Agendar Asesoria</a>
                             </div>
                         </div>
                     </div>
