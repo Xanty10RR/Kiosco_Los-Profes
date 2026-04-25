@@ -2279,8 +2279,6 @@ function render_subject_cards($cards)
                         document.documentElement.classList.remove('dark');
                     }
                 </script>
-                <!-- Boton para cambiar modo de color -->
-                <!-- 2. Movemos la imagen al contenedor principal para que la tarjeta pueda cambiar de color -->
                 <div class="min-h-screen bg-gray-100 dark:bg-gray-900 flex items-center justify-center bg-cover bg-center bg-no-repeat" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('por.jpg');">
                     <button id="CambiarModo"
                         class="fixed top-4 left-4 p-3 rounded-full bg-gray-200 dark:bg-gray-700 transition duration-300 z-[110] hover:scale-110">
@@ -2297,13 +2295,10 @@ function render_subject_cards($cards)
                         </svg>
                     </button>
 
-                    <!-- 3. Quitamos el style de la tarjeta para que brille el modo oscuro de Tailwind -->
                     <div class="w-full bg-white/95 backdrop-blur-sm rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800/95 dark:border-gray-700">
-
                         <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
-                            <h2 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white text-center">Acceso Administrador</h2>
+                            <h2 class="text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white text-center space-x-2">Acceso Administrador</h2>
 
-                            <!-- Corregido: eliminado class duplicado -->
                             <form method="POST" class="space-y-4 md:space-y-6" action="">
                                 <input type="hidden" name="action" value="admin_login">
 
@@ -2335,7 +2330,7 @@ function render_subject_cards($cards)
                 </div>
 
                 <script>
-                    // Mover el listener aquí abajo para asegurar que el botón ya existe
+                    // Script para el botón de cambio de modo
                     document.getElementById("CambiarModo").addEventListener("click", () => {
                         const html = document.documentElement;
                         const isDark = html.classList.toggle("dark");
