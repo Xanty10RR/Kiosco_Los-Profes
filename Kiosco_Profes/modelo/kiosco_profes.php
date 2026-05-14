@@ -2164,9 +2164,10 @@ function render_subject_cards($cards)
 
                                     <div class="w-32 h-32 md:w-44 md:h-44 <?php echo $style['bg']; ?> rounded-[3rem] flex items-center justify-center mx-auto mb-12 shadow-2xl relative z-10 border-[12px] border-white transform hover:rotate-6 transition-transform duration-700 ease-out overflow-hidden">
 
-                                        <img src="logo1.png"
+                                        <img src="../assets/logo1.png"
                                             alt="100%"
                                             class="w-full h-full object-contain p-4 drop-shadow-md">
+
 
                                     </div>
 
