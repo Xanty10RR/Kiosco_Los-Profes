@@ -1828,8 +1828,6 @@ function render_subject_cards($cards)
                 </div>
             </div>
 
-
-
         <?php
         // ===============================================
         // VISTA: Pago (Estudiante)
