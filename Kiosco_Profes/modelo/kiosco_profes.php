@@ -1598,9 +1598,6 @@ function render_subject_cards($cards)
 
         <?php
 
-
-
-
         if ($current_view === $VIEWS['SCHEDULE_VIEW']): ?>
             <style>
                 /* OPTIMIZACIÓN BAJO BRILLO Y ANDROID */
