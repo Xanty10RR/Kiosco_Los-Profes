@@ -1908,7 +1908,7 @@ function render_subject_cards($cards)
                 <div class="relative border-l-4 border-emerald-500/30 ml-6 space-y-12 py-4">
 
                     <!-- PASO 1 -->
-                    <div class="ml-8 relative">
+                    <div id="paso1" class="ml-8 relative">
                         <div class="absolute -left-[44px] top-1 w-8 h-8 bg-emerald-500 rounded-full border-4 border-white dark:border-gray-900 shadow-[0_0_15px_rgba(16,185,129,0.5)] flex items-center justify-center text-[10px] font-black text-white">1</div>
 
                         <p class="text-emerald-500 dark:text-emerald-400 font-black uppercase text-xs tracking-[0.3em] mb-1">
@@ -1923,7 +1923,7 @@ function render_subject_cards($cards)
                     </div>
 
                     <!-- PASO 2 -->
-                    <div class="ml-8 relative">
+                    <div id="paso2" class="ml-8 relative">
                         <div class="absolute -left-[44px] top-1 w-8 h-8 bg-emerald-500 rounded-full border-4 border-white dark:border-gray-900 shadow-[0_0_15px_rgba(16,185,129,0.5)] flex items-center justify-center text-[10px] font-black text-white">2</div>
 
                         <p class="text-emerald-500 dark:text-emerald-400 font-black uppercase text-xs tracking-[0.3em] mb-1">
@@ -1938,7 +1938,7 @@ function render_subject_cards($cards)
                     </div>
 
                     <!-- PASO 3 -->
-                    <div class="ml-8 relative">
+                    <div id="paso3" class="ml-8 relative">
                         <div class="absolute -left-[44px] top-1 w-8 h-8 bg-emerald-500 rounded-full border-4 border-white dark:border-gray-900 shadow-[0_0_15px_rgba(16,185,129,0.5)] flex items-center justify-center text-[10px] font-black text-white">3</div>
 
                         <p class="text-emerald-500 dark:text-emerald-400 font-black uppercase text-xs tracking-[0.3em] mb-1">
