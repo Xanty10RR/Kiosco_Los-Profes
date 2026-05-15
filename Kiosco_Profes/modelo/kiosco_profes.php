@@ -1467,22 +1467,22 @@ function render_subject_cards($cards)
 <body class="min-h-screen bg-gray-100 dark:bg-gray-900 transition-colors duration-500">
 
     <script>
-                    tailwind.config = {
-                        darkMode: 'class'
-                    }
-                </script>
-                <script>
-                    if (
-                        localStorage.getItem('theme') === 'dark' ||
-                        (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)
-                    ) {
-                        document.documentElement.classList.add('dark');
-                    } else {
-                        document.documentElement.classList.remove('dark');
-                    }
+        tailwind.config = {
+            darkMode: 'class'
+        }
+    </script>
+    <script>
+        if (
+            localStorage.getItem('theme') === 'dark' ||
+            (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)
+        ) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
     </script>
 
-        <!-- Botón de cambiar tema -->
+    <!-- Botón de cambiar tema -->
     <div>
         <button id="CambiarModo"
             aria-label="Cambiar entre modo claro y oscuro"
@@ -1499,17 +1499,17 @@ function render_subject_cards($cards)
             </svg>
         </button>
     </div>
-    
-                <script>
-                    // Script para el botón de cambio de modo
-                    document.getElementById("CambiarModo").addEventListener("click", () => {
-                        const html = document.documentElement;
-                        const isDark = html.classList.toggle("dark");
 
-                        // Guardar preferencia
-                        localStorage.setItem("theme", isDark ? "dark" : "light");
-                    });
-                </script>
+    <script>
+        // Script para el botón de cambio de modo
+        document.getElementById("CambiarModo").addEventListener("click", () => {
+            const html = document.documentElement;
+            const isDark = html.classList.toggle("dark");
+
+            // Guardar preferencia
+            localStorage.setItem("theme", isDark ? "dark" : "light");
+        });
+    </script>
 
     <?php if (!$is_admin && $current_view !== $VIEWS['ADMIN_LOGIN']): // Botón de acceso Admin flotante 
     ?>
@@ -1902,6 +1902,56 @@ function render_subject_cards($cards)
                             </a>
                         <?php endif; ?>
                     </div>
+                </div>
+
+                <!-- NUEVO -->
+                <div class="relative border-l-4 border-emerald-500/30 ml-6 space-y-12 py-4">
+
+                    <!-- PASO 1 -->
+                    <div class="ml-8 relative">
+                        <div class="absolute -left-[44px] top-1 w-8 h-8 bg-emerald-500 rounded-full border-4 border-white dark:border-gray-900 shadow-[0_0_15px_rgba(16,185,129,0.5)] flex items-center justify-center text-[10px] font-black text-white">1</div>
+
+                        <p class="text-emerald-500 dark:text-emerald-400 font-black uppercase text-xs tracking-[0.3em] mb-1">
+                            Paso 1
+                        </p>
+
+                        <h3 class="text-2xl md:text-3xl font-black text-slate-900 dark:text-white mb-4 tracking-tighter italic uppercase">
+                            Verifica tu asesoría
+                        </h3>
+
+                        <!-- CARD RESUMEN -->
+                    </div>
+
+                    <!-- PASO 2 -->
+                    <div class="ml-8 relative">
+                        <div class="absolute -left-[44px] top-1 w-8 h-8 bg-emerald-500 rounded-full border-4 border-white dark:border-gray-900 shadow-[0_0_15px_rgba(16,185,129,0.5)] flex items-center justify-center text-[10px] font-black text-white">2</div>
+
+                        <p class="text-emerald-500 dark:text-emerald-400 font-black uppercase text-xs tracking-[0.3em] mb-1">
+                            Paso 2
+                        </p>
+
+                        <h3 class="text-2xl md:text-3xl font-black text-slate-900 dark:text-white mb-4 tracking-tighter italic uppercase">
+                            Realiza el pago
+                        </h3>
+
+                        <!-- CARD NEQUI -->
+                    </div>
+
+                    <!-- PASO 3 -->
+                    <div class="ml-8 relative">
+                        <div class="absolute -left-[44px] top-1 w-8 h-8 bg-emerald-500 rounded-full border-4 border-white dark:border-gray-900 shadow-[0_0_15px_rgba(16,185,129,0.5)] flex items-center justify-center text-[10px] font-black text-white">3</div>
+
+                        <p class="text-emerald-500 dark:text-emerald-400 font-black uppercase text-xs tracking-[0.3em] mb-1">
+                            Paso 3
+                        </p>
+
+                        <h3 class="text-2xl md:text-3xl font-black text-slate-900 dark:text-white mb-4 tracking-tighter italic uppercase">
+                            Envía el comprobante
+                        </h3>
+
+                        <!-- FORM -->
+                    </div>
+
                 </div>
 
                 <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
