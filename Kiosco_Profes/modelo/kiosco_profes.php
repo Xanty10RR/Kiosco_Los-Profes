@@ -1873,7 +1873,7 @@ function render_subject_cards($cards)
             ];
             $style = $status_styles[$status] ?? ['bg' => 'bg-slate-500', 'text' => 'text-white', 'icon' => '❓', 'message' => 'Desconocido', 'light' => 'bg-slate-50'];
         ?>
-            <div class="bg-[#fcfdfe] min-h-screen py-6 px-4 md:py-12 md:px-8 font-sans antialiased text-slate-900">
+            <div class="min-h-screen py-6 px-4 md:py-12 md:px-8 font-sans antialiased text-slate-900">
 
                 <div class="max-w-6xl mx-auto mb-10">
                     <div class="<?php echo $style['bg']; ?> <?php echo $style['text']; ?> rounded-[2.5rem] p-6 md:p-10 shadow-[0_20px_50px_rgba(0,0,0,0.08)] flex flex-col md:flex-row justify-between items-center gap-8 relative overflow-hidden">
