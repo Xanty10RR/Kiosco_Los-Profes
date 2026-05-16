@@ -1920,41 +1920,7 @@ function render_subject_cards($cards)
                         </h3>
 
                         <!-- CARD RESUMEN -->
-                    </div>
-
-                    <!-- PASO 2 -->
-                    <div id="paso2" class="ml-8 relative">
-                        <div class="absolute -left-[44px] top-1 w-8 h-8 bg-emerald-500 rounded-full border-4 border-white dark:border-gray-900 shadow-[0_0_15px_rgba(16,185,129,0.5)] flex items-center justify-center text-[10px] font-black text-white">2</div>
-
-                        <p class="text-emerald-500 dark:text-emerald-400 font-black uppercase text-xs tracking-[0.3em] mb-1">
-                            Paso 2
-                        </p>
-
-                        <h3 class="text-2xl md:text-3xl font-black text-slate-900 dark:text-white mb-4 tracking-tighter italic uppercase">
-                            Realiza el pago
-                        </h3>
-
-                        <!-- CARD NEQUI -->
-                    </div>
-
-                    <!-- PASO 3 -->
-                    <div id="paso3" class="ml-8 relative">
-                        <div class="absolute -left-[44px] top-1 w-8 h-8 bg-emerald-500 rounded-full border-4 border-white dark:border-gray-900 shadow-[0_0_15px_rgba(16,185,129,0.5)] flex items-center justify-center text-[10px] font-black text-white">3</div>
-
-                        <p class="text-emerald-500 dark:text-emerald-400 font-black uppercase text-xs tracking-[0.3em] mb-1">
-                            Paso 3
-                        </p>
-
-                        <h3 class="text-2xl md:text-3xl font-black text-slate-900 dark:text-white mb-4 tracking-tighter italic uppercase">
-                            Envía el comprobante
-                        </h3>
-
-                        <!-- FORM -->
-                    </div>
-
-                </div>
-
-                <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                         <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
 
                     <div class="lg:col-span-4 space-y-6 order-2 lg:order-1">
                         <div class="bg-white rounded-[2.5rem] p-8 shadow-[0_4px_20px_rgba(0,0,0,0.02)] border border-slate-100">
@@ -2005,6 +1971,39 @@ function render_subject_cards($cards)
                                 </form>
                             <?php endif; ?>
                         </div>
+                    </div>
+
+                    <!-- PASO 2 -->
+                    <div id="paso2" class="ml-8 relative">
+                        <div class="absolute -left-[44px] top-1 w-8 h-8 bg-emerald-500 rounded-full border-4 border-white dark:border-gray-900 shadow-[0_0_15px_rgba(16,185,129,0.5)] flex items-center justify-center text-[10px] font-black text-white">2</div>
+
+                        <p class="text-emerald-500 dark:text-emerald-400 font-black uppercase text-xs tracking-[0.3em] mb-1">
+                            Paso 2
+                        </p>
+
+                        <h3 class="text-2xl md:text-3xl font-black text-slate-900 dark:text-white mb-4 tracking-tighter italic uppercase">
+                            Realiza el pago
+                        </h3>
+
+                        <!-- CARD NEQUI -->
+                    </div>
+
+                    <!-- PASO 3 -->
+                    <div id="paso3" class="ml-8 relative">
+                        <div class="absolute -left-[44px] top-1 w-8 h-8 bg-emerald-500 rounded-full border-4 border-white dark:border-gray-900 shadow-[0_0_15px_rgba(16,185,129,0.5)] flex items-center justify-center text-[10px] font-black text-white">3</div>
+
+                        <p class="text-emerald-500 dark:text-emerald-400 font-black uppercase text-xs tracking-[0.3em] mb-1">
+                            Paso 3
+                        </p>
+
+                        <h3 class="text-2xl md:text-3xl font-black text-slate-900 dark:text-white mb-4 tracking-tighter italic uppercase">
+                            Envía el comprobante
+                        </h3>
+
+                        <!-- FORM -->
+                    </div>
+
+                </div>
 
                         <?php if ($is_payment_pending): ?>
                             <div id="timer-container" class="bg-slate-900 rounded-[2.5rem] p-8 shadow-2xl relative overflow-hidden border border-white/5">
