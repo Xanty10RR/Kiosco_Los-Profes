@@ -1568,13 +1568,18 @@ function render_subject_cards($cards)
         </style>
 
         <a href="?view=<?php echo $VIEWS['ADMIN_LOGIN']; ?>"
-            class="btn-admin-glow top-4 right-4 p-3 rounded-full bg-gray-200 dark:bg-gray-800 transition duration-300 z-[110] hover:scale-110"
+            class="btn-admin-glow fixed top-4 right-4 p-3 rounded-full bg-gray-200 dark:bg-gray-800 transition duration-300 z-[110] hover:scale-110"
             aria-label="Acceso Administrador"
             title="Acceso Administrador">
 
             <svg xmlns="http://www.w3.org/2000/svg" class="size-6 text-gray-800 dark:text-gray-100 icon-admin" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
             </svg>
+
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 text-gray-800 dark:text-gray-100 icon-admin">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z" />
+            </svg>
+
         </a>
     <?php elseif ($is_admin): // Botón de Logout Admin flotante 
     ?>
