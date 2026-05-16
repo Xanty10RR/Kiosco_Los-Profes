@@ -1905,7 +1905,7 @@ function render_subject_cards($cards)
                 </div>
 
                 <!-- NUEVO -->
-                <div class="relative border-l-4 border-emerald-500/20 ml-6 pl-10 space-y-24 py-10">
+                <div class="relative pl-16 space-y-24 py-10 before:absolute before:left-4 before:top-0 before:h-full before:w-1 before:bg-emerald-500/20">
 
                     <!-- PASO 1 -->
                     <div id="paso1" class="ml-8 relative">
