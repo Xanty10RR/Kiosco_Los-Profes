@@ -1988,7 +1988,42 @@ function render_subject_cards($cards)
                                 <!-- CARD NEQUI -->
                                 <div class="lg:col-span-8 space-y-8 order-1">
                                     <?php if ($is_payment_pending): ?>
+                                        <!-- AVISO -->
+                                        <div class="w-full relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen px-4 md:px-10 pb-10">
+                                            <br>
+                                            <br>
+
+                                            <div class="w-full bg-emerald-50 rounded-[2.5rem] p-8 md:p-10 border border-emerald-100 flex flex-col md:flex-row items-center justify-between gap-8 group hover:bg-emerald-100 transition-all duration-500 shadow-sm">
+
+                                                <div class="flex flex-row items-center gap-6 md:gap-12 flex-1">
+                                                    <div class="flex-shrink-0 w-16 h-16 md:w-28 md:h-28 bg-white rounded-[2.2rem] flex items-center justify-center text-3xl md:text-6xl shadow-sm border border-emerald-200 group-hover:rotate-12 transition-transform duration-500">
+                                                        📸
+                                                    </div>
+
+                                                    <div class="text-left flex-1">
+                                                        <h4 class="font-black text-emerald-900 text-xl md:text-3xl tracking-tighter leading-none uppercase">
+                                                            ¿SI SU PAGO LO VA A REALIZAR A TRAVÉS DE UN CORRESPONSAL?
+                                                        </h4>
+                                                        <p class="text-emerald-700/70 text-sm md:text-lg font-bold mt-3 leading-tight max-w-[90%]">
+                                                            ENVÍENOS LA FOTO DEL COMPROBANTE DESDE SU WHATSAPP AL 3164876650 O INGRESE AL
+                                                            WHATSAPP DE ESTE DISPOSITIVO Y ENVIÉ LA FOTO DEL COMPROBANTE
+                                                            ADJUNTANDO SUS DATOS, RECUERDE QUE SOLO TIENE 30 MINUTOS PARA
+                                                            REALIZAR ESTE PROCESO DE LO CONTRARIO DEBERÁ AGENDAR NUEVAMENTE
+                                                            SU ASESORÍA.
+                                                        </p>
+                                                    </div>
+                                                </div>
+
+                                                <div class="w-full md:w-auto flex-shrink-0">
+                                                    <a href="https://wa.me/573164876650" target="_blank"
+                                                        class="inline-flex w-full md:w-auto px-16 py-7 bg-emerald-500 text-white rounded-[2rem] font-black text-xs md:text-base uppercase tracking-[0.2em] shadow-2xl shadow-emerald-200 hover:bg-emerald-600 hover:-translate-y-2 active:scale-95 transition-all text-center justify-center whitespace-nowrap">
+                                                        WhatsApp Soporte
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
                                         <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+
                                             <!-- CARD NEQUI -->
                                             <div class="relative min-h-[320px] flex flex-col justify-between p-10 sm:p-10 rounded-[2.5rem] md:rounded-[3.5rem] overflow-hidden group 
             bg-gradient-to-br from-[#062c1d] via-[#02110b] to-black
@@ -2169,40 +2204,6 @@ function render_subject_cards($cards)
                                     </div>
                                 </div>
 
-                            </div>
-
-                            <div class="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen px-4 md:px-10 pb-10">
-                                <br>
-                                <br>
-
-                                <div class="w-full bg-emerald-50 rounded-[2.5rem] p-8 md:p-10 border border-emerald-100 flex flex-col md:flex-row items-center justify-between gap-8 group hover:bg-emerald-100 transition-all duration-500 shadow-sm">
-
-                                    <div class="flex flex-row items-center gap-6 md:gap-12 flex-1">
-                                        <div class="flex-shrink-0 w-16 h-16 md:w-28 md:h-28 bg-white rounded-[2.2rem] flex items-center justify-center text-3xl md:text-6xl shadow-sm border border-emerald-200 group-hover:rotate-12 transition-transform duration-500">
-                                            📸
-                                        </div>
-
-                                        <div class="text-left flex-1">
-                                            <h4 class="font-black text-emerald-900 text-xl md:text-3xl tracking-tighter leading-none uppercase">
-                                                ¿SI SU PAGO LO VA A REALIZAR A TRAVÉS DE UN CORRESPONSAL?
-                                            </h4>
-                                            <p class="text-emerald-700/70 text-sm md:text-lg font-bold mt-3 leading-tight max-w-[90%]">
-                                                ENVÍENOS LA FOTO DEL COMPROBANTE DESDE SU WHATSAPP AL 3164876650 O INGRESE AL
-                                                WHATSAPP DE ESTE DISPOSITIVO Y ENVIÉ LA FOTO DEL COMPROBANTE
-                                                ADJUNTANDO SUS DATOS, RECUERDE QUE SOLO TIENE 30 MINUTOS PARA
-                                                REALIZAR ESTE PROCESO DE LO CONTRARIO DEBERÁ AGENDAR NUEVAMENTE
-                                                SU ASESORÍA.
-                                            </p>
-                                        </div>
-                                    </div>
-
-                                    <div class="w-full md:w-auto flex-shrink-0">
-                                        <a href="https://wa.me/573164876650" target="_blank"
-                                            class="inline-flex w-full md:w-auto px-16 py-7 bg-emerald-500 text-white rounded-[2rem] font-black text-xs md:text-base uppercase tracking-[0.2em] shadow-2xl shadow-emerald-200 hover:bg-emerald-600 hover:-translate-y-2 active:scale-95 transition-all text-center justify-center whitespace-nowrap">
-                                            WhatsApp Soporte
-                                        </a>
-                                    </div>
-                                </div>
                             </div>
 
                         <?php else: ?>
