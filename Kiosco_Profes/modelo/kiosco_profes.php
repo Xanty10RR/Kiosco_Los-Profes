@@ -1905,7 +1905,7 @@ function render_subject_cards($cards)
                 </div>
 
                 <!-- NUEVO -->
-                <div class="relative border-l-4 border-emerald-500/30 ml-6 space-y-12 py-4">
+                <div class="relative border-l-4 border-emerald-500/20 ml-6 pl-10 space-y-24 py-10">
 
                     <!-- PASO 1 -->
                     <div id="paso1" class="ml-8 relative">
@@ -1926,7 +1926,7 @@ function render_subject_cards($cards)
                                 <div class="bg-white rounded-[2.5rem] p-8 shadow-[0_4px_20px_rgba(0,0,0,0.02)] border border-slate-100">
                                     <div class="flex items-center gap-3 mb-10">
                                         <div class="w-2 h-6 bg-indigo-500 rounded-full"></div>
-                                        <h3 class="text-slate-400 font-bold text-[11px] uppercase tracking-[0.2em]">Resumen de tu Asesoria
+                                        <h3 class="text-slate-400 font-bold text-[11px] uppercase tracking-[0.2em]">Resumen de tu Asesoria</h3>
                                     </div>
 
                                     <div class="space-y-8">
@@ -1972,6 +1972,10 @@ function render_subject_cards($cards)
                                     <?php endif; ?>
                                 </div>
                             </div>
+                        </div>
+                    </div>
+
+                    <!-- CIERRE DE CONTENEDORES DEL PASO 1 -->
 
                             <!-- PASO 2 -->
                             <div id="paso2" class="ml-8 relative">
@@ -2025,10 +2029,7 @@ function render_subject_cards($cards)
                                         <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
 
                                             <!-- CARD NEQUI -->
-                                            <div class="relative min-h-[320px] flex flex-col justify-between p-10 sm:p-10 rounded-[2.5rem] md:rounded-[3.5rem] overflow-hidden group 
-            bg-gradient-to-br from-[#062c1d] via-[#02110b] to-black
-            border border-emerald-500/20 shadow-[0_32px_64px_-15px_rgba(0,0,0,0.6)] transition-all duration-500 hover:border-emerald-400/40">
-
+                                            <div class="relative min-h-[320px] flex flex-col justify-between p-10 sm:p-10 rounded-[2.5rem] md:rounded-[3.5rem] overflow-hidden group bg-gradient-to-br from-[#062c1d] via-[#02110b] to-black border border-emerald-500/20 shadow-[0_32px_64px_-15px_rgba(0,0,0,0.6)] transition-all duration-500 hover:border-emerald-400/40">
                                                 <div class="absolute -top-20 -right-20 w-80 h-80 bg-emerald-600/20 rounded-full blur-[100px] group-hover:bg-emerald-500/30 transition-colors duration-700"></div>
                                                 <div class="absolute -bottom-20 -left-20 w-64 h-64 bg-green-400/10 rounded-full blur-[80px]"></div>
 
@@ -2113,6 +2114,8 @@ function render_subject_cards($cards)
                                             </div>
                                         </div>
                                 </div>
+                            </div>
+                            <!-- CIERRE DE PASO 2 -->
 
                                 <!-- PASO 3 -->
                                 <div id="paso3" class="ml-8 relative">
@@ -2178,9 +2181,7 @@ function render_subject_cards($cards)
                                             </div>
 
                                             <button type="submit"
-                                                class="group relative w-full py-6 bg-[#062c1d] overflow-hidden rounded-[1.8rem] font-black text-xs uppercase tracking-[0.3em] text-white
-                   shadow-[0_20px_40px_rgba(6,44,29,0.2)] hover:shadow-[0_20px_40px_rgba(16,185,129,0.3)]
-                   active:scale-[0.98] transition-all duration-300">
+                                                class="group relative w-full py-6 bg-[#062c1d] overflow-hidden rounded-[1.8rem] font-black text-xs uppercase tracking-[0.3em] text-white shadow-[0_20px_40px_rgba(6,44,29,0.2)] hover:shadow-[0_20px_40px_rgba(16,185,129,0.3)] active:scale-[0.98] transition-all duration-300">
 
                                                 <div class="absolute inset-0 bg-emerald-600 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out"></div>
 
@@ -2203,7 +2204,6 @@ function render_subject_cards($cards)
                                         </form>
                                     </div>
                                 </div>
-
                             </div>
 
                         <?php else: ?>
