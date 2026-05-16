@@ -1920,344 +1920,343 @@ function render_subject_cards($cards)
                         </h3>
 
                         <!-- CARD RESUMEN -->
-                         <div class="max-w-6xl mx-auto gap-8 items-start">
+                        <div class="max-w-6xl mx-auto gap-8 items-start">
 
-                    <div class="lg:col-span-4 space-y-6 order-2 lg:order-1">
-                        <div class="bg-white rounded-[2.5rem] p-8 shadow-[0_4px_20px_rgba(0,0,0,0.02)] border border-slate-100">
-                            <div class="flex items-center gap-3 mb-10">
-                                <div class="w-2 h-6 bg-indigo-500 rounded-full"></div>
-                                <h3 class="text-slate-400 font-bold text-[11px] uppercase tracking-[0.2em]">Resumen de tu Asesoria
-                            </div>
-
-                            <div class="space-y-8">
-                                <div class="group flex items-center gap-5">
-                                    <div class="w-12 h-12 rounded-2xl bg-slate-50 flex items-center justify-center text-xl group-hover:bg-indigo-50 group-hover:text-indigo-600 transition-colors duration-300">👤</div>
-                                    <div>
-                                        <p class="text-slate-400 text-[10px] font-bold uppercase tracking-widest mb-0.5">Estudiante</p>
-                                        <p class="font-extrabold text-slate-800 tracking-tight leading-tight"><?php echo htmlspecialchars($current_appointment['student_name']); ?></p>
+                            <div class="lg:col-span-4 space-y-6 order-2 lg:order-1">
+                                <div class="bg-white rounded-[2.5rem] p-8 shadow-[0_4px_20px_rgba(0,0,0,0.02)] border border-slate-100">
+                                    <div class="flex items-center gap-3 mb-10">
+                                        <div class="w-2 h-6 bg-indigo-500 rounded-full"></div>
+                                        <h3 class="text-slate-400 font-bold text-[11px] uppercase tracking-[0.2em]">Resumen de tu Asesoria
                                     </div>
-                                </div>
 
-                                <div class="group flex items-center gap-5">
-                                    <div class="w-12 h-12 rounded-2xl bg-slate-50 flex items-center justify-center text-xl group-hover:bg-indigo-50 group-hover:text-indigo-600 transition-colors duration-300">📚</div>
-                                    <div>
-                                        <p class="text-slate-400 text-[10px] font-bold uppercase tracking-widest mb-0.5">Asignatura</p>
-                                        <p class="font-extrabold text-indigo-600 tracking-tight leading-tight">
-                                            <?php echo htmlspecialchars($current_appointment['subject']); ?>
-                                            <?php if ($current_appointment['other_subject']): ?>
-                                                <span class="block text-slate-400 text-xs font-semibold mt-1">(<?php echo htmlspecialchars($current_appointment['other_subject']); ?>)</span>
-                                            <?php endif; ?>
-                                        </p>
-                                    </div>
-                                </div>
-
-                                <div class="group flex items-center gap-5">
-                                    <div class="w-12 h-12 rounded-2xl bg-slate-50 flex items-center justify-center text-xl group-hover:bg-emerald-50 group-hover:text-emerald-600 transition-colors duration-300">📅</div>
-                                    <div>
-                                        <p class="text-slate-400 text-[10px] font-bold uppercase tracking-widest mb-0.5">Fecha programada</p>
-                                        <p class="font-extrabold text-slate-800 tracking-tight"><?php echo htmlspecialchars($current_appointment['date']); ?></p>
-                                        <p class="text-emerald-500 font-bold text-xs mt-0.5"><?php echo htmlspecialchars($current_appointment['time']); ?></p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <?php if ($is_cancellable): ?>
-                                <form method="POST" class="mt-12 pt-8 border-t border-slate-50" onsubmit="return confirm('¿Seguro que desea cancelar su cupo?');">
-                                    <input type="hidden" name="action" value="student_cancel">
-                                    <input type="hidden" name="appointment_id" value="<?php echo $current_appointment['id']; ?>">
-                                    <button type="submit" class="w-full flex items-center justify-center gap-2 text-slate-300 hover:text-red-500 font-bold text-[10px] uppercase tracking-[0.2em] transition-all">
-                                        <span class="text-lg">×</span> Cancelar mi reservación
-                                    </button>
-                                </form>
-                            <?php endif; ?>
-                        </div>
-                    </div>
-
-                    <!-- PASO 2 -->
-                    <div id="paso2" class="ml-8 relative">
-                        <div class="absolute -left-[44px] top-1 w-8 h-8 bg-emerald-500 rounded-full border-4 border-white dark:border-gray-900 shadow-[0_0_15px_rgba(16,185,129,0.5)] flex items-center justify-center text-[10px] font-black text-white">2</div>
-
-                        <p class="text-emerald-500 dark:text-emerald-400 font-black uppercase text-xs tracking-[0.3em] mb-1">
-                            Paso 2
-                        </p>
-
-                        <h3 class="text-2xl md:text-3xl font-black text-slate-900 dark:text-white mb-4 tracking-tighter italic uppercase">
-                            Realiza el pago
-                        </h3>
-
-                        <!-- CARD NEQUI -->
-                    </div>
-
-                    <!-- PASO 3 -->
-                    <div id="paso3" class="ml-8 relative">
-                        <div class="absolute -left-[44px] top-1 w-8 h-8 bg-emerald-500 rounded-full border-4 border-white dark:border-gray-900 shadow-[0_0_15px_rgba(16,185,129,0.5)] flex items-center justify-center text-[10px] font-black text-white">3</div>
-
-                        <p class="text-emerald-500 dark:text-emerald-400 font-black uppercase text-xs tracking-[0.3em] mb-1">
-                            Paso 3
-                        </p>
-
-                        <h3 class="text-2xl md:text-3xl font-black text-slate-900 dark:text-white mb-4 tracking-tighter italic uppercase">
-                            Envía el comprobante
-                        </h3>
-
-                        <!-- FORM -->
-                    </div>
-
-                </div>
-
-                        <?php if ($is_payment_pending): ?>
-                            <div id="timer-container" class="bg-slate-900 rounded-[2.5rem] p-8 shadow-2xl relative overflow-hidden border border-white/5">
-                                <div class="relative z-10">
-                                    <p class="text-slate-500 font-bold text-[10px] uppercase tracking-[0.3em] mb-6 text-center">Tiempo límite de pago</p>
-                                    <div id="timer-display" class="text-6xl font-black text-white tracking-tighter text-center tabular-nums leading-none mb-6 drop-shadow-2xl">--:--</div>
-                                    <div class="flex items-center justify-center gap-3 bg-white/5 py-3 px-6 rounded-2xl border border-white/10">
-                                        <div class="relative flex h-3 w-3">
-                                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
-                                            <span class="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
+                                    <div class="space-y-8">
+                                        <div class="group flex items-center gap-5">
+                                            <div class="w-12 h-12 rounded-2xl bg-slate-50 flex items-center justify-center text-xl group-hover:bg-indigo-50 group-hover:text-indigo-600 transition-colors duration-300">👤</div>
+                                            <div>
+                                                <p class="text-slate-400 text-[10px] font-bold uppercase tracking-widest mb-0.5">Estudiante</p>
+                                                <p class="font-extrabold text-slate-800 tracking-tight leading-tight"><?php echo htmlspecialchars($current_appointment['student_name']); ?></p>
+                                            </div>
                                         </div>
-                                        <p class="text-[10px] text-red-400 font-black uppercase tracking-widest animate-pulse">Agendamiento en Curso
+
+                                        <div class="group flex items-center gap-5">
+                                            <div class="w-12 h-12 rounded-2xl bg-slate-50 flex items-center justify-center text-xl group-hover:bg-indigo-50 group-hover:text-indigo-600 transition-colors duration-300">📚</div>
+                                            <div>
+                                                <p class="text-slate-400 text-[10px] font-bold uppercase tracking-widest mb-0.5">Asignatura</p>
+                                                <p class="font-extrabold text-indigo-600 tracking-tight leading-tight">
+                                                    <?php echo htmlspecialchars($current_appointment['subject']); ?>
+                                                    <?php if ($current_appointment['other_subject']): ?>
+                                                        <span class="block text-slate-400 text-xs font-semibold mt-1">(<?php echo htmlspecialchars($current_appointment['other_subject']); ?>)</span>
+                                                    <?php endif; ?>
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        <div class="group flex items-center gap-5">
+                                            <div class="w-12 h-12 rounded-2xl bg-slate-50 flex items-center justify-center text-xl group-hover:bg-emerald-50 group-hover:text-emerald-600 transition-colors duration-300">📅</div>
+                                            <div>
+                                                <p class="text-slate-400 text-[10px] font-bold uppercase tracking-widest mb-0.5">Fecha programada</p>
+                                                <p class="font-extrabold text-slate-800 tracking-tight"><?php echo htmlspecialchars($current_appointment['date']); ?></p>
+                                                <p class="text-emerald-500 font-bold text-xs mt-0.5"><?php echo htmlspecialchars($current_appointment['time']); ?></p>
+                                            </div>
+                                        </div>
                                     </div>
+
+                                    <?php if ($is_cancellable): ?>
+                                        <form method="POST" class="mt-12 pt-8 border-t border-slate-50" onsubmit="return confirm('¿Seguro que desea cancelar su cupo?');">
+                                            <input type="hidden" name="action" value="student_cancel">
+                                            <input type="hidden" name="appointment_id" value="<?php echo $current_appointment['id']; ?>">
+                                            <button type="submit" class="w-full flex items-center justify-center gap-2 text-slate-300 hover:text-red-500 font-bold text-[10px] uppercase tracking-[0.2em] transition-all">
+                                                <span class="text-lg">×</span> Cancelar mi reservación
+                                            </button>
+                                        </form>
+                                    <?php endif; ?>
                                 </div>
                             </div>
-                        <?php endif; ?>
-                    </div>
 
-                    <div class="lg:col-span-8 space-y-8 order-1 lg:order-2">
-                        <?php if ($is_payment_pending): ?>
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                                <div class="relative min-h-[340px] flex flex-col justify-between p-10 rounded-[3.5rem] overflow-hidden group 
+                            <!-- PASO 2 -->
+                            <div id="paso2" class="ml-8 relative">
+                                <div class="absolute -left-[44px] top-1 w-8 h-8 bg-emerald-500 rounded-full border-4 border-white dark:border-gray-900 shadow-[0_0_15px_rgba(16,185,129,0.5)] flex items-center justify-center text-[10px] font-black text-white">2</div>
+
+                                <p class="text-emerald-500 dark:text-emerald-400 font-black uppercase text-xs tracking-[0.3em] mb-1">
+                                    Paso 2
+                                </p>
+
+                                <h3 class="text-2xl md:text-3xl font-black text-slate-900 dark:text-white mb-4 tracking-tighter italic uppercase">
+                                    Realiza el pago
+                                </h3>
+
+                                <!-- CARD NEQUI -->
+                                <div class="lg:col-span-8 space-y-8 order-1 lg:order-2">
+                                    <?php if ($is_payment_pending): ?>
+                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                            <div class="relative min-h-[340px] flex flex-col justify-between p-10 rounded-[3.5rem] overflow-hidden group 
             bg-gradient-to-br from-[#062c1d] via-[#02110b] to-black 
             border border-emerald-500/20 shadow-[0_32px_64px_-15px_rgba(0,0,0,0.6)] transition-all duration-500 hover:border-emerald-400/40">
 
-                                    <div class="absolute -top-20 -right-20 w-80 h-80 bg-emerald-600/20 rounded-full blur-[100px] group-hover:bg-emerald-500/30 transition-colors duration-700"></div>
-                                    <div class="absolute -bottom-20 -left-20 w-64 h-64 bg-green-400/10 rounded-full blur-[80px]"></div>
+                                                <div class="absolute -top-20 -right-20 w-80 h-80 bg-emerald-600/20 rounded-full blur-[100px] group-hover:bg-emerald-500/30 transition-colors duration-700"></div>
+                                                <div class="absolute -bottom-20 -left-20 w-64 h-64 bg-green-400/10 rounded-full blur-[80px]"></div>
 
-                                    <div class="relative z-10 flex justify-between items-start">
-                                        <div class="space-y-1">
-                                            <div class="flex items-center gap-2">
-                                                <div class="w-2.5 h-2.5 bg-emerald-400 rounded-full animate-pulse shadow-[0_0_10px_rgba(52,211,153,0.8)]"></div>
-                                                <h3 class="text-3xl font-black tracking-tighter bg-gradient-to-r from-white via-emerald-100 to-emerald-500/50 bg-clip-text text-transparent">Nequi</h3>
-                                            </div>
-                                            <p class="text-[10px] text-emerald-400/60 font-black uppercase tracking-[0.3em] pl-5">Realiza tu pago de Inmediato
-                                        </div>
+                                                <div class="relative z-10 flex justify-between items-start">
+                                                    <div class="space-y-1">
+                                                        <div class="flex items-center gap-2">
+                                                            <div class="w-2.5 h-2.5 bg-emerald-400 rounded-full animate-pulse shadow-[0_0_10px_rgba(52,211,153,0.8)]"></div>
+                                                            <h3 class="text-3xl font-black tracking-tighter bg-gradient-to-r from-white via-emerald-100 to-emerald-500/50 bg-clip-text text-transparent">Nequi</h3>
+                                                        </div>
+                                                        <p class="text-[10px] text-emerald-400/60 font-black uppercase tracking-[0.3em] pl-5">Realiza tu pago de Inmediato
+                                                    </div>
 
-                                        <div class="relative w-14 h-11 bg-gradient-to-br from-emerald-200/20 to-emerald-600/20 rounded-xl border border-emerald-400/30 flex items-center justify-center overflow-hidden shadow-inner">
-                                            <div class="absolute inset-0 grid grid-cols-2 gap-px opacity-30">
-                                                <div class="border-r border-b border-emerald-400/50"></div>
-                                                <div class="border-b border-emerald-400/50"></div>
-                                                <div class="border-r border-emerald-400/50"></div>
-                                                <div></div>
-                                            </div>
-                                            <div class="w-8 h-6 bg-emerald-400/10 rounded-md border border-emerald-400/40 shadow-2xl"></div>
-                                        </div>
-                                    </div>
-
-                                    <div class="relative z-10">
-                                        <div class="flex flex-col gap-1">
-
-                                            <div class="flex items-center gap-4 group/number cursor-pointer">
-                                                <p class="text-3xl md:text-5xl font-mono font-medium tracking-[0.15em] text-white/90 group-hover:text-emerald-50 transition-colors">
-                                                    316 <span class="text-emerald-400 font-black drop-shadow-[0_0_15px_rgba(52,211,153,0.3)]">669</span> 2913
-                                                </p>
-                                                <div class="opacity-0 group-hover/number:opacity-100 transition-all transform translate-x-[-10px] group-hover:translate-x-0 bg-emerald-500/20 p-2 rounded-full border border-emerald-500/30">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-emerald-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2" />
-                                                    </svg>
+                                                    <div class="relative w-14 h-11 bg-gradient-to-br from-emerald-200/20 to-emerald-600/20 rounded-xl border border-emerald-400/30 flex items-center justify-center overflow-hidden shadow-inner">
+                                                        <div class="absolute inset-0 grid grid-cols-2 gap-px opacity-30">
+                                                            <div class="border-r border-b border-emerald-400/50"></div>
+                                                            <div class="border-b border-emerald-400/50"></div>
+                                                            <div class="border-r border-emerald-400/50"></div>
+                                                            <div></div>
+                                                        </div>
+                                                        <div class="w-8 h-6 bg-emerald-400/10 rounded-md border border-emerald-400/40 shadow-2xl"></div>
+                                                    </div>
                                                 </div>
+
+                                                <div class="relative z-10">
+                                                    <div class="flex flex-col gap-1">
+
+                                                        <div class="flex items-center gap-4 group/number cursor-pointer">
+                                                            <p class="text-3xl md:text-5xl font-mono font-medium tracking-[0.15em] text-white/90 group-hover:text-emerald-50 transition-colors">
+                                                                316 <span class="text-emerald-400 font-black drop-shadow-[0_0_15px_rgba(52,211,153,0.3)]">669</span> 2913
+                                                            </p>
+                                                            <div class="opacity-0 group-hover/number:opacity-100 transition-all transform translate-x-[-10px] group-hover:translate-x-0 bg-emerald-500/20 p-2 rounded-full border border-emerald-500/30">
+                                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-emerald-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2" />
+                                                                </svg>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="relative z-10 pt-8 border-t border-emerald-500/10 flex justify-between items-end">
+                                                    <div class="space-y-1">
+                                                        <div class="flex items-center gap-2 mb-1">
+
+                                                        </div>
+                                                        <p class="text-slate-400 text-[10px] font-bold uppercase tracking-widest pl-0.5">
+                                                            Total a Pagar por tu Asesoría
+                                                        </p>
+                                                        <div class="flex items-baseline gap-2">
+                                                            <span class="text-5xl font-black text-white tracking-tighter drop-shadow-md">$30.000</span>
+                                                            <span class="text-sm font-bold text-emerald-400 italic">PESOS
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="flex flex-col items-end gap-2">
+                                                        <div class="px-5 py-2.5 bg-emerald-500/10 backdrop-blur-xl border border-emerald-500/30 rounded-[1.2rem] flex items-center gap-3 shadow-2xl">
+                                                            <span class="relative flex h-2.5 w-2.5">
+                                                                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                                                                <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-400"></span>
+                                                            </span>
+                                                            <span class="text-emerald-100 text-[11px] font-black uppercase tracking-widest">Sesión 1H</span>
+                                                        </div>
+                                                        <p class="text-[9px] text-emerald-900 font-black italic pr-2 uppercase tracking-tighter">lOS PROFES
+                                                    </div>
+                                                </div>
+
+                                                <div class="absolute inset-0 opacity-[0.04] pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')] contrast-150"></div>
                                             </div>
                                         </div>
-                                    </div>
 
-                                    <div class="relative z-10 pt-8 border-t border-emerald-500/10 flex justify-between items-end">
-                                        <div class="space-y-1">
-                                            <div class="flex items-center gap-2 mb-1">
+                                        <!-- PASO 3 -->
+                                        <div id="paso3" class="ml-8 relative">
+                                            <div class="absolute -left-[44px] top-1 w-8 h-8 bg-emerald-500 rounded-full border-4 border-white dark:border-gray-900 shadow-[0_0_15px_rgba(16,185,129,0.5)] flex items-center justify-center text-[10px] font-black text-white">3</div>
 
-                                            </div>
-                                            <p class="text-slate-400 text-[10px] font-bold uppercase tracking-widest pl-0.5">
-                                                Total a Pagar por tu Asesoría
+                                            <p class="text-emerald-500 dark:text-emerald-400 font-black uppercase text-xs tracking-[0.3em] mb-1">
+                                                Paso 3
                                             </p>
-                                            <div class="flex items-baseline gap-2">
-                                                <span class="text-5xl font-black text-white tracking-tighter drop-shadow-md">$30.000</span>
-                                                <span class="text-sm font-bold text-emerald-400 italic">PESOS
-                                            </div>
+
+                                            <h3 class="text-2xl md:text-3xl font-black text-slate-900 dark:text-white mb-4 tracking-tighter italic uppercase">
+                                                Envía el comprobante
+                                            </h3>
+
+                                            <!-- FORM -->
                                         </div>
 
-                                        <div class="flex flex-col items-end gap-2">
-                                            <div class="px-5 py-2.5 bg-emerald-500/10 backdrop-blur-xl border border-emerald-500/30 rounded-[1.2rem] flex items-center gap-3 shadow-2xl">
-                                                <span class="relative flex h-2.5 w-2.5">
-                                                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                                                    <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-400"></span>
-                                                </span>
-                                                <span class="text-emerald-100 text-[11px] font-black uppercase tracking-widest">Sesión 1H</span>
-                                            </div>
-                                            <p class="text-[9px] text-emerald-900 font-black italic pr-2 uppercase tracking-tighter">lOS PROFES
-                                        </div>
-                                    </div>
-
-                                    <div class="absolute inset-0 opacity-[0.04] pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')] contrast-150"></div>
                                 </div>
 
-                                <div class="relative bg-white rounded-[3.5rem] p-10 shadow-[0_25px_50px_-12px_rgba(0,0,0,0.04)] border border-slate-100 flex flex-col justify-center overflow-hidden group">
-
-                                    <div class="absolute -top-10 -right-10 w-32 h-32 bg-emerald-50 rounded-full blur-3xl opacity-70 group-hover:opacity-100 transition-opacity duration-700"></div>
-
-                                    <div class="relative z-10 flex items-center gap-5 mb-10">
-                                        <div class="border-l-4 border-emerald-500 pl-6 py-2">
-                                            <h1 class="text-2xl md:text-3xl font-black text-slate-900 tracking-tighter leading-tight">
-                                                ¡Casi hemos terminado!
-                                                <span class="block text-slate-400 font-bold text-sm md:text-base uppercase tracking-[0.15em] mt-1">
-                                                    Envía la referencia del comprobante para confirmar la asesoría:
-                                                </span>
-                                            </h1>
-                                        </div>
-                                        <div class="relative">
-                                            <div class="w-14 h-14 bg-gradient-to-br from-emerald-400 to-emerald-600 text-white rounded-[1.5rem] flex items-center justify-center text-xl font-black shadow-[0_10px_20px_rgba(16,185,129,0.2)] transform group-hover:rotate-6 transition-transform">
-                                                02
+                                <?php if ($is_payment_pending): ?>
+                                    <div id="timer-container" class="bg-slate-900 rounded-[2.5rem] p-8 shadow-2xl relative overflow-hidden border border-white/5">
+                                        <div class="relative z-10">
+                                            <p class="text-slate-500 font-bold text-[10px] uppercase tracking-[0.3em] mb-6 text-center">Tiempo límite de pago</p>
+                                            <div id="timer-display" class="text-6xl font-black text-white tracking-tighter text-center tabular-nums leading-none mb-6 drop-shadow-2xl">--:--</div>
+                                            <div class="flex items-center justify-center gap-3 bg-white/5 py-3 px-6 rounded-2xl border border-white/10">
+                                                <div class="relative flex h-3 w-3">
+                                                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                                                    <span class="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
+                                                </div>
+                                                <p class="text-[10px] text-red-400 font-black uppercase tracking-widest animate-pulse">Agendamiento en Curso
                                             </div>
-                                            <span class="absolute -top-1 -right-1 flex h-4 w-4">
-                                                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                                                <span class="relative inline-flex rounded-full h-4 w-4 bg-emerald-500 border-2 border-white"></span>
-                                            </span>
                                         </div>
+                                    </div>
+                                <?php endif; ?>
+                            </div>
 
+                            <div class="relative bg-white rounded-[3.5rem] p-10 shadow-[0_25px_50px_-12px_rgba(0,0,0,0.04)] border border-slate-100 flex flex-col justify-center overflow-hidden group">
+
+                                <div class="absolute -top-10 -right-10 w-32 h-32 bg-emerald-50 rounded-full blur-3xl opacity-70 group-hover:opacity-100 transition-opacity duration-700"></div>
+
+                                <div class="relative z-10 flex items-center gap-5 mb-10">
+                                    <div class="border-l-4 border-emerald-500 pl-6 py-2">
+                                        <h1 class="text-2xl md:text-3xl font-black text-slate-900 tracking-tighter leading-tight">
+                                            ¡Casi hemos terminado!
+                                            <span class="block text-slate-400 font-bold text-sm md:text-base uppercase tracking-[0.15em] mt-1">
+                                                Envía la referencia del comprobante para confirmar la asesoría:
+                                            </span>
+                                        </h1>
+                                    </div>
+                                    <div class="relative">
+                                        <div class="w-14 h-14 bg-gradient-to-br from-emerald-400 to-emerald-600 text-white rounded-[1.5rem] flex items-center justify-center text-xl font-black shadow-[0_10px_20px_rgba(16,185,129,0.2)] transform group-hover:rotate-6 transition-transform">
+                                            02
+                                        </div>
+                                        <span class="absolute -top-1 -right-1 flex h-4 w-4">
+                                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                                            <span class="relative inline-flex rounded-full h-4 w-4 bg-emerald-500 border-2 border-white"></span>
+                                        </span>
                                     </div>
 
-                                    <form method="POST" class="relative z-10 space-y-6">
-                                        <input type="hidden" name="action" value="upload_proof">
-                                        <input type="hidden" name="appointment_id" value="<?php echo $current_appointment['id']; ?>">
+                                </div>
 
-                                        <div class="relative group/input">
-                                            <label class="block text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] mb-3 ml-2">
-                                                Referencia de Transacción
-                                            </label>
+                                <form method="POST" class="relative z-10 space-y-6">
+                                    <input type="hidden" name="action" value="upload_proof">
+                                    <input type="hidden" name="appointment_id" value="<?php echo $current_appointment['id']; ?>">
 
-                                            <div class="relative">
-                                                <textarea name="proof_details" rows="3" required
-                                                    class="w-full p-6 bg-slate-50 border-2 border-slate-50 rounded-[2.2rem] 
+                                    <div class="relative group/input">
+                                        <label class="block text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] mb-3 ml-2">
+                                            Referencia de Transacción
+                                        </label>
+
+                                        <div class="relative">
+                                            <textarea name="proof_details" rows="3" required
+                                                class="w-full p-6 bg-slate-50 border-2 border-slate-50 rounded-[2.2rem] 
                            focus:bg-white focus:border-emerald-400 focus:ring-[12px] focus:ring-emerald-500/5 
                            outline-none transition-all duration-300 text-sm font-bold text-slate-700 
                            placeholder:text-slate-300 tracking-tight"
-                                                    placeholder="Escribe el código de referencia o adjunta detalles..."></textarea>
+                                                placeholder="Escribe el código de referencia o adjunta detalles..."></textarea>
 
-                                                <div class="absolute bottom-5 right-6 text-slate-200 group-focus-within/input:text-emerald-400 transition-colors">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                                    </svg>
-                                                </div>
+                                            <div class="absolute bottom-5 right-6 text-slate-200 group-focus-within/input:text-emerald-400 transition-colors">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                                </svg>
                                             </div>
                                         </div>
+                                    </div>
 
-                                        <button type="submit"
-                                            class="group relative w-full py-6 bg-[#062c1d] overflow-hidden rounded-[1.8rem] font-black text-xs uppercase tracking-[0.3em] text-white
+                                    <button type="submit"
+                                        class="group relative w-full py-6 bg-[#062c1d] overflow-hidden rounded-[1.8rem] font-black text-xs uppercase tracking-[0.3em] text-white
                    shadow-[0_20px_40px_rgba(6,44,29,0.2)] hover:shadow-[0_20px_40px_rgba(16,185,129,0.3)]
                    active:scale-[0.98] transition-all duration-300">
 
-                                            <div class="absolute inset-0 bg-emerald-600 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out"></div>
+                                        <div class="absolute inset-0 bg-emerald-600 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out"></div>
 
-                                            <span class="relative z-10 flex items-center justify-center gap-3">
-                                                Enviar Comprobante Ahora
-                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                                                </svg>
-                                            </span>
-                                        </button>
-
-                                        <div class="flex items-center justify-center gap-2 opacity-60">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-emerald-600" viewBox="0 0 20 20" fill="currentColor">
-                                                <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd" />
+                                        <span class="relative z-10 flex items-center justify-center gap-3">
+                                            Enviar Comprobante Ahora
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                                             </svg>
-                                            <p class="text-center text-[9px] text-slate-400 font-bold uppercase tracking-widest">
-                                                Conexión segura y cifrada
+                                        </span>
+                                    </button>
+
+                                    <div class="flex items-center justify-center gap-2 opacity-60">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-emerald-600" viewBox="0 0 20 20" fill="currentColor">
+                                            <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd" />
+                                        </svg>
+                                        <p class="text-center text-[9px] text-slate-400 font-bold uppercase tracking-widest">
+                                            Conexión segura y cifrada
+                                        </p>
+                                    </div>
+                                </form>
+                            </div>
+
+                            <div class="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen px-4 md:px-10 pb-10">
+                                <br>
+                                <br>
+
+                                <div class="w-full bg-emerald-50 rounded-[2.5rem] p-8 md:p-10 border border-emerald-100 flex flex-col md:flex-row items-center justify-between gap-8 group hover:bg-emerald-100 transition-all duration-500 shadow-sm">
+
+                                    <div class="flex flex-row items-center gap-6 md:gap-12 flex-1">
+                                        <div class="flex-shrink-0 w-16 h-16 md:w-28 md:h-28 bg-white rounded-[2.2rem] flex items-center justify-center text-3xl md:text-6xl shadow-sm border border-emerald-200 group-hover:rotate-12 transition-transform duration-500">
+                                            📸
+                                        </div>
+
+                                        <div class="text-left flex-1">
+                                            <h4 class="font-black text-emerald-900 text-xl md:text-3xl tracking-tighter leading-none uppercase">
+                                                ¿SI SU PAGO LO VA A REALIZAR A TRAVÉS DE UN CORRESPONSAL?
+                                            </h4>
+                                            <p class="text-emerald-700/70 text-sm md:text-lg font-bold mt-3 leading-tight max-w-[90%]">
+                                                ENVÍENOS LA FOTO DEL COMPROBANTE DESDE SU WHATSAPP AL 3164876650 O INGRESE AL
+                                                WHATSAPP DE ESTE DISPOSITIVO Y ENVIÉ LA FOTO DEL COMPROBANTE
+                                                ADJUNTANDO SUS DATOS, RECUERDE QUE SOLO TIENE 30 MINUTOS PARA
+                                                REALIZAR ESTE PROCESO DE LO CONTRARIO DEBERÁ AGENDAR NUEVAMENTE
+                                                SU ASESORÍA.
                                             </p>
                                         </div>
-                                    </form>
-                                </div>
-
-                                <div class="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen px-4 md:px-10 pb-10">
-                                    <br>
-                                    <br>
-
-                                    <div class="w-full bg-emerald-50 rounded-[2.5rem] p-8 md:p-10 border border-emerald-100 flex flex-col md:flex-row items-center justify-between gap-8 group hover:bg-emerald-100 transition-all duration-500 shadow-sm">
-
-                                        <div class="flex flex-row items-center gap-6 md:gap-12 flex-1">
-                                            <div class="flex-shrink-0 w-16 h-16 md:w-28 md:h-28 bg-white rounded-[2.2rem] flex items-center justify-center text-3xl md:text-6xl shadow-sm border border-emerald-200 group-hover:rotate-12 transition-transform duration-500">
-                                                📸
-                                            </div>
-
-                                            <div class="text-left flex-1">
-                                                <h4 class="font-black text-emerald-900 text-xl md:text-3xl tracking-tighter leading-none uppercase">
-                                                    ¿SI SU PAGO LO VA A REALIZAR A TRAVÉS DE UN CORRESPONSAL?
-                                                </h4>
-                                                <p class="text-emerald-700/70 text-sm md:text-lg font-bold mt-3 leading-tight max-w-[90%]">
-                                                    ENVÍENOS LA FOTO DEL COMPROBANTE DESDE SU WHATSAPP AL 3164876650 O INGRESE AL
-                                                    WHATSAPP DE ESTE DISPOSITIVO Y ENVIÉ LA FOTO DEL COMPROBANTE
-                                                    ADJUNTANDO SUS DATOS, RECUERDE QUE SOLO TIENE 30 MINUTOS PARA
-                                                    REALIZAR ESTE PROCESO DE LO CONTRARIO DEBERÁ AGENDAR NUEVAMENTE
-                                                    SU ASESORÍA.
-                                                </p>
-                                            </div>
-                                        </div>
-
-                                        <div class="w-full md:w-auto flex-shrink-0">
-                                            <a href="https://wa.me/573164876650" target="_blank"
-                                                class="inline-flex w-full md:w-auto px-16 py-7 bg-emerald-500 text-white rounded-[2rem] font-black text-xs md:text-base uppercase tracking-[0.2em] shadow-2xl shadow-emerald-200 hover:bg-emerald-600 hover:-translate-y-2 active:scale-95 transition-all text-center justify-center whitespace-nowrap">
-                                                WhatsApp Soporte
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-
-                            <?php else: ?>
-                                <div class="bg-white rounded-[3.5rem] p-12 md:p-24 shadow-sm border border-slate-100 text-center relative overflow-hidden">
-                                    <div class="absolute -top-12 -left-12 w-64 h-64 <?php echo $style['bg']; ?> opacity-[0.03] rounded-full blur-3xl"></div>
-
-                                    <div class="w-32 h-32 md:w-44 md:h-44 <?php echo $style['bg']; ?> rounded-[3rem] flex items-center justify-center mx-auto mb-12 shadow-2xl relative z-10 border-[12px] border-white transform hover:rotate-6 transition-transform duration-700 ease-out overflow-hidden">
-                                        <img src="../assets/logo1.png"
-                                            alt="100%"
-                                            class="w-full h-full object-contain p-4 drop-shadow-md">
                                     </div>
 
-
-
-                                    <?php if ($status === 'PENDING_VALIDATION'): ?>
-                                        <div class="max-w-md mx-auto relative z-10 bg-slate-50 p-8 rounded-[2rem] border border-slate-100 shadow-inner">
-                                            <div class="relative p-6 bg-emerald-50/30 rounded-[2rem] border border-emerald-100/50">
-                                                <p class="text-slate-600 leading-relaxed font-medium text-lg">
-                                                    <span class="inline-flex items-center gap-2 px-3 py-1 bg-emerald-500 text-white text-[10px] font-black uppercase tracking-[0.2em] rounded-full mb-4">
-                                                        <span class="relative flex h-2 w-2">
-                                                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
-                                                            <span class="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
-                                                        </span>
-                                                        Procesando con prioridad
-                                                    </span>
-
-                                                    <br>
-
-                                                    <span class="text-slate-900 font-black text-xl block mb-2">
-                                                        ¡Tu proceso ha comenzado con éxito! 🚀
-                                                    </span>
-
-                                                    Tu pago está siendo validado por nuestro sistema. En un Momento, un
-                                                    <span class="text-emerald-600 font-bold italic">Coordinador Especialista</span>
-                                                    se comunicará contigo para darte la bienvenida y entregarte todos los detalles exclusivos de tu asesoría.
-
-                                                    <span class="block mt-4 text-sm font-bold text-slate-400 uppercase tracking-widest">
-                                                        ¡Prepárate para llevar tu aprendizaje al siguiente nivel!
-                                                    </span>
-                                                </p>
-                                            </div>
-                                        </div>
-                                    <?php endif; ?>
-
-                                    <?php if ($current_appointment['proof_details']): ?>
-                                        <div class="mt-16 p-8 bg-slate-50 rounded-[2rem] text-left border-2 border-dashed border-slate-200 relative max-w-xl mx-auto">
-                                            <span class="absolute -top-3 left-10 bg-white px-4 py-1 rounded-full text-[9px] font-black text-slate-400 uppercase tracking-widest shadow-sm">Tu Pin de Referencia</span>
-                                            <p class="text-slate-600 font-extrabold italic text-md leading-relaxed">"<?php echo htmlspecialchars($current_appointment['proof_details']); ?>"</p>
-                                        </div>
-                                    <?php endif; ?>
+                                    <div class="w-full md:w-auto flex-shrink-0">
+                                        <a href="https://wa.me/573164876650" target="_blank"
+                                            class="inline-flex w-full md:w-auto px-16 py-7 bg-emerald-500 text-white rounded-[2rem] font-black text-xs md:text-base uppercase tracking-[0.2em] shadow-2xl shadow-emerald-200 hover:bg-emerald-600 hover:-translate-y-2 active:scale-95 transition-all text-center justify-center whitespace-nowrap">
+                                            WhatsApp Soporte
+                                        </a>
+                                    </div>
                                 </div>
-                            <?php endif; ?>
                             </div>
+
+                        <?php else: ?>
+                            <div class="bg-white rounded-[3.5rem] p-12 md:p-24 shadow-sm border border-slate-100 text-center relative overflow-hidden">
+                                <div class="absolute -top-12 -left-12 w-64 h-64 <?php echo $style['bg']; ?> opacity-[0.03] rounded-full blur-3xl"></div>
+
+                                <div class="w-32 h-32 md:w-44 md:h-44 <?php echo $style['bg']; ?> rounded-[3rem] flex items-center justify-center mx-auto mb-12 shadow-2xl relative z-10 border-[12px] border-white transform hover:rotate-6 transition-transform duration-700 ease-out overflow-hidden">
+                                    <img src="../assets/logo1.png"
+                                        alt="100%"
+                                        class="w-full h-full object-contain p-4 drop-shadow-md">
+                                </div>
+
+
+
+                                <?php if ($status === 'PENDING_VALIDATION'): ?>
+                                    <div class="max-w-md mx-auto relative z-10 bg-slate-50 p-8 rounded-[2rem] border border-slate-100 shadow-inner">
+                                        <div class="relative p-6 bg-emerald-50/30 rounded-[2rem] border border-emerald-100/50">
+                                            <p class="text-slate-600 leading-relaxed font-medium text-lg">
+                                                <span class="inline-flex items-center gap-2 px-3 py-1 bg-emerald-500 text-white text-[10px] font-black uppercase tracking-[0.2em] rounded-full mb-4">
+                                                    <span class="relative flex h-2 w-2">
+                                                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+                                                        <span class="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
+                                                    </span>
+                                                    Procesando con prioridad
+                                                </span>
+
+                                                <br>
+
+                                                <span class="text-slate-900 font-black text-xl block mb-2">
+                                                    ¡Tu proceso ha comenzado con éxito! 🚀
+                                                </span>
+
+                                                Tu pago está siendo validado por nuestro sistema. En un Momento, un
+                                                <span class="text-emerald-600 font-bold italic">Coordinador Especialista</span>
+                                                se comunicará contigo para darte la bienvenida y entregarte todos los detalles exclusivos de tu asesoría.
+
+                                                <span class="block mt-4 text-sm font-bold text-slate-400 uppercase tracking-widest">
+                                                    ¡Prepárate para llevar tu aprendizaje al siguiente nivel!
+                                                </span>
+                                            </p>
+                                        </div>
+                                    </div>
+                                <?php endif; ?>
+
+                                <?php if ($current_appointment['proof_details']): ?>
+                                    <div class="mt-16 p-8 bg-slate-50 rounded-[2rem] text-left border-2 border-dashed border-slate-200 relative max-w-xl mx-auto">
+                                        <span class="absolute -top-3 left-10 bg-white px-4 py-1 rounded-full text-[9px] font-black text-slate-400 uppercase tracking-widest shadow-sm">Tu Pin de Referencia</span>
+                                        <p class="text-slate-600 font-extrabold italic text-md leading-relaxed">"<?php echo htmlspecialchars($current_appointment['proof_details']); ?>"</p>
+                                    </div>
+                                <?php endif; ?>
+                            </div>
+                        <?php endif; ?>
+                        </div>
                     </div>
                 </div>
 
