@@ -2092,84 +2092,83 @@ function render_subject_cards($cards)
                                     </h3>
 
                                     <!-- FORM -->
-                                </div>
+                                    <div class="relative bg-white rounded-[3.5rem] p-10 shadow-[0_25px_50px_-12px_rgba(0,0,0,0.04)] border border-slate-100 flex flex-col justify-center overflow-hidden group">
 
-                            </div>
+                                        <div class="absolute -top-10 -right-10 w-32 h-32 bg-emerald-50 rounded-full blur-3xl opacity-70 group-hover:opacity-100 transition-opacity duration-700"></div>
 
-                            <div class="relative bg-white rounded-[3.5rem] p-10 shadow-[0_25px_50px_-12px_rgba(0,0,0,0.04)] border border-slate-100 flex flex-col justify-center overflow-hidden group">
+                                        <div class="relative z-10 flex items-center gap-5 mb-10">
+                                            <div class="border-l-4 border-emerald-500 pl-6 py-2">
+                                                <h1 class="text-2xl md:text-3xl font-black text-slate-900 tracking-tighter leading-tight">
+                                                    ¡Casi hemos terminado!
+                                                    <span class="block text-slate-400 font-bold text-sm md:text-base uppercase tracking-[0.15em] mt-1">
+                                                        Envía la referencia del comprobante para confirmar la asesoría:
+                                                    </span>
+                                                </h1>
+                                            </div>
+                                            <div class="relative">
+                                                <div class="w-14 h-14 bg-gradient-to-br from-emerald-400 to-emerald-600 text-white rounded-[1.5rem] flex items-center justify-center text-xl font-black shadow-[0_10px_20px_rgba(16,185,129,0.2)] transform group-hover:rotate-6 transition-transform">
+                                                    02
+                                                </div>
+                                                <span class="absolute -top-1 -right-1 flex h-4 w-4">
+                                                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                                                    <span class="relative inline-flex rounded-full h-4 w-4 bg-emerald-500 border-2 border-white"></span>
+                                                </span>
+                                            </div>
 
-                                <div class="absolute -top-10 -right-10 w-32 h-32 bg-emerald-50 rounded-full blur-3xl opacity-70 group-hover:opacity-100 transition-opacity duration-700"></div>
-
-                                <div class="relative z-10 flex items-center gap-5 mb-10">
-                                    <div class="border-l-4 border-emerald-500 pl-6 py-2">
-                                        <h1 class="text-2xl md:text-3xl font-black text-slate-900 tracking-tighter leading-tight">
-                                            ¡Casi hemos terminado!
-                                            <span class="block text-slate-400 font-bold text-sm md:text-base uppercase tracking-[0.15em] mt-1">
-                                                Envía la referencia del comprobante para confirmar la asesoría:
-                                            </span>
-                                        </h1>
-                                    </div>
-                                    <div class="relative">
-                                        <div class="w-14 h-14 bg-gradient-to-br from-emerald-400 to-emerald-600 text-white rounded-[1.5rem] flex items-center justify-center text-xl font-black shadow-[0_10px_20px_rgba(16,185,129,0.2)] transform group-hover:rotate-6 transition-transform">
-                                            02
                                         </div>
-                                        <span class="absolute -top-1 -right-1 flex h-4 w-4">
-                                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                                            <span class="relative inline-flex rounded-full h-4 w-4 bg-emerald-500 border-2 border-white"></span>
-                                        </span>
-                                    </div>
 
-                                </div>
+                                        <form method="POST" class="relative z-10 space-y-6">
+                                            <input type="hidden" name="action" value="upload_proof">
+                                            <input type="hidden" name="appointment_id" value="<?php echo $current_appointment['id']; ?>">
 
-                                <form method="POST" class="relative z-10 space-y-6">
-                                    <input type="hidden" name="action" value="upload_proof">
-                                    <input type="hidden" name="appointment_id" value="<?php echo $current_appointment['id']; ?>">
+                                            <div class="relative group/input">
+                                                <label class="block text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] mb-3 ml-2">
+                                                    Referencia de Transacción
+                                                </label>
 
-                                    <div class="relative group/input">
-                                        <label class="block text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] mb-3 ml-2">
-                                            Referencia de Transacción
-                                        </label>
-
-                                        <div class="relative">
-                                            <textarea name="proof_details" rows="3" required
-                                                class="w-full p-6 bg-slate-50 border-2 border-slate-50 rounded-[2.2rem] 
+                                                <div class="relative">
+                                                    <textarea name="proof_details" rows="3" required
+                                                        class="w-full p-6 bg-slate-50 border-2 border-slate-50 rounded-[2.2rem] 
                            focus:bg-white focus:border-emerald-400 focus:ring-[12px] focus:ring-emerald-500/5 
                            outline-none transition-all duration-300 text-sm font-bold text-slate-700 
                            placeholder:text-slate-300 tracking-tight"
-                                                placeholder="Escribe el código de referencia o adjunta detalles..."></textarea>
+                                                        placeholder="Escribe el código de referencia o adjunta detalles..."></textarea>
 
-                                            <div class="absolute bottom-5 right-6 text-slate-200 group-focus-within/input:text-emerald-400 transition-colors">
-                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                                                </svg>
+                                                    <div class="absolute bottom-5 right-6 text-slate-200 group-focus-within/input:text-emerald-400 transition-colors">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                                        </svg>
+                                                    </div>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </div>
 
-                                    <button type="submit"
-                                        class="group relative w-full py-6 bg-[#062c1d] overflow-hidden rounded-[1.8rem] font-black text-xs uppercase tracking-[0.3em] text-white
+                                            <button type="submit"
+                                                class="group relative w-full py-6 bg-[#062c1d] overflow-hidden rounded-[1.8rem] font-black text-xs uppercase tracking-[0.3em] text-white
                    shadow-[0_20px_40px_rgba(6,44,29,0.2)] hover:shadow-[0_20px_40px_rgba(16,185,129,0.3)]
                    active:scale-[0.98] transition-all duration-300">
 
-                                        <div class="absolute inset-0 bg-emerald-600 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out"></div>
+                                                <div class="absolute inset-0 bg-emerald-600 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out"></div>
 
-                                        <span class="relative z-10 flex items-center justify-center gap-3">
-                                            Enviar Comprobante Ahora
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                                            </svg>
-                                        </span>
-                                    </button>
+                                                <span class="relative z-10 flex items-center justify-center gap-3">
+                                                    Enviar Comprobante Ahora
+                                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                                    </svg>
+                                                </span>
+                                            </button>
 
-                                    <div class="flex items-center justify-center gap-2 opacity-60">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-emerald-600" viewBox="0 0 20 20" fill="currentColor">
-                                            <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd" />
-                                        </svg>
-                                        <p class="text-center text-[9px] text-slate-400 font-bold uppercase tracking-widest">
-                                            Conexión segura y cifrada
-                                        </p>
+                                            <div class="flex items-center justify-center gap-2 opacity-60">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-emerald-600" viewBox="0 0 20 20" fill="currentColor">
+                                                    <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd" />
+                                                </svg>
+                                                <p class="text-center text-[9px] text-slate-400 font-bold uppercase tracking-widest">
+                                                    Conexión segura y cifrada
+                                                </p>
+                                            </div>
+                                        </form>
                                     </div>
-                                </form>
+                                </div>
+
                             </div>
 
                             <div class="relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen px-4 md:px-10 pb-10">
