@@ -2062,38 +2062,38 @@ function render_subject_cards($cards)
                                             </div>
                                         </div>
 
-                                        <!-- PASO 3 -->
-                                        <div id="paso3" class="ml-8 relative">
-                                            <div class="absolute -left-[44px] top-1 w-8 h-8 bg-emerald-500 rounded-full border-4 border-white dark:border-gray-900 shadow-[0_0_15px_rgba(16,185,129,0.5)] flex items-center justify-center text-[10px] font-black text-white">3</div>
-
-                                            <p class="text-emerald-500 dark:text-emerald-400 font-black uppercase text-xs tracking-[0.3em] mb-1">
-                                                Paso 3
-                                            </p>
-
-                                            <h3 class="text-2xl md:text-3xl font-black text-slate-900 dark:text-white mb-4 tracking-tighter italic uppercase">
-                                                Envía el comprobante
-                                            </h3>
-
-                                            <!-- FORM -->
-                                        </div>
-
+                                        <?php if ($is_payment_pending): ?>
+                                            <div id="timer-container" class="bg-slate-900 rounded-[2.5rem] p-8 shadow-2xl relative overflow-hidden border border-white/5">
+                                                <div class="relative z-10">
+                                                    <p class="text-slate-500 font-bold text-[10px] uppercase tracking-[0.3em] mb-6 text-center">Tiempo límite de pago</p>
+                                                    <div id="timer-display" class="text-6xl font-black text-white tracking-tighter text-center tabular-nums leading-none mb-6 drop-shadow-2xl">--:--</div>
+                                                    <div class="flex items-center justify-center gap-3 bg-white/5 py-3 px-6 rounded-2xl border border-white/10">
+                                                        <div class="relative flex h-3 w-3">
+                                                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                                                            <span class="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
+                                                        </div>
+                                                        <p class="text-[10px] text-red-400 font-black uppercase tracking-widest animate-pulse">Agendamiento en Curso
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        <?php endif; ?>
                                 </div>
 
-                                <?php if ($is_payment_pending): ?>
-                                    <div id="timer-container" class="bg-slate-900 rounded-[2.5rem] p-8 shadow-2xl relative overflow-hidden border border-white/5">
-                                        <div class="relative z-10">
-                                            <p class="text-slate-500 font-bold text-[10px] uppercase tracking-[0.3em] mb-6 text-center">Tiempo límite de pago</p>
-                                            <div id="timer-display" class="text-6xl font-black text-white tracking-tighter text-center tabular-nums leading-none mb-6 drop-shadow-2xl">--:--</div>
-                                            <div class="flex items-center justify-center gap-3 bg-white/5 py-3 px-6 rounded-2xl border border-white/10">
-                                                <div class="relative flex h-3 w-3">
-                                                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
-                                                    <span class="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
-                                                </div>
-                                                <p class="text-[10px] text-red-400 font-black uppercase tracking-widest animate-pulse">Agendamiento en Curso
-                                            </div>
-                                        </div>
-                                    </div>
-                                <?php endif; ?>
+                                <!-- PASO 3 -->
+                                <div id="paso3" class="ml-8 relative">
+                                    <div class="absolute -left-[44px] top-1 w-8 h-8 bg-emerald-500 rounded-full border-4 border-white dark:border-gray-900 shadow-[0_0_15px_rgba(16,185,129,0.5)] flex items-center justify-center text-[10px] font-black text-white">3</div>
+
+                                    <p class="text-emerald-500 dark:text-emerald-400 font-black uppercase text-xs tracking-[0.3em] mb-1">
+                                        Paso 3
+                                    </p>
+
+                                    <h3 class="text-2xl md:text-3xl font-black text-slate-900 dark:text-white mb-4 tracking-tighter italic uppercase">
+                                        Envía el comprobante
+                                    </h3>
+
+                                    <!-- FORM -->
+                                </div>
+
                             </div>
 
                             <div class="relative bg-white rounded-[3.5rem] p-10 shadow-[0_25px_50px_-12px_rgba(0,0,0,0.04)] border border-slate-100 flex flex-col justify-center overflow-hidden group">
