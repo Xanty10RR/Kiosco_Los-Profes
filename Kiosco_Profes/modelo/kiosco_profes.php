@@ -1988,7 +1988,7 @@ function render_subject_cards($cards)
                                 <!-- CARD NEQUI -->
                                 <div class="lg:col-span-8 space-y-8 order-1">
                                     <?php if ($is_payment_pending): ?>
-                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+                                        <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
                                             <!-- CARD NEQUI -->
                                             <div class="relative min-h-[320px] flex flex-col justify-between p-6 sm:p-8 md:p-7 lg:p-10 rounded-[2.5rem] md:rounded-[3.5rem] overflow-hidden group 
             bg-gradient-to-br from-[#062c1d] via-[#02110b] to-black 
@@ -2021,7 +2021,7 @@ function render_subject_cards($cards)
                                                     <div class="flex flex-col gap-1">
 
                                                         <div class="flex items-center gap-4 group/number cursor-pointer">
-                                                            <p class="text-2xl sm:text-3xl md:text-2xl lg:text-4xl font-mono font-medium tracking-[0.1em] sm:tracking-[0.15em] md:tracking-normal lg:tracking-[0.15em] text-white/90 group-hover:text-emerald-50 transition-colors">
+                                                            <p class="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-mono font-medium tracking-[0.1em] sm:tracking-[0.15em] md:tracking-normal lg:tracking-[0.15em] text-white/90 group-hover:text-emerald-50 transition-colors">
                                                                 316 <span class="text-emerald-400 font-black drop-shadow-[0_0_15px_rgba(52,211,153,0.3)]">669</span> 2913
                                                             </p>
                                                             <div class="opacity-0 group-hover/number:opacity-100 transition-all transform translate-x-[-10px] group-hover:translate-x-0 bg-emerald-500/20 p-2 rounded-full border border-emerald-500/30">
