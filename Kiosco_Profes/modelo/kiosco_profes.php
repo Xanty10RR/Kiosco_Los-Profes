@@ -1986,7 +1986,7 @@ function render_subject_cards($cards)
                                 </h3>
 
                                 <!-- CARD NEQUI -->
-                                <div class="lg:col-span-8 space-y-8 order-1 lg:order-2">
+                                <div class="lg:col-span-8 space-y-8 order-1">
                                     <?php if ($is_payment_pending): ?>
                                         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
                                             <!-- CARD NEQUI -->
