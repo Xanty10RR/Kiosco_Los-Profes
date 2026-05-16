@@ -1920,7 +1920,7 @@ function render_subject_cards($cards)
                         </h3>
 
                         <!-- CARD RESUMEN -->
-                         <div class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                         <div class="max-w-6xl mx-auto gap-8 items-start">
 
                     <div class="lg:col-span-4 space-y-6 order-2 lg:order-1">
                         <div class="bg-white rounded-[2.5rem] p-8 shadow-[0_4px_20px_rgba(0,0,0,0.02)] border border-slate-100">
