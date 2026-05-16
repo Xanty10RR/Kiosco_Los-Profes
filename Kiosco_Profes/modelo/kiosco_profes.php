@@ -1990,7 +1990,7 @@ function render_subject_cards($cards)
                                     <?php if ($is_payment_pending): ?>
                                         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
                                             <!-- CARD NEQUI -->
-                                            <div class="relative min-h-[320px] flex flex-col justify-between p-6 sm:p-10 rounded-[2.5rem] md:rounded-[3.5rem] overflow-hidden group 
+                                            <div class="relative min-h-[320px] flex flex-col justify-between p-6 sm:p-8 md:p-7 lg:p-10 rounded-[2.5rem] md:rounded-[3.5rem] overflow-hidden group 
             bg-gradient-to-br from-[#062c1d] via-[#02110b] to-black 
             border border-emerald-500/20 shadow-[0_32px_64px_-15px_rgba(0,0,0,0.6)] transition-all duration-500 hover:border-emerald-400/40">
 
@@ -2021,7 +2021,7 @@ function render_subject_cards($cards)
                                                     <div class="flex flex-col gap-1">
 
                                                         <div class="flex items-center gap-4 group/number cursor-pointer">
-                                                            <p class="text-2xl sm:text-3xl lg:text-4xl font-mono font-medium tracking-[0.1em] sm:tracking-[0.15em] text-white/90 group-hover:text-emerald-50 transition-colors">
+                                                            <p class="text-2xl sm:text-3xl md:text-2xl lg:text-4xl font-mono font-medium tracking-[0.1em] sm:tracking-[0.15em] md:tracking-normal lg:tracking-[0.15em] text-white/90 group-hover:text-emerald-50 transition-colors">
                                                                 316 <span class="text-emerald-400 font-black drop-shadow-[0_0_15px_rgba(52,211,153,0.3)]">669</span> 2913
                                                             </p>
                                                             <div class="opacity-0 group-hover/number:opacity-100 transition-all transform translate-x-[-10px] group-hover:translate-x-0 bg-emerald-500/20 p-2 rounded-full border border-emerald-500/30">
@@ -2042,7 +2042,7 @@ function render_subject_cards($cards)
                                                             Total a Pagar por tu Asesoría
                                                         </p>
                                                         <div class="flex items-baseline gap-2">
-                                                            <span class="text-4xl md:text-5xl font-black text-white tracking-tighter drop-shadow-md">$30.000</span>
+                                                            <span class="text-4xl md:text-3xl lg:text-5xl font-black text-white tracking-tighter drop-shadow-md">$30.000</span>
                                                             <span class="text-sm font-bold text-emerald-400 italic">PESOS
                                                         </div>
                                                     </div>
@@ -2063,10 +2063,10 @@ function render_subject_cards($cards)
                                             </div>
 
                                             <!-- LÍMITE DE PAGO -->
-                                            <div id="timer-container" class="bg-slate-900 rounded-[2.5rem] p-6 md:p-8 shadow-2xl relative overflow-hidden border border-white/5 flex flex-col justify-center min-h-[320px]">
+                                            <div id="timer-container" class="bg-slate-900 rounded-[2.5rem] p-6 md:p-5 lg:p-8 shadow-2xl relative overflow-hidden border border-white/5 flex flex-col justify-center min-h-[320px]">
                                                 <div class="relative z-10">
                                                     <p class="text-slate-500 font-bold text-[10px] uppercase tracking-[0.3em] mb-6 text-center">Tiempo límite de pago</p>
-                                                    <div id="timer-display" class="text-5xl md:text-6xl font-black text-white tracking-tighter text-center tabular-nums leading-none mb-6 drop-shadow-2xl">--:--</div>
+                                                    <div id="timer-display" class="text-5xl md:text-4xl lg:text-6xl font-black text-white tracking-tighter text-center tabular-nums leading-none mb-6 drop-shadow-2xl">--:--</div>
                                                     <div class="flex items-center justify-center gap-3 bg-white/5 py-3 px-6 rounded-2xl border border-white/10">
                                                         <div class="relative flex h-3 w-3">
                                                             <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
