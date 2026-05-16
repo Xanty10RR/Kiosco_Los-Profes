@@ -1988,7 +1988,8 @@ function render_subject_cards($cards)
                                 <!-- CARD NEQUI -->
                                 <div class="lg:col-span-8 space-y-8 order-1 lg:order-2">
                                     <?php if ($is_payment_pending): ?>
-                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+                                            <!-- CARD NEQUI -->
                                             <div class="relative min-h-[340px] flex flex-col justify-between p-10 rounded-[3.5rem] overflow-hidden group 
             bg-gradient-to-br from-[#062c1d] via-[#02110b] to-black 
             border border-emerald-500/20 shadow-[0_32px_64px_-15px_rgba(0,0,0,0.6)] transition-all duration-500 hover:border-emerald-400/40">
@@ -2060,10 +2061,9 @@ function render_subject_cards($cards)
 
                                                 <div class="absolute inset-0 opacity-[0.04] pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')] contrast-150"></div>
                                             </div>
-                                        </div>
 
-                                        <?php if ($is_payment_pending): ?>
-                                            <div id="timer-container" class="bg-slate-900 rounded-[2.5rem] p-8 shadow-2xl relative overflow-hidden border border-white/5">
+                                            <!-- LÍMITE DE PAGO -->
+                                            <div id="timer-container" class="bg-slate-900 rounded-[2.5rem] p-8 shadow-2xl relative overflow-hidden border border-white/5 flex flex-col justify-center">
                                                 <div class="relative z-10">
                                                     <p class="text-slate-500 font-bold text-[10px] uppercase tracking-[0.3em] mb-6 text-center">Tiempo límite de pago</p>
                                                     <div id="timer-display" class="text-6xl font-black text-white tracking-tighter text-center tabular-nums leading-none mb-6 drop-shadow-2xl">--:--</div>
@@ -2072,11 +2072,11 @@ function render_subject_cards($cards)
                                                             <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
                                                             <span class="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
                                                         </div>
-                                                        <p class="text-[10px] text-red-400 font-black uppercase tracking-widest animate-pulse">Agendamiento en Curso
+                                                        <p class="text-[10px] text-red-400 font-black uppercase tracking-widest animate-pulse">Agendamiento en Curso</p>
                                                     </div>
                                                 </div>
                                             </div>
-                                        <?php endif; ?>
+                                        </div>
                                 </div>
 
                                 <!-- PASO 3 -->
