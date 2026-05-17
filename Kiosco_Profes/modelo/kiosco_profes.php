@@ -2111,14 +2111,14 @@ function render_subject_cards($cards)
                                             <!-- LÍMITE DE PAGO -->
                                             <div id="timer-container" class="bg-white dark:bg-slate-900 rounded-[2.5rem] p-6 md:p-8 shadow-xl dark:shadow-2xl relative overflow-hidden border border-slate-100 dark:border-white/5 flex flex-col justify-center min-h-[320px]">
                                                 <div class="relative z-10">
-                                                    <p class="text-slate-400 dark:text-slate-500 font-bold text-[10px] uppercase tracking-[0.3em] mb-6 text-center">Tiempo límite de pago</p>
+                                                    <p class="text-dark dark:text-white font-bold text-[10px] uppercase tracking-[0.3em] mb-6 text-center">Tiempo límite de pago</p>
                                                     <div id="timer-display" class="text-5xl md:text-6xl font-black text-slate-900 dark:text-white tracking-tighter text-center tabular-nums leading-none mb-6 dark:drop-shadow-2xl">--:--</div>
                                                     <div class="flex items-center justify-center gap-3 bg-slate-200 dark:bg-white/5 py-3 px-6 rounded-2xl border border-slate-100 dark:border-white/10">
                                                         <div class="relative flex h-3 w-3">
                                                             <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
                                                             <span class="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
                                                         </div>
-                                                        <p class="text-[10px] text-red-600 dark:text-red-400 font-black uppercase tracking-widest animate-pulse">Agendamiento en Curso</p>
+                                                        <p class="text-[10px] text-red-600 dark:text-red-500 font-black uppercase tracking-widest animate-pulse">Agendamiento en Curso</p>
                                                     </div>
                                                 </div>
                                             </div>
