@@ -2113,7 +2113,7 @@ function render_subject_cards($cards)
                                                 <div class="relative z-10">
                                                     <p class="text-slate-400 dark:text-slate-500 font-bold text-[10px] uppercase tracking-[0.3em] mb-6 text-center">Tiempo límite de pago</p>
                                                     <div id="timer-display" class="text-5xl md:text-6xl font-black text-slate-900 dark:text-white tracking-tighter text-center tabular-nums leading-none mb-6 dark:drop-shadow-2xl">--:--</div>
-                                                    <div class="flex items-center justify-center gap-3 bg-slate-50 dark:bg-white/5 py-3 px-6 rounded-2xl border border-slate-100 dark:border-white/10">
+                                                    <div class="flex items-center justify-center gap-3 bg-slate-200 dark:bg-white/5 py-3 px-6 rounded-2xl border border-slate-100 dark:border-white/10">
                                                         <div class="relative flex h-3 w-3">
                                                             <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
                                                             <span class="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
