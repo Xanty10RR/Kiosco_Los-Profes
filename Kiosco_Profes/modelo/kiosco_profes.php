@@ -1926,7 +1926,9 @@ function render_subject_cards($cards)
                                 <div class="bg-white rounded-[2.5rem] p-8 shadow-[0_4px_20px_rgba(0,0,0,0.02)] border border-slate-100">
                                     <div class="flex items-center gap-3 mb-10">
                                         <div class="w-2 h-6 bg-indigo-500 rounded-full"></div>
-                                        <h3 class="text-slate-400 font-bold text-[11px] uppercase tracking-[0.2em]">Resumen de tu Asesoria</h3>
+                                        <h3 class="text-slate-400 font-bold text-[11px] uppercase tracking-[0.2em]">
+                                            Resumen de tu Asesoria
+                                        </h3>
                                     </div>
 
                                     <div class="space-y-8">
@@ -1993,7 +1995,7 @@ function render_subject_cards($cards)
                                 <div class="lg:col-span-8 space-y-8 order-1">
                                     <?php if ($is_payment_pending): ?>
                                         <!-- AVISO -->
-                                        <div class="w-full relative left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] w-screen px-4 md:px-10 pb-10">
+                                        <div class="w-full px-2 md:px-4 pb-10">
                                             <br>
                                             <br>
 
@@ -2039,7 +2041,9 @@ function render_subject_cards($cards)
                                                             <div class="w-2.5 h-2.5 bg-emerald-400 rounded-full animate-pulse shadow-[0_0_10px_rgba(52,211,153,0.8)]"></div>
                                                             <h3 class="text-3xl font-black tracking-tighter bg-gradient-to-r from-white via-emerald-100 to-emerald-500/50 bg-clip-text text-transparent">Nequi</h3>
                                                         </div>
-                                                        <p class="text-[10px] text-emerald-400/60 font-black uppercase tracking-[0.3em] pl-5">Realiza tu pago de Inmediato
+                                                        <p class="text-[10px] text-emerald-400/60 font-black uppercase tracking-[0.3em] pl-5">
+                                                            Realiza tu pago de Inmediato
+                                                        </p>
                                                     </div>
 
                                                     <div class="relative w-14 h-11 bg-gradient-to-br from-emerald-200/20 to-emerald-600/20 rounded-xl border border-emerald-400/30 flex items-center justify-center overflow-hidden shadow-inner">
@@ -2078,8 +2082,12 @@ function render_subject_cards($cards)
                                                             Total a Pagar por tu Asesoría
                                                         </p>
                                                         <div class="flex items-baseline gap-2">
-                                                            <span class="text-4xl md:text-5xl font-black text-white tracking-tighter drop-shadow-md">$30.000</span>
-                                                            <span class="text-sm font-bold text-emerald-400 italic">PESOS
+                                                            <span class="text-4xl md:text-5xl font-black text-white tracking-tighter drop-shadow-md">
+                                                                $30.000
+                                                            </span>
+                                                            <span class="text-sm font-bold text-emerald-400 italic">
+                                                                PESOS
+                                                            </span>
                                                         </div>
                                                     </div>
 
@@ -2091,7 +2099,9 @@ function render_subject_cards($cards)
                                                             </span>
                                                             <span class="text-emerald-100 text-[11px] font-black uppercase tracking-widest">Sesión 1H</span>
                                                         </div>
-                                                        <p class="text-[10px] text-emerald-900 font-black italic pr-2 uppercase tracking-tighter">LOS PROFES
+                                                        <p class="text-[10px] text-emerald-900 font-black italic pr-2 uppercase tracking-tighter">
+                                                            LOS PROFES
+                                                        </p>
                                                     </div>
                                                 </div>
 
