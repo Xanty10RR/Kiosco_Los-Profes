@@ -2031,17 +2031,17 @@ function render_subject_cards($cards)
                                         <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
 
                                             <!-- CARD NEQUI -->
-                                            <div class="relative min-h-[320px] flex flex-col justify-between p-10 sm:p-10 rounded-[2.5rem] md:rounded-[3.5rem] overflow-hidden group bg-white dark:bg-gradient-to-br from-[#062c1d] via-[#02110b] to-black border border-emerald-500/20 shadow-[0_32px_64px_-15px_rgba(0,0,0,0.6)] transition-all duration-500 hover:border-emerald-400/40">
-                                                <div class="absolute -top-20 -right-20 w-80 h-80 bg-emerald-600/20 rounded-full blur-[100px] group-hover:bg-emerald-500/30 transition-colors duration-700"></div>
-                                                <div class="absolute -bottom-20 -left-20 w-64 h-64 bg-green-400/10 rounded-full blur-[80px]"></div>
+                                            <div class="relative min-h-[320px] flex flex-col justify-between p-10 sm:p-10 rounded-[2.5rem] md:rounded-[3.5rem] overflow-hidden group bg-white dark:bg-gradient-to-br dark:from-[#062c1d] dark:via-[#02110b] dark:to-black border border-emerald-100 dark:border-emerald-500/20 shadow-[0_32px_64px_-15px_rgba(0,0,0,0.05)] dark:shadow-[0_32px_64px_-15px_rgba(0,0,0,0.6)] transition-all duration-500 hover:border-emerald-400/40">
+                                                <div class="absolute -top-20 -right-20 w-80 h-80 bg-emerald-50 dark:bg-emerald-600/20 rounded-full blur-[100px] group-hover:bg-emerald-100 dark:group-hover:bg-emerald-500/30 transition-colors duration-700"></div>
+                                                <div class="absolute -bottom-20 -left-20 w-64 h-64 bg-green-50 dark:bg-green-400/10 rounded-full blur-[80px]"></div>
 
                                                 <div class="relative z-10 flex justify-between items-start">
                                                     <div class="space-y-1">
                                                         <div class="flex items-center gap-2">
                                                             <div class="w-2.5 h-2.5 bg-emerald-400 rounded-full animate-pulse shadow-[0_0_10px_rgba(52,211,153,0.8)]"></div>
-                                                            <h3 class="text-3xl font-black tracking-tighter bg-gradient-to-r from-white via-emerald-100 to-emerald-500/50 bg-clip-text text-transparent">Nequi</h3>
+                                                            <h3 class="text-3xl font-black tracking-tighter bg-gradient-to-r from-emerald-800 via-emerald-600 to-emerald-500 dark:from-white dark:via-emerald-100 dark:to-emerald-500/50 bg-clip-text text-transparent">Nequi</h3>
                                                         </div>
-                                                        <p class="text-[10px] text-emerald-400/60 font-black uppercase tracking-[0.3em] pl-5">
+                                                        <p class="text-[10px] text-emerald-600/70 dark:text-emerald-400/60 font-black uppercase tracking-[0.3em] pl-5">
                                                             Realiza tu pago de Inmediato
                                                         </p>
                                                     </div>
@@ -2061,8 +2061,8 @@ function render_subject_cards($cards)
                                                     <div class="flex flex-col gap-1">
 
                                                         <div class="flex items-center gap-4 group/number cursor-pointer">
-                                                            <p class="text-3xl md:text-5xl font-mono font-medium tracking-[0.15em] text-white/90 group-hover:text-emerald-50 transition-colors">
-                                                                316 <span class="text-emerald-400 font-black drop-shadow-[0_0_15px_rgba(52,211,153,0.3)]">669</span> 2913
+                                                            <p class="text-3xl md:text-5xl font-mono font-medium tracking-[0.15em] text-slate-800 dark:text-white/90 group-hover:text-emerald-700 dark:group-hover:text-emerald-50 transition-colors">
+                                                                316 <span class="text-emerald-600 dark:text-emerald-400 font-black drop-shadow-[0_0_15px_rgba(52,211,153,0.1)] dark:drop-shadow-[0_0_15px_rgba(52,211,153,0.3)]">669</span> 2913
                                                             </p>
                                                             <div class="opacity-0 group-hover/number:opacity-100 transition-all transform translate-x-[-10px] group-hover:translate-x-0 bg-emerald-500/20 p-2 rounded-full border border-emerald-500/30">
                                                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-emerald-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -2078,11 +2078,11 @@ function render_subject_cards($cards)
                                                         <div class="flex items-center gap-2 mb-1">
 
                                                         </div>
-                                                        <p class="text-slate-400 text-[10px] font-bold uppercase tracking-widest pl-0.5">
+                                                        <p class="text-slate-500 dark:text-slate-400 text-[10px] font-bold uppercase tracking-widest pl-0.5">
                                                             Total a Pagar por tu Asesoría
                                                         </p>
                                                         <div class="flex items-baseline gap-2">
-                                                            <span class="text-4xl md:text-5xl font-black text-white tracking-tighter drop-shadow-md">
+                                                            <span class="text-4xl md:text-5xl font-black text-slate-900 dark:text-white tracking-tighter drop-shadow-md">
                                                                 $30.000
                                                             </span>
                                                             <span class="text-sm font-bold text-emerald-400 italic">
@@ -2097,9 +2097,9 @@ function render_subject_cards($cards)
                                                                 <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                                                                 <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-400"></span>
                                                             </span>
-                                                            <span class="text-emerald-100 text-[11px] font-black uppercase tracking-widest">Sesión 1H</span>
+                                                            <span class="text-emerald-700 dark:text-emerald-100 text-[11px] font-black uppercase tracking-widest">Sesión 1H</span>
                                                         </div>
-                                                        <p class="text-[10px] text-emerald-900 font-black italic pr-2 uppercase tracking-tighter">
+                                                        <p class="text-[10px] text-emerald-600 dark:text-emerald-400 font-black italic pr-2 uppercase tracking-tighter">
                                                             LOS PROFES
                                                         </p>
                                                     </div>
@@ -2109,16 +2109,16 @@ function render_subject_cards($cards)
                                             </div>
 
                                             <!-- LÍMITE DE PAGO -->
-                                            <div id="timer-container" class="bg-slate-900 rounded-[2.5rem] p-6 md:p-8 shadow-2xl relative overflow-hidden border border-white/5 flex flex-col justify-center min-h-[320px]">
+                                            <div id="timer-container" class="bg-white dark:bg-slate-900 rounded-[2.5rem] p-6 md:p-8 shadow-xl dark:shadow-2xl relative overflow-hidden border border-slate-100 dark:border-white/5 flex flex-col justify-center min-h-[320px]">
                                                 <div class="relative z-10">
-                                                    <p class="text-slate-500 font-bold text-[10px] uppercase tracking-[0.3em] mb-6 text-center">Tiempo límite de pago</p>
-                                                    <div id="timer-display" class="text-5xl md:text-6xl font-black text-white tracking-tighter text-center tabular-nums leading-none mb-6 drop-shadow-2xl">--:--</div>
-                                                    <div class="flex items-center justify-center gap-3 bg-white/5 py-3 px-6 rounded-2xl border border-white/10">
+                                                    <p class="text-slate-400 dark:text-slate-500 font-bold text-[10px] uppercase tracking-[0.3em] mb-6 text-center">Tiempo límite de pago</p>
+                                                    <div id="timer-display" class="text-5xl md:text-6xl font-black text-slate-900 dark:text-white tracking-tighter text-center tabular-nums leading-none mb-6 dark:drop-shadow-2xl">--:--</div>
+                                                    <div class="flex items-center justify-center gap-3 bg-slate-50 dark:bg-white/5 py-3 px-6 rounded-2xl border border-slate-100 dark:border-white/10">
                                                         <div class="relative flex h-3 w-3">
                                                             <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
                                                             <span class="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
                                                         </div>
-                                                        <p class="text-[10px] text-red-400 font-black uppercase tracking-widest animate-pulse">Agendamiento en Curso</p>
+                                                        <p class="text-[10px] text-red-600 dark:text-red-400 font-black uppercase tracking-widest animate-pulse">Agendamiento en Curso</p>
                                                     </div>
                                                 </div>
                                             </div>
