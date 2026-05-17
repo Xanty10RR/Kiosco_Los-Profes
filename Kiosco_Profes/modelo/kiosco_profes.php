@@ -1920,13 +1920,13 @@ function render_subject_cards($cards)
                         </h3>
 
                         <!-- CARD RESUMEN -->
-                        <div class="max-w-6xl mx-auto gap-8 items-start">
+                        <div class="">
 
                             <div class="lg:col-span-4 space-y-6 order-2 lg:order-1">
-                                <div class="bg-white rounded-[2.5rem] p-8 shadow-[0_4px_20px_rgba(0,0,0,0.02)] border border-slate-100">
+                                <div class="max-w-5xl bg-gray-200 dark:bg-gray-800 rounded-[2.5rem] p-8 shadow-[0_4px_20px_rgba(0,0,0,0.02)]">
                                     <div class="flex items-center gap-3 mb-10">
-                                        <div class="w-2 h-6 bg-indigo-500 rounded-full"></div>
-                                        <h3 class="text-slate-400 font-bold text-[11px] uppercase tracking-[0.2em]">
+                                        <div class="w-2 h-6 bg-emerald-500 rounded-full"></div>
+                                        <h3 class="text-black dark:text-white font-bold text-[11px] uppercase tracking-[0.2em]">
                                             Resumen de tu Asesoria
                                         </h3>
                                     </div>
@@ -1935,19 +1935,19 @@ function render_subject_cards($cards)
                                         <div class="group flex items-center gap-5">
                                             <div class="w-12 h-12 rounded-2xl bg-slate-50 flex items-center justify-center text-xl group-hover:bg-indigo-50 group-hover:text-indigo-600 transition-colors duration-300">👤</div>
                                             <div>
-                                                <p class="text-slate-400 text-[10px] font-bold uppercase tracking-widest mb-0.5">Estudiante</p>
-                                                <p class="font-extrabold text-slate-800 tracking-tight leading-tight"><?php echo htmlspecialchars($current_appointment['student_name']); ?></p>
+                                                <p class="text-black dark:text-white text-[10px] font-bold uppercase tracking-widest mb-0.5">Estudiante</p>
+                                                <p class="font-extrabold text-black dark:text-white tracking-tight leading-tight"><?php echo htmlspecialchars($current_appointment['student_name']); ?></p>
                                             </div>
                                         </div>
 
                                         <div class="group flex items-center gap-5">
                                             <div class="w-12 h-12 rounded-2xl bg-slate-50 flex items-center justify-center text-xl group-hover:bg-indigo-50 group-hover:text-indigo-600 transition-colors duration-300">📚</div>
                                             <div>
-                                                <p class="text-slate-400 text-[10px] font-bold uppercase tracking-widest mb-0.5">Asignatura</p>
-                                                <p class="font-extrabold text-indigo-600 tracking-tight leading-tight">
+                                                <p class="text-black dark:text-white text-[10px] font-bold uppercase tracking-widest mb-0.5">Asignatura</p>
+                                                <p class="font-extrabold text-black dark:text-white tracking-tight leading-tight">
                                                     <?php echo htmlspecialchars($current_appointment['subject']); ?>
                                                     <?php if ($current_appointment['other_subject']): ?>
-                                                        <span class="block text-slate-400 text-xs font-semibold mt-1">(<?php echo htmlspecialchars($current_appointment['other_subject']); ?>)</span>
+                                                        <span class="block text-black dark:text-slice-100 text-xs font-semibold mt-1">(<?php echo htmlspecialchars($current_appointment['other_subject']); ?>)</span>
                                                     <?php endif; ?>
                                                 </p>
                                             </div>
@@ -1956,15 +1956,15 @@ function render_subject_cards($cards)
                                         <div class="group flex items-center gap-5">
                                             <div class="w-12 h-12 rounded-2xl bg-slate-50 flex items-center justify-center text-xl group-hover:bg-emerald-50 group-hover:text-emerald-600 transition-colors duration-300">📅</div>
                                             <div>
-                                                <p class="text-slate-400 text-[10px] font-bold uppercase tracking-widest mb-0.5">Fecha programada</p>
-                                                <p class="font-extrabold text-slate-800 tracking-tight"><?php echo htmlspecialchars($current_appointment['date']); ?></p>
-                                                <p class="text-emerald-500 font-bold text-xs mt-0.5"><?php echo htmlspecialchars($current_appointment['time']); ?></p>
+                                                <p class="text-black dark:text-white text-[10px] font-bold uppercase tracking-widest mb-0.5">Fecha programada</p>
+                                                <p class="font-extrabold text-black dark:text-white tracking-tight"><?php echo htmlspecialchars($current_appointment['date']); ?></p>
+                                                <p class="text-emerald-500 dark:text-emerald-300 font-bold text-xs mt-0.5"><?php echo htmlspecialchars($current_appointment['time']); ?></p>
                                             </div>
                                         </div>
                                     </div>
 
                                     <?php if ($is_cancellable): ?>
-                                        <form method="POST" class="mt-12 pt-8 border-t border-slate-50" onsubmit="return confirm('¿Seguro que desea cancelar su cupo?');">
+                                        <form method="POST" class="mt-12 pt-8 border-t border-black dark:border-white" onsubmit="return confirm('¿Seguro que desea cancelar su cupo?');">
                                             <input type="hidden" name="action" value="student_cancel">
                                             <input type="hidden" name="appointment_id" value="<?php echo $current_appointment['id']; ?>">
                                             <button type="submit" class="w-full flex items-center justify-center gap-2 text-slate-300 hover:text-red-500 font-bold text-[10px] uppercase tracking-[0.2em] transition-all">
@@ -1999,7 +1999,7 @@ function render_subject_cards($cards)
                                             <br>
                                             <br>
 
-                                            <div class="w-full bg-emerald-50 rounded-[2.5rem] p-8 md:p-10 border border-emerald-100 flex flex-col md:flex-row items-center justify-between gap-8 group hover:bg-emerald-100 transition-all duration-500 shadow-sm">
+                                            <div class="w-full bg-gray-200 dark:bg-gray-800 rounded-[2.5rem] p-8 md:p-10 border border-emerald-100 dark:border-none flex flex-col md:flex-row items-center justify-between gap-8 group hover:bg-emerald-100 transition-all duration-500 shadow-sm">
 
                                                 <div class="flex flex-row items-center gap-6 md:gap-12 flex-1">
                                                     <div class="flex-shrink-0 w-16 h-16 md:w-28 md:h-28 bg-white rounded-[2.2rem] flex items-center justify-center text-3xl md:text-6xl shadow-sm border border-emerald-200 group-hover:rotate-12 transition-transform duration-500">
@@ -2007,10 +2007,10 @@ function render_subject_cards($cards)
                                                     </div>
 
                                                     <div class="text-left flex-1">
-                                                        <h4 class="font-black text-emerald-900 text-xl md:text-3xl tracking-tighter leading-none uppercase">
+                                                        <h4 class="font-black text-black dark:text-white text-xl md:text-3xl tracking-tighter leading-none uppercase">
                                                             ¿SI SU PAGO LO VA A REALIZAR A TRAVÉS DE UN CORRESPONSAL?
                                                         </h4>
-                                                        <p class="text-emerald-700/70 text-sm md:text-lg font-bold mt-3 leading-tight max-w-[90%]">
+                                                        <p class="text-emerald-900 dark:text-emerald-400 text-sm md:text-lg font-bold mt-3 leading-tight max-w-[90%]">
                                                             ENVÍENOS LA FOTO DEL COMPROBANTE DESDE SU WHATSAPP AL 3164876650 O INGRESE AL
                                                             WHATSAPP DE ESTE DISPOSITIVO Y ENVIÉ LA FOTO DEL COMPROBANTE
                                                             ADJUNTANDO SUS DATOS, RECUERDE QUE SOLO TIENE 30 MINUTOS PARA
@@ -2022,7 +2022,7 @@ function render_subject_cards($cards)
 
                                                 <div class="w-full md:w-auto flex-shrink-0">
                                                     <a href="https://wa.me/573164876650" target="_blank"
-                                                        class="inline-flex w-full md:w-auto px-16 py-7 bg-emerald-500 text-white rounded-[2rem] font-black text-xs md:text-base uppercase tracking-[0.2em] shadow-2xl shadow-emerald-200 hover:bg-emerald-600 hover:-translate-y-2 active:scale-95 transition-all text-center justify-center whitespace-nowrap">
+                                                        class="inline-flex w-full md:w-auto px-16 py-7 bg-emerald-500 text-white rounded-[2rem] font-black text-xs md:text-base uppercase tracking-[0.2em] shadow-md shadow-emerald-400 hover:bg-emerald-600 hover:-translate-y-2 active:scale-95 transition-all text-center justify-center whitespace-nowrap">
                                                         WhatsApp Soporte
                                                     </a>
                                                 </div>
@@ -2031,7 +2031,7 @@ function render_subject_cards($cards)
                                         <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
 
                                             <!-- CARD NEQUI -->
-                                            <div class="relative min-h-[320px] flex flex-col justify-between p-10 sm:p-10 rounded-[2.5rem] md:rounded-[3.5rem] overflow-hidden group bg-gradient-to-br from-[#062c1d] via-[#02110b] to-black border border-emerald-500/20 shadow-[0_32px_64px_-15px_rgba(0,0,0,0.6)] transition-all duration-500 hover:border-emerald-400/40">
+                                            <div class="relative min-h-[320px] flex flex-col justify-between p-10 sm:p-10 rounded-[2.5rem] md:rounded-[3.5rem] overflow-hidden group bg-white dark:bg-gradient-to-br from-[#062c1d] via-[#02110b] to-black border border-emerald-500/20 shadow-[0_32px_64px_-15px_rgba(0,0,0,0.6)] transition-all duration-500 hover:border-emerald-400/40">
                                                 <div class="absolute -top-20 -right-20 w-80 h-80 bg-emerald-600/20 rounded-full blur-[100px] group-hover:bg-emerald-500/30 transition-colors duration-700"></div>
                                                 <div class="absolute -bottom-20 -left-20 w-64 h-64 bg-green-400/10 rounded-full blur-[80px]"></div>
 
