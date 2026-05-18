@@ -2042,7 +2042,7 @@ function render_subject_cards($cards)
                                                             <h3 class="text-3xl font-black tracking-tighter bg-gradient-to-r from-emerald-800 via-emerald-600 to-emerald-500 dark:from-white dark:via-emerald-100 dark:to-emerald-500/50 bg-clip-text text-transparent">Nequi</h3>
                                                         </div>
                                                         <p class="text-[10px] text-emerald-600/70 dark:text-emerald-400/60 font-black uppercase tracking-[0.3em] pl-5">
-                                                            Realiza tu pago de Inmediato
+                                                            Realiza tu pago de Inmediato bg
                                                         </p>
                                                     </div>
 
@@ -2140,32 +2140,32 @@ function render_subject_cards($cards)
                                     </h3>
 
                                     <!-- FORM -->
-                                    <div class="relative bg-white rounded-[3.5rem] p-10 shadow-[0_25px_50px_-12px_rgba(0,0,0,0.04)] border border-slate-100 flex flex-col justify-center overflow-hidden group">
+                                    <div class="relative bg-gray-200 dark:bg-gray-900 rounded-[3.5rem] p-10 shadow-[0_25px_50px_-12px_rgba(0,0,0,0.04)] border border-slate-100 dark:border-white/5 flex flex-col justify-center overflow-hidden group">
 
-                                        <div class="absolute -top-10 -right-10 w-32 h-32 bg-emerald-50 rounded-full blur-3xl opacity-70 group-hover:opacity-100 transition-opacity duration-700"></div>
+                                        <div class="absolute -top-10 -right-10 w-32 h-32 bg-emerald-50 dark:bg-emerald-900/20 rounded-full blur-3xl opacity-70 group-hover:opacity-100 transition-opacity duration-700"></div>
 
                                         <div class="relative z-10 flex items-center gap-5 mb-10">
                                             <div class="border-l-4 border-emerald-500 pl-6 py-2">
-                                                <h1 class="text-2xl md:text-3xl font-black text-slate-900 tracking-tighter leading-tight">
+                                                <h1 class="text-2xl md:text-3xl font-black text-slate-900 dark:text-white tracking-tighter leading-tight">
                                                     ¡Casi hemos terminado!
-                                                    <span class="block text-slate-400 font-bold text-sm md:text-base uppercase tracking-[0.15em] mt-1">
+                                                    <span class="block text-slate-400 dark:text-slate-500 font-bold text-sm md:text-base uppercase tracking-[0.15em] mt-1">
                                                         Envía la referencia del comprobante para confirmar la asesoría:
                                                     </span>
                                                 </h1>
                                             </div>
                                             <div class="relative">
-                                                <div class="w-14 h-14 bg-gradient-to-br from-emerald-400 to-emerald-600 text-white rounded-[1.5rem] flex items-center justify-center text-xl font-black shadow-[0_10px_20px_rgba(16,185,129,0.2)] transform group-hover:rotate-6 transition-transform">
+                                                <div class="w-14 h-14 bg-gradient-to-br from-emerald-400 to-emerald-600 dark:from-emerald-600 dark:to-emerald-800 text-white rounded-[1.5rem] flex items-center justify-center text-xl font-black shadow-[0_10px_20px_rgba(16,185,129,0.2)] dark:shadow-[0_10px_20px_rgba(0,0,0,0.3)] transform group-hover:rotate-6 transition-transform">
                                                     02
                                                 </div>
                                                 <span class="absolute -top-1 -right-1 flex h-4 w-4">
                                                     <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                                                    <span class="relative inline-flex rounded-full h-4 w-4 bg-emerald-500 border-2 border-white"></span>
+                                                    <span class="relative inline-flex rounded-full h-4 w-4 bg-emerald-500 border-2 border-white dark:border-gray-900"></span>
                                                 </span>
                                             </div>
 
                                         </div>
 
-                                        <form method="POST" class="relative z-10 space-y-6">
+                                        <form method="POST" action="" class="relative z-10 space-y-6">
                                             <input type="hidden" name="action" value="upload_proof">
                                             <input type="hidden" name="appointment_id" value="<?php echo $current_appointment['id']; ?>">
 
@@ -2176,13 +2176,13 @@ function render_subject_cards($cards)
 
                                                 <div class="relative">
                                                     <textarea name="proof_details" rows="3" required
-                                                        class="w-full p-6 bg-slate-50 border-2 border-slate-50 rounded-[2.2rem] 
-                           focus:bg-white focus:border-emerald-400 focus:ring-[12px] focus:ring-emerald-500/5 
-                           outline-none transition-all duration-300 text-sm font-bold text-slate-700 
-                           placeholder:text-slate-300 tracking-tight"
+                                                        class="w-full p-6 bg-slate-50 dark:bg-white/5 border-2 border-slate-50 dark:border-white/10 rounded-[2.2rem] 
+                           focus:bg-white dark:focus:bg-white/10 focus:border-emerald-400 focus:ring-[12px] focus:ring-emerald-500/5 
+                           outline-none transition-all duration-300 text-sm font-bold text-slate-700 dark:text-white 
+                           placeholder:text-slate-300 dark:placeholder:text-slate-600 tracking-tight"
                                                         placeholder="Escribe el código de referencia o adjunta detalles..."></textarea>
 
-                                                    <div class="absolute bottom-5 right-6 text-slate-200 group-focus-within/input:text-emerald-400 transition-colors">
+                                                    <div class="absolute bottom-5 right-6 text-slate-200 dark:text-slate-700 group-focus-within/input:text-emerald-400 transition-colors">
                                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                                                         </svg>
@@ -2207,7 +2207,7 @@ function render_subject_cards($cards)
                                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-emerald-600" viewBox="0 0 20 20" fill="currentColor">
                                                     <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd" />
                                                 </svg>
-                                                <p class="text-center text-[9px] text-slate-400 font-bold uppercase tracking-widest">
+                                                <p class="text-center text-[9px] text-slate-400 dark:text-slate-500 font-bold uppercase tracking-widest">
                                                     Conexión segura y cifrada
                                                 </p>
                                             </div>
