@@ -2021,7 +2021,7 @@ function render_subject_cards($cards)
 
                                                 <div class="w-full md:w-auto flex-shrink-0">
                                                     <a href="https://wa.me/573164876650" target="_blank"
-                                                        class="inline-flex w-full md:w-auto px-16 py-7 bg-emerald-500 text-white rounded-[2rem] font-black text-xs md:text-base uppercase tracking-[0.2em] shadow-md shadow-emerald-400 hover:bg-emerald-600 hover:-translate-y-2 active:scale-95 transition-all text-center justify-center whitespace-nowrap">
+                                                        class="inline-flex w-full md:w-auto px-16 py-7 bg-[#10B981] text-white rounded-[2rem] font-black text-xs md:text-base uppercase tracking-[0.2em] shadow-md shadow-emerald-400 hover:bg-emerald-600 hover:-translate-y-2 active:scale-95 transition-all text-center justify-center whitespace-nowrap">
                                                         WhatsApp Soporte
                                                     </a>
                                                 </div>
