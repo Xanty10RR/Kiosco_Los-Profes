@@ -1920,7 +1920,7 @@ function render_subject_cards($cards)
                         </h3>
 
                         <!-- CARD RESUMEN -->
-                        <div class="">
+                        <div id="timeline-container" class="">
 
                             <div class="lg:col-span-4 space-y-6 order-2 lg:order-1">
                                 <div class="max-w-5xl bg-gray-200 dark:bg-gray-800 rounded-[2.5rem] p-8 shadow-[0_4px_20px_rgba(0,0,0,0.02)]">
@@ -1991,7 +1991,6 @@ function render_subject_cards($cards)
                                     Realiza el pago
                                 </h3>
 
-                                <!-- CARD NEQUI -->
                                 <div class="lg:col-span-8 space-y-8 order-1">
                                     <?php if ($is_payment_pending): ?>
                                         <!-- AVISO -->
@@ -2042,7 +2041,7 @@ function render_subject_cards($cards)
                                                             <h3 class="text-3xl font-black tracking-tighter bg-gradient-to-r from-emerald-800 via-emerald-600 to-emerald-500 dark:from-white dark:via-emerald-100 dark:to-emerald-500/50 bg-clip-text text-transparent">Nequi</h3>
                                                         </div>
                                                         <p class="text-[10px] text-emerald-600/70 dark:text-emerald-400/60 font-black uppercase tracking-[0.3em] pl-5">
-                                                            Realiza tu pago de Inmediato bg
+                                                            Realiza tu pago de Inmediato
                                                         </p>
                                                     </div>
 
@@ -2109,7 +2108,7 @@ function render_subject_cards($cards)
                                             </div>
 
                                             <!-- LÍMITE DE PAGO -->
-                                            <div id="timer-container" class="bg-white dark:bg-slate-900 rounded-[2.5rem] p-6 md:p-8 shadow-xl dark:shadow-2xl relative overflow-hidden border border-slate-100 dark:border-white/5 flex flex-col justify-center min-h-[320px]">
+                                            <div id="timer-container" class="bg-white dark:bg-gray-800 rounded-[2.5rem] p-6 md:p-8 shadow-xl dark:shadow-2xl relative overflow-hidden border border-slate-100 dark:border-white/5 flex flex-col justify-center min-h-[320px]">
                                                 <div class="relative z-10">
                                                     <p class="text-dark dark:text-white font-bold text-[10px] uppercase tracking-[0.3em] mb-6 text-center">Tiempo límite de pago</p>
                                                     <div id="timer-display" class="text-5xl md:text-6xl font-black text-slate-900 dark:text-white tracking-tighter text-center tabular-nums leading-none mb-6 dark:drop-shadow-2xl">--:--</div>
@@ -2140,7 +2139,7 @@ function render_subject_cards($cards)
                                     </h3>
 
                                     <!-- FORM -->
-                                    <div class="relative bg-gray-200 dark:bg-gray-900 rounded-[3.5rem] p-10 shadow-[0_25px_50px_-12px_rgba(0,0,0,0.04)] border border-slate-100 dark:border-white/5 flex flex-col justify-center overflow-hidden group">
+                                    <div class="relative bg-gray-200 dark:bg-gray-800 rounded-[3.5rem] p-10 shadow-[0_25px_50px_-12px_rgba(0,0,0,0.04)] border border-slate-100 dark:border-white/5 flex flex-col justify-center overflow-hidden group">
 
                                         <div class="absolute -top-10 -right-10 w-32 h-32 bg-emerald-50 dark:bg-emerald-900/20 rounded-full blur-3xl opacity-70 group-hover:opacity-100 transition-opacity duration-700"></div>
 
@@ -2148,7 +2147,7 @@ function render_subject_cards($cards)
                                             <div class="border-l-4 border-emerald-500 pl-6 py-2">
                                                 <h1 class="text-2xl md:text-3xl font-black text-slate-900 dark:text-white tracking-tighter leading-tight">
                                                     ¡Casi hemos terminado!
-                                                    <span class="block text-slate-400 dark:text-slate-500 font-bold text-sm md:text-base uppercase tracking-[0.15em] mt-1">
+                                                    <span class="block text-slate-900 dark:text-emerald-400 font-bold text-sm md:text-base uppercase tracking-[0.15em] mt-1">
                                                         Envía la referencia del comprobante para confirmar la asesoría:
                                                     </span>
                                                 </h1>
@@ -2170,7 +2169,7 @@ function render_subject_cards($cards)
                                             <input type="hidden" name="appointment_id" value="<?php echo $current_appointment['id']; ?>">
 
                                             <div class="relative group/input">
-                                                <label class="block text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] mb-3 ml-2">
+                                                <label class="block text-[10px] font-black text-slate-400 dark:text-emerald-400 uppercase tracking-[0.2em] mb-3 ml-2">
                                                     Referencia de Transacción
                                                 </label>
 
@@ -2179,7 +2178,7 @@ function render_subject_cards($cards)
                                                         class="w-full p-6 bg-slate-50 dark:bg-white/5 border-2 border-slate-50 dark:border-white/10 rounded-[2.2rem] 
                            focus:bg-white dark:focus:bg-white/10 focus:border-emerald-400 focus:ring-[12px] focus:ring-emerald-500/5 
                            outline-none transition-all duration-300 text-sm font-bold text-slate-700 dark:text-white 
-                           placeholder:text-slate-300 dark:placeholder:text-slate-600 tracking-tight"
+                           placeholder:text-slate-500 dark:placeholder:text-slate-300 tracking-tight"
                                                         placeholder="Escribe el código de referencia o adjunta detalles..."></textarea>
 
                                                     <div class="absolute bottom-5 right-6 text-slate-200 dark:text-slate-700 group-focus-within/input:text-emerald-400 transition-colors">
@@ -2191,7 +2190,7 @@ function render_subject_cards($cards)
                                             </div>
 
                                             <button type="submit"
-                                                class="group relative w-full py-6 bg-[#062c1d] overflow-hidden rounded-[1.8rem] font-black text-xs uppercase tracking-[0.3em] text-white shadow-[0_20px_40px_rgba(6,44,29,0.2)] hover:shadow-[0_20px_40px_rgba(16,185,129,0.3)] active:scale-[0.98] transition-all duration-300">
+                                                class="group relative w-full py-6 bg-[#10B981] overflow-hidden rounded-[1.8rem] font-black text-xs uppercase tracking-[0.2em] text-white shadow-[0_10px_20px_rgba(6,44,29,0.2)] hover:shadow-[0_10px_20px_rgba(16,185,129,0.3)] active:scale-[0.98] transition-all duration-300">
 
                                                 <div class="absolute inset-0 bg-emerald-600 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out"></div>
 
