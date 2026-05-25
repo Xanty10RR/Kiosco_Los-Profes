@@ -8,7 +8,7 @@ session_start();
 
 // --- 1. Configuración de la Base de Datos MySQL ---
 // ATENCIÓN: Debe reemplazar estos valores con sus credenciales reales de MySQL.
-define('DB_HOST', 'localhost');
+define('DB_HOST', '127.0.0.1'); // Agregue 127.0.0.1
 define('DB_USER', 'root');
 define('DB_PASS', '');
 define('DB_NAME', 'kiosco_profes_db'); // Asegúrese de que esta DB exista (ejecute database_setup.sql)
@@ -17,9 +17,9 @@ define('DB_NAME', 'kiosco_profes_db'); // Asegúrese de que esta DB exista (ejec
 $pdo = null;
 $db_connected = false;
 $error_message = '';
-
+// Cambie el pueto de 3306 a 3307
 try {
-    $pdo = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME . ";charset=utf8", DB_USER, DB_PASS);
+    $pdo = new PDO("mysql:host=" . DB_HOST . ";port=3307;dbname=" . DB_NAME . ";charset=utf8", DB_USER, DB_PASS);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $db_connected = true;
 } catch (PDOException $e) {
