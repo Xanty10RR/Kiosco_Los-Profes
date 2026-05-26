@@ -2012,14 +2012,15 @@ function render_subject_cards($cards)
 
                                             <div class="text-left flex-1">
                                                 <h4 class="font-black text-black dark:text-white text-xl md:text-3xl tracking-tighter leading-none uppercase">
-                                                    ¿SI SU PAGO LO VA A REALIZAR A TRAVÉS DE UN CORRESPONSAL?
+                                                    ¿Vas a realizar tu pago desde un corresponsal?
                                                 </h4>
-                                                <p class="text-emerald-900 dark:text-emerald-400 text-sm md:text-lg font-bold mt-3 leading-tight max-w-[90%]">
-                                                    ENVÍENOS LA FOTO DEL COMPROBANTE DESDE SU WHATSAPP AL 3164876650 O INGRESE AL
-                                                    WHATSAPP DE ESTE DISPOSITIVO Y ENVIÉ LA FOTO DEL COMPROBANTE
-                                                    ADJUNTANDO SUS DATOS, RECUERDE QUE SOLO TIENE 30 MINUTOS PARA
-                                                    REALIZAR ESTE PROCESO DE LO CONTRARIO DEBERÁ AGENDAR NUEVAMENTE
-                                                    SU ASESORÍA.
+                                                <p class="text-emerald-900 dark:text-emerald-400 text-sm md:text-lg font-bold uppercase mt-3 leading-tight max-w-[90%]">
+                                                    Una vez realizado el pago, envíanos la foto del comprobante a 
+                                                    nuestro WhatsApp 3164876650 o haz clic en el botón de WhatsApp 
+                                                    desde este dispositivo para enviarlo directamente.
+                                                    Recuerda adjuntar tus datos para validar correctamente tu asesoría. 
+                                                    Recuerde que solo tiene 30 minutos para completar este proceso. 
+                                                    Si el tiempo expira, deberás agendar nuevamente tu asesoría.
                                                 </p>
                                             </div>
                                         </div>
