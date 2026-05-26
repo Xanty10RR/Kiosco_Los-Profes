@@ -1905,7 +1905,7 @@ function render_subject_cards($cards)
                 </div>
 
                 <!-- NUEVO -->
-                <div class="relative pl-8 space-y-24 py-10 before:absolute before:left-0 before:top-0 before:h-full before:w-1 before:bg-emerald-500/20">
+                <div id="timeline-container" class="relative pl-8 space-y-24 py-10 before:absolute before:left-0 before:top-0 before:h-full before:w-1 before:bg-emerald-500/20">
 
                     <!-- PASO 1 -->
                     <div id="paso1" class="ml-8 relative">
@@ -1920,10 +1920,10 @@ function render_subject_cards($cards)
                         </h3>
 
                         <!-- CARD RESUMEN -->
-                        <div id="timeline-container" class="">
+                        <div>
 
                             <div class="lg:col-span-4 space-y-6 order-2 lg:order-1">
-                                <div class="max-w-5xl bg-gray-200 dark:bg-gray-800 rounded-[2.5rem] p-8 shadow-[0_4px_20px_rgba(0,0,0,0.02)]">
+                                <div class="max-w-5xl bg-white/50 dark:bg-gray-800 rounded-[2.5rem] p-8 shadow-[0_4px_20px_rgba(0,0,0,0.02)]">
                                     <div class="flex items-center gap-3 mb-10">
                                         <div class="w-2 h-6 bg-emerald-500 rounded-full"></div>
                                         <h3 class="text-black dark:text-white font-bold text-[11px] uppercase tracking-[0.2em]">
@@ -1998,7 +1998,7 @@ function render_subject_cards($cards)
                                             <br>
                                             <br>
 
-                                            <div class="w-full bg-gray-200 dark:bg-gray-800 rounded-[2.5rem] p-8 md:p-10 border border-emerald-100 dark:border-none flex flex-col md:flex-row items-center justify-between gap-8 group hover:bg-emerald-100 transition-all duration-500 shadow-sm">
+                                            <div class="w-full bg-white/50 dark:bg-gray-800 rounded-[2.5rem] p-8 md:p-10 border border-emerald-100 dark:border-none flex flex-col md:flex-row items-center justify-between gap-8 group hover:bg-emerald-100 transition-all duration-500 shadow-sm">
 
                                                 <div class="flex flex-row items-center gap-6 md:gap-12 flex-1">
                                                     <div class="flex-shrink-0 w-16 h-16 md:w-28 md:h-28 bg-white rounded-[2.2rem] flex items-center justify-center text-3xl md:text-6xl shadow-sm border border-emerald-200 group-hover:rotate-12 transition-transform duration-500">
@@ -2030,7 +2030,7 @@ function render_subject_cards($cards)
                                         <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
 
                                             <!-- CARD NEQUI -->
-                                            <div class="relative min-h-[320px] flex flex-col justify-between p-10 sm:p-10 rounded-[2.5rem] md:rounded-[3.5rem] overflow-hidden group bg-white dark:bg-gradient-to-br dark:from-[#062c1d] dark:via-[#02110b] dark:to-black border border-emerald-100 dark:border-emerald-500/20 shadow-[0_32px_64px_-15px_rgba(0,0,0,0.05)] dark:shadow-[0_32px_64px_-15px_rgba(0,0,0,0.6)] transition-all duration-500 hover:border-emerald-400/40">
+                                            <div class="relative min-h-[320px] flex flex-col justify-between p-10 sm:p-10 rounded-[2.5rem] md:rounded-[3.5rem] overflow-hidden group bg-gradient-to-br from-[#F6FDFA] via-[#CDF3E5] dark:bg-gradient-to-br dark:from-[#062c1d] dark:via-[#02110b] dark:to-black border border-emerald-100 dark:border-emerald-500/20 shadow-[0_32px_64px_-15px_rgba(0,0,0,0.05)] dark:shadow-[0_32px_64px_-15px_rgba(0,0,0,0.6)] transition-all duration-500 hover:border-emerald-400/40">
                                                 <div class="absolute -top-20 -right-20 w-80 h-80 bg-emerald-50 dark:bg-emerald-600/20 rounded-full blur-[100px] group-hover:bg-emerald-100 dark:group-hover:bg-emerald-500/30 transition-colors duration-700"></div>
                                                 <div class="absolute -bottom-20 -left-20 w-64 h-64 bg-green-50 dark:bg-green-400/10 rounded-full blur-[80px]"></div>
 
@@ -2060,7 +2060,7 @@ function render_subject_cards($cards)
                                                     <div class="flex flex-col gap-1">
 
                                                         <div class="flex items-center gap-4 group/number cursor-pointer">
-                                                            <p class="text-3xl md:text-5xl font-mono font-medium tracking-[0.15em] text-slate-800 dark:text-white/90 group-hover:text-emerald-700 dark:group-hover:text-emerald-50 transition-colors">
+                                                            <p class="text-3xl md:text-5xl font-mono font-medium tracking-[0.15em] text-slate-800 dark:text-white/90 group-hover:text-emerald-700 dark:group-hover:text-emerald-300 transition-colors">
                                                                 316 <span class="text-emerald-600 dark:text-emerald-400 font-black drop-shadow-[0_0_15px_rgba(52,211,153,0.1)] dark:drop-shadow-[0_0_15px_rgba(52,211,153,0.3)]">669</span> 2913
                                                             </p>
                                                             <div class="opacity-0 group-hover/number:opacity-100 transition-all transform translate-x-[-10px] group-hover:translate-x-0 bg-emerald-500/20 p-2 rounded-full border border-emerald-500/30">
@@ -2139,7 +2139,7 @@ function render_subject_cards($cards)
                                     </h3>
 
                                     <!-- FORM -->
-                                    <div class="relative bg-gray-200 dark:bg-gray-800 rounded-[3.5rem] p-10 shadow-[0_25px_50px_-12px_rgba(0,0,0,0.04)] border border-slate-100 dark:border-white/5 flex flex-col justify-center overflow-hidden group">
+                                    <div class="relative bg-white/50 dark:bg-gray-800 rounded-[3.5rem] p-10 shadow-[0_25px_50px_-12px_rgba(0,0,0,0.04)] border border-slate-100 dark:border-white/5 flex flex-col justify-center overflow-hidden group">
 
                                         <div class="absolute -top-10 -right-10 w-32 h-32 bg-emerald-50 dark:bg-emerald-900/20 rounded-full blur-3xl opacity-70 group-hover:opacity-100 transition-opacity duration-700"></div>
 
