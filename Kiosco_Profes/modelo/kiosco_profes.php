@@ -1919,9 +1919,9 @@ function render_subject_cards($cards)
                             Verifica tu asesoría
                         </h3>
 
-                        <p class="text-slate-500 text-sm md:text-base font-medium max-w-3xl leading-relaxed m-3">
+                        <p class="text-slate-500 dark:text-slate-400 text-sm md:text-base font-medium max-w-3xl leading-relaxed m-3 transition-colors duration-300">
                             Estás a pocos pasos de asegurar tu asesoría.
-                            Verifica tus datos y continúa con el proceso de pago y confirmación.
+                            Verifica que los datos sean correctos y continúa con el proceso de pago y confirmación.
                         </p>
 
                         <!-- CARD RESUMEN -->
@@ -2174,7 +2174,7 @@ function render_subject_cards($cards)
                                 <input type="hidden" name="appointment_id" value="<?php echo $current_appointment['id']; ?>">
 
                                 <div class="relative group/input">
-                                    <label class="block text-[10px] font-black text-slate-400 dark:text-emerald-400 uppercase tracking-[0.2em] mb-3 ml-2">
+                                    <label class="block text-[10px] font-black text-slate-500 dark:text-emerald-400 uppercase tracking-[0.2em] mb-3 ml-2">
                                         Referencia de Transacción
                                     </label>
 
