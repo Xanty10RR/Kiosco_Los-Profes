@@ -1919,6 +1919,11 @@ function render_subject_cards($cards)
                             Verifica tu asesoría
                         </h3>
 
+                        <p class="text-slate-500 text-sm md:text-base font-medium max-w-3xl leading-relaxed m-3">
+                            Estás a pocos pasos de asegurar tu asesoría.
+                            Verifica tus datos y continúa con el proceso de pago y confirmación.
+                        </p>
+
                         <!-- CARD RESUMEN -->
                         <div>
 
@@ -1979,377 +1984,377 @@ function render_subject_cards($cards)
 
                     <!-- CIERRE DE CONTENEDORES DEL PASO 1 -->
 
-                            <!-- PASO 2 -->
-                            <div id="paso2" class="ml-8 relative">
-                                <div class="absolute -left-[78px] top-1 w-8 h-8 bg-emerald-500 rounded-full border-4 border-white dark:border-gray-900 shadow-[0_0_15px_rgba(16,185,129,0.5)] flex items-center justify-center text-[10px] font-black text-white">2</div>
+                    <!-- PASO 2 -->
+                    <div id="paso2" class="ml-8 relative">
+                        <div class="absolute -left-[78px] top-1 w-8 h-8 bg-emerald-500 rounded-full border-4 border-white dark:border-gray-900 shadow-[0_0_15px_rgba(16,185,129,0.5)] flex items-center justify-center text-[10px] font-black text-white">2</div>
 
-                                <p class="text-emerald-500 dark:text-emerald-400 font-black uppercase text-xs tracking-[0.3em] mb-1">
-                                    Paso 2
-                                </p>
+                        <p class="text-emerald-500 dark:text-emerald-400 font-black uppercase text-xs tracking-[0.3em] mb-1">
+                            Paso 2
+                        </p>
 
-                                <h3 class="text-2xl md:text-3xl font-black text-slate-900 dark:text-white mb-4 tracking-tighter italic uppercase">
-                                    Realiza el pago
-                                </h3>
+                        <h3 class="text-2xl md:text-3xl font-black text-slate-900 dark:text-white mb-4 tracking-tighter italic uppercase">
+                            Realiza el pago
+                        </h3>
 
-                                <div class="lg:col-span-8 space-y-8 order-1">
-                                    <?php if ($is_payment_pending): ?>
-                                        <!-- AVISO -->
-                                        <div class="w-full px-2 md:px-4 pb-10">
-                                            <br>
-                                            <br>
+                        <div class="lg:col-span-8 space-y-8 order-1">
+                            <?php if ($is_payment_pending): ?>
+                                <!-- AVISO -->
+                                <div class="w-full px-2 md:px-4 pb-10">
+                                    <br>
+                                    <br>
 
-                                            <div class="w-full bg-white/50 dark:bg-gray-800 rounded-[2.5rem] p-8 md:p-10 border border-emerald-100 dark:border-none flex flex-col md:flex-row items-center justify-between gap-8 group hover:bg-emerald-100 transition-all duration-500 shadow-sm">
+                                    <div class="w-full bg-white/50 dark:bg-gray-800 rounded-[2.5rem] p-8 md:p-10 border border-emerald-100 dark:border-none flex flex-col md:flex-row items-center justify-between gap-8 group hover:bg-emerald-100 transition-all duration-500 shadow-sm">
 
-                                                <div class="flex flex-row items-center gap-6 md:gap-12 flex-1">
-                                                    <div class="flex-shrink-0 w-16 h-16 md:w-28 md:h-28 bg-white rounded-[2.2rem] flex items-center justify-center text-3xl md:text-6xl shadow-sm border border-emerald-200 group-hover:rotate-12 transition-transform duration-500">
-                                                        📸
-                                                    </div>
+                                        <div class="flex flex-row items-center gap-6 md:gap-12 flex-1">
+                                            <div class="flex-shrink-0 w-16 h-16 md:w-28 md:h-28 bg-white rounded-[2.2rem] flex items-center justify-center text-3xl md:text-6xl shadow-sm border border-emerald-200 group-hover:rotate-12 transition-transform duration-500">
+                                                📸
+                                            </div>
 
-                                                    <div class="text-left flex-1">
-                                                        <h4 class="font-black text-black dark:text-white text-xl md:text-3xl tracking-tighter leading-none uppercase">
-                                                            ¿SI SU PAGO LO VA A REALIZAR A TRAVÉS DE UN CORRESPONSAL?
-                                                        </h4>
-                                                        <p class="text-emerald-900 dark:text-emerald-400 text-sm md:text-lg font-bold mt-3 leading-tight max-w-[90%]">
-                                                            ENVÍENOS LA FOTO DEL COMPROBANTE DESDE SU WHATSAPP AL 3164876650 O INGRESE AL
-                                                            WHATSAPP DE ESTE DISPOSITIVO Y ENVIÉ LA FOTO DEL COMPROBANTE
-                                                            ADJUNTANDO SUS DATOS, RECUERDE QUE SOLO TIENE 30 MINUTOS PARA
-                                                            REALIZAR ESTE PROCESO DE LO CONTRARIO DEBERÁ AGENDAR NUEVAMENTE
-                                                            SU ASESORÍA.
-                                                        </p>
-                                                    </div>
-                                                </div>
-
-                                                <div class="w-full md:w-auto flex-shrink-0">
-                                                    <a href="https://wa.me/573164876650" target="_blank"
-                                                        class="inline-flex w-full md:w-auto px-16 py-7 bg-[#10B981] text-white rounded-[2rem] font-black text-xs md:text-base uppercase tracking-[0.2em] shadow-md shadow-emerald-400 hover:bg-emerald-600 hover:-translate-y-2 active:scale-95 transition-all text-center justify-center whitespace-nowrap">
-                                                        WhatsApp Soporte
-                                                    </a>
-                                                </div>
+                                            <div class="text-left flex-1">
+                                                <h4 class="font-black text-black dark:text-white text-xl md:text-3xl tracking-tighter leading-none uppercase">
+                                                    ¿SI SU PAGO LO VA A REALIZAR A TRAVÉS DE UN CORRESPONSAL?
+                                                </h4>
+                                                <p class="text-emerald-900 dark:text-emerald-400 text-sm md:text-lg font-bold mt-3 leading-tight max-w-[90%]">
+                                                    ENVÍENOS LA FOTO DEL COMPROBANTE DESDE SU WHATSAPP AL 3164876650 O INGRESE AL
+                                                    WHATSAPP DE ESTE DISPOSITIVO Y ENVIÉ LA FOTO DEL COMPROBANTE
+                                                    ADJUNTANDO SUS DATOS, RECUERDE QUE SOLO TIENE 30 MINUTOS PARA
+                                                    REALIZAR ESTE PROCESO DE LO CONTRARIO DEBERÁ AGENDAR NUEVAMENTE
+                                                    SU ASESORÍA.
+                                                </p>
                                             </div>
                                         </div>
-                                        <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
 
-                                            <!-- CARD NEQUI -->
-                                            <div class="relative min-h-[320px] flex flex-col justify-between p-10 sm:p-10 rounded-[2.5rem] md:rounded-[3.5rem] overflow-hidden group bg-gradient-to-br from-[#F6FDFA] via-[#CDF3E5] dark:bg-gradient-to-br dark:from-[#062c1d] dark:via-[#02110b] dark:to-black border border-emerald-100 dark:border-emerald-500/20 shadow-[0_32px_64px_-15px_rgba(0,0,0,0.05)] dark:shadow-[0_32px_64px_-15px_rgba(0,0,0,0.6)] transition-all duration-500 hover:border-emerald-400/40">
-                                                <div class="absolute -top-20 -right-20 w-80 h-80 bg-emerald-50 dark:bg-emerald-600/20 rounded-full blur-[100px] group-hover:bg-emerald-100 dark:group-hover:bg-emerald-500/30 transition-colors duration-700"></div>
-                                                <div class="absolute -bottom-20 -left-20 w-64 h-64 bg-green-50 dark:bg-green-400/10 rounded-full blur-[80px]"></div>
-
-                                                <div class="relative z-10 flex justify-between items-start">
-                                                    <div class="space-y-1">
-                                                        <div class="flex items-center gap-2">
-                                                            <div class="w-2.5 h-2.5 bg-emerald-400 rounded-full animate-pulse shadow-[0_0_10px_rgba(52,211,153,0.8)]"></div>
-                                                            <h3 class="text-3xl font-black tracking-tighter bg-gradient-to-r from-emerald-800 via-emerald-600 to-emerald-500 dark:from-white dark:via-emerald-100 dark:to-emerald-500/50 bg-clip-text text-transparent">Nequi</h3>
-                                                        </div>
-                                                        <p class="text-[10px] text-emerald-600/70 dark:text-emerald-400/60 font-black uppercase tracking-[0.3em] pl-5">
-                                                            Realiza tu pago de Inmediato
-                                                        </p>
-                                                    </div>
-
-                                                    <div class="relative w-14 h-11 bg-gradient-to-br from-emerald-200/20 to-emerald-600/20 rounded-xl border border-emerald-400/30 flex items-center justify-center overflow-hidden shadow-inner">
-                                                        <div class="absolute inset-0 grid grid-cols-2 gap-px opacity-30">
-                                                            <div class="border-r border-b border-emerald-400/50"></div>
-                                                            <div class="border-b border-emerald-400/50"></div>
-                                                            <div class="border-r border-emerald-400/50"></div>
-                                                            <div></div>
-                                                        </div>
-                                                        <div class="w-8 h-6 bg-emerald-400/10 rounded-md border border-emerald-400/40 shadow-2xl"></div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="relative z-10">
-                                                    <div class="flex flex-col gap-1">
-
-                                                        <div class="flex items-center gap-4 group/number cursor-pointer">
-                                                            <p class="text-3xl md:text-5xl font-mono font-medium tracking-[0.15em] text-slate-800 dark:text-white/90 group-hover:text-emerald-700 dark:group-hover:text-emerald-300 transition-colors">
-                                                                316 <span class="text-emerald-600 dark:text-emerald-400 font-black drop-shadow-[0_0_15px_rgba(52,211,153,0.1)] dark:drop-shadow-[0_0_15px_rgba(52,211,153,0.3)]">669</span> 2913
-                                                            </p>
-                                                            <div class="opacity-0 group-hover/number:opacity-100 transition-all transform translate-x-[-10px] group-hover:translate-x-0 bg-emerald-500/20 p-2 rounded-full border border-emerald-500/30">
-                                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-emerald-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2" />
-                                                                </svg>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-
-                                                <div class="relative z-10 pt-8 border-t border-emerald-500/10 flex justify-between items-end">
-                                                    <div class="space-y-1">
-                                                        <div class="flex items-center gap-2 mb-1">
-
-                                                        </div>
-                                                        <p class="text-slate-500 dark:text-slate-400 text-[10px] font-bold uppercase tracking-widest pl-0.5">
-                                                            Total a Pagar por tu Asesoría
-                                                        </p>
-                                                        <div class="flex items-baseline gap-2">
-                                                            <span class="text-4xl md:text-5xl font-black text-slate-900 dark:text-white tracking-tighter drop-shadow-md">
-                                                                $30.000
-                                                            </span>
-                                                            <span class="text-sm font-bold text-emerald-400 italic">
-                                                                PESOS
-                                                            </span>
-                                                        </div>
-                                                    </div>
-
-                                                    <div class="flex flex-col items-end gap-2">
-                                                        <div class="px-5 py-2.5 bg-emerald-500/10 backdrop-blur-xl border border-emerald-500/30 rounded-[1.2rem] flex items-center gap-3 shadow-2xl">
-                                                            <span class="relative flex h-2.5 w-2.5">
-                                                                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                                                                <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-400"></span>
-                                                            </span>
-                                                            <span class="text-emerald-700 dark:text-emerald-100 text-[11px] font-black uppercase tracking-widest">Sesión 1H</span>
-                                                        </div>
-                                                        <p class="text-[10px] text-emerald-600 dark:text-emerald-400 font-black italic pr-2 uppercase tracking-tighter">
-                                                            LOS PROFES
-                                                        </p>
-                                                    </div>
-                                                </div>
-
-                                                <div class="absolute inset-0 opacity-[0.04] pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')] contrast-150"></div>
-                                            </div>
-
-                                            <!-- LÍMITE DE PAGO -->
-                                            <div id="timer-container" class="bg-white dark:bg-gray-800 rounded-[2.5rem] p-6 md:p-8 shadow-xl dark:shadow-2xl relative overflow-hidden border border-slate-100 dark:border-white/5 flex flex-col justify-center min-h-[320px]">
-                                                <div class="relative z-10">
-                                                    <p class="text-dark dark:text-white font-bold text-[10px] uppercase tracking-[0.3em] mb-6 text-center">Tiempo límite de pago</p>
-                                                    <div id="timer-display" class="text-5xl md:text-6xl font-black text-slate-900 dark:text-white tracking-tighter text-center tabular-nums leading-none mb-6 dark:drop-shadow-2xl">--:--</div>
-                                                    <div class="flex items-center justify-center gap-3 bg-slate-200 dark:bg-white/5 py-3 px-6 rounded-2xl border border-slate-100 dark:border-white/10">
-                                                        <div class="relative flex h-3 w-3">
-                                                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
-                                                            <span class="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
-                                                        </div>
-                                                        <p class="text-[10px] text-red-600 dark:text-red-500 font-black uppercase tracking-widest animate-pulse">Agendamiento en Curso</p>
-                                                    </div>
-                                                </div>
-                                            </div>
+                                        <div class="w-full md:w-auto flex-shrink-0">
+                                            <a href="https://wa.me/573164876650" target="_blank"
+                                                class="inline-flex w-full md:w-auto px-16 py-7 bg-[#10B981] text-white rounded-[2rem] font-black text-xs md:text-base uppercase tracking-[0.2em] shadow-md shadow-emerald-400 hover:bg-emerald-600 hover:-translate-y-2 active:scale-95 transition-all text-center justify-center whitespace-nowrap">
+                                                WhatsApp Soporte
+                                            </a>
                                         </div>
+                                    </div>
                                 </div>
-                            </div>
-                            <!-- CIERRE DE PASO 2 -->
+                                <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
 
-                                <!-- PASO 3 -->
-                                <div id="paso3" class="ml-8 relative">
-                                    <div class="absolute -left-[78px] top-1 w-8 h-8 bg-emerald-500 rounded-full border-4 border-white dark:border-gray-900 shadow-[0_0_15px_rgba(16,185,129,0.5)] flex items-center justify-center text-[10px] font-black text-white">3</div>
+                                    <!-- CARD NEQUI -->
+                                    <div class="relative min-h-[320px] flex flex-col justify-between p-10 sm:p-10 rounded-[2.5rem] md:rounded-[3.5rem] overflow-hidden group bg-gradient-to-br from-[#F6FDFA] via-[#CDF3E5] dark:bg-gradient-to-br dark:from-[#062c1d] dark:via-[#02110b] dark:to-black border border-emerald-100 dark:border-emerald-500/20 shadow-[0_32px_64px_-15px_rgba(0,0,0,0.05)] dark:shadow-[0_32px_64px_-15px_rgba(0,0,0,0.6)] transition-all duration-500 hover:border-emerald-400/40">
+                                        <div class="absolute -top-20 -right-20 w-80 h-80 bg-emerald-50 dark:bg-emerald-600/20 rounded-full blur-[100px] group-hover:bg-emerald-100 dark:group-hover:bg-emerald-500/30 transition-colors duration-700"></div>
+                                        <div class="absolute -bottom-20 -left-20 w-64 h-64 bg-green-50 dark:bg-green-400/10 rounded-full blur-[80px]"></div>
 
-                                    <p class="text-emerald-500 dark:text-emerald-400 font-black uppercase text-xs tracking-[0.3em] mb-1">
-                                        Paso 3
-                                    </p>
-
-                                    <h3 class="text-2xl md:text-3xl font-black text-slate-900 dark:text-white mb-4 tracking-tighter italic uppercase">
-                                        Envía el comprobante
-                                    </h3>
-
-                                    <!-- FORM -->
-                                    <div class="relative bg-white/50 dark:bg-gray-800 rounded-[3.5rem] p-10 shadow-[0_25px_50px_-12px_rgba(0,0,0,0.04)] border border-slate-100 dark:border-white/5 flex flex-col justify-center overflow-hidden group">
-
-                                        <div class="absolute -top-10 -right-10 w-32 h-32 bg-emerald-50 dark:bg-emerald-900/20 rounded-full blur-3xl opacity-70 group-hover:opacity-100 transition-opacity duration-700"></div>
-
-                                        <div class="relative z-10 flex items-center gap-5 mb-10">
-                                            <div class="border-l-4 border-emerald-500 pl-6 py-2">
-                                                <h1 class="text-2xl md:text-3xl font-black text-slate-900 dark:text-white tracking-tighter leading-tight">
-                                                    ¡Casi hemos terminado!
-                                                    <span class="block text-slate-900 dark:text-emerald-400 font-bold text-sm md:text-base uppercase tracking-[0.15em] mt-1">
-                                                        Envía la referencia del comprobante para confirmar la asesoría:
-                                                    </span>
-                                                </h1>
-                                            </div>
-                                            <div class="relative">
-                                                <div class="w-14 h-14 bg-gradient-to-br from-emerald-400 to-emerald-600 dark:from-emerald-600 dark:to-emerald-800 text-white rounded-[1.5rem] flex items-center justify-center text-xl font-black shadow-[0_10px_20px_rgba(16,185,129,0.2)] dark:shadow-[0_10px_20px_rgba(0,0,0,0.3)] transform group-hover:rotate-6 transition-transform">
-                                                    02
+                                        <div class="relative z-10 flex justify-between items-start">
+                                            <div class="space-y-1">
+                                                <div class="flex items-center gap-2">
+                                                    <div class="w-2.5 h-2.5 bg-emerald-400 rounded-full animate-pulse shadow-[0_0_10px_rgba(52,211,153,0.8)]"></div>
+                                                    <h3 class="text-3xl font-black tracking-tighter bg-gradient-to-r from-emerald-800 via-emerald-600 to-emerald-500 dark:from-white dark:via-emerald-100 dark:to-emerald-500/50 bg-clip-text text-transparent">Nequi</h3>
                                                 </div>
-                                                <span class="absolute -top-1 -right-1 flex h-4 w-4">
-                                                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                                                    <span class="relative inline-flex rounded-full h-4 w-4 bg-emerald-500 border-2 border-white dark:border-gray-900"></span>
-                                                </span>
+                                                <p class="text-[10px] text-emerald-600/70 dark:text-emerald-400/60 font-black uppercase tracking-[0.3em] pl-5">
+                                                    Realiza tu pago de Inmediato
+                                                </p>
                                             </div>
 
+                                            <div class="relative w-14 h-11 bg-gradient-to-br from-emerald-200/20 to-emerald-600/20 rounded-xl border border-emerald-400/30 flex items-center justify-center overflow-hidden shadow-inner">
+                                                <div class="absolute inset-0 grid grid-cols-2 gap-px opacity-30">
+                                                    <div class="border-r border-b border-emerald-400/50"></div>
+                                                    <div class="border-b border-emerald-400/50"></div>
+                                                    <div class="border-r border-emerald-400/50"></div>
+                                                    <div></div>
+                                                </div>
+                                                <div class="w-8 h-6 bg-emerald-400/10 rounded-md border border-emerald-400/40 shadow-2xl"></div>
+                                            </div>
                                         </div>
 
-                                        <form method="POST" action="" class="relative z-10 space-y-6">
-                                            <input type="hidden" name="action" value="upload_proof">
-                                            <input type="hidden" name="appointment_id" value="<?php echo $current_appointment['id']; ?>">
+                                        <div class="relative z-10">
+                                            <div class="flex flex-col gap-1">
 
-                                            <div class="relative group/input">
-                                                <label class="block text-[10px] font-black text-slate-400 dark:text-emerald-400 uppercase tracking-[0.2em] mb-3 ml-2">
-                                                    Referencia de Transacción
-                                                </label>
-
-                                                <div class="relative">
-                                                    <textarea name="proof_details" rows="3" required
-                                                        class="w-full p-6 bg-slate-50 dark:bg-white/5 border-2 border-slate-50 dark:border-white/10 rounded-[2.2rem] 
-                           focus:bg-white dark:focus:bg-white/10 focus:border-emerald-400 focus:ring-[12px] focus:ring-emerald-500/5 
-                           outline-none transition-all duration-300 text-sm font-bold text-slate-700 dark:text-white 
-                           placeholder:text-slate-500 dark:placeholder:text-slate-300 tracking-tight"
-                                                        placeholder="Escribe el código de referencia o adjunta detalles..."></textarea>
-
-                                                    <div class="absolute bottom-5 right-6 text-slate-200 dark:text-slate-700 group-focus-within/input:text-emerald-400 transition-colors">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                                <div class="flex items-center gap-4 group/number cursor-pointer">
+                                                    <p class="text-3xl md:text-5xl font-mono font-medium tracking-[0.15em] text-slate-800 dark:text-white/90 group-hover:text-emerald-700 dark:group-hover:text-emerald-300 transition-colors">
+                                                        316 <span class="text-emerald-600 dark:text-emerald-400 font-black drop-shadow-[0_0_15px_rgba(52,211,153,0.1)] dark:drop-shadow-[0_0_15px_rgba(52,211,153,0.3)]">669</span> 2913
+                                                    </p>
+                                                    <div class="opacity-0 group-hover/number:opacity-100 transition-all transform translate-x-[-10px] group-hover:translate-x-0 bg-emerald-500/20 p-2 rounded-full border border-emerald-500/30">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-emerald-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2" />
                                                         </svg>
                                                     </div>
                                                 </div>
                                             </div>
+                                        </div>
 
-                                            <button type="submit"
-                                                class="group relative w-full py-6 bg-[#10B981] overflow-hidden rounded-[1.8rem] font-black text-xs uppercase tracking-[0.2em] text-white shadow-[0_10px_20px_rgba(6,44,29,0.2)] hover:shadow-[0_10px_20px_rgba(16,185,129,0.3)] active:scale-[0.98] transition-all duration-300">
+                                        <div class="relative z-10 pt-8 border-t border-emerald-500/10 flex justify-between items-end">
+                                            <div class="space-y-1">
+                                                <div class="flex items-center gap-2 mb-1">
 
-                                                <div class="absolute inset-0 bg-emerald-600 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out"></div>
+                                                </div>
+                                                <p class="text-slate-500 dark:text-slate-400 text-[10px] font-bold uppercase tracking-widest pl-0.5">
+                                                    Total a Pagar por tu Asesoría
+                                                </p>
+                                                <div class="flex items-baseline gap-2">
+                                                    <span class="text-4xl md:text-5xl font-black text-slate-900 dark:text-white tracking-tighter drop-shadow-md">
+                                                        $30.000
+                                                    </span>
+                                                    <span class="text-sm font-bold text-emerald-400 italic">
+                                                        PESOS
+                                                    </span>
+                                                </div>
+                                            </div>
 
-                                                <span class="relative z-10 flex items-center justify-center gap-3">
-                                                    Enviar Comprobante Ahora
-                                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                                                    </svg>
-                                                </span>
-                                            </button>
-
-                                            <div class="flex items-center justify-center gap-2 opacity-60">
-                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-emerald-600" viewBox="0 0 20 20" fill="currentColor">
-                                                    <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd" />
-                                                </svg>
-                                                <p class="text-center text-[9px] text-slate-400 dark:text-slate-500 font-bold uppercase tracking-widest">
-                                                    Conexión segura y cifrada
+                                            <div class="flex flex-col items-end gap-2">
+                                                <div class="px-5 py-2.5 bg-emerald-500/10 backdrop-blur-xl border border-emerald-500/30 rounded-[1.2rem] flex items-center gap-3 shadow-2xl">
+                                                    <span class="relative flex h-2.5 w-2.5">
+                                                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                                                        <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-400"></span>
+                                                    </span>
+                                                    <span class="text-emerald-700 dark:text-emerald-100 text-[11px] font-black uppercase tracking-widest">Sesión 1H</span>
+                                                </div>
+                                                <p class="text-[10px] text-emerald-600 dark:text-emerald-400 font-black italic pr-2 uppercase tracking-tighter">
+                                                    LOS PROFES
                                                 </p>
                                             </div>
-                                        </form>
+                                        </div>
+
+                                        <div class="absolute inset-0 opacity-[0.04] pointer-events-none bg-[url('https://grainy-gradients.vercel.app/noise.svg')] contrast-150"></div>
                                     </div>
-                                </div>
-                            </div>
 
-                        <?php else: ?>
-                            <div class="bg-white rounded-[3.5rem] p-12 md:p-24 shadow-sm border border-slate-100 text-center relative overflow-hidden">
-                                <div class="absolute -top-12 -left-12 w-64 h-64 <?php echo $style['bg']; ?> opacity-[0.03] rounded-full blur-3xl"></div>
-
-                                <div class="w-32 h-32 md:w-44 md:h-44 <?php echo $style['bg']; ?> rounded-[3rem] flex items-center justify-center mx-auto mb-12 shadow-2xl relative z-10 border-[12px] border-white transform hover:rotate-6 transition-transform duration-700 ease-out overflow-hidden">
-                                    <img src="../assets/logo1.png"
-                                        alt="100%"
-                                        class="w-full h-full object-contain p-4 drop-shadow-md">
-                                </div>
-
-
-
-                                <?php if ($status === 'PENDING_VALIDATION'): ?>
-                                    <div class="max-w-md mx-auto relative z-10 bg-slate-50 p-8 rounded-[2rem] border border-slate-100 shadow-inner">
-                                        <div class="relative p-6 bg-emerald-50/30 rounded-[2rem] border border-emerald-100/50">
-                                            <p class="text-slate-600 leading-relaxed font-medium text-lg">
-                                                <span class="inline-flex items-center gap-2 px-3 py-1 bg-emerald-500 text-white text-[10px] font-black uppercase tracking-[0.2em] rounded-full mb-4">
-                                                    <span class="relative flex h-2 w-2">
-                                                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
-                                                        <span class="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
-                                                    </span>
-                                                    Procesando con prioridad
-                                                </span>
-
-                                                <br>
-
-                                                <span class="text-slate-900 font-black text-xl block mb-2">
-                                                    ¡Tu proceso ha comenzado con éxito! 🚀
-                                                </span>
-
-                                                Tu pago está siendo validado por nuestro sistema. En un Momento, un
-                                                <span class="text-emerald-600 font-bold italic">Coordinador Especialista</span>
-                                                se comunicará contigo para darte la bienvenida y entregarte todos los detalles exclusivos de tu asesoría.
-
-                                                <span class="block mt-4 text-sm font-bold text-slate-400 uppercase tracking-widest">
-                                                    ¡Prepárate para llevar tu aprendizaje al siguiente nivel!
-                                                </span>
-                                            </p>
+                                    <!-- LÍMITE DE PAGO -->
+                                    <div id="timer-container" class="bg-white dark:bg-gray-800 rounded-[2.5rem] p-6 md:p-8 shadow-xl dark:shadow-2xl relative overflow-hidden border border-slate-100 dark:border-white/5 flex flex-col justify-center min-h-[320px]">
+                                        <div class="relative z-10">
+                                            <p class="text-dark dark:text-white font-bold text-[10px] uppercase tracking-[0.3em] mb-6 text-center">Tiempo límite de pago</p>
+                                            <div id="timer-display" class="text-5xl md:text-6xl font-black text-slate-900 dark:text-white tracking-tighter text-center tabular-nums leading-none mb-6 dark:drop-shadow-2xl">--:--</div>
+                                            <div class="flex items-center justify-center gap-3 bg-slate-200 dark:bg-white/5 py-3 px-6 rounded-2xl border border-slate-100 dark:border-white/10">
+                                                <div class="relative flex h-3 w-3">
+                                                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                                                    <span class="relative inline-flex rounded-full h-3 w-3 bg-red-500"></span>
+                                                </div>
+                                                <p class="text-[10px] text-red-600 dark:text-red-500 font-black uppercase tracking-widest animate-pulse">Agendamiento en Curso</p>
+                                            </div>
                                         </div>
                                     </div>
-                                <?php endif; ?>
+                                </div>
+                        </div>
+                    </div>
+                    <!-- CIERRE DE PASO 2 -->
 
-                                <?php if ($current_appointment['proof_details']): ?>
-                                    <div class="mt-16 p-8 bg-slate-50 rounded-[2rem] text-left border-2 border-dashed border-slate-200 relative max-w-xl mx-auto">
-                                        <span class="absolute -top-3 left-10 bg-white px-4 py-1 rounded-full text-[9px] font-black text-slate-400 uppercase tracking-widest shadow-sm">Tu Pin de Referencia</span>
-                                        <p class="text-slate-600 font-extrabold italic text-md leading-relaxed">"<?php echo htmlspecialchars($current_appointment['proof_details']); ?>"</p>
+                    <!-- PASO 3 -->
+                    <div id="paso3" class="ml-8 relative">
+                        <div class="absolute -left-[78px] top-1 w-8 h-8 bg-emerald-500 rounded-full border-4 border-white dark:border-gray-900 shadow-[0_0_15px_rgba(16,185,129,0.5)] flex items-center justify-center text-[10px] font-black text-white">3</div>
+
+                        <p class="text-emerald-500 dark:text-emerald-400 font-black uppercase text-xs tracking-[0.3em] mb-1">
+                            Paso 3
+                        </p>
+
+                        <h3 class="text-2xl md:text-3xl font-black text-slate-900 dark:text-white mb-4 tracking-tighter italic uppercase">
+                            Envía el comprobante
+                        </h3>
+
+                        <!-- FORM -->
+                        <div class="relative bg-white/50 dark:bg-gray-800 rounded-[3.5rem] p-10 shadow-[0_25px_50px_-12px_rgba(0,0,0,0.04)] border border-slate-100 dark:border-white/5 flex flex-col justify-center overflow-hidden group">
+
+                            <div class="absolute -top-10 -right-10 w-32 h-32 bg-emerald-50 dark:bg-emerald-900/20 rounded-full blur-3xl opacity-70 group-hover:opacity-100 transition-opacity duration-700"></div>
+
+                            <div class="relative z-10 flex items-center gap-5 mb-10">
+                                <div class="border-l-4 border-emerald-500 pl-6 py-2">
+                                    <h1 class="text-2xl md:text-3xl font-black text-slate-900 dark:text-white tracking-tighter leading-tight">
+                                        ¡Casi hemos terminado!
+                                        <span class="block text-slate-900 dark:text-emerald-400 font-bold text-sm md:text-base uppercase tracking-[0.15em] mt-1">
+                                            Envía la referencia del comprobante para confirmar la asesoría:
+                                        </span>
+                                    </h1>
+                                </div>
+                                <div class="relative">
+                                    <div class="w-14 h-14 bg-gradient-to-br from-emerald-400 to-emerald-600 dark:from-emerald-600 dark:to-emerald-800 text-white rounded-[1.5rem] flex items-center justify-center text-xl font-black shadow-[0_10px_20px_rgba(16,185,129,0.2)] dark:shadow-[0_10px_20px_rgba(0,0,0,0.3)] transform group-hover:rotate-6 transition-transform">
+                                        02
                                     </div>
-                                <?php endif; ?>
+                                    <span class="absolute -top-1 -right-1 flex h-4 w-4">
+                                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                                        <span class="relative inline-flex rounded-full h-4 w-4 bg-emerald-500 border-2 border-white dark:border-gray-900"></span>
+                                    </span>
+                                </div>
+
                             </div>
-                        <?php endif; ?>
+
+                            <form method="POST" action="" class="relative z-10 space-y-6">
+                                <input type="hidden" name="action" value="upload_proof">
+                                <input type="hidden" name="appointment_id" value="<?php echo $current_appointment['id']; ?>">
+
+                                <div class="relative group/input">
+                                    <label class="block text-[10px] font-black text-slate-400 dark:text-emerald-400 uppercase tracking-[0.2em] mb-3 ml-2">
+                                        Referencia de Transacción
+                                    </label>
+
+                                    <div class="relative">
+                                        <textarea name="proof_details" rows="3" required
+                                            class="w-full p-6 bg-slate-50 dark:bg-white/5 border-2 border-slate-50 dark:border-white/10 rounded-[2.2rem] 
+                           focus:bg-white dark:focus:bg-white/10 focus:border-emerald-400 focus:ring-[12px] focus:ring-emerald-500/5 
+                           outline-none transition-all duration-300 text-sm font-bold text-slate-700 dark:text-white 
+                           placeholder:text-slate-500 dark:placeholder:text-slate-300 tracking-tight"
+                                            placeholder="Escribe el código de referencia o adjunta detalles..."></textarea>
+
+                                        <div class="absolute bottom-5 right-6 text-slate-200 dark:text-slate-700 group-focus-within/input:text-emerald-400 transition-colors">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <button type="submit"
+                                    class="group relative w-full py-6 bg-[#10B981] overflow-hidden rounded-[1.8rem] font-black text-xs uppercase tracking-[0.2em] text-white shadow-[0_10px_20px_rgba(6,44,29,0.2)] hover:shadow-[0_10px_20px_rgba(16,185,129,0.3)] active:scale-[0.98] transition-all duration-300">
+
+                                    <div class="absolute inset-0 bg-emerald-600 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out"></div>
+
+                                    <span class="relative z-10 flex items-center justify-center gap-3">
+                                        Enviar Comprobante Ahora
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                        </svg>
+                                    </span>
+                                </button>
+
+                                <div class="flex items-center justify-center gap-2 opacity-60">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-3 w-3 text-emerald-600" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd" />
+                                    </svg>
+                                    <p class="text-center text-[9px] text-slate-400 dark:text-slate-500 font-bold uppercase tracking-widest">
+                                        Conexión segura y cifrada
+                                    </p>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
 
-                <!-- Script para el Timer de Expiración -->
-                <script>
-                    const expiresAtTimestamp = <?php echo $expires_at_timestamp; ?>;
-                    const timerDisplay = document.getElementById('timer-display');
+            <?php else: ?>
+                <div class="bg-white rounded-[3.5rem] p-12 md:p-24 shadow-sm border border-slate-100 text-center relative overflow-hidden">
+                    <div class="absolute -top-12 -left-12 w-64 h-64 <?php echo $style['bg']; ?> opacity-[0.03] rounded-full blur-3xl"></div>
 
-                    function updateTimer() {
-                        const now = new Date().getTime();
-                        const distance = expiresAtTimestamp - now;
+                    <div class="w-32 h-32 md:w-44 md:h-44 <?php echo $style['bg']; ?> rounded-[3rem] flex items-center justify-center mx-auto mb-12 shadow-2xl relative z-10 border-[12px] border-white transform hover:rotate-6 transition-transform duration-700 ease-out overflow-hidden">
+                        <img src="../assets/logo1.png"
+                            alt="100%"
+                            class="w-full h-full object-contain p-4 drop-shadow-md">
+                    </div>
 
-                        if (distance <= 0) {
-                            if (timerDisplay) {
-                                timerDisplay.textContent = "00:00";
-                                // No recargamos inmediatamente, esperamos a que PHP lo haga en el siguiente request
-                                // Pero podemos cambiar el estilo para indicar la expiración
-                                timerDisplay.closest('.text-center').innerHTML = "<p class='text-xl font-bold text-red-600'>¡Tiempo Expirado! Refresque para cancelar la Asesoria.</p>";
-                            }
-                            clearInterval(x);
-                            return;
-                        }
 
-                        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-                        const displayMinutes = String(minutes).padStart(2, '0');
-                        const displaySeconds = String(seconds).padStart(2, '0');
+                    <?php if ($status === 'PENDING_VALIDATION'): ?>
+                        <div class="max-w-md mx-auto relative z-10 bg-slate-50 p-8 rounded-[2rem] border border-slate-100 shadow-inner">
+                            <div class="relative p-6 bg-emerald-50/30 rounded-[2rem] border border-emerald-100/50">
+                                <p class="text-slate-600 leading-relaxed font-medium text-lg">
+                                    <span class="inline-flex items-center gap-2 px-3 py-1 bg-emerald-500 text-white text-[10px] font-black uppercase tracking-[0.2em] rounded-full mb-4">
+                                        <span class="relative flex h-2 w-2">
+                                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+                                            <span class="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
+                                        </span>
+                                        Procesando con prioridad
+                                    </span>
 
-                        if (timerDisplay) {
-                            timerDisplay.textContent = displayMinutes + ":" + displaySeconds;
-                        }
-                    }
+                                    <br>
 
-                    if (expiresAtTimestamp > 0 && timerDisplay) {
-                        // Actualizar el contador cada segundo
-                        var x = setInterval(updateTimer, 1000);
-                        // Ejecutar inmediatamente al cargar
-                        updateTimer();
-                    }
-                </script>
+                                    <span class="text-slate-900 font-black text-xl block mb-2">
+                                        ¡Tu proceso ha comenzado con éxito! 🚀
+                                    </span>
 
-            <?php
+                                    Tu pago está siendo validado por nuestro sistema. En un Momento, un
+                                    <span class="text-emerald-600 font-bold italic">Coordinador Especialista</span>
+                                    se comunicará contigo para darte la bienvenida y entregarte todos los detalles exclusivos de tu asesoría.
+
+                                    <span class="block mt-4 text-sm font-bold text-slate-400 uppercase tracking-widest">
+                                        ¡Prepárate para llevar tu aprendizaje al siguiente nivel!
+                                    </span>
+                                </p>
+                            </div>
+                        </div>
+                    <?php endif; ?>
+
+                    <?php if ($current_appointment['proof_details']): ?>
+                        <div class="mt-16 p-8 bg-slate-50 rounded-[2rem] text-left border-2 border-dashed border-slate-200 relative max-w-xl mx-auto">
+                            <span class="absolute -top-3 left-10 bg-white px-4 py-1 rounded-full text-[9px] font-black text-slate-400 uppercase tracking-widest shadow-sm">Tu Pin de Referencia</span>
+                            <p class="text-slate-600 font-extrabold italic text-md leading-relaxed">"<?php echo htmlspecialchars($current_appointment['proof_details']); ?>"</p>
+                        </div>
+                    <?php endif; ?>
+                </div>
+            <?php endif; ?>
+            </div>
+    </div>
+    </div>
+
+    <!-- Script para el Timer de Expiración -->
+    <script>
+        const expiresAtTimestamp = <?php echo $expires_at_timestamp; ?>;
+        const timerDisplay = document.getElementById('timer-display');
+
+        function updateTimer() {
+            const now = new Date().getTime();
+            const distance = expiresAtTimestamp - now;
+
+            if (distance <= 0) {
+                if (timerDisplay) {
+                    timerDisplay.textContent = "00:00";
+                    // No recargamos inmediatamente, esperamos a que PHP lo haga en el siguiente request
+                    // Pero podemos cambiar el estilo para indicar la expiración
+                    timerDisplay.closest('.text-center').innerHTML = "<p class='text-xl font-bold text-red-600'>¡Tiempo Expirado! Refresque para cancelar la Asesoria.</p>";
+                }
+                clearInterval(x);
+                return;
+            }
+
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            const displayMinutes = String(minutes).padStart(2, '0');
+            const displaySeconds = String(seconds).padStart(2, '0');
+
+            if (timerDisplay) {
+                timerDisplay.textContent = displayMinutes + ":" + displaySeconds;
+            }
+        }
+
+        if (expiresAtTimestamp > 0 && timerDisplay) {
+            // Actualizar el contador cada segundo
+            var x = setInterval(updateTimer, 1000);
+            // Ejecutar inmediatamente al cargar
+            updateTimer();
+        }
+    </script>
+
+<?php
 
         // ===============================================
         // VISTA: Login de Administrador
         // ===============================================
         elseif ($current_view === $VIEWS['ADMIN_LOGIN']): ?>
 
-                <div class="min-h-screen flex items-center justify-center bg-cover bg-center bg-no-repeat" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../assets/por.jpg');">
-                    <div class="w-full bg-white/95 backdrop-blur-sm rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800/95 dark:border-gray-700">
-                        <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
-                            <h2 class="text-3xl md:text-4xl font-bold leading-tight tracking-tight text-gray-900 dark:text-white text-center">Acceso Administrador</h2>
+    <div class="min-h-screen flex items-center justify-center bg-cover bg-center bg-no-repeat" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../assets/por.jpg');">
+        <div class="w-full bg-white/95 backdrop-blur-sm rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 dark:bg-gray-800/95 dark:border-gray-700">
+            <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
+                <h2 class="text-3xl md:text-4xl font-bold leading-tight tracking-tight text-gray-900 dark:text-white text-center">Acceso Administrador</h2>
 
-                            <form method="POST" class="space-y-4 md:space-y-6" action="">
-                                <input type="hidden" name="action" value="admin_login">
+                <form method="POST" class="space-y-4 md:space-y-6" action="">
+                    <input type="hidden" name="action" value="admin_login">
 
-                                <div>
-                                    <label for="admin_email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label>
-                                    <input type="email" id="admin_email" name="email" value=""
-                                        class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-2 focus:ring-indigo-600 focus:border-indigo-600 outline-none block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="admin@gmail.com"
-                                        required>
-                                </div>
-
-                                <div>
-                                    <label for="admin_password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Contraseña</label>
-                                    <input type="password" id="admin_password" name="password" value=""
-                                        class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-2 focus:ring-indigo-600 focus:border-indigo-600 outline-none block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="••••••••"
-                                        required>
-                                </div>
-
-                                <button type="submit"
-                                    class="w-full text-white bg-indigo-600 hover:bg-indigo-700 focus:ring-4 focus:outline-none focus:ring-indigo-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indigo-800">
-                                    Iniciar Sesión
-                                </button>
-                            </form>
-
-                            <div class="mt-6 text-center">
-                                <a href="?" class="text-sm text-indigo-600 hover:text-indigo-800 font-semibold text hover:underline dark:text-indigo-500 dark:hover:text-indigo-400">Volver a Agendar Asesoria</a>
-                            </div>
-                        </div>
+                    <div>
+                        <label for="admin_email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label>
+                        <input type="email" id="admin_email" name="email" value=""
+                            class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-2 focus:ring-indigo-600 focus:border-indigo-600 outline-none block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="admin@gmail.com"
+                            required>
                     </div>
+
+                    <div>
+                        <label for="admin_password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Contraseña</label>
+                        <input type="password" id="admin_password" name="password" value=""
+                            class="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-2 focus:ring-indigo-600 focus:border-indigo-600 outline-none block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="••••••••"
+                            required>
+                    </div>
+
+                    <button type="submit"
+                        class="w-full text-white bg-indigo-600 hover:bg-indigo-700 focus:ring-4 focus:outline-none focus:ring-indigo-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-indigo-600 dark:hover:bg-indigo-700 dark:focus:ring-indigo-800">
+                        Iniciar Sesión
+                    </button>
+                </form>
+
+                <div class="mt-6 text-center">
+                    <a href="?" class="text-sm text-indigo-600 hover:text-indigo-800 font-semibold text hover:underline dark:text-indigo-500 dark:hover:text-indigo-400">Volver a Agendar Asesoria</a>
                 </div>
-            <?php
+            </div>
+        </div>
+    </div>
+<?php
 
         // ===============================================
         // VISTA: Dashboard de Administrador
@@ -2395,363 +2400,363 @@ function render_subject_cards($cards)
             if ($edit_appointment_id && is_numeric($edit_appointment_id)) {
                 $appointment_to_edit = get_appointment_by_id($edit_appointment_id, $pdo);
             }
-            ?>
+?>
 
-                <div class="mt-4 py-3 border-l-4 border-indigo-500 pl-4 bg-gray-50/80 rounded-r-2xl shadow-sm flex items-center justify-between">
-                    <div class="flex items-center gap-4">
-                        <div class="relative">
-                            <div class="w-12 h-12 bg-gradient-to-tr from-indigo-600 to-purple-500 rounded-full flex items-center justify-center text-white text-xl font-bold shadow-md">
-                                <?php echo strtoupper(substr($_SESSION['admin_nombre'] ?? 'A', 0, 1)); ?>
-                            </div>
-                            <span class="absolute bottom-0 right-0 flex h-3 w-3">
-                                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                                <span class="relative inline-flex rounded-full h-3 w-3 bg-green-500 border-2 border-white"></span>
-                            </span>
-                        </div>
-                        <div class="flex flex-col">
-                            <div class="flex items-center gap-2">
-                                <p class="text-[10px] text-gray-400 uppercase tracking-[0.2em] font-bold">Sesión activa</p>
-                            </div>
-                            <p class="text-lg font-semibold text-gray-800 leading-tight">
-                                <?php echo htmlspecialchars($_SESSION['admin_nombre'] ?? 'Administrador'); ?>
-                            </p>
-                            <div class="mt-1">
-                                <span class="bg-indigo-100 text-indigo-700 text-[10px] px-2 py-0.5 rounded-full font-black uppercase tracking-wider">
-                                    <?php echo htmlspecialchars($_SESSION['admin_rol'] ?? 'Invitado'); ?>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
+    <div class="mt-4 py-3 border-l-4 border-indigo-500 pl-4 bg-gray-50/80 rounded-r-2xl shadow-sm flex items-center justify-between">
+        <div class="flex items-center gap-4">
+            <div class="relative">
+                <div class="w-12 h-12 bg-gradient-to-tr from-indigo-600 to-purple-500 rounded-full flex items-center justify-center text-white text-xl font-bold shadow-md">
+                    <?php echo strtoupper(substr($_SESSION['admin_nombre'] ?? 'A', 0, 1)); ?>
                 </div>
-                <h1 class="text-4xl font-extrabold text-gray-900 mb-6 border-b pb-2">Panel de Administración</h1>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 p-4">
-
-
-                    <div class="flex flex-wrap gap-3">
-                        <?php
-                        $subs = $pdo->query("SELECT * FROM subjects_list WHERE is_active = 1")->fetchAll();
-                        foreach ($subs as $m): ?>
-                            <div class="flex items-center gap-2 px-4 py-2 rounded-full border-2 border-gray-100 font-bold text-xs" style="color: <?php echo $m['color_hex']; ?>">
-                                <?php echo $m['name']; ?>
-                                <form method="POST" class="inline">
-                                    <input type="hidden" name="delete_type" value="subject">
-                                    <input type="hidden" name="id" value="<?php echo $m['id']; ?>">
-                                    <button type="submit" class="ml-1 text-gray-300 hover:text-red-500">×</button>
-                                </form>
-                            </div>
-                        <?php endforeach; ?>
-                    </div>
+                <span class="absolute bottom-0 right-0 flex h-3 w-3">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-3 w-3 bg-green-500 border-2 border-white"></span>
+                </span>
+            </div>
+            <div class="flex flex-col">
+                <div class="flex items-center gap-2">
+                    <p class="text-[10px] text-gray-400 uppercase tracking-[0.2em] font-bold">Sesión activa</p>
+                </div>
+                <p class="text-lg font-semibold text-gray-800 leading-tight">
+                    <?php echo htmlspecialchars($_SESSION['admin_nombre'] ?? 'Administrador'); ?>
+                </p>
+                <div class="mt-1">
+                    <span class="bg-indigo-100 text-indigo-700 text-[10px] px-2 py-0.5 rounded-full font-black uppercase tracking-wider">
+                        <?php echo htmlspecialchars($_SESSION['admin_rol'] ?? 'Invitado'); ?>
+                    </span>
                 </div>
             </div>
+        </div>
+    </div>
+    <h1 class="text-4xl font-extrabold text-gray-900 mb-6 border-b pb-2">Panel de Administración</h1>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 p-4">
 
-            <!-- Panel de Conteo de Asesorías -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 mb-8">
-                <?php
-                $count_cards = [
-                    'ALL' => ['title' => 'Total Asesorías', 'icon' => 'M4 6h16M4 10h16M4 14h16M4 18h16', 'color' => 'bg-indigo-600', 'count' => $counts['ALL']],
-                    'PENDING_VALIDATION' => ['title' => 'Pendientes Validar', 'icon' => 'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z', 'color' => 'bg-blue-600', 'count' => $counts['PENDING_VALIDATION']],
-                    'PENDING_PAYMENT' => ['title' => 'Pendientes Pago', 'icon' => 'M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z', 'color' => 'bg-yellow-600', 'count' => $counts['PENDING_PAYMENT']],
-                    'PAID' => ['title' => 'Pagadas (Conf.)', 'icon' => 'M5 13l4 4L19 7', 'color' => 'bg-green-600', 'count' => $counts['PAID']],
-                    'CANCELLED' => ['title' => 'Canceladas / Exp.', 'icon' => 'M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z', 'color' => 'bg-red-600', 'count' => $counts['CANCELLED']],
-                ];
 
-                foreach ($count_cards as $key => $card): ?>
-                    <div class="<?php echo $card['color']; ?> p-6 rounded-2xl text-white shadow-xl flex items-center justify-between transform hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 cursor-pointer group relative overflow-hidden"
-                        onclick="window.location.href='?view=<?php echo $VIEWS['ADMIN_DASHBOARD']; ?>&filter=<?php echo $key; ?>'">
-                        <div class="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
-                        <div class="relative z-10">
-                            <p class="text-4xl font-black tracking-tight mb-1"><?php echo $card['count']; ?></p>
-                            <p class="text-xs font-bold uppercase tracking-widest opacity-90"><?php echo $card['title']; ?></p>
-                        </div>
-                        <div class="relative z-10 bg-white/20 p-3 rounded-lg backdrop-blur-sm">
-                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="<?php echo $card['icon']; ?>"></path>
-                            </svg>
-                        </div>
-                    </div>
-                <?php endforeach; ?>
-            </div>
-            <!-- Fin Panel de Conteo de Asesorías -->
-
+        <div class="flex flex-wrap gap-3">
             <?php
+            $subs = $pdo->query("SELECT * FROM subjects_list WHERE is_active = 1")->fetchAll();
+            foreach ($subs as $m): ?>
+                <div class="flex items-center gap-2 px-4 py-2 rounded-full border-2 border-gray-100 font-bold text-xs" style="color: <?php echo $m['color_hex']; ?>">
+                    <?php echo $m['name']; ?>
+                    <form method="POST" class="inline">
+                        <input type="hidden" name="delete_type" value="subject">
+                        <input type="hidden" name="id" value="<?php echo $m['id']; ?>">
+                        <button type="submit" class="ml-1 text-gray-300 hover:text-red-500">×</button>
+                    </form>
+                </div>
+            <?php endforeach; ?>
+        </div>
+    </div>
+    </div>
+
+    <!-- Panel de Conteo de Asesorías -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 mb-8">
+        <?php
+            $count_cards = [
+                'ALL' => ['title' => 'Total Asesorías', 'icon' => 'M4 6h16M4 10h16M4 14h16M4 18h16', 'color' => 'bg-indigo-600', 'count' => $counts['ALL']],
+                'PENDING_VALIDATION' => ['title' => 'Pendientes Validar', 'icon' => 'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z', 'color' => 'bg-blue-600', 'count' => $counts['PENDING_VALIDATION']],
+                'PENDING_PAYMENT' => ['title' => 'Pendientes Pago', 'icon' => 'M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z', 'color' => 'bg-yellow-600', 'count' => $counts['PENDING_PAYMENT']],
+                'PAID' => ['title' => 'Pagadas (Conf.)', 'icon' => 'M5 13l4 4L19 7', 'color' => 'bg-green-600', 'count' => $counts['PAID']],
+                'CANCELLED' => ['title' => 'Canceladas / Exp.', 'icon' => 'M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z', 'color' => 'bg-red-600', 'count' => $counts['CANCELLED']],
+            ];
+
+            foreach ($count_cards as $key => $card): ?>
+            <div class="<?php echo $card['color']; ?> p-6 rounded-2xl text-white shadow-xl flex items-center justify-between transform hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 cursor-pointer group relative overflow-hidden"
+                onclick="window.location.href='?view=<?php echo $VIEWS['ADMIN_DASHBOARD']; ?>&filter=<?php echo $key; ?>'">
+                <div class="absolute inset-0 bg-white opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
+                <div class="relative z-10">
+                    <p class="text-4xl font-black tracking-tight mb-1"><?php echo $card['count']; ?></p>
+                    <p class="text-xs font-bold uppercase tracking-widest opacity-90"><?php echo $card['title']; ?></p>
+                </div>
+                <div class="relative z-10 bg-white/20 p-3 rounded-lg backdrop-blur-sm">
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="<?php echo $card['icon']; ?>"></path>
+                    </svg>
+                </div>
+            </div>
+        <?php endforeach; ?>
+    </div>
+    <!-- Fin Panel de Conteo de Asesorías -->
+
+    <?php
             // Detectamos la vista
             $view = $_GET['view'] ?? '';
-            ?>
+    ?>
 
-            <div class="container-fluid <?php echo ($view !== 'admin_dashboard') ? 'schedule-bg' : ''; ?>">
+    <div class="container-fluid <?php echo ($view !== 'admin_dashboard') ? 'schedule-bg' : ''; ?>">
+    </div>
+    <!-- Filtros (Se mantiene el bloque de filtros original para la compatibilidad y visibilidad del filtro activo) -->
+    <div class="mb-6 flex space-x-3 items-center">
+        <span class="font-semibold text-gray-700">Filtrar por Estado:</span>
+        <?php foreach ($filters as $status_key => $status_text):
+                $isActive = $filter === $status_key;
+                $button_class = $isActive
+                    ? "bg-indigo-600 text-white font-bold"
+                    : "bg-gray-200 text-gray-700 hover:bg-gray-300";
+        ?>
+            <a href="?view=<?php echo $VIEWS['ADMIN_DASHBOARD']; ?>&filter=<?php echo $status_key; ?>"
+                class="py-2 px-4 rounded-lg text-sm transition-colors <?php echo $button_class; ?>">
+                <?php echo $status_text; ?>
+            </a>
+        <?php endforeach; ?>
+    </div>
+
+    <div class="flex flex-col md:flex-row justify-between items-center mb-8 bg-gradient-to-r from-white to-gray-50 p-4 md:p-6 shadow-md rounded-2xl border border-gray-100 overflow-hidden relative">
+        <div class="absolute -right-10 -top-10 w-32 h-32 bg-indigo-50 rounded-full opacity-50"></div>
+
+        <div class="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6 relative z-10">
+            <div class="flex-shrink-0 bg-white p-2 rounded-xl shadow-sm border border-gray-100">
+                <img src="logo2.png" alt="Logo" class="h-16 md:h-20 w-auto object-contain">
             </div>
-            <!-- Filtros (Se mantiene el bloque de filtros original para la compatibilidad y visibilidad del filtro activo) -->
-            <div class="mb-6 flex space-x-3 items-center">
-                <span class="font-semibold text-gray-700">Filtrar por Estado:</span>
-                <?php foreach ($filters as $status_key => $status_text):
-                    $isActive = $filter === $status_key;
-                    $button_class = $isActive
-                        ? "bg-indigo-600 text-white font-bold"
-                        : "bg-gray-200 text-gray-700 hover:bg-gray-300";
-                ?>
-                    <a href="?view=<?php echo $VIEWS['ADMIN_DASHBOARD']; ?>&filter=<?php echo $status_key; ?>"
-                        class="py-2 px-4 rounded-lg text-sm transition-colors <?php echo $button_class; ?>">
-                        <?php echo $status_text; ?>
-                    </a>
-                <?php endforeach; ?>
-            </div>
-
-            <div class="flex flex-col md:flex-row justify-between items-center mb-8 bg-gradient-to-r from-white to-gray-50 p-4 md:p-6 shadow-md rounded-2xl border border-gray-100 overflow-hidden relative">
-                <div class="absolute -right-10 -top-10 w-32 h-32 bg-indigo-50 rounded-full opacity-50"></div>
-
-                <div class="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6 relative z-10">
-                    <div class="flex-shrink-0 bg-white p-2 rounded-xl shadow-sm border border-gray-100">
-                        <img src="logo2.png" alt="Logo" class="h-16 md:h-20 w-auto object-contain">
-                    </div>
-                    <div class="text-center md:text-left">
-                        <h1 class="text-xl md:text-2xl font-black text-gray-800 leading-tight">
-                            ¡Bienvenido, <span class="text-indigo-600"><?php echo htmlspecialchars($_SESSION['admin_nombre'] ?? 'Admin'); ?></span>!
-                        </h1>
-                        <p class="text-gray-500 text-xs md:text-sm font-medium mt-1">Gestión centralizada de asesorías académicas</p>
-                    </div>
-
-                </div>
-                <div class="mb-6 relative group">
-                    <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
-                        <svg class="w-5 h-5 text-indigo-500 group-focus-within:text-indigo-600 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                        </svg>
-                    </div>
-                    <input type="text" id="smartSearch"
-                        placeholder="Buscar por estudiante, asignatura o ID..."
-                        class="w-full pl-12 pr-4 py-4 bg-white border-2 border-gray-100 rounded-2xl shadow-sm outline-none focus:border-indigo-500 focus:ring-4 focus:ring-indigo-100 transition-all text-gray-700 font-medium placeholder-gray-400"
-                        onkeyup="filterTable()">
-                </div>
-
-            </div>
-            <div class="flex justify-end mb-4">
-                <button type="button" onclick="descargarInforme()"
-                    class="w-full md:w-auto bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 px-6 rounded-2xl shadow-lg transition-all active:scale-95 flex items-center justify-center gap-2">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-                    </svg>
-                    Descargar Informe CSV
-                </button>
-
-                <script>
-                    function descargarInforme() {
-                        // 1. Obtener el texto del buscador inteligente (ajusta el ID si es diferente)
-                        const buscador = document.getElementById('smartSearch').value;
-
-                        // 2. Obtener el filtro de estado actual de la URL (si existe)
-                        const urlParams = new URLSearchParams(window.location.search);
-                        const filtroEstado = urlParams.get('filter') || 'ALL';
-
-                        // 3. Redirigir enviando ambos filtros
-                        window.location.href = `?action=export_csv&filter=${filtroEstado}&search=${encodeURIComponent(buscador)}`;
-                    }
-                </script>
+            <div class="text-center md:text-left">
+                <h1 class="text-xl md:text-2xl font-black text-gray-800 leading-tight">
+                    ¡Bienvenido, <span class="text-indigo-600"><?php echo htmlspecialchars($_SESSION['admin_nombre'] ?? 'Admin'); ?></span>!
+                </h1>
+                <p class="text-gray-500 text-xs md:text-sm font-medium mt-1">Gestión centralizada de asesorías académicas</p>
             </div>
 
-            <div class="bg-transparent">
+        </div>
+        <div class="mb-6 relative group">
+            <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                <svg class="w-5 h-5 text-indigo-500 group-focus-within:text-indigo-600 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                </svg>
+            </div>
+            <input type="text" id="smartSearch"
+                placeholder="Buscar por estudiante, asignatura o ID..."
+                class="w-full pl-12 pr-4 py-4 bg-white border-2 border-gray-100 rounded-2xl shadow-sm outline-none focus:border-indigo-500 focus:ring-4 focus:ring-indigo-100 transition-all text-gray-700 font-medium placeholder-gray-400"
+                onkeyup="filterTable()">
+        </div>
 
-                <div class="overflow-x-auto bg-white shadow-2xl shadow-gray-200/50 rounded-[2rem] border border-gray-100 mb-8 scrollbar-hide touch-pan-x">
-                    <div class="overflow-x-auto pb-4">
+    </div>
+    <div class="flex justify-end mb-4">
+        <button type="button" onclick="descargarInforme()"
+            class="w-full md:w-auto bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 px-6 rounded-2xl shadow-lg transition-all active:scale-95 flex items-center justify-center gap-2">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
+            Descargar Informe CSV
+        </button>
 
-                        <table class="hidden md:table w-full text-left border-separate border-spacing-y-3">
-                            <thead class="bg-gray-50/50">
-                                <tr>
-                                    <th class="px-6 py-4 text-[10px] font-black uppercase text-gray-400 tracking-widest">ID</th>
-                                    <th class="px-6 py-4 text-[10px] font-black uppercase text-gray-400 tracking-widest">Estudiante</th>
-                                    <th class="px-6 py-4 text-[10px] font-black uppercase text-gray-400 tracking-widest">Asignatura</th>
-                                    <th class="px-6 py-4 text-[10px] font-black uppercase text-gray-400 tracking-widest">Fecha / Hora</th>
-                                    <th class="px-6 py-4 text-[10px] font-black uppercase text-gray-400 tracking-widest">Comprobante</th>
-                                    <th class="px-6 py-4 text-center text-[10px] font-black uppercase text-gray-400 tracking-widest">Estado</th>
-                                    <th class="px-6 py-4 text-right text-[10px] font-black uppercase text-gray-400 tracking-widest">Acciones</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php if (empty($filtered_appointments)): ?>
-                                    <tr>
-                                        <td colspan="7" class="text-center py-10 italic text-gray-400">No hay Asesorias registradas.</td>
-                                    </tr>
-                                <?php else: ?>
-                                    <?php foreach ($filtered_appointments as $app):
-                                        $status = $status_details[$app['status']] ?? ['bg' => 'bg-gray-100 text-gray-800', 'text' => $app['status']];
-                                    ?>
-                                        <tr class="bg-white hover:bg-gray-50 transition-all shadow-sm rounded-2xl">
-                                            <td class="px-6 py-4 font-bold text-gray-400">#<?php echo $app['id']; ?></td>
+        <script>
+            function descargarInforme() {
+                // 1. Obtener el texto del buscador inteligente (ajusta el ID si es diferente)
+                const buscador = document.getElementById('smartSearch').value;
 
-                                            <td class="px-6 py-4">
-                                                <div class="font-black text-gray-800 uppercase text-sm"><?php echo htmlspecialchars($app['student_name']); ?></div>
-                                                <div class="text-xs text-indigo-500 font-bold"><?php echo htmlspecialchars($app['student_contact']); ?></div>
-                                            </td>
+                // 2. Obtener el filtro de estado actual de la URL (si existe)
+                const urlParams = new URLSearchParams(window.location.search);
+                const filtroEstado = urlParams.get('filter') || 'ALL';
 
-                                            <td class="px-6 py-4 text-sm font-medium text-gray-600">
-                                                <?php echo htmlspecialchars($app['subject']); ?>
-                                            </td>
+                // 3. Redirigir enviando ambos filtros
+                window.location.href = `?action=export_csv&filter=${filtroEstado}&search=${encodeURIComponent(buscador)}`;
+            }
+        </script>
+    </div>
 
-                                            <td class="px-6 py-4">
-                                                <div class="text-sm font-bold text-gray-700"><?php echo $app['date']; ?></div>
-                                                <div class="text-xs text-gray-400"><?php echo $app['time']; ?></div>
-                                            </td>
+    <div class="bg-transparent">
 
-                                            <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                                                <?php echo htmlspecialchars($app['date']); ?><br>
-                                                <span class="font-semibold"><?php echo htmlspecialchars($app['time']); ?></span>
-                                            </td>
-                                            <td class="px-6 py-4 text-sm proof-details-cell">
-                                                <?php if (!empty($app['proof_details'])): ?>
-                                                    <div class="text-xs italic p-1 bg-gray-100 rounded break-words">
-                                                        <?php echo nl2br(htmlspecialchars($app['proof_details'])); ?>
-                                                    </div>
-                                                <?php else: ?>
-                                                    <span class="text-gray-400">N/A</span>
-                                                <?php endif; ?>
-                                            </td>
+        <div class="overflow-x-auto bg-white shadow-2xl shadow-gray-200/50 rounded-[2rem] border border-gray-100 mb-8 scrollbar-hide touch-pan-x">
+            <div class="overflow-x-auto pb-4">
 
-                                            <td class="px-6 py-4 text-center">
-                                                <span class="px-3 py-1.5 rounded-full text-[10px] font-black uppercase tracking-tighter <?php echo $status['bg']; ?>">
-                                                    <?php echo $status['text']; ?>
-                                                </span>
-                                            </td>
-
-                                            <td class="px-6 py-4">
-                                                <div class="flex items-center justify-end gap-3">
-
-                                                    <a href="?view=<?php echo $VIEWS['ADMIN_DASHBOARD']; ?>&filter=<?php echo $filter; ?>&edit=<?php echo $app['id']; ?>"
-                                                        class="p-3 bg-indigo-100 text-indigo-600 rounded-2xl hover:bg-indigo-600 hover:text-white transition-all shadow-sm" title="Editar">
-                                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
-                                                        </svg>
-                                                    </a>
-
-                                                    <?php if ($app['status'] !== 'PAID'): ?>
-                                                        <form method="POST" class="inline" onsubmit="return confirm('¿Confirmar pago y liberar Asesoria manualmente?');">
-                                                            <input type="hidden" name="action" value="confirm_payment_manual">
-                                                            <input type="hidden" name="id" value="<?php echo $app['id']; ?>">
-                                                            <button type="submit" class="p-3 bg-emerald-500 text-white rounded-2xl hover:bg-emerald-700 transition-all shadow-lg shadow-emerald-100" title="Liberar Asesoria">
-                                                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
-                                                                </svg>
-                                                            </button>
-                                                        </form>
-                                                    <?php else: ?>
-                                                        <div class="p-3 text-emerald-600 bg-emerald-50 rounded-2xl border border-emerald-200">
-                                                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
-                                                                <path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" />
-                                                            </svg>
-                                                        </div>
-                                                    <?php endif; ?>
-
-                                                    <form method="POST" class="inline" onsubmit="return confirm('¿Eliminar permanentemente?');">
-                                                        <input type="hidden" name="action" value="admin_delete">
-                                                        <input type="hidden" name="appointment_id" value="<?php echo $app['id']; ?>">
-                                                        <button type="submit" class="p-3 bg-red-100 text-red-500 rounded-2xl hover:bg-red-500 hover:text-white transition-all shadow-sm">
-                                                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                                                            </svg>
-                                                        </button>
-                                                    </form>
-
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    <?php endforeach; ?>
-                                <?php endif; ?>
-                            </tbody>
-                        </table>
-
-                        <div class="md:hidden space-y-4 px-2">
+                <table class="hidden md:table w-full text-left border-separate border-spacing-y-3">
+                    <thead class="bg-gray-50/50">
+                        <tr>
+                            <th class="px-6 py-4 text-[10px] font-black uppercase text-gray-400 tracking-widest">ID</th>
+                            <th class="px-6 py-4 text-[10px] font-black uppercase text-gray-400 tracking-widest">Estudiante</th>
+                            <th class="px-6 py-4 text-[10px] font-black uppercase text-gray-400 tracking-widest">Asignatura</th>
+                            <th class="px-6 py-4 text-[10px] font-black uppercase text-gray-400 tracking-widest">Fecha / Hora</th>
+                            <th class="px-6 py-4 text-[10px] font-black uppercase text-gray-400 tracking-widest">Comprobante</th>
+                            <th class="px-6 py-4 text-center text-[10px] font-black uppercase text-gray-400 tracking-widest">Estado</th>
+                            <th class="px-6 py-4 text-right text-[10px] font-black uppercase text-gray-400 tracking-widest">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php if (empty($filtered_appointments)): ?>
+                            <tr>
+                                <td colspan="7" class="text-center py-10 italic text-gray-400">No hay Asesorias registradas.</td>
+                            </tr>
+                        <?php else: ?>
                             <?php foreach ($filtered_appointments as $app):
                                 $status = $status_details[$app['status']] ?? ['bg' => 'bg-gray-100 text-gray-800', 'text' => $app['status']];
                             ?>
-                                <div class="bg-white p-6 rounded-[2rem] shadow-lg border border-gray-100 relative overflow-hidden">
-                                    <div class="flex justify-between items-start mb-4">
-                                        <div>
-                                            <span class="text-[10px] font-black text-gray-300 uppercase tracking-widest">ID #<?php echo $app['id']; ?></span>
-                                            <h3 class="font-black text-gray-800 uppercase text-lg leading-tight"><?php echo htmlspecialchars($app['student_name']); ?></h3>
-                                            <p class="text-xs text-indigo-500 font-bold"><?php echo htmlspecialchars($app['student_contact']); ?></p>
-                                        </div>
-                                        <span class="px-3 py-1 rounded-full text-[10px] font-black uppercase <?php echo $status['bg']; ?>">
+                                <tr class="bg-white hover:bg-gray-50 transition-all shadow-sm rounded-2xl">
+                                    <td class="px-6 py-4 font-bold text-gray-400">#<?php echo $app['id']; ?></td>
+
+                                    <td class="px-6 py-4">
+                                        <div class="font-black text-gray-800 uppercase text-sm"><?php echo htmlspecialchars($app['student_name']); ?></div>
+                                        <div class="text-xs text-indigo-500 font-bold"><?php echo htmlspecialchars($app['student_contact']); ?></div>
+                                    </td>
+
+                                    <td class="px-6 py-4 text-sm font-medium text-gray-600">
+                                        <?php echo htmlspecialchars($app['subject']); ?>
+                                    </td>
+
+                                    <td class="px-6 py-4">
+                                        <div class="text-sm font-bold text-gray-700"><?php echo $app['date']; ?></div>
+                                        <div class="text-xs text-gray-400"><?php echo $app['time']; ?></div>
+                                    </td>
+
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                        <?php echo htmlspecialchars($app['date']); ?><br>
+                                        <span class="font-semibold"><?php echo htmlspecialchars($app['time']); ?></span>
+                                    </td>
+                                    <td class="px-6 py-4 text-sm proof-details-cell">
+                                        <?php if (!empty($app['proof_details'])): ?>
+                                            <div class="text-xs italic p-1 bg-gray-100 rounded break-words">
+                                                <?php echo nl2br(htmlspecialchars($app['proof_details'])); ?>
+                                            </div>
+                                        <?php else: ?>
+                                            <span class="text-gray-400">N/A</span>
+                                        <?php endif; ?>
+                                    </td>
+
+                                    <td class="px-6 py-4 text-center">
+                                        <span class="px-3 py-1.5 rounded-full text-[10px] font-black uppercase tracking-tighter <?php echo $status['bg']; ?>">
                                             <?php echo $status['text']; ?>
                                         </span>
-                                    </div>
+                                    </td>
 
-                                    <div class="grid grid-cols-2 gap-4 mb-4">
-                                        <div class="bg-gray-50 p-3 rounded-2xl">
-                                            <span class="block text-[8px] font-black text-gray-400 uppercase">Asignatura</span>
-                                            <span class="text-xs font-bold text-gray-700"><?php echo htmlspecialchars($app['subject']); ?></span>
-                                        </div>
-                                        <div class="bg-gray-50 p-3 rounded-2xl">
-                                            <span class="block text-[8px] font-black text-gray-400 uppercase">Horario</span>
-                                            <span class="text-xs font-bold text-gray-700"><?php echo $app['date']; ?> <br> <?php echo $app['time']; ?></span>
-                                        </div>
-                                    </div>
+                                    <td class="px-6 py-4">
+                                        <div class="flex items-center justify-end gap-3">
 
-                                    <div class="mb-4 bg-indigo-50/30 p-3 rounded-2xl border border-dashed border-indigo-100">
-                                        <span class="block text-[8px] font-black text-indigo-400 uppercase mb-1">Comprobante</span>
-                                        <p class="text-[10px] italic text-indigo-900 leading-relaxed"><?php echo !empty($app['proof_details']) ? nl2br(htmlspecialchars($app['proof_details'])) : 'Sin detalles de pago.'; ?></p>
-                                    </div>
+                                            <a href="?view=<?php echo $VIEWS['ADMIN_DASHBOARD']; ?>&filter=<?php echo $filter; ?>&edit=<?php echo $app['id']; ?>"
+                                                class="p-3 bg-indigo-100 text-indigo-600 rounded-2xl hover:bg-indigo-600 hover:text-white transition-all shadow-sm" title="Editar">
+                                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                                                </svg>
+                                            </a>
 
-                                    <div class="flex gap-2">
-                                        <a href="?edit=<?php echo $app['id']; ?>" class="flex-1 py-3 bg-gray-100 text-gray-600 text-center rounded-xl font-black text-[10px] uppercase">Editar</a>
-                                        <?php if ($app['status'] === 'PENDING_VALIDATION'): ?>
-                                            <form method="POST" class="flex-1">
-                                                <input type="hidden" name="action" value="update_status">
+                                            <?php if ($app['status'] !== 'PAID'): ?>
+                                                <form method="POST" class="inline" onsubmit="return confirm('¿Confirmar pago y liberar Asesoria manualmente?');">
+                                                    <input type="hidden" name="action" value="confirm_payment_manual">
+                                                    <input type="hidden" name="id" value="<?php echo $app['id']; ?>">
+                                                    <button type="submit" class="p-3 bg-emerald-500 text-white rounded-2xl hover:bg-emerald-700 transition-all shadow-lg shadow-emerald-100" title="Liberar Asesoria">
+                                                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                                                        </svg>
+                                                    </button>
+                                                </form>
+                                            <?php else: ?>
+                                                <div class="p-3 text-emerald-600 bg-emerald-50 rounded-2xl border border-emerald-200">
+                                                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20">
+                                                        <path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" />
+                                                    </svg>
+                                                </div>
+                                            <?php endif; ?>
+
+                                            <form method="POST" class="inline" onsubmit="return confirm('¿Eliminar permanentemente?');">
+                                                <input type="hidden" name="action" value="admin_delete">
                                                 <input type="hidden" name="appointment_id" value="<?php echo $app['id']; ?>">
-                                                <input type="hidden" name="status" value="PAID">
-                                                <button class="w-full py-3 bg-green-500 text-white rounded-xl font-black text-[10px] uppercase shadow-lg shadow-green-100">Confirmar Pago</button>
+                                                <button type="submit" class="p-3 bg-red-100 text-red-500 rounded-2xl hover:bg-red-500 hover:text-white transition-all shadow-sm">
+                                                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                                                    </svg>
+                                                </button>
                                             </form>
-                                        <?php endif; ?>
-                                    </div>
-                                </div>
-                            <?php endforeach; ?>
-                        </div>
-                    </div>
-                    </table>
-                </div>
 
-                <div class="md:hidden space-y-4">
+                                        </div>
+                                    </td>
+                                </tr>
+                            <?php endforeach; ?>
+                        <?php endif; ?>
+                    </tbody>
+                </table>
+
+                <div class="md:hidden space-y-4 px-2">
                     <?php foreach ($filtered_appointments as $app):
                         $status = $status_details[$app['status']] ?? ['bg' => 'bg-gray-100 text-gray-800', 'text' => $app['status']];
                     ?>
-                        <div class="bg-white p-5 rounded-2xl shadow-md border border-gray-100 relative overflow-hidden">
-                            <div class="absolute top-0 right-0 h-1 w-20 <?php echo strpos($status['bg'], 'green') !== false ? 'bg-green-500' : 'bg-amber-500'; ?>"></div>
-
+                        <div class="bg-white p-6 rounded-[2rem] shadow-lg border border-gray-100 relative overflow-hidden">
                             <div class="flex justify-between items-start mb-4">
-                                <div class="flex items-center">
-                                    <div class="h-10 w-10 rounded-xl bg-indigo-600 text-white flex items-center justify-center font-bold mr-3 shadow-lg shadow-indigo-200">
-                                        <?php echo strtoupper(substr($app['student_name'], 0, 1)); ?>
-                                    </div>
-                                    <div>
-                                        <h3 class="font-black text-gray-900 leading-none"><?php echo htmlspecialchars($app['student_name']); ?></h3>
-                                        <p class="text-xs text-gray-500 mt-1"><?php echo htmlspecialchars($app['student_contact']); ?></p>
-                                    </div>
+                                <div>
+                                    <span class="text-[10px] font-black text-gray-300 uppercase tracking-widest">ID #<?php echo $app['id']; ?></span>
+                                    <h3 class="font-black text-gray-800 uppercase text-lg leading-tight"><?php echo htmlspecialchars($app['student_name']); ?></h3>
+                                    <p class="text-xs text-indigo-500 font-bold"><?php echo htmlspecialchars($app['student_contact']); ?></p>
                                 </div>
-                                <span class="px-2 py-1 text-[9px] font-black rounded-full <?php echo $status['bg']; ?>">
-                                    <?php echo strtoupper($status['text']); ?>
+                                <span class="px-3 py-1 rounded-full text-[10px] font-black uppercase <?php echo $status['bg']; ?>">
+                                    <?php echo $status['text']; ?>
                                 </span>
                             </div>
 
-                            <div class="grid grid-cols-2 gap-4 py-3 border-y border-gray-50 my-3 text-sm">
-                                <div>
-                                    <p class="text-[10px] uppercase text-gray-400 font-bold">Materia</p>
-                                    <p class="font-semibold text-gray-700"><?php echo htmlspecialchars($app['subject']); ?></p>
+                            <div class="grid grid-cols-2 gap-4 mb-4">
+                                <div class="bg-gray-50 p-3 rounded-2xl">
+                                    <span class="block text-[8px] font-black text-gray-400 uppercase">Asignatura</span>
+                                    <span class="text-xs font-bold text-gray-700"><?php echo htmlspecialchars($app['subject']); ?></span>
                                 </div>
-                                <div>
-                                    <p class="text-[10px] uppercase text-gray-400 font-bold">Horario</p>
-                                    <p class="font-semibold text-gray-700"><?php echo $app['date']; ?> <span class="text-indigo-500"><?php echo $app['time']; ?></span></p>
+                                <div class="bg-gray-50 p-3 rounded-2xl">
+                                    <span class="block text-[8px] font-black text-gray-400 uppercase">Horario</span>
+                                    <span class="text-xs font-bold text-gray-700"><?php echo $app['date']; ?> <br> <?php echo $app['time']; ?></span>
                                 </div>
                             </div>
 
-                            <div class="flex gap-2 mt-4">
-                                <a href="?edit=<?php echo $app['id']; ?>" class="flex-1 bg-indigo-50 text-indigo-600 text-center py-2.5 rounded-xl font-bold text-xs">Editar</a>
-                                <form method="POST" class="flex-1" onsubmit="return confirm('¿Borrar?');">
-                                    <input type="hidden" name="action" value="admin_delete">
-                                    <input type="hidden" name="appointment_id" value="<?php echo $app['id']; ?>">
-                                    <button class="w-full bg-red-50 text-red-500 py-2.5 rounded-xl font-bold text-xs text-center">Eliminar</button>
-                                </form>
+                            <div class="mb-4 bg-indigo-50/30 p-3 rounded-2xl border border-dashed border-indigo-100">
+                                <span class="block text-[8px] font-black text-indigo-400 uppercase mb-1">Comprobante</span>
+                                <p class="text-[10px] italic text-indigo-900 leading-relaxed"><?php echo !empty($app['proof_details']) ? nl2br(htmlspecialchars($app['proof_details'])) : 'Sin detalles de pago.'; ?></p>
+                            </div>
+
+                            <div class="flex gap-2">
+                                <a href="?edit=<?php echo $app['id']; ?>" class="flex-1 py-3 bg-gray-100 text-gray-600 text-center rounded-xl font-black text-[10px] uppercase">Editar</a>
+                                <?php if ($app['status'] === 'PENDING_VALIDATION'): ?>
+                                    <form method="POST" class="flex-1">
+                                        <input type="hidden" name="action" value="update_status">
+                                        <input type="hidden" name="appointment_id" value="<?php echo $app['id']; ?>">
+                                        <input type="hidden" name="status" value="PAID">
+                                        <button class="w-full py-3 bg-green-500 text-white rounded-xl font-black text-[10px] uppercase shadow-lg shadow-green-100">Confirmar Pago</button>
+                                    </form>
+                                <?php endif; ?>
                             </div>
                         </div>
                     <?php endforeach; ?>
                 </div>
             </div>
+            </table>
+        </div>
+
+        <div class="md:hidden space-y-4">
+            <?php foreach ($filtered_appointments as $app):
+                $status = $status_details[$app['status']] ?? ['bg' => 'bg-gray-100 text-gray-800', 'text' => $app['status']];
+            ?>
+                <div class="bg-white p-5 rounded-2xl shadow-md border border-gray-100 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 h-1 w-20 <?php echo strpos($status['bg'], 'green') !== false ? 'bg-green-500' : 'bg-amber-500'; ?>"></div>
+
+                    <div class="flex justify-between items-start mb-4">
+                        <div class="flex items-center">
+                            <div class="h-10 w-10 rounded-xl bg-indigo-600 text-white flex items-center justify-center font-bold mr-3 shadow-lg shadow-indigo-200">
+                                <?php echo strtoupper(substr($app['student_name'], 0, 1)); ?>
+                            </div>
+                            <div>
+                                <h3 class="font-black text-gray-900 leading-none"><?php echo htmlspecialchars($app['student_name']); ?></h3>
+                                <p class="text-xs text-gray-500 mt-1"><?php echo htmlspecialchars($app['student_contact']); ?></p>
+                            </div>
+                        </div>
+                        <span class="px-2 py-1 text-[9px] font-black rounded-full <?php echo $status['bg']; ?>">
+                            <?php echo strtoupper($status['text']); ?>
+                        </span>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-4 py-3 border-y border-gray-50 my-3 text-sm">
+                        <div>
+                            <p class="text-[10px] uppercase text-gray-400 font-bold">Materia</p>
+                            <p class="font-semibold text-gray-700"><?php echo htmlspecialchars($app['subject']); ?></p>
+                        </div>
+                        <div>
+                            <p class="text-[10px] uppercase text-gray-400 font-bold">Horario</p>
+                            <p class="font-semibold text-gray-700"><?php echo $app['date']; ?> <span class="text-indigo-500"><?php echo $app['time']; ?></span></p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-2 mt-4">
+                        <a href="?edit=<?php echo $app['id']; ?>" class="flex-1 bg-indigo-50 text-indigo-600 text-center py-2.5 rounded-xl font-bold text-xs">Editar</a>
+                        <form method="POST" class="flex-1" onsubmit="return confirm('¿Borrar?');">
+                            <input type="hidden" name="action" value="admin_delete">
+                            <input type="hidden" name="appointment_id" value="<?php echo $app['id']; ?>">
+                            <button class="w-full bg-red-50 text-red-500 py-2.5 rounded-xl font-bold text-xs text-center">Eliminar</button>
+                        </form>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+        </div>
+    </div>
 
     </div>
 
