@@ -2012,7 +2012,7 @@ function render_subject_cards($cards)
 
                                             <div class="text-left flex-1">
                                                 <h4 class="font-black text-black dark:text-white text-xl md:text-3xl tracking-tighter leading-none uppercase">
-                                                    ¿Vas a realizar tu pago desde un corresponsal?
+                                                    ¿Vas a realizar tu pago desde un corresponsal Bancolombia?
                                                 </h4>
                                                 <p class="text-emerald-900 dark:text-emerald-400 text-sm md:text-lg font-bold uppercase mt-3 leading-tight max-w-[90%]">
                                                     Una vez realizado el pago, envíanos la foto del comprobante a 
