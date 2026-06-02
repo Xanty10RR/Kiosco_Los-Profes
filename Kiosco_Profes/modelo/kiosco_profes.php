@@ -1998,7 +1998,7 @@ function render_subject_cards($cards)
 
                         <p class="text-slate-500 dark:text-slate-400 text-sm md:text-base font-medium max-w-3xl leading-relaxed m-3 transition-colors duration-300">
                             Realiza el pago desde un Corresponsal Bancolombia o desde tu
-                            cuenta Nequi
+                            cuenta Nequi al número <b>3166692913</b>
                         </p>
 
                         <div class="lg:col-span-8 space-y-8 order-1">
@@ -2099,12 +2099,12 @@ function render_subject_cards($cards)
                                             </div>
 
                                             <div class="flex flex-col items-end gap-2">
-                                                <div class="px-5 py-2.5 bg-emerald-500/10 backdrop-blur-xl border border-emerald-500/30 rounded-[1.2rem] flex items-center gap-3 shadow-2xl">
+                                                <div class="p-2.5 bg-emerald-500/10 backdrop-blur-xl border border-emerald-500/30 rounded-[1.2rem] flex items-center gap-3 shadow-2xl">
                                                     <span class="relative flex h-2.5 w-2.5">
                                                         <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                                                         <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-400"></span>
                                                     </span>
-                                                    <span class="text-emerald-700 dark:text-emerald-100 text-[11px] font-black uppercase tracking-widest">Sesión 1H</span>
+                                                    <span class="text-emerald-700 dark:text-emerald-100 text-[10px] font-black uppercase tracking-widest">Sesión 1H</span>
                                                 </div>
                                                 <p class="text-[10px] text-emerald-600 dark:text-emerald-400 font-black italic pr-2 uppercase tracking-tighter">
                                                     LOS PROFES
