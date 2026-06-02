@@ -1926,7 +1926,6 @@ function render_subject_cards($cards)
 
                         <!-- CARD RESUMEN -->
                         <div>
-
                             <div class="lg:col-span-4 space-y-6 order-2 lg:order-1">
                                 <div class="max-w-5xl bg-white/50 dark:bg-gray-800 rounded-[2.5rem] p-8 shadow-[0_4px_20px_rgba(0,0,0,0.02)]">
                                     <div class="flex items-center gap-3 mb-10">
