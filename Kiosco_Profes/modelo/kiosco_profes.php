@@ -1988,22 +1988,24 @@ function render_subject_cards($cards)
                     <div id="paso2" class="ml-8 relative">
                         <div class="absolute -left-[78px] top-1 w-8 h-8 bg-emerald-500 rounded-full border-4 border-white dark:border-gray-900 shadow-[0_0_15px_rgba(16,185,129,0.5)] flex items-center justify-center text-[10px] font-black text-white">2</div>
 
-                        <p class="text-emerald-500 dark:text-emerald-400 font-black uppercase text-xs tracking-[0.3em] mb-1">
+                        <p class="text-emerald-500 dark:text-emerald-400 font-black uppercase text-xs tracking-[0.3em]">
                             Paso 2
                         </p>
 
-                        <h3 class="text-2xl md:text-3xl font-black text-slate-900 dark:text-white mb-4 tracking-tighter italic uppercase">
+                        <h3 class="text-2xl md:text-3xl font-black text-slate-900 dark:text-white tracking-tighter italic uppercase">
                             Realiza el pago
                         </h3>
+
+                        <p class="text-slate-500 dark:text-slate-400 text-sm md:text-base font-medium max-w-3xl leading-relaxed m-3 transition-colors duration-300">
+                            Realiza el pago desde un Corresponsal Bancolombia o desde tu
+                            cuenta Nequi
+                        </p>
 
                         <div class="lg:col-span-8 space-y-8 order-1">
                             <?php if ($is_payment_pending): ?>
                                 <!-- AVISO -->
-                                <div class="w-full px-2 md:px-4 pb-10">
-                                    <br>
-                                    <br>
-
-                                    <div class="w-full bg-white/50 dark:bg-gray-800 rounded-[2.5rem] p-8 md:p-10 border border-emerald-100 dark:border-none flex flex-col md:flex-row items-center justify-between gap-8 group hover:bg-emerald-100 transition-all duration-500 shadow-sm">
+                                <div class="w-full">
+                                    <div class="w-full bg-white/50 dark:bg-gray-800 rounded-[2.5rem] p-8 md:p-10 border border-emerald-100 dark:border-none flex flex-col md:flex-row items-center justify-between gap-8 group hover:bg-emerald-100 dark:hover:bg-gray-700 transition-all duration-500 shadow-sm">
 
                                         <div class="flex flex-row items-center gap-6 md:gap-12 flex-1">
                                             <div class="flex-shrink-0 w-16 h-16 md:w-28 md:h-28 bg-white rounded-[2.2rem] flex items-center justify-center text-3xl md:text-6xl shadow-sm border border-emerald-200 group-hover:rotate-12 transition-transform duration-500">
@@ -2069,8 +2071,8 @@ function render_subject_cards($cards)
                                                     <p class="text-3xl md:text-5xl font-mono font-medium tracking-[0.15em] text-slate-800 dark:text-white/90 group-hover:text-emerald-700 dark:group-hover:text-emerald-300 transition-colors">
                                                         316 <span class="text-emerald-600 dark:text-emerald-400 font-black drop-shadow-[0_0_15px_rgba(52,211,153,0.1)] dark:drop-shadow-[0_0_15px_rgba(52,211,153,0.3)]">669</span> 2913
                                                     </p>
-                                                    <div class="opacity-0 group-hover/number:opacity-100 transition-all transform translate-x-[-10px] group-hover:translate-x-0 bg-emerald-500/20 p-2 rounded-full border border-emerald-500/30">
-                                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-emerald-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <div class="opacity-0 group-hover/number:opacity-100 transition-all transform translate-x-[-10px] group-hover:translate-x-0 bg-emerald-900 dark:bg-emerald-900 p-2 rounded-full border border-emerald-500/30">
+                                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-emerald-200 hover:text-emerald-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2" />
                                                         </svg>
                                                     </div>
@@ -2114,7 +2116,7 @@ function render_subject_cards($cards)
                                     </div>
 
                                     <!-- LÍMITE DE PAGO -->
-                                    <div id="timer-container" class="bg-white dark:bg-gray-800 rounded-[2.5rem] p-6 md:p-8 shadow-xl dark:shadow-2xl relative overflow-hidden border border-slate-100 dark:border-white/5 flex flex-col justify-center min-h-[320px]">
+                                    <div id="timer-container" class="bg-white/50 dark:bg-gray-800 rounded-[2.5rem] p-6 md:p-8 shadow-xl dark:shadow-2xl relative overflow-hidden border border-slate-100 dark:border-white/5 flex flex-col justify-center min-h-[320px]">
                                         <div class="relative z-10">
                                             <p class="text-dark dark:text-white font-bold text-[10px] uppercase tracking-[0.3em] mb-6 text-center">Tiempo límite de pago</p>
                                             <div id="timer-display" class="text-5xl md:text-6xl font-black text-slate-900 dark:text-white tracking-tighter text-center tabular-nums leading-none mb-6 dark:drop-shadow-2xl">--:--</div>
@@ -2143,6 +2145,11 @@ function render_subject_cards($cards)
                         <h3 class="text-2xl md:text-3xl font-black text-slate-900 dark:text-white mb-4 tracking-tighter italic uppercase">
                             Envía el comprobante
                         </h3>
+
+                        <p class="text-slate-500 dark:text-slate-400 text-sm md:text-base font-medium max-w-3xl leading-relaxed transition-colors m-3 duration-300">
+                            Envianos tu referencia de pago, este lo encontraras en la parte inferior
+                            del comprobante tal como indica la siguiente foto de referencia
+                        </p>
 
                         <!-- FORM -->
                         <div class="relative bg-white/50 dark:bg-gray-800 rounded-[3.5rem] p-10 shadow-[0_25px_50px_-12px_rgba(0,0,0,0.04)] border border-slate-100 dark:border-white/5 flex flex-col justify-center overflow-hidden group">
@@ -2181,7 +2188,7 @@ function render_subject_cards($cards)
 
                                     <div class="relative">
                                         <textarea name="proof_details" rows="3" required
-                                            class="w-full p-6 bg-slate-50 dark:bg-white/5 border-2 border-slate-50 dark:border-white/10 rounded-[2.2rem] 
+                                            class="w-full p-6 bg-slate-50 dark:bg-white/5 border-2 border-emerald/20 dark:border-white/20 rounded-[2.2rem] 
                            focus:bg-white dark:focus:bg-white/10 focus:border-emerald-400 focus:ring-[12px] focus:ring-emerald-500/5 
                            outline-none transition-all duration-300 text-sm font-bold text-slate-700 dark:text-white 
                            placeholder:text-slate-500 dark:placeholder:text-slate-300 tracking-tight"
