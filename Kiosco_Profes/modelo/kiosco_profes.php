@@ -2151,9 +2151,12 @@ function render_subject_cards($cards)
                         </p>
 
                         <!-- FORM -->
-                        <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-8 items-start">
-                            <div class="w-full flex justify-center lg:justify-start">
-                                <img src="../assets/comprobante_Nequi.webp" alt="Comprobante pago Nequi" class="w-full max-w-sm rounded-2xl shadow-lg object-contain">
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center max-w-6xl w-full mx-auto">
+                            <div class="flex justify-center">
+                                <img 
+                                src="../assets/comprobante_Nequi.webp" 
+                                alt="Comprobante pago Nequi" 
+                                class="justify-center w-full max-w-sm rounded-2xl shadow-lg">
                             </div>
                             <div class="relative bg-white/50 dark:bg-gray-800 rounded-[3.5rem] p-10 shadow-[0_25px_50px_-12px_rgba(0,0,0,0.04)] border border-slate-100 dark:border-white/5 flex flex-col justify-center overflow-hidden group">
 
