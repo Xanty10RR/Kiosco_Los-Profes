@@ -1909,7 +1909,7 @@ function render_subject_cards($cards)
                 class="relative pl-8 py-10 before:absolute before:left-0 before:top-0 before:h-full before:w-1 before:bg-emerald-500/20">
 
                     <!-- PASO 1 -->
-                    <div id="paso1" class="max-w-7xl mx-auto space-y-24">
+                    <div id="paso1" class="w-full">
                         <div class="absolute -left-[78px] top-1 w-8 h-8 bg-emerald-500 rounded-full border-4 border-white dark:border-gray-900 shadow-[0_0_15px_rgba(16,185,129,0.5)] flex items-center justify-center text-[10px] font-black text-white">1</div>
 
                         <p class="text-emerald-500 dark:text-emerald-400 font-black uppercase text-xs tracking-[0.3em] mb-1">
@@ -2166,7 +2166,7 @@ function render_subject_cards($cards)
                                 <div class="relative z-10 flex items-center gap-5 mb-10">
                                     <div class="border-l-4 border-emerald-500 pl-6 py-2">
                                         <h1 class="text-2xl md:text-3xl font-black text-slate-900 dark:text-white tracking-tighter leading-tight">
-                                            ¡Casi hemos terminado!
+                                            ¡Casi hemos terminado!+
                                             <span class="block text-slate-900 dark:text-emerald-400 font-bold text-sm md:text-base uppercase tracking-[0.15em] mt-1">
                                                 Envía la referencia del comprobante para confirmar la asesoría:
                                             </span>
