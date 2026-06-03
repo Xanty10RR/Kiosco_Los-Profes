@@ -1910,7 +1910,7 @@ function render_subject_cards($cards)
 
                     <!-- PASO 1 -->
                     <div id="paso1" class="ml-8 mb-12 relative">
-                        <div class="absolute -left-[78px] top-1 w-8 h-8 bg-emerald-500 rounded-full border-4 border-white dark:border-gray-900 shadow-[0_0_15px_rgba(16,185,129,0.5)] flex items-center justify-center text-[10px] font-black text-white">1</div>
+                        <div class="absolute -left-[78px] top-1 w-8 h-8 bg-emerald-500 rounded-full border-4 border-white dark:border-gray-900 shadow-[0_0_15px_rgba(16,185,129,0.5)] flex items-center justify-center text-[14px] font-black text-white">1</div>
 
                         <p class="text-emerald-500 dark:text-emerald-400 font-black uppercase text-xs tracking-[0.3em] mb-1">
                             Paso 1
@@ -1985,7 +1985,7 @@ function render_subject_cards($cards)
 
                     <!-- PASO 2 -->
                     <div id="paso2" class="ml-8 mb-12 relative">
-                        <div class="absolute -left-[78px] top-1 w-8 h-8 bg-emerald-500 rounded-full border-4 border-white dark:border-gray-900 shadow-[0_0_15px_rgba(16,185,129,0.5)] flex items-center justify-center text-[10px] font-black text-white">2</div>
+                        <div class="absolute -left-[78px] top-1 w-8 h-8 bg-emerald-500 rounded-full border-4 border-white dark:border-gray-900 shadow-[0_0_15px_rgba(16,185,129,0.5)] flex items-center justify-center text-[14px] font-black text-white">2</div>
 
                         <p class="text-emerald-500 dark:text-emerald-400 font-black uppercase text-xs tracking-[0.3em]">
                             Paso 2
@@ -2135,7 +2135,7 @@ function render_subject_cards($cards)
 
                     <!-- PASO 3 -->
                     <div id="paso3" class="ml-8 relative">
-                        <div class="absolute -left-[78px] top-1 w-8 h-8 bg-emerald-500 rounded-full border-4 border-white dark:border-gray-900 shadow-[0_0_15px_rgba(16,185,129,0.5)] flex items-center justify-center text-[10px] font-black text-white">3</div>
+                        <div class="absolute -left-[78px] top-1 w-8 h-8 bg-emerald-500 rounded-full border-4 border-white dark:border-gray-900 shadow-[0_0_15px_rgba(16,185,129,0.5)] flex items-center justify-center text-[14px] font-black text-white">3</div>
 
                         <p class="text-emerald-500 dark:text-emerald-400 font-black uppercase text-xs tracking-[0.3em] mb-1">
                             Paso 3
