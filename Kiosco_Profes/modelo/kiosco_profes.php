@@ -2171,16 +2171,6 @@ function render_subject_cards($cards)
                                             </span>
                                         </h1>
                                     </div>
-                                    <div class="relative">
-                                        <div class="w-14 h-14 bg-gradient-to-br from-emerald-400 to-emerald-600 dark:from-emerald-600 dark:to-emerald-800 text-white rounded-[1.5rem] flex items-center justify-center text-xl font-black shadow-[0_10px_20px_rgba(16,185,129,0.2)] dark:shadow-[0_10px_20px_rgba(0,0,0,0.3)] transform group-hover:rotate-6 transition-transform">
-                                            02
-                                        </div>
-                                        <span class="absolute -top-1 -right-1 flex h-4 w-4">
-                                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                                            <span class="relative inline-flex rounded-full h-4 w-4 bg-emerald-500 border-2 border-white dark:border-gray-900"></span>
-                                        </span>
-                                    </div>
-
                                 </div>
 
                                 <form method="POST" action="" class="relative z-10 space-y-6">
