@@ -1906,11 +1906,11 @@ function render_subject_cards($cards)
 
                 <!-- NUEVO -->
                 <div id="timeline-container" 
-                class="relative pl-8 py-10 before:absolute before:left-0 before:top-0 before:h-full before:w-1 before:bg-emerald-500/20">
+                class="relative before:absolute before:left-0 before:top-0 before:h-full before:w-1 before:bg-emerald-500/20">
 
                     <!-- PASO 1 -->
                     <div id="paso1" class="ml-8 mb-12 relative">
-                        <div class="absolute -left-[78px] top-1 w-8 h-8 bg-emerald-500 rounded-full border-4 border-white dark:border-gray-900 shadow-[0_0_15px_rgba(16,185,129,0.5)] flex items-center justify-center text-[14px] font-black text-white">1</div>
+                        <div class="absolute -left-[46px] top-1 w-8 h-8 bg-emerald-500 rounded-full border-4 border-white dark:border-gray-900 shadow-[0_0_15px_rgba(16,185,129,0.5)] flex items-center justify-center text-[14px] font-black text-white">1</div>
 
                         <p class="text-emerald-500 dark:text-emerald-400 font-black uppercase text-xs tracking-[0.3em] mb-1">
                             Paso 1
@@ -1985,7 +1985,7 @@ function render_subject_cards($cards)
 
                     <!-- PASO 2 -->
                     <div id="paso2" class="ml-8 mb-12 relative">
-                        <div class="absolute -left-[78px] top-1 w-8 h-8 bg-emerald-500 rounded-full border-4 border-white dark:border-gray-900 shadow-[0_0_15px_rgba(16,185,129,0.5)] flex items-center justify-center text-[14px] font-black text-white">2</div>
+                        <div class="absolute -left-[46px] top-1 w-8 h-8 bg-emerald-500 rounded-full border-4 border-white dark:border-gray-900 shadow-[0_0_15px_rgba(16,185,129,0.5)] flex items-center justify-center text-[14px] font-black text-white">2</div>
 
                         <p class="text-emerald-500 dark:text-emerald-400 font-black uppercase text-xs tracking-[0.3em]">
                             Paso 2
@@ -2128,7 +2128,7 @@ function render_subject_cards($cards)
 
                     <!-- PASO 3 -->
                     <div id="paso3" class="ml-8 relative">
-                        <div class="absolute -left-[78px] top-1 w-8 h-8 bg-emerald-500 rounded-full border-4 border-white dark:border-gray-900 shadow-[0_0_15px_rgba(16,185,129,0.5)] flex items-center justify-center text-[14px] font-black text-white">3</div>
+                        <div class="absolute -left-[46px] top-1 w-8 h-8 bg-emerald-500 rounded-full border-4 border-white dark:border-gray-900 shadow-[0_0_15px_rgba(16,185,129,0.5)] flex items-center justify-center text-[14px] font-black text-white">3</div>
 
                         <p class="text-emerald-500 dark:text-emerald-400 font-black uppercase text-xs tracking-[0.3em] mb-1">
                             Paso 3
