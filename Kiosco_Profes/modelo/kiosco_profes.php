@@ -2288,7 +2288,7 @@ function render_subject_cards($cards)
                     timerDisplay.textContent = "00:00";
                     // No recargamos inmediatamente, esperamos a que PHP lo haga en el siguiente request
                     // Pero podemos cambiar el estilo para indicar la expiración
-                    timerDisplay.closest('.text-center').innerHTML = "<p class='text-xl font-bold text-red-600'>¡Tiempo Expirado! Refresque para cancelar la Asesoria.</p>";
+                    timerDisplay.closest('.text-center').innerHTML = "<p class='text-xl font-bold text-red-600 tracking-wide'>¡Tiempo Expirado! Refresque para cancelar la Asesoria.</p>";
                 }
                 clearInterval(x);
                 return;
