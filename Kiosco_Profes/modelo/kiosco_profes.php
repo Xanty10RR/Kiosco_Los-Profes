@@ -2015,9 +2015,9 @@ function render_subject_cards($cards)
                                                 <h4 class="font-black text-black dark:text-white text-xl md:text-3xl tracking-tighter leading-none uppercase">
                                                     ¿Vas a realizar tu pago desde un corresponsal Bancolombia?
                                                 </h4>
-                                                <p class="text-emerald-900 dark:text-emerald-400 text-sm md:text-lg font-bold uppercase mt-3 leading-tight max-w-[90%]">
+                                                <p class="text-emerald-900 dark:text-emerald-400 text-sm md:text-lg uppercase mt-3 leading-tight max-w-[90%]">
                                                     Una vez realizado el pago, envíanos la foto del comprobante a
-                                                    nuestro WhatsApp 3164876650 o haz clic en el botón de WhatsApp
+                                                    nuestro WhatsApp <b>3164876650</b> o haz clic en el botón de WhatsApp
                                                     desde este dispositivo para enviarlo directamente.
                                                     Recuerda adjuntar tus datos para validar correctamente tu asesoría.
                                                     Recuerde que solo tiene 30 minutos para completar este proceso.
@@ -2025,17 +2025,10 @@ function render_subject_cards($cards)
                                                 </p>
                                             </div>
                                         </div>
-
-                                        <div class="w-full md:w-auto flex-shrink-0">
-                                            <a href="https://wa.me/573164876650" target="_blank"
-                                                class="inline-flex w-full md:w-auto px-16 py-7 bg-[#10B981] text-white rounded-[2rem] font-black text-xs md:text-base uppercase tracking-[0.2em] shadow-md shadow-emerald-400 hover:bg-emerald-600 hover:-translate-y-2 active:scale-95 transition-all text-center justify-center whitespace-nowrap">
-                                                WhatsApp Soporte
-                                            </a>
-                                        </div>
                                     </div>
                                 </div>
-                                <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
 
+                                <div class="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
                                     <!-- CARD NEQUI -->
                                     <div class="relative min-h-[320px] flex flex-col justify-between p-10 sm:p-10 rounded-[2.5rem] md:rounded-[3.5rem] overflow-hidden group bg-gradient-to-br from-[#F6FDFA] via-[#CDF3E5] dark:bg-gradient-to-br dark:from-[#062c1d] dark:via-[#02110b] dark:to-black border border-emerald-100 dark:border-emerald-500/20 shadow-[0_32px_64px_-15px_rgba(0,0,0,0.05)] dark:shadow-[0_32px_64px_-15px_rgba(0,0,0,0.6)] transition-all duration-500 hover:border-emerald-400/40">
                                         <div class="absolute -top-20 -right-20 w-80 h-80 bg-emerald-50 dark:bg-emerald-600/20 rounded-full blur-[100px] group-hover:bg-emerald-100 dark:group-hover:bg-emerald-500/30 transition-colors duration-700"></div>
@@ -2199,13 +2192,13 @@ function render_subject_cards($cards)
                                     </div>
 
                                     <button type="submit"
-                                        class="group relative w-full py-6 bg-[#10B981] overflow-hidden rounded-[1.8rem] font-black text-xs uppercase tracking-[0.2em] text-white shadow-[0_10px_20px_rgba(6,44,29,0.2)] hover:shadow-[0_10px_20px_rgba(16,185,129,0.3)] active:scale-[0.98] transition-all duration-300">
+                                        class="group relative w-full py-6 bg-[#10B981] overflow-hidden rounded-[1.8rem] font-black text-xs uppercase tracking-[0.1em] text-white shadow-[0_10px_20px_rgba(6,44,29,0.2)] hover:shadow-[0_10px_20px_rgba(16,185,129,0.3)] active:scale-[0.98] transition-all duration-300">
 
                                         <div class="absolute inset-0 bg-emerald-600 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out"></div>
 
                                         <span class="relative z-10 flex items-center justify-center gap-3">
                                             Enviar Comprobante Ahora
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                                             </svg>
                                         </span>
