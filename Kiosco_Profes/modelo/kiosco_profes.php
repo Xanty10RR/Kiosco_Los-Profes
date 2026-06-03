@@ -1981,7 +1981,6 @@ function render_subject_cards($cards)
                             </div>
                         </div>
                     </div>
-
                     <!-- CIERRE DE CONTENEDORES DEL PASO 1 -->
 
                     <!-- PASO 2 -->
