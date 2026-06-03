@@ -1909,7 +1909,7 @@ function render_subject_cards($cards)
                 class="relative pl-8 py-10 before:absolute before:left-0 before:top-0 before:h-full before:w-1 before:bg-emerald-500/20">
 
                     <!-- PASO 1 -->
-                    <div id="paso1" class="w-full">
+                    <div id="paso1" class="w-full ml-8 relative">
                         <div class="absolute -left-[78px] top-1 w-8 h-8 bg-emerald-500 rounded-full border-4 border-white dark:border-gray-900 shadow-[0_0_15px_rgba(16,185,129,0.5)] flex items-center justify-center text-[10px] font-black text-white">1</div>
 
                         <p class="text-emerald-500 dark:text-emerald-400 font-black uppercase text-xs tracking-[0.3em] mb-1">
@@ -2198,7 +2198,7 @@ function render_subject_cards($cards)
                                                 class="w-full p-6 bg-slate-50 dark:bg-white/5 border-2 border-emerald/20 dark:border-white/20 rounded-[2.2rem] 
                            focus:bg-white dark:focus:bg-white/10 focus:border-emerald-400 focus:ring-[12px] focus:ring-emerald-500/5 
                            outline-none transition-all duration-300 text-sm font-bold text-slate-700 dark:text-white 
-                           placeholder:text-slate-500 dark:placeholder:text-slate-300 tracking-tight"
+                           placeholder:text-slate-500 dark:placeholder:text-slate-300 dark:focus:border-emerald-400 focus:ring-[12px] tracking-tight"
                                                 placeholder="Escribe el código de referencia o adjunta detalles..."></textarea>
 
                                             <div class="absolute bottom-5 right-6 text-slate-200 dark:text-slate-700 group-focus-within/input:text-emerald-400 transition-colors">
