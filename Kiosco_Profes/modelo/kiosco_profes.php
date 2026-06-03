@@ -1931,25 +1931,25 @@ function render_subject_cards($cards)
                                 <div class="w-full bg-white/50 dark:bg-gray-800 rounded-[2.5rem] p-8 shadow-[0_4px_20px_rgba(0,0,0,0.02)]">
                                     <div class="flex items-center gap-3 mb-10">
                                         <div class="w-2 h-6 bg-emerald-500 rounded-full"></div>
-                                        <h3 class="text-black dark:text-white font-bold text-[11px] uppercase tracking-[0.2em]">
+                                        <h3 class="text-black dark:text-white font-bold text-[12px] uppercase tracking-[0.2em]">
                                             Resumen de tu Asesoria
                                         </h3>
                                     </div>
 
-                                    <div class="space-y-8">
-                                        <div class="group flex items-center gap-5">
-                                            <div class="w-12 h-12 rounded-2xl bg-slate-50 flex items-center justify-center text-xl group-hover:bg-indigo-50 group-hover:text-indigo-600 transition-colors duration-300">👤</div>
+                                    <div class="grid grid-cols-1 md:grid-cols-3 xl:grid-cols-3 gap-6">
+                                        <div class="group p-6 rounded-3xl bg-slate-50 dark:bg-gray-700/50 border border-slate-300 dark:border-gray-600">
+                                            <div class="flex mx-auto w-12 h-12 rounded-2xl bg-slate-50 flex items-center justify-center text-xl group-hover:bg-indigo-100 group-hover:text-indigo-600 transition-colors duration-300">👤</div>
                                             <div>
-                                                <p class="text-black dark:text-white text-[10px] font-bold uppercase tracking-widest mb-0.5">Estudiante</p>
-                                                <p class="font-extrabold text-black dark:text-white tracking-tight leading-tight"><?php echo htmlspecialchars($current_appointment['student_name']); ?></p>
+                                                <p class="text-center text-black dark:text-white text-[10px] font-bold uppercase tracking-widest mb-0.5">Estudiante</p>
+                                                <p class="text-center font-extrabold text-black dark:text-white tracking-tight leading-tight"><?php echo htmlspecialchars($current_appointment['student_name']); ?></p>
                                             </div>
                                         </div>
 
-                                        <div class="group flex items-center gap-5">
-                                            <div class="w-12 h-12 rounded-2xl bg-slate-50 flex items-center justify-center text-xl group-hover:bg-indigo-50 group-hover:text-indigo-600 transition-colors duration-300">📚</div>
+                                        <div class="group p-6 rounded-3xl bg-slate-50 dark:bg-gray-700/50 border border-slate-300 dark:border-gray-600">
+                                            <div class="flex mx-auto w-12 h-12 rounded-2xl bg-slate-50 flex items-center justify-center text-xl group-hover:bg-indigo-100 group-hover:text-indigo-600 transition-colors duration-300">📚</div>
                                             <div>
-                                                <p class="text-black dark:text-white text-[10px] font-bold uppercase tracking-widest mb-0.5">Asignatura</p>
-                                                <p class="font-extrabold text-black dark:text-white tracking-tight leading-tight">
+                                                <p class="text-center text-black dark:text-white text-[10px] font-bold uppercase tracking-widest mb-0.5">Asignatura</p>
+                                                <p class="text-center font-extrabold text-black dark:text-white tracking-tight leading-tight">
                                                     <?php echo htmlspecialchars($current_appointment['subject']); ?>
                                                     <?php if ($current_appointment['other_subject']): ?>
                                                         <span class="block text-black dark:text-slice-100 text-xs font-semibold mt-1">(<?php echo htmlspecialchars($current_appointment['other_subject']); ?>)</span>
@@ -1958,12 +1958,12 @@ function render_subject_cards($cards)
                                             </div>
                                         </div>
 
-                                        <div class="group flex items-center gap-5">
-                                            <div class="w-12 h-12 rounded-2xl bg-slate-50 flex items-center justify-center text-xl group-hover:bg-emerald-50 group-hover:text-emerald-600 transition-colors duration-300">📅</div>
+                                        <div class="group p-6 rounded-3xl bg-slate-50 dark:bg-gray-700/50 border border-slate-300 dark:border-gray-600">
+                                            <div class="flex mx-auto w-12 h-12 rounded-2xl bg-slate-50 flex items-center justify-center text-xl group-hover:bg-indigo-100 group-hover:text-indigo-600 transition-colors duration-300">📅</div>
                                             <div>
-                                                <p class="text-black dark:text-white text-[10px] font-bold uppercase tracking-widest mb-0.5">Fecha programada</p>
-                                                <p class="font-extrabold text-black dark:text-white tracking-tight"><?php echo htmlspecialchars($current_appointment['date']); ?></p>
-                                                <p class="text-emerald-500 dark:text-emerald-300 font-bold text-xs mt-0.5"><?php echo htmlspecialchars($current_appointment['time']); ?></p>
+                                                <p class="text-center text-black dark:text-white text-[10px] font-bold uppercase tracking-widest mb-0.5">Fecha programada</p>
+                                                <p class="text-center font-extrabold text-black dark:text-white tracking-tight"><?php echo htmlspecialchars($current_appointment['date']); ?></p>
+                                                <p class="text-center text-emerald-500 dark:text-emerald-300 font-bold text-xs mt-0.5"><?php echo htmlspecialchars($current_appointment['time']); ?></p>
                                             </div>
                                         </div>
                                     </div>
