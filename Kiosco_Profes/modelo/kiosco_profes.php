@@ -1905,10 +1905,11 @@ function render_subject_cards($cards)
                 </div>
 
                 <!-- NUEVO -->
-                <div id="timeline-container" class="relative pl-8 space-y-24 py-10 before:absolute before:left-0 before:top-0 before:h-full before:w-1 before:bg-emerald-500/20">
+                <div id="timeline-container" 
+                class="relative pl-8 py-10 before:absolute before:left-0 before:top-0 before:h-full before:w-1 before:bg-emerald-500/20">
 
                     <!-- PASO 1 -->
-                    <div id="paso1" class="ml-8 relative">
+                    <div id="paso1" class="max-w-7xl mx-auto space-y-24">
                         <div class="absolute -left-[78px] top-1 w-8 h-8 bg-emerald-500 rounded-full border-4 border-white dark:border-gray-900 shadow-[0_0_15px_rgba(16,185,129,0.5)] flex items-center justify-center text-[10px] font-black text-white">1</div>
 
                         <p class="text-emerald-500 dark:text-emerald-400 font-black uppercase text-xs tracking-[0.3em] mb-1">
@@ -1927,7 +1928,7 @@ function render_subject_cards($cards)
                         <!-- CARD RESUMEN -->
                         <div>
                             <div class="lg:col-span-4 space-y-6 order-2 lg:order-1">
-                                <div class="max-w-5xl bg-white/50 dark:bg-gray-800 rounded-[2.5rem] p-8 shadow-[0_4px_20px_rgba(0,0,0,0.02)]">
+                                <div class="w-full bg-white/50 dark:bg-gray-800 rounded-[2.5rem] p-8 shadow-[0_4px_20px_rgba(0,0,0,0.02)]">
                                     <div class="flex items-center gap-3 mb-10">
                                         <div class="w-2 h-6 bg-emerald-500 rounded-full"></div>
                                         <h3 class="text-black dark:text-white font-bold text-[11px] uppercase tracking-[0.2em]">
@@ -2151,12 +2152,12 @@ function render_subject_cards($cards)
                         </p>
 
                         <!-- FORM -->
-                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center max-w-6xl w-full mx-auto">
-                            <div class="flex justify-center">
+                        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch w-full">
+                            <div class="flex flex-col items-center justify-center bg-white/50 dark:bg-gray-800 rounded-[3.5rem] p-10 shadow-[0_25px_50px_-12px_rgba(0,0,0,0.04)] border border-slate-100 dark:border-white/5 overflow-hidden group">
                                 <img 
                                 src="../assets/comprobante_Nequi.webp" 
                                 alt="Comprobante pago Nequi" 
-                                class="justify-center w-full max-w-sm rounded-2xl shadow-lg">
+                                class="w-full max-w-sm rounded-2xl shadow-lg">
                             </div>
                             <div class="relative bg-white/50 dark:bg-gray-800 rounded-[3.5rem] p-10 shadow-[0_25px_50px_-12px_rgba(0,0,0,0.04)] border border-slate-100 dark:border-white/5 flex flex-col justify-center overflow-hidden group">
 
