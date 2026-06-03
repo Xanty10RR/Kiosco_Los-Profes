@@ -2139,7 +2139,7 @@ function render_subject_cards($cards)
                         </h3>
 
                         <p class="text-slate-500 dark:text-slate-400 text-sm md:text-base font-medium max-w-3xl leading-relaxed transition-colors m-3 duration-300">
-                            Envianos tu referencia de pago, este lo encontraras en la parte inferior
+                            Después de hacer el pago envianos tu referencia de pago, este lo encontraras en la parte inferior
                             del comprobante tal como indica la siguiente foto de referencia
                         </p>
 
