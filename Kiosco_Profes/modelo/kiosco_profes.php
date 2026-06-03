@@ -2063,7 +2063,9 @@ function render_subject_cards($cards)
                                                     <p class="text-3xl md:text-5xl font-mono font-medium tracking-[0.15em] text-slate-800 dark:text-white/90 group-hover:text-emerald-700 dark:group-hover:text-emerald-300 transition-colors">
                                                         316 <span class="text-emerald-600 dark:text-emerald-400 font-black drop-shadow-[0_0_15px_rgba(52,211,153,0.1)] dark:drop-shadow-[0_0_15px_rgba(52,211,153,0.3)]">669</span> 2913
                                                     </p>
-                                                    <div class="opacity-0 group-hover/number:opacity-100 transition-all transform translate-x-[-10px] group-hover:translate-x-0 bg-emerald-900 dark:bg-emerald-900 p-2 rounded-full border border-emerald-500/30">
+                                                    <div 
+                                                    class="opacity-0 group-hover/number:opacity-100 transition-all transform translate-x-[-10px] group-hover:translate-x-0 bg-emerald-900 dark:bg-emerald-900 p-2 rounded-full border border-emerald-500/30"
+                                                    onclick="event.stopPropagation(); navigator.clipboard.writeText('3166692913'); alert('¡Celular Copiado!')">
                                                         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-emerald-200 hover:text-emerald-200" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2" />
                                                         </svg>
