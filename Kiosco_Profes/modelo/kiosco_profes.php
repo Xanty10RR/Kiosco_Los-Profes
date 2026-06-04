@@ -2216,6 +2216,7 @@ function render_subject_cards($cards)
                                     </div>
                                 </form>
                                 <script>
+                                    /*
                                     document.getElementById('formWhatsapp').addEventListener('submit', function(e) {
                                         e.preventDefault();
 
@@ -2233,6 +2234,7 @@ function render_subject_cards($cards)
                                         const url = `https://wa.me/${numeroLosProfes}?text=${mensaje}`;
                                         window.open(url, `_blank`); //Abre en nueva pestaña del navegador
                                     });
+                                    */
                                 </script>
                             </div>
                         </div>
