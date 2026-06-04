@@ -2168,7 +2168,7 @@ function render_subject_cards($cards)
                                     </div>
                                 </div>
 
-                                <form method="POST" action="" class="relative z-10 space-y-6">
+                                <form id="formWhatsapp" method="POST" action="" class="relative z-10 space-y-6">
                                     <input type="hidden" name="action" value="upload_proof">
                                     <input type="hidden" name="appointment_id" value="<?php echo $current_appointment['id']; ?>">
 
@@ -2199,7 +2199,7 @@ function render_subject_cards($cards)
                                         <div class="absolute inset-0 bg-emerald-600 translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out"></div>
 
                                         <span class="relative z-10 flex items-center justify-center gap-3">
-                                            Enviar Comprobante Ahora
+                                            Enviar Referencia
                                             <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                                             </svg>
@@ -2215,6 +2215,25 @@ function render_subject_cards($cards)
                                         </p>
                                     </div>
                                 </form>
+                                <script>
+                                    document.getElementById('formWhatsapp').addEventListener('submit', function(e) {
+                                        e.preventDefault();
+
+                                        //Capturo los datos del form
+                                        const proof_details = this.proof_details.value;
+
+                                        //Numero cel de Los Profes
+                                        const numeroLosProfes = `+573166692913`
+
+                                        //Mensaje
+                                        let mensaje = `*Nuevo pago Kiosco Los Profes*%0A%0A`;
+                                        mensaje += `*Referencia de pago:* ${proof_details}%0A%0A`;
+                                        mensaje += `Ya realice el pago, quedo atent@.`;
+
+                                        const url = `https://wa.me/${numeroLosProfes}?text=${mensaje}`;
+                                        window.open(url, `_blank`); //Abre en nueva pestaña del navegador
+                                    });
+                                </script>
                             </div>
                         </div>
                     </div>
