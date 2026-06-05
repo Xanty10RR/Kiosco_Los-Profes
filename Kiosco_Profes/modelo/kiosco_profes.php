@@ -2256,32 +2256,30 @@ function render_subject_cards($cards)
 
 
                     <?php if ($status === 'PENDING_VALIDATION'): ?>
-                        <div class="max-w-md mx-auto relative z-10 bg-white/50 dark:bg-gray-800 p-8 rounded-[2rem] border border-slate-100 dark:border-white/5 shadow-inner">
-                            <div class="relative p-6 bg-emerald-200/30 dark:bg-emerald-900/20 rounded-[2rem] border border-emerald-300/30 dark:border-emerald-500/20">
-                                <p class="text-slate-800 dark:text-slate-200 leading-relaxed font-medium text-lg">
-                                    <span class="inline-flex items-center gap-2 px-3 py-1 bg-emerald-500 text-white text-[10px] font-black uppercase tracking-[0.2em] rounded-full mb-4">
-                                        <span class="relative flex h-2 w-2">
-                                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
-                                            <span class="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
-                                        </span>
-                                        Procesando con prioridad
+                        <div class="max-w-md mx-auto relative p-6 bg-emerald-200/30 dark:bg-emerald-900/20 rounded-[2rem] border border-emerald-300/30 dark:border-emerald-500/20 shadow-inner">
+                            <p class="text-slate-800 dark:text-slate-200 leading-relaxed font-medium text-lg">
+                                <span class="inline-flex items-center gap-2 px-3 py-1 bg-emerald-500 text-white text-[10px] font-black uppercase tracking-[0.2em] rounded-full mb-4">
+                                    <span class="relative flex h-2 w-2">
+                                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+                                        <span class="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
                                     </span>
+                                    Procesando con prioridad
+                                </span>
 
-                                    <br>
+                                <br>
 
-                                    <span class="text-slate-900 dark:text-white font-black text-xl block mb-2">
-                                        ¡Tu proceso ha comenzado con éxito! 🚀
-                                    </span>
+                                <span class="text-slate-900 dark:text-white font-black text-xl block mb-2">
+                                    ¡Tu proceso ha comenzado con éxito! 🚀
+                                </span>
 
-                                    Tu pago está siendo validado por nuestro sistema. En un Momento, un
-                                    <span class="text-emerald-700 dark:text-emerald-300 font-bold italic">Coordinador Especialista</span>
-                                    se comunicará contigo para darte la bienvenida y entregarte todos los detalles exclusivos de tu asesoría.
+                                Tu pago está siendo validado por nuestro sistema. En un Momento, un
+                                <span class="text-emerald-700 dark:text-emerald-300 font-bold italic">Coordinador Especialista</span>
+                                se comunicará contigo para darte la bienvenida y entregarte todos los detalles exclusivos de tu asesoría.
 
-                                    <span class="block mt-4 text-sm font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest">
-                                        ¡Prepárate para llevar tu aprendizaje al siguiente nivel!
-                                    </span>
-                                </p>
-                            </div>
+                                <span class="block mt-4 text-sm font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest">
+                                    ¡Prepárate para llevar tu aprendizaje al siguiente nivel!
+                                </span>
+                            </p>
                         </div>
                     <?php endif; ?>
 
