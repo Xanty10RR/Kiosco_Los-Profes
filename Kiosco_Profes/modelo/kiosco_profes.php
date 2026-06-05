@@ -1881,7 +1881,7 @@ function render_subject_cards($cards)
                         <div class="absolute -top-24 -right-24 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
 
                         <div class="flex flex-col md:flex-row items-center gap-6 relative z-10 text-center md:text-left">
-                            <div class="w-20 h-20 md:w-24 md:h-24 bg-white/20 backdrop-blur-2xl rounded-3xl flex items-center justify-center text-5xl shadow-2xl border border-white/30 transform hover:scale-105 transition-transform duration-500">
+                            <div class="w-20 h-20 md:w-24 md:h-24 bg-white/20 backdrop-blur-2xl rounded-3xl flex items-center justify-center shrink-0 aspect-square text-5xl shadow-2xl border border-white/30 transform hover:scale-105 transition-transform duration-500">
                                 <?php echo $style['icon']; ?>
                             </div>
                             <div>
