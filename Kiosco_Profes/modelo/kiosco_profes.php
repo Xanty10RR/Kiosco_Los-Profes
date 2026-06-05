@@ -2286,9 +2286,9 @@ function render_subject_cards($cards)
                     <?php endif; ?>
 
                     <?php if ($current_appointment['proof_details']): ?>
-                        <div class="mt-16 p-8 bg-slate-50 dark:bg-gray-700/50 rounded-[2rem] text-left border-2 border-dashed border-slate-200 dark:border-gray-600 relative max-w-xl mx-auto">
-                            <span class="absolute -top-3 left-10 bg-white dark:bg-gray-800 px-4 py-1 rounded-full text-[9px] font-black text-slate-400 dark:text-slate-300 uppercase tracking-widest shadow-sm">Tu Pin de Referencia</span>
-                            <p class="text-slate-600 dark:text-slate-300 font-extrabold italic text-md leading-relaxed">"<?php echo htmlspecialchars($current_appointment['proof_details']); ?>"</p>
+                        <div class="mt-16 p-8 bg-slate-200/50 dark:bg-gray-700/50 rounded-[2rem] text-left border-2 border-dashed border-slate-300 dark:border-gray-600 relative max-w-xl mx-auto">
+                            <span class="absolute -top-3 left-10 bg-white dark:bg-gray-800 px-4 py-1 rounded-full text-[10px] font-black text-black dark:text-white uppercase tracking-widest shadow-sm">Tu Pin de Referencia</span>
+                            <p class="text-slate-800 dark:text-slate-100 font-extrabold italic text-md leading-relaxed">"<?php echo htmlspecialchars($current_appointment['proof_details']); ?>"</p>
                         </div>
                     <?php endif; ?>
                 </div>
