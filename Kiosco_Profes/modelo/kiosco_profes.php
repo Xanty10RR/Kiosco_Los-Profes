@@ -1897,7 +1897,7 @@ function render_subject_cards($cards)
                         </div>
 
                         <?php if (!$is_payment_pending || $status === 'PAID'): ?>
-                            <a href="?view=<?php echo $VIEWS['SCHEDULE_VIEW']; ?>" class="bg-white text-slate-900 px-10 py-4 rounded-2xl font-black text-xs uppercase tracking-[0.2em] hover:shadow-2xl hover:-translate-y-1 active:scale-95 transition-all duration-300 relative z-10 shadow-xl border border-transparent">
+                            <a href="?view=<?php echo $VIEWS['SCHEDULE_VIEW']; ?>" class="bg-white text-center text-black px-7 py-3.5 rounded-2xl font-black text-xs uppercase tracking-[0.2em] hover:shadow-2xl hover:-translate-y-1 active:scale-95 transition-all duration-300 relative z-10 shadow-xl border border-transparent">
                                 Agendar nueva Asesoría
                             </a>
                         <?php endif; ?>
