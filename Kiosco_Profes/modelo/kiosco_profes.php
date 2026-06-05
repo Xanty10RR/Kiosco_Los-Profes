@@ -2268,7 +2268,7 @@ function render_subject_cards($cards)
 
                                 <br>
 
-                                <span class="text-slate-900 dark:text-white font-black text-xl block mb-2">
+                                <span class="text-slate-900 dark:text-slate-100 font-black text-xl block mb-2">
                                     ¡Tu proceso ha comenzado con éxito! 🚀
                                 </span>
 
@@ -2276,7 +2276,7 @@ function render_subject_cards($cards)
                                 <span class="text-emerald-700 dark:text-emerald-300 font-bold italic">Coordinador Especialista</span>
                                 se comunicará contigo para darte la bienvenida y entregarte todos los detalles exclusivos de tu asesoría.
 
-                                <span class="block mt-4 text-sm font-bold text-slate-500 dark:text-slate-400 uppercase tracking-widest">
+                                <span class="block mt-4 text-sm font-bold text-slate-600 dark:text-slate-300 uppercase tracking-widest">
                                     ¡Prepárate para llevar tu aprendizaje al siguiente nivel!
                                 </span>
                             </p>
