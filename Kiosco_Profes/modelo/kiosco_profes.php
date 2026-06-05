@@ -2244,10 +2244,10 @@ function render_subject_cards($cards)
                 <?php endif; ?>
 
             <?php else: ?>
-                <div class="bg-white rounded-[3.5rem] p-12 md:p-24 shadow-sm border border-slate-100 text-center relative overflow-hidden">
+                <div class="bg-white dark:bg-gray-800 rounded-[3.5rem] p-12 md:p-24 shadow-sm border border-slate-100 dark:border-gray-700 text-center relative overflow-hidden">
                     <div class="absolute -top-12 -left-12 w-64 h-64 <?php echo $style['bg']; ?> opacity-[0.03] rounded-full blur-3xl"></div>
 
-                    <div class="w-32 h-32 md:w-44 md:h-44 <?php echo $style['bg']; ?> rounded-[3rem] flex items-center justify-center mx-auto mb-12 shadow-2xl relative z-10 border-[12px] border-white transform hover:rotate-6 transition-transform duration-700 ease-out overflow-hidden">
+                    <div class="w-32 h-32 md:w-44 md:h-44 <?php echo $style['bg']; ?> rounded-[3rem] flex items-center justify-center mx-auto mb-12 shadow-2xl relative z-10 border-[12px] border-white dark:border-gray-800 transform hover:rotate-6 transition-transform duration-700 ease-out overflow-hidden">
                         <img src="../assets/logo1.png"
                             alt="100%"
                             class="w-full h-full object-contain p-4 drop-shadow-md">
@@ -2256,9 +2256,9 @@ function render_subject_cards($cards)
 
 
                     <?php if ($status === 'PENDING_VALIDATION'): ?>
-                        <div class="max-w-md mx-auto relative z-10 bg-slate-50 p-8 rounded-[2rem] border border-slate-100 shadow-inner">
-                            <div class="relative p-6 bg-emerald-50/30 rounded-[2rem] border border-emerald-100/50">
-                                <p class="text-slate-600 leading-relaxed font-medium text-lg">
+                        <div class="max-w-md mx-auto relative z-10 bg-slate-50 dark:bg-gray-700 p-8 rounded-[2rem] border border-slate-100 dark:border-gray-600 shadow-inner">
+                            <div class="relative p-6 bg-emerald-50/30 dark:bg-emerald-900/20 rounded-[2rem] border border-emerald-100/50 dark:border-emerald-500/20">
+                                <p class="text-slate-600 dark:text-slate-300 leading-relaxed font-medium text-lg">
                                     <span class="inline-flex items-center gap-2 px-3 py-1 bg-emerald-500 text-white text-[10px] font-black uppercase tracking-[0.2em] rounded-full mb-4">
                                         <span class="relative flex h-2 w-2">
                                             <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
@@ -2269,15 +2269,15 @@ function render_subject_cards($cards)
 
                                     <br>
 
-                                    <span class="text-slate-900 font-black text-xl block mb-2">
+                                    <span class="text-slate-900 dark:text-white font-black text-xl block mb-2">
                                         ¡Tu proceso ha comenzado con éxito! 🚀
                                     </span>
 
                                     Tu pago está siendo validado por nuestro sistema. En un Momento, un
-                                    <span class="text-emerald-600 font-bold italic">Coordinador Especialista</span>
+                                    <span class="text-emerald-600 dark:text-emerald-400 font-bold italic">Coordinador Especialista</span>
                                     se comunicará contigo para darte la bienvenida y entregarte todos los detalles exclusivos de tu asesoría.
 
-                                    <span class="block mt-4 text-sm font-bold text-slate-400 uppercase tracking-widest">
+                                    <span class="block mt-4 text-sm font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest">
                                         ¡Prepárate para llevar tu aprendizaje al siguiente nivel!
                                     </span>
                                 </p>
@@ -2286,9 +2286,9 @@ function render_subject_cards($cards)
                     <?php endif; ?>
 
                     <?php if ($current_appointment['proof_details']): ?>
-                        <div class="mt-16 p-8 bg-slate-50 rounded-[2rem] text-left border-2 border-dashed border-slate-200 relative max-w-xl mx-auto">
-                            <span class="absolute -top-3 left-10 bg-white px-4 py-1 rounded-full text-[9px] font-black text-slate-400 uppercase tracking-widest shadow-sm">Tu Pin de Referencia</span>
-                            <p class="text-slate-600 font-extrabold italic text-md leading-relaxed">"<?php echo htmlspecialchars($current_appointment['proof_details']); ?>"</p>
+                        <div class="mt-16 p-8 bg-slate-50 dark:bg-gray-700/50 rounded-[2rem] text-left border-2 border-dashed border-slate-200 dark:border-gray-600 relative max-w-xl mx-auto">
+                            <span class="absolute -top-3 left-10 bg-white dark:bg-gray-800 px-4 py-1 rounded-full text-[9px] font-black text-slate-400 dark:text-slate-300 uppercase tracking-widest shadow-sm">Tu Pin de Referencia</span>
+                            <p class="text-slate-600 dark:text-slate-300 font-extrabold italic text-md leading-relaxed">"<?php echo htmlspecialchars($current_appointment['proof_details']); ?>"</p>
                         </div>
                     <?php endif; ?>
                 </div>
