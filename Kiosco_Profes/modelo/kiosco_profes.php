@@ -2518,8 +2518,8 @@ function render_subject_cards($cards)
     <div class="container-fluid <?php echo ($view !== 'admin_dashboard') ? 'schedule-bg' : ''; ?>">
     </div>
     <!-- Filtros (Se mantiene el bloque de filtros original para la compatibilidad y visibilidad del filtro activo) -->
-    <div class="mb-6 flex space-x-3 items-center">
-        <span class="font-semibold text-gray-800 dark:text-slate-200">Filtrar por Estado:</span>
+    <div class="mb-7 flex flex-wrap gap-2 items-center">
+        <span class="w-full sm:w-auto mb-2 sm:mb-0 font-semibold text-gray-800 dark:text-slate-200">Filtrar por Estado:</span>
         <?php foreach ($filters as $status_key => $status_text):
                 $isActive = $filter === $status_key;
                 $button_class = $isActive
@@ -2527,7 +2527,7 @@ function render_subject_cards($cards)
                     : "bg-gray-200 text-gray-700 hover:text-slate-800 hover:bg-gray-300 dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-300 dark:hover:text-slate-800";
         ?>
             <a href="?view=<?php echo $VIEWS['ADMIN_DASHBOARD']; ?>&filter=<?php echo $status_key; ?>"
-                class="py-2 px-4 rounded-lg text-sm transition-colors <?php echo $button_class; ?>">
+                class="py-2 px-3 sm:px-4 rounded-lg text-xs sm:text-sm transition-all duration-200 whitespace-nowrap <?php echo $button_class; ?>">
                 <?php echo $status_text; ?>
             </a>
         <?php endforeach; ?>
