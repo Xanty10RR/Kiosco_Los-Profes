@@ -48,6 +48,18 @@ CREATE TABLE IF NOT EXISTS `appointments` (
   KEY `idx_expires_at` (`expires_at`)
 ) ENGINE=MyISAM AUTO_INCREMENT=31 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
+CREATE TABLE IF NOT EXISTS `administradores` (
+`id` int(11) NOT NULL AUTO_INCREMENT,
+`email` varchar(100) NOT NULL UNIQUE,
+`password` varchar(255) NOT NULL,
+`nombre` varchar(100) NOT NULL,
+`rol` varchar(50) DEFAULT 'admin',
+`fecha_creacion` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+PRIMARY KEY (`id`)
+) ENGINE=INNODB DEFAULT CHARSET=utf8mb4;
+
+INSERT INTO `administradores` (`email`, `password`, `nombre`, `rol`) VALUES ('admin@kiosco.com', '$2y$10$TKh8H1.PfQx37YgCzwiKb.KjNyWgaHb9cbcoQgdIVFlYg7B77UdFm', 'san', 'superadmin');
+
 --
 -- Volcado de datos para la tabla `appointments`
 --

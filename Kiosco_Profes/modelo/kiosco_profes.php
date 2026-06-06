@@ -2228,8 +2228,8 @@ function render_subject_cards($cards)
                                         const numeroLosProfes = `+573166692913`
 
                                         //Mensaje
-                                        let mensaje = `*Nuevo pago Kiosco Los Profes*%0A%0A`;
-                                        mensaje += `*Referencia de pago:* ${proof_details}%0A%0A`;
+                                        let mensaje = `Nuevo pago para Kiosco Los Profes%0A%0A`;
+                                        mensaje += `Referencia de pago: ${proof_details}%0A%0A`;
                                         mensaje += `Ya realice el pago, quedo atent@.`;
 
                                         const url = `https://wa.me/${numeroLosProfes}?text=${mensaje}`;
@@ -2252,8 +2252,6 @@ function render_subject_cards($cards)
                             alt="100%"
                             class="w-full h-full object-contain p-4 drop-shadow-md">
                     </div>
-
-
 
                     <?php if ($status === 'PENDING_VALIDATION'): ?>
                         <div class="max-w-md mx-auto relative p-6 bg-emerald-200/30 dark:bg-emerald-900/20 rounded-[2rem] border border-emerald-300/30 dark:border-emerald-500/20 shadow-inner">
