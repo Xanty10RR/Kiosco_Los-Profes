@@ -496,8 +496,18 @@ if (isset($_POST['action']) && $_POST['action'] === 'admin_login') {
             $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
             // Verificamos si existe el usuario y si la contraseña coincide
-            if ($user && $password === $user['password']) {
+            //if ($user && $password === $user['password']) {
                 // Seteamos las variables de sesión
+
+                /*PARA DEBUGUEAR 
+                if($user) { 
+                    var_dump($user);
+                    var_dump($password);
+                    var_dump(password_verify($password, $user['password']));
+                    exit;
+                }
+                */
+            if ($user && password_verify($password, $user['password'])) {
                 $_SESSION['is_admin'] = true;
                 $_SESSION['admin_id'] = $user['id'];
                 $_SESSION['admin_nombre'] = $user['nombre'];
