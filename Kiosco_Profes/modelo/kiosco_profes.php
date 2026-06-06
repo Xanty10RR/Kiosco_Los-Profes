@@ -2431,10 +2431,10 @@ function render_subject_cards($cards)
             }
 ?>
 
-    <div class="mt-4 py-3 border-l-4 border-indigo-500 pl-4 bg-gray-50/80 rounded-r-2xl shadow-sm flex items-center justify-between">
+    <div class="mt-4 py-3 border-l-4 border-indigo-500 pl-4 bg-white/50 dark:bg-gray-800 rounded-r-2xl shadow-sm flex items-center justify-between">
         <div class="flex items-center gap-4">
             <div class="relative">
-                <div class="w-12 h-12 bg-gradient-to-tr from-indigo-600 to-purple-500 rounded-full flex items-center justify-center text-white text-xl font-bold shadow-md">
+                <div class="w-12 h-12 bg-gradient-to-tr from-indigo-600 to-purple-500 rounded-full flex items-center justify-center text-black dark:text-white text-xl font-bold shadow-md">
                     <?php echo strtoupper(substr($_SESSION['admin_nombre'] ?? 'A', 0, 1)); ?>
                 </div>
                 <span class="absolute bottom-0 right-0 flex h-3 w-3">
@@ -2444,20 +2444,20 @@ function render_subject_cards($cards)
             </div>
             <div class="flex flex-col">
                 <div class="flex items-center gap-2">
-                    <p class="text-[10px] text-gray-400 uppercase tracking-[0.2em] font-bold">Sesión activa</p>
+                    <p class="text-[10px] text-gray-800 dark:text-gray-200 uppercase tracking-[0.2em] font-bold">Sesión activa</p>
                 </div>
-                <p class="text-lg font-semibold text-gray-800 leading-tight">
+                <p class="text-lg font-semibold text-gray-800 dark:text-gray-200 leading-tight">
                     <?php echo htmlspecialchars($_SESSION['admin_nombre'] ?? 'Administrador'); ?>
                 </p>
                 <div class="mt-1">
                     <span class="bg-indigo-100 text-indigo-700 text-[10px] px-2 py-0.5 rounded-full font-black uppercase tracking-wider">
                         <?php echo htmlspecialchars($_SESSION['admin_rol'] ?? 'Invitado'); ?>
                     </span>
+                    <h1 class="bg-white/50 dark:bg-gray-800 text-4xl font-extrabold text-gray-800 dark:text-slate-200 border-b">Panel de Administración</h1>
                 </div>
             </div>
         </div>
     </div>
-    <h1 class="text-4xl font-extrabold text-gray-900 mb-6 border-b pb-2">Panel de Administración</h1>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 p-4">
 
 
