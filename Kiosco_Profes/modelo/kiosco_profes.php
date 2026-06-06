@@ -2458,14 +2458,14 @@ function render_subject_cards($cards)
         </div>
     </div>
 
-    <div class="mb-6">
+    <div class="mb-8">
         <h1 class="text-4xl lg:text-5xl font-black text-gray-800 dark:text-slate-200 mt-10 tracking-tight">Panel de
             <span class="bg-gradient-to-r from-indigo-600 to-purple-500 bg-clip-text text-transparent">Administración</span>
         </h1>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 p-4">
-        <div class="flex flex-wrap gap-3">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div class="flex flex-wrap items-center gap-3 mb-5">
             <?php
             $subs = $pdo->query("SELECT * FROM subjects_list WHERE is_active = 1")->fetchAll();
             foreach ($subs as $m): ?>
