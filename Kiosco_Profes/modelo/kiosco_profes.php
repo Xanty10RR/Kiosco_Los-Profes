@@ -2446,7 +2446,7 @@ function render_subject_cards($cards)
                 <div class="flex items-center gap-2">
                     <p class="text-[10px] text-gray-800 dark:text-gray-200 uppercase tracking-[0.2em] font-bold">Sesión activa</p>
                 </div>
-                <p class="text-lg font-semibold text-gray-800 dark:text-gray-200 leading-tight">
+                <p class="text-lg font-semibold text-gray-800 dark:text-gray-200 uppercase leading-tight">
                     <?php echo htmlspecialchars($_SESSION['admin_nombre'] ?? 'Administrador'); ?>
                 </p>
                 <div class="mt-1">
@@ -2465,7 +2465,7 @@ function render_subject_cards($cards)
             <?php
             $subs = $pdo->query("SELECT * FROM subjects_list WHERE is_active = 1")->fetchAll();
             foreach ($subs as $m): ?>
-                <div class="flex items-center gap-2 px-4 py-2 rounded-full border-2 border-gray-100 font-bold text-xs" style="color: <?php echo $m['color_hex']; ?>">
+                <div class="flex items-center gap-2 px-4 py-2 rounded-full border-2 border-gray-500 dark:border-gray-400 font-bold text-xs" style="color: <?php echo $m['color_hex']; ?>">
                     <?php echo $m['name']; ?>
                     <form method="POST" class="inline">
                         <input type="hidden" name="delete_type" value="subject">
@@ -2516,12 +2516,12 @@ function render_subject_cards($cards)
     </div>
     <!-- Filtros (Se mantiene el bloque de filtros original para la compatibilidad y visibilidad del filtro activo) -->
     <div class="mb-6 flex space-x-3 items-center">
-        <span class="font-semibold text-gray-700">Filtrar por Estado:</span>
+        <span class="font-semibold text-gray-800 dark:text-slate-200">Filtrar por Estado:</span>
         <?php foreach ($filters as $status_key => $status_text):
                 $isActive = $filter === $status_key;
                 $button_class = $isActive
                     ? "bg-indigo-600 text-white font-bold"
-                    : "bg-gray-200 text-gray-700 hover:bg-gray-300";
+                    : "bg-gray-200 text-gray-700 hover:text-slate-800 hover:bg-gray-300 dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-300 dark:hover:text-slate-800";
         ?>
             <a href="?view=<?php echo $VIEWS['ADMIN_DASHBOARD']; ?>&filter=<?php echo $status_key; ?>"
                 class="py-2 px-4 rounded-lg text-sm transition-colors <?php echo $button_class; ?>">
@@ -2535,7 +2535,7 @@ function render_subject_cards($cards)
 
         <div class="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6 relative z-10">
             <div class="flex-shrink-0 bg-white p-2 rounded-xl shadow-sm border border-gray-100">
-                <img src="logo2.png" alt="Logo" class="h-16 md:h-20 w-auto object-contain">
+                <img src="../assets/logo2.png" alt="Logo" class="h-16 md:h-20 w-auto object-contain">
             </div>
             <div class="text-center md:text-left">
                 <h1 class="text-xl md:text-2xl font-black text-gray-800 leading-tight">
@@ -2584,7 +2584,7 @@ function render_subject_cards($cards)
 
     <div class="bg-transparent">
 
-        <div class="overflow-x-auto bg-white shadow-2xl shadow-gray-200/50 rounded-[2rem] border border-gray-100 mb-8 scrollbar-hide touch-pan-x">
+        <div class="overflow-x-auto bg-green-100 shadow-2xl shadow-gray-200/50 rounded-[2rem] border border-gray-100 mb-8 scrollbar-hide touch-pan-x">
             <div class="overflow-x-auto pb-4">
 
                 <table class="hidden md:table w-full text-left border-separate border-spacing-y-3">
