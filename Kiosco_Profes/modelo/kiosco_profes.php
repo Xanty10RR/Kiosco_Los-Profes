@@ -497,9 +497,9 @@ if (isset($_POST['action']) && $_POST['action'] === 'admin_login') {
 
             // Verificamos si existe el usuario y si la contraseña coincide
             //if ($user && $password === $user['password']) {
-                // Seteamos las variables de sesión
+            // Seteamos las variables de sesión
 
-                /*PARA DEBUGUEAR 
+            /*PARA DEBUGUEAR 
                 if($user) { 
                     var_dump($user);
                     var_dump($password);
@@ -2453,14 +2453,18 @@ function render_subject_cards($cards)
                     <span class="bg-indigo-100 text-indigo-700 text-[10px] px-2 py-0.5 rounded-full font-black uppercase tracking-wider">
                         <?php echo htmlspecialchars($_SESSION['admin_rol'] ?? 'Invitado'); ?>
                     </span>
-                    <h1 class="bg-white/50 dark:bg-gray-800 text-4xl font-extrabold text-gray-800 dark:text-slate-200 border-b">Panel de Administración</h1>
                 </div>
             </div>
         </div>
     </div>
+
+    <div class="mb-6">
+        <h1 class="text-4xl lg:text-5xl font-black text-gray-800 dark:text-slate-200 mt-10 tracking-tight">Panel de
+            <span class="bg-gradient-to-r from-indigo-600 to-purple-500 bg-clip-text text-transparent">Administración</span>
+        </h1>
+    </div>
+
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 p-4">
-
-
         <div class="flex flex-wrap gap-3">
             <?php
             $subs = $pdo->query("SELECT * FROM subjects_list WHERE is_active = 1")->fetchAll();
@@ -2470,12 +2474,11 @@ function render_subject_cards($cards)
                     <form method="POST" class="inline">
                         <input type="hidden" name="delete_type" value="subject">
                         <input type="hidden" name="id" value="<?php echo $m['id']; ?>">
-                        <button type="submit" class="ml-1 text-gray-300 hover:text-red-500">×</button>
+                        <button type="submit" class="ml-1 text-800 dark:text-gray-200 hover:text-red-500 dark:hover:text-red-500">×</button>
                     </form>
                 </div>
             <?php endforeach; ?>
         </div>
-    </div>
     </div>
 
     <!-- Panel de Conteo de Asesorías -->
