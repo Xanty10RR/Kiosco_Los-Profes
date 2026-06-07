@@ -2586,25 +2586,25 @@ function render_subject_cards($cards)
         </script>
     </div>
 
-    <div class="bg-black">
+    <div class="bg-transparent">
 
-        <div class="overflow-x-auto bg-green-100 shadow-2xl shadow-gray-200/50 rounded-[2rem] border border-gray-100 mb-8 scrollbar-hide touch-pan-x">
-            <div class="overflow-x-auto pb-4">
+        <div class="overflow-x-auto bg-white/50 dark:gray-800 shadow-2xl shadow-gray-200/50 rounded-[2rem] border border-gray-100 mb-8 scrollbar-hide touch-pan-x">
+            <div class="bg-white/50 dark:gray-800 overflow-x-auto pb-4">
 
                 <table class="hidden md:table w-full text-left border-separate border-spacing-y-3">
-                    <thead class="bg-red-300/50">
+                    <thead class="bg-white/50 dark:bg-gray-800">
                         <tr>
-                            <th class="px-6 py-4 text-[10px] font-black uppercase text-gray-400 tracking-widest">ID</th>
-                            <th class="px-6 py-4 text-[10px] font-black uppercase text-gray-400 tracking-widest">Estudiante</th>
-                            <th class="px-6 py-4 text-[10px] font-black uppercase text-gray-400 tracking-widest">Asignatura</th>
-                            <th class="px-6 py-4 text-[10px] font-black uppercase text-gray-400 tracking-widest">Fecha / Hora</th>
-                            <th class="px-6 py-4 text-[10px] font-black uppercase text-gray-400 tracking-widest">Comprobante</th>
-                            <th class="px-6 py-4 text-center text-[10px] font-black uppercase text-gray-400 tracking-widest">Estado</th>
-                            <th class="px-6 py-4 text-right text-[10px] font-black uppercase text-gray-400 tracking-widest">Acciones</th>
+                            <th class="px-6 py-4 text-[10px] font-black uppercase text-gray-800 dark:text-gray-200 tracking-widest">ID</th>
+                            <th class="px-6 py-4 text-[10px] font-black uppercase text-gray-800 dark:text-gray-200 tracking-widest">Estudiante</th>
+                            <th class="px-6 py-4 text-[10px] font-black uppercase text-gray-800 dark:text-gray-200 tracking-widest">Asignatura</th>
+                            <th class="px-6 py-4 text-[10px] font-black uppercase text-gray-800 dark:text-gray-200 tracking-widest">Fecha / Hora</th>
+                            <th class="px-6 py-4 text-[10px] font-black uppercase text-gray-800 dark:text-gray-200 tracking-widest">Comprobante</th>
+                            <th class="px-6 py-4 text-center text-[10px] font-black uppercase text-gray-800 dark:text-gray-200 tracking-widest">Estado</th>
+                            <th class="px-6 py-4 text-right text-[10px] font-black uppercase text-gray-800 dark:text-gray-200 tracking-widest">Acciones</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <?php if (empty($filtered_appointments)): ?>
+                        <?php if (empty($filtered_appointments)): ?>red
                             <tr>
                                 <td colspan="7" class="text-center py-10 italic text-gray-400">No hay Asesorias registradas.</td>
                             </tr>
@@ -2612,39 +2612,39 @@ function render_subject_cards($cards)
                             <?php foreach ($filtered_appointments as $app):
                                 $status = $status_details[$app['status']] ?? ['bg' => 'bg-gray-100 text-gray-800', 'text' => $app['status']];
                             ?>
-                                <tr class="bg-white hover:bg-gray-50 transition-all shadow-sm rounded-2xl">
-                                    <td class="px-6 py-4 font-bold text-gray-400">#<?php echo $app['id']; ?></td>
+                                <tr class="bg-white/50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all shadow-sm rounded-2xl">
+                                    <td class="px-6 py-4 font-bold text-gray-800 dark:text-gray-200">#<?php echo $app['id']; ?></td>
 
                                     <td class="px-6 py-4">
-                                        <div class="font-black text-gray-800 uppercase text-sm"><?php echo htmlspecialchars($app['student_name']); ?></div>
-                                        <div class="text-xs text-indigo-500 font-bold"><?php echo htmlspecialchars($app['student_contact']); ?></div>
+                                        <div class="font-black text-gray-800 dark:text-gray-200 uppercase text-sm"><?php echo htmlspecialchars($app['student_name']); ?></div>
+                                        <div class="text-xs text-gray-800 dark:text-gray-200 font-bold"><?php echo htmlspecialchars($app['student_contact']); ?></div>
                                     </td>
 
-                                    <td class="px-6 py-4 text-sm font-medium text-gray-600">
+                                    <td class="px-6 py-4 text-sm font-medium text-gray-800 dark:text-gray-200">
                                         <?php echo htmlspecialchars($app['subject']); ?>
                                     </td>
 
                                     <td class="px-6 py-4">
-                                        <div class="text-sm font-bold text-gray-700"><?php echo $app['date']; ?></div>
-                                        <div class="text-xs text-gray-400"><?php echo $app['time']; ?></div>
+                                        <div class="text-sm font-bold text-gray-800 dark:text-gray-200"><?php echo $app['date']; ?></div>
+                                        <div class="text-xs text-gray-800 dark:text-gray-200"><?php echo $app['time']; ?></div>
                                     </td>
 
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">
                                         <?php echo htmlspecialchars($app['date']); ?><br>
-                                        <span class="font-semibold"><?php echo htmlspecialchars($app['time']); ?></span>
+                                        <span class="font-semibold text-gray-800 dark:text-gray-200"><?php echo htmlspecialchars($app['time']); ?></span>
                                     </td>
                                     <td class="px-6 py-4 text-sm proof-details-cell">
                                         <?php if (!empty($app['proof_details'])): ?>
-                                            <div class="text-xs italic p-1 bg-gray-100 rounded break-words">
+                                            <div class="text-xs italic p-1 text-gray-800 dark:text-gray-200 bg-white/50 dark:bg-gray-800 rounded break-words">
                                                 <?php echo nl2br(htmlspecialchars($app['proof_details'])); ?>
                                             </div>
                                         <?php else: ?>
-                                            <span class="text-gray-400">N/A</span>
+                                            <span class="text-gray-800 dark:text-gray-200">N/A</span>
                                         <?php endif; ?>
                                     </td>
 
                                     <td class="px-6 py-4 text-center">
-                                        <span class="px-3 py-1.5 rounded-full text-[10px] font-black uppercase tracking-tighter <?php echo $status['bg']; ?>">
+                                        <span class="text-gray-800 px-3 py-1.5 rounded-full text-[10px] font-black uppercase tracking-tighter <?php echo $status['bg']; ?>">
                                             <?php echo $status['text']; ?>
                                         </span>
                                     </td>
@@ -2663,7 +2663,7 @@ function render_subject_cards($cards)
                                                 <form method="POST" class="inline" onsubmit="return confirm('¿Confirmar pago y liberar Asesoria manualmente?');">
                                                     <input type="hidden" name="action" value="confirm_payment_manual">
                                                     <input type="hidden" name="id" value="<?php echo $app['id']; ?>">
-                                                    <button type="submit" class="p-3 bg-emerald-500 text-white rounded-2xl hover:bg-emerald-700 transition-all shadow-lg shadow-emerald-100" title="Liberar Asesoria">
+                                                    <button type="submit" class="p-3 bg-emerald-100 text-emerald-600 rounded-2xl hover:bg-emerald-600 hover:text-white transition-all shadow-sm" title="Liberar Asesoria">
                                                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
                                                         </svg>
@@ -2680,7 +2680,7 @@ function render_subject_cards($cards)
                                             <form method="POST" class="inline" onsubmit="return confirm('¿Eliminar permanentemente?');">
                                                 <input type="hidden" name="action" value="admin_delete">
                                                 <input type="hidden" name="appointment_id" value="<?php echo $app['id']; ?>">
-                                                <button type="submit" class="p-3 bg-red-100 text-red-500 rounded-2xl hover:bg-red-500 hover:text-white transition-all shadow-sm">
+                                                <button type="submit" class="p-3 bg-red-100 text-red-600 rounded-2xl hover:bg-red-600 hover:text-white transition-all shadow-sm">
                                                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
                                                     </svg>
