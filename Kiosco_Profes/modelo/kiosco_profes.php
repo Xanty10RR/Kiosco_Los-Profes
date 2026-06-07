@@ -2588,23 +2588,23 @@ function render_subject_cards($cards)
 
     <div class="bg-transparent">
 
-        <div class="overflow-x-auto bg-white/50 dark:gray-800 shadow-2xl shadow-gray-200/50 rounded-[2rem] border border-gray-100 mb-8 scrollbar-hide touch-pan-x">
-            <div class="bg-white/50 dark:gray-800 overflow-x-auto pb-4">
+        <div class="overflow-x-auto bg-white/50 dark:gray-800 shadow-2xl shadow-gray-200/50 rounded-[2rem] border border-gray-100 scrollbar-hide touch-pan-x">
+            <div class="bg-white/50 dark:gray-800 overflow-x-auto">
 
-                <table class="hidden md:table w-full text-left border-separate border-spacing-y-3">
+                <table class="hidden md:table w-full border-separate text-center">
                     <thead class="bg-white/50 dark:bg-gray-800">
-                        <tr>
-                            <th class="px-6 py-4 text-[10px] font-black uppercase text-gray-800 dark:text-gray-200 tracking-widest">ID</th>
-                            <th class="px-6 py-4 text-[10px] font-black uppercase text-gray-800 dark:text-gray-200 tracking-widest">Estudiante</th>
-                            <th class="px-6 py-4 text-[10px] font-black uppercase text-gray-800 dark:text-gray-200 tracking-widest">Asignatura</th>
-                            <th class="px-6 py-4 text-[10px] font-black uppercase text-gray-800 dark:text-gray-200 tracking-widest">Fecha / Hora</th>
-                            <th class="px-6 py-4 text-[10px] font-black uppercase text-gray-800 dark:text-gray-200 tracking-widest">Comprobante</th>
-                            <th class="px-6 py-4 text-center text-[10px] font-black uppercase text-gray-800 dark:text-gray-200 tracking-widest">Estado</th>
-                            <th class="px-6 py-4 text-right text-[10px] font-black uppercase text-gray-800 dark:text-gray-200 tracking-widest">Acciones</th>
+                        <tr class="">
+                            <th class="px-6 py-4 text-[12px] font-black uppercase text-gray-800 dark:text-gray-200 tracking-widest">ID</th>
+                            <th class="px-6 py-4 text-[12px] font-black uppercase text-gray-800 dark:text-gray-200 tracking-widest">Estudiante</th>
+                            <th class="px-6 py-4 text-[12px] font-black uppercase text-gray-800 dark:text-gray-200 tracking-widest">Asignatura</th>
+                            <th class="px-6 py-4 text-[12px] font-black uppercase text-gray-800 dark:text-gray-200 tracking-widest">Fecha / Hora</th>
+                            <th class="px-6 py-4 text-[12px] font-black uppercase text-gray-800 dark:text-gray-200 tracking-widest">Comprobante</th>
+                            <th class="px-6 py-4 text-[12px] font-black uppercase text-gray-800 dark:text-gray-200 tracking-widest">Estado</th>
+                            <th class="px-6 py-4 text-[12px] font-black uppercase text-gray-800 dark:text-gray-200 tracking-widest">Acciones</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <?php if (empty($filtered_appointments)): ?>red
+                        <?php if (empty($filtered_appointments)): ?>
                             <tr>
                                 <td colspan="7" class="text-center py-10 italic text-gray-400">No hay Asesorias registradas.</td>
                             </tr>
@@ -2612,28 +2612,24 @@ function render_subject_cards($cards)
                             <?php foreach ($filtered_appointments as $app):
                                 $status = $status_details[$app['status']] ?? ['bg' => 'bg-gray-100 text-gray-800', 'text' => $app['status']];
                             ?>
-                                <tr class="bg-white/50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 transition-all shadow-sm rounded-2xl">
-                                    <td class="px-6 py-4 font-bold text-gray-800 dark:text-gray-200">#<?php echo $app['id']; ?></td>
+                                <tr class="bg-white/50 dark:bg-gray-800 hover:bg-gray-100 dark:hover:bg-gray-700 text-center transition-all shadow-sm rounded-2xl">
+                                    <td class="font-bold text-gray-800 dark:text-gray-200">#<?php echo $app['id']; ?></td>
 
-                                    <td class="px-6 py-4">
-                                        <div class="font-black text-gray-800 dark:text-gray-200 uppercase text-sm"><?php echo htmlspecialchars($app['student_name']); ?></div>
-                                        <div class="text-xs text-gray-800 dark:text-gray-200 font-bold"><?php echo htmlspecialchars($app['student_contact']); ?></div>
+                                    <td>
+                                        <div class="text-gray-800 dark:text-gray-200 uppercase text-sm"><?php echo htmlspecialchars($app['student_name']); ?></div>
+                                        <div class="text-xs text-gray-800 dark:text-gray-200"><?php echo htmlspecialchars($app['student_contact']); ?></div>
                                     </td>
 
-                                    <td class="px-6 py-4 text-sm font-medium text-gray-800 dark:text-gray-200">
+                                    <td class="px-6 py-4 text-sm text-center font-medium text-gray-800 dark:text-gray-200">
                                         <?php echo htmlspecialchars($app['subject']); ?>
                                     </td>
 
-                                    <td class="px-6 py-4">
-                                        <div class="text-sm font-bold text-gray-800 dark:text-gray-200"><?php echo $app['date']; ?></div>
+                                    <td>
+                                        <div class="text-sm text-gray-800 dark:text-gray-200"><?php echo $app['date']; ?></div>
                                         <div class="text-xs text-gray-800 dark:text-gray-200"><?php echo $app['time']; ?></div>
                                     </td>
 
-                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-800 dark:text-gray-200">
-                                        <?php echo htmlspecialchars($app['date']); ?><br>
-                                        <span class="font-semibold text-gray-800 dark:text-gray-200"><?php echo htmlspecialchars($app['time']); ?></span>
-                                    </td>
-                                    <td class="px-6 py-4 text-sm proof-details-cell">
+                                    <td class="px-2 proof-details-cell">
                                         <?php if (!empty($app['proof_details'])): ?>
                                             <div class="text-xs italic p-1 text-gray-800 dark:text-gray-200 bg-white/50 dark:bg-gray-800 rounded break-words">
                                                 <?php echo nl2br(htmlspecialchars($app['proof_details'])); ?>
@@ -2643,14 +2639,14 @@ function render_subject_cards($cards)
                                         <?php endif; ?>
                                     </td>
 
-                                    <td class="px-6 py-4 text-center">
+                                    <td>
                                         <span class="text-gray-800 px-3 py-1.5 rounded-full text-[10px] font-black uppercase tracking-tighter <?php echo $status['bg']; ?>">
                                             <?php echo $status['text']; ?>
                                         </span>
                                     </td>
 
-                                    <td class="px-6 py-4">
-                                        <div class="flex items-center justify-end gap-3">
+                                    <td class="py-2">
+                                        <div class="flex gap-3 justify-center">
 
                                             <a href="?view=<?php echo $VIEWS['ADMIN_DASHBOARD']; ?>&filter=<?php echo $filter; ?>&edit=<?php echo $app['id']; ?>"
                                                 class="p-3 bg-indigo-100 text-indigo-600 rounded-2xl hover:bg-indigo-600 hover:text-white transition-all shadow-sm" title="Editar">
