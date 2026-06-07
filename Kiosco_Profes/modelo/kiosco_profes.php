@@ -1499,7 +1499,7 @@ function render_subject_cards($cards)
             class="fixed top-4 left-4 p-3 rounded-full bg-gray-200 dark:bg-gray-800 transition duration-300 z-[110] hover:scale-110">
 
             <!-- Icono modo oscuro -->
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 text-gray-800 dark:hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="#1f2937" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6 text-gray-800 dark:hidden">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" />
             </svg>
 
@@ -2586,13 +2586,13 @@ function render_subject_cards($cards)
         </script>
     </div>
 
-    <div class="bg-transparent">
+    <div class="bg-black">
 
         <div class="overflow-x-auto bg-green-100 shadow-2xl shadow-gray-200/50 rounded-[2rem] border border-gray-100 mb-8 scrollbar-hide touch-pan-x">
             <div class="overflow-x-auto pb-4">
 
                 <table class="hidden md:table w-full text-left border-separate border-spacing-y-3">
-                    <thead class="bg-gray-50/50">
+                    <thead class="bg-red-300/50">
                         <tr>
                             <th class="px-6 py-4 text-[10px] font-black uppercase text-gray-400 tracking-widest">ID</th>
                             <th class="px-6 py-4 text-[10px] font-black uppercase text-gray-400 tracking-widest">Estudiante</th>
