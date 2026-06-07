@@ -2591,7 +2591,7 @@ function render_subject_cards($cards)
         <div class="overflow-x-auto bg-white/50 dark:gray-800 shadow-2xl shadow-gray-200/50 rounded-[2rem] border border-gray-100 scrollbar-hide touch-pan-x">
             <div class="bg-white/50 dark:gray-800 overflow-x-auto">
 
-                <table class="hidden md:table w-full border-separate text-center">
+                <table class="hidden md:table w-full text-center"><!-- borré separete-border colocarlo si se mira mejor -->
                     <thead class="bg-white/50 dark:bg-gray-800">
                         <tr class="">
                             <th class="px-6 py-4 text-[12px] font-black uppercase text-gray-800 dark:text-gray-200 tracking-widest">ID</th>
