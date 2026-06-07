@@ -2527,24 +2527,25 @@ function render_subject_cards($cards)
                     : "bg-gray-200 text-gray-700 hover:text-slate-800 hover:bg-gray-300 dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-300 dark:hover:text-slate-800";
         ?>
             <a href="?view=<?php echo $VIEWS['ADMIN_DASHBOARD']; ?>&filter=<?php echo $status_key; ?>"
-                class="py-2 px-3 sm:px-4 rounded-lg text-xs sm:text-sm transition-all duration-200 whitespace-nowrap <?php echo $button_class; ?>">
+                class="uppercase py-2 px-3 sm:px-4 rounded-lg text-xs sm:text-sm transition-all duration-200 whitespace-nowrap <?php echo $button_class; ?>">
                 <?php echo $status_text; ?>
             </a>
         <?php endforeach; ?>
     </div>
 
-    <div class="flex flex-col md:flex-row justify-between items-center mb-8 bg-gradient-to-r from-white to-gray-50 p-4 md:p-6 shadow-md rounded-2xl border border-gray-100 overflow-hidden relative">
-        <div class="absolute -right-10 -top-10 w-32 h-32 bg-indigo-50 rounded-full opacity-50"></div>
+    <div class="relative mx-auto text-center max-w-5xl overflow-hidden bg-white/50 dark:bg-gray-800 p-6 md:p-8 rounded-2xl border border-gray-300 dark:border-gray-700 shadow-sm">
+        <div class="absolute -top16 -right-16 w-64 h-64 bg-indigo-100/40 dark:bg-gray-700/20 rounded-full"></div>
+        <div class="absolute -bottom-16 -left-16 w-64 h-64 bg-indigo-100/40 dark:bg-gray-700/20 rounded-full"></div>
 
-        <div class="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6 relative z-10">
-            <div class="flex-shrink-0 bg-white p-2 rounded-xl shadow-sm border border-gray-100">
-                <img src="../assets/logo2.png" alt="Logo" class="h-16 md:h-20 w-auto object-contain">
+        <div class="flex flex-col sm:flex-row items-center sm:items-start gap-4 text-center sm:text-left">
+            <div class="flex-shrink-0 bg-white/50 dark:bg-gray-800 p-3  rounded-xl shadow-md">
+                <img src="../assets/logo2.png" alt="Logo" class="h-16 md:h-20 w-auto">
             </div>
-            <div class="text-center md:text-left">
-                <h1 class="text-xl md:text-2xl font-black text-gray-800 leading-tight">
-                    ¡Bienvenido, <span class="text-indigo-600"><?php echo htmlspecialchars($_SESSION['admin_nombre'] ?? 'Admin'); ?></span>!
+            <div class="text-center md:text-left uppercase">
+                <h1 class="text-xl md:text-2xl font-black text-gray-900 dark:text-gray-200 md:mb-4 lg:mb-4 xl:mb-4 leading-tight">
+                    ¡Bienvenido, <span class="text-indigo-600 uppercase"><?php echo htmlspecialchars($_SESSION['admin_nombre'] ?? 'Admin'); ?></span>!
                 </h1>
-                <p class="text-gray-500 text-xs md:text-sm font-medium mt-1">Gestión centralizada de asesorías académicas</p>
+                <p class="text-gray-900 dark:text-gray-100 text-xs md:text-sm font-medium mt-1 mb-2 md:mt-1 md:mb-2">Gestión centralizada de asesorías académicas</p>
             </div>
 
         </div>
@@ -2555,7 +2556,7 @@ function render_subject_cards($cards)
                 </svg>
             </div>
             <input type="text" id="smartSearch"
-                placeholder="Buscar por estudiante, asignatura o ID..."
+                placeholder="Buscar por estudiante, asignatura o id..."
                 class="w-full pl-12 pr-4 py-4 bg-white border-2 border-gray-100 rounded-2xl shadow-sm outline-none focus:border-indigo-500 focus:ring-4 focus:ring-indigo-100 transition-all text-gray-700 font-medium placeholder-gray-400"
                 onkeyup="filterTable()">
         </div>
