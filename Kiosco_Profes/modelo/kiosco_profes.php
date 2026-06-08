@@ -2635,7 +2635,7 @@ function render_subject_cards($cards)
                                                 <?php echo nl2br(htmlspecialchars($app['proof_details'])); ?>
                                             </div>
                                         <?php else: ?>
-                                            <span class="text-gray-800 dark:text-gray-200">N/A</span>
+                                            <span class="text-xs text-gray-800 dark:text-gray-200">N/A</span>
                                         <?php endif; ?>
                                     </td>
 
