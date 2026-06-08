@@ -2586,10 +2586,10 @@ function render_subject_cards($cards)
         </script>
     </div>
 
-    <div class="bg-transparent">
+    <div>
 
-        <div class="overflow-x-auto bg-white/50 dark:gray-800 rounded-[2rem] border border-gray-200 dark:border-gray-700 scrollbar-hide touch-pan-x">
-            <div class="bg-white/50 dark:gray-800 overflow-x-auto">
+        <div class="rounded-2xl mb-4 scrollbar-hide touch-pan-x">
+            <div class="overflow-x-auto">
 
                 <table class="hidden md:table w-full text-center"><!-- borré border-separete colocarlo si se mira mejor -->
                     <thead class="bg-white/50 dark:bg-gray-800">
@@ -2693,44 +2693,44 @@ function render_subject_cards($cards)
 
                 <div class="md:hidden space-y-4 px-2">
                     <?php foreach ($filtered_appointments as $app):
-                        $status = $status_details[$app['status']] ?? ['bg' => 'bg-gray-100 text-gray-800', 'text' => $app['status']];
+                        $status = $status_details[$app['status']] ?? ['bg' => 'bg-white/50 text-gray-800', 'text' => $app['status']];
                     ?>
-                        <div class="bg-white p-6 rounded-[2rem] shadow-lg border border-gray-100 relative overflow-hidden">
+                        <div class="relative bg-white/50 dark:bg-gray-800 p-6 rounded-2xl border border-gray-200 dark:border-gray-700 mb-2">
                             <div class="flex justify-between items-start mb-4">
                                 <div>
-                                    <span class="text-[10px] font-black text-gray-300 uppercase tracking-widest">ID #<?php echo $app['id']; ?></span>
-                                    <h3 class="font-black text-gray-800 uppercase text-lg leading-tight"><?php echo htmlspecialchars($app['student_name']); ?></h3>
-                                    <p class="text-xs text-indigo-500 font-bold"><?php echo htmlspecialchars($app['student_contact']); ?></p>
+                                    <span class="text-[10px] font-black text-gray-800 dark:text-gray-200 uppercase tracking-widest">ID #<?php echo $app['id']; ?></span>
+                                    <h3 class="font-black text-gray-800 dark:text-gray-200 uppercase text-lg leading-tight"><?php echo htmlspecialchars($app['student_name']); ?></h3>
+                                    <p class="text-xs text-indigo-600 dark:text-indigo-400 font-bold"><?php echo htmlspecialchars($app['student_contact']); ?></p>
                                 </div>
                                 <span class="px-3 py-1 rounded-full text-[10px] font-black uppercase <?php echo $status['bg']; ?>">
                                     <?php echo $status['text']; ?>
                                 </span>
                             </div>
 
-                            <div class="grid grid-cols-2 gap-4 mb-4">
-                                <div class="bg-gray-50 p-3 rounded-2xl">
-                                    <span class="block text-[8px] font-black text-gray-400 uppercase">Asignatura</span>
-                                    <span class="text-xs font-bold text-gray-700"><?php echo htmlspecialchars($app['subject']); ?></span>
+                            <div class="grid grid-cols-2 gap-3 mb-4">
+                                <div class="bg-gray-100 dark:bg-gray-900/50 p-3 rounded-xl">
+                                    <span class="block text-[8px] font-black text-gray-600 dark:text-gray-300 uppercase">Asignatura</span>
+                                    <span class="text-sm font-bold text-gray-800 dark:text-gray-200"><?php echo htmlspecialchars($app['subject']); ?></span>
                                 </div>
-                                <div class="bg-gray-50 p-3 rounded-2xl">
-                                    <span class="block text-[8px] font-black text-gray-400 uppercase">Horario</span>
-                                    <span class="text-xs font-bold text-gray-700"><?php echo $app['date']; ?> <br> <?php echo $app['time']; ?></span>
+                                <div class="bg-gray-100 dark:bg-gray-900/50 p-3 rounded-xl">
+                                    <span class="block text-[8px] font-black text-gray-600 dark:text-gray-300 uppercase">Horario</span>
+                                    <span class="text-xs font-bold text-gray-800 dark:text-gray-200"><?php echo $app['date']; ?> <br> <?php echo $app['time']; ?></span>
                                 </div>
                             </div>
 
-                            <div class="mb-4 bg-indigo-50/30 p-3 rounded-2xl border border-dashed border-indigo-100">
-                                <span class="block text-[8px] font-black text-indigo-400 uppercase mb-1">Comprobante</span>
-                                <p class="text-[10px] italic text-indigo-900 leading-relaxed"><?php echo !empty($app['proof_details']) ? nl2br(htmlspecialchars($app['proof_details'])) : 'Sin detalles de pago.'; ?></p>
+                            <div class="mb-4 bg-indigo-50/50 dark:bg-indigo-900/20 p-3 rounded-2xl border border-dashed border-indigo-200 dark:border-indigo-800">
+                                <span class="block text-[8px] font-black text-indigo-600 dark:text-indigo-400 uppercase mb-1">Comprobante</span>
+                                <p class="text-xs italic text-gray-800 dark:text-gray-200 break-all"><?php echo !empty($app['proof_details']) ? nl2br(htmlspecialchars($app['proof_details'])) : 'Sin detalles de pago.'; ?></p>
                             </div>
 
                             <div class="flex gap-2">
-                                <a href="?edit=<?php echo $app['id']; ?>" class="flex-1 py-3 bg-gray-100 text-gray-600 text-center rounded-xl font-black text-[10px] uppercase">Editar</a>
+                                <a href="?edit=<?php echo $app['id']; ?>" class="flex-1 py-3 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-200 text-center rounded-xl font-black text-[10px] uppercase">Editar</a>
                                 <?php if ($app['status'] === 'PENDING_VALIDATION'): ?>
                                     <form method="POST" class="flex-1">
                                         <input type="hidden" name="action" value="update_status">
                                         <input type="hidden" name="appointment_id" value="<?php echo $app['id']; ?>">
                                         <input type="hidden" name="status" value="PAID">
-                                        <button class="w-full py-3 bg-green-500 text-white rounded-xl font-black text-[10px] uppercase shadow-lg shadow-green-100">Confirmar Pago</button>
+                                        <button class="w-full py-3 bg-green-500 dark:bg-green-600 text-white rounded-xl font-black text-[10px] uppercase">Confirmar Pago</button>
                                     </form>
                                 <?php endif; ?>
                             </div>
