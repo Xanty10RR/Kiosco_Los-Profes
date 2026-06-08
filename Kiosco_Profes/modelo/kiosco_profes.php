@@ -2743,43 +2743,43 @@ function render_subject_cards($cards)
 
         <div class="md:hidden space-y-4">
             <?php foreach ($filtered_appointments as $app):
-                $status = $status_details[$app['status']] ?? ['bg' => 'bg-gray-100 text-gray-800', 'text' => $app['status']];
+                $status = $status_details[$app['status']] ?? ['bg' => 'bg-gray-100 text-gray-800 dark:bg-gray-700 dark:text-gray-200', 'text' => $app['status']];
             ?>
-                <div class="bg-white p-5 rounded-2xl shadow-md border border-gray-100 relative overflow-hidden">
+                <div class="bg-white dark:bg-gray-800 p-5 rounded-2xl border border-gray-200 dark:border-gray-700 relative overflow-hidden">
                     <div class="absolute top-0 right-0 h-1 w-20 <?php echo strpos($status['bg'], 'green') !== false ? 'bg-green-500' : 'bg-amber-500'; ?>"></div>
 
                     <div class="flex justify-between items-start mb-4">
                         <div class="flex items-center">
-                            <div class="h-10 w-10 rounded-xl bg-indigo-600 text-white flex items-center justify-center font-bold mr-3 shadow-lg shadow-indigo-200">
+                            <div class="h-10 w-10 rounded-xl bg-indigo-600 dark:bg-indigo-500 text-white flex items-center justify-center font-bold mr-3">
                                 <?php echo strtoupper(substr($app['student_name'], 0, 1)); ?>
                             </div>
                             <div>
-                                <h3 class="font-black text-gray-900 leading-none"><?php echo htmlspecialchars($app['student_name']); ?></h3>
-                                <p class="text-xs text-gray-500 mt-1"><?php echo htmlspecialchars($app['student_contact']); ?></p>
+                                <h3 class="font-black text-gray-800 dark:text-gray-200 leading-none"><?php echo htmlspecialchars($app['student_name']); ?></h3>
+                                <p class="text-xs text-gray-800 dark:text-gray-200 mt-1"><?php echo htmlspecialchars($app['student_contact']); ?></p>
                             </div>
                         </div>
-                        <span class="px-2 py-1 text-[9px] font-black rounded-full <?php echo $status['bg']; ?>">
+                        <span class="px-2 py-1 text-[9px] font-black rounded-full uppercase <?php echo $status['bg']; ?>">
                             <?php echo strtoupper($status['text']); ?>
                         </span>
                     </div>
 
-                    <div class="grid grid-cols-2 gap-4 py-3 border-y border-gray-50 my-3 text-sm">
+                    <div class="grid grid-cols-2 gap-4 py-3 border-y border-gray-200 dark:border-gray-700 my-3 text-sm">
                         <div>
-                            <p class="text-[10px] uppercase text-gray-400 font-bold">Materia</p>
-                            <p class="font-semibold text-gray-700"><?php echo htmlspecialchars($app['subject']); ?></p>
+                            <p class="text-[10px] uppercase text-gray-800 dark:text-gray-200 font-bold">Materia</p>
+                            <p class="font-semibold text-gray-700 dark:text-gray-200"><?php echo htmlspecialchars($app['subject']); ?></p>
                         </div>
                         <div>
-                            <p class="text-[10px] uppercase text-gray-400 font-bold">Horario</p>
-                            <p class="font-semibold text-gray-700"><?php echo $app['date']; ?> <span class="text-indigo-500"><?php echo $app['time']; ?></span></p>
+                            <p class="text-[10px] uppercase text-gray-800 dark:text-gray-200 font-bold">Horario</p>
+                            <p class="font-semibold text-gray-700 dark:text-gray-200"> <?php echo $app['date']; ?> <span class="mx-4 text-indigo-600 dark:text-indigo-400"> <?php echo $app['time']; ?></span></p>
                         </div>
                     </div>
 
                     <div class="flex gap-2 mt-4">
-                        <a href="?edit=<?php echo $app['id']; ?>" class="flex-1 bg-indigo-50 text-indigo-600 text-center py-2.5 rounded-xl font-bold text-xs">Editar</a>
+                        <a href="?edit=<?php echo $app['id']; ?>" class="flex-1 bg-gray-100 dark:bg-gray-700 text-indigo-600 dark:text-indigo-400 text-center py-2.5 rounded-xl font-bold text-xs">Editar</a>
                         <form method="POST" class="flex-1" onsubmit="return confirm('¿Borrar?');">
                             <input type="hidden" name="action" value="admin_delete">
                             <input type="hidden" name="appointment_id" value="<?php echo $app['id']; ?>">
-                            <button class="w-full bg-red-50 text-red-500 py-2.5 rounded-xl font-bold text-xs text-center">Eliminar</button>
+                            <button class="w-full bg-red-50 dark:bg-red-900/30 text-red-500 dark:text-red-400 py-2.5 rounded-xl font-bold text-xs text-center">Eliminar</button>
                         </form>
                     </div>
                 </div>
