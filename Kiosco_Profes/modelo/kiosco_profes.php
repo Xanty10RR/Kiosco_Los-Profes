@@ -2629,9 +2629,9 @@ function render_subject_cards($cards)
                                         <div class="text-xs text-gray-800 dark:text-gray-200"><?php echo $app['time']; ?></div>
                                     </td>
 
-                                    <td class="px-2 proof-details-cell">
+                                    <td class="px-3 proof-details-cell">
                                         <?php if (!empty($app['proof_details'])): ?>
-                                            <div class="text-xs italic p-1 text-gray-800 dark:text-gray-200 bg-white/50 dark:bg-gray-800 rounded break-words">
+                                            <div class="text-xs italic text-gray-800 dark:text-gray-200 break-all">
                                                 <?php echo nl2br(htmlspecialchars($app['proof_details'])); ?>
                                             </div>
                                         <?php else: ?>
