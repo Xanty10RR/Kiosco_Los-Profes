@@ -2431,7 +2431,7 @@ function render_subject_cards($cards)
             }
 ?>
 
-    <div class="mt-4 py-3 border-l-4 border-indigo-500 pl-4 bg-white/50 dark:bg-gray-800 rounded-r-2xl shadow-sm flex items-center justify-between">
+    <div class="mt-4 py-4 border-l-4 border-indigo-500 pl-4 bg-white/50 dark:bg-gray-800 rounded-r-2xl shadow-sm flex items-center justify-between">
         <div class="flex items-center gap-4">
             <div class="relative">
                 <div class="w-12 h-12 bg-gradient-to-tr from-indigo-600 to-purple-500 rounded-full flex items-center justify-center text-black dark:text-white text-xl font-bold shadow-md">
@@ -2557,7 +2557,7 @@ function render_subject_cards($cards)
             </div>
             <input type="text" id="smartSearch"
                 placeholder="Buscar por estudiante, asignatura o id..."
-                class="w-full pl-12 pr-4 py-4 bg-white border-2 border-gray-100 rounded-2xl shadow-sm outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 dark:focus:border-indigo-500 dark:focus:ring-2 dark:focus:ring-indigo-100 transition-all text-gray-700 font-medium placeholder-gray-400"
+                class="w-full pl-12 pr-4 py-4 bg-white border-2 border-gray-100 rounded-2xl shadow-sm outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-300 dark:focus:border-indigo-500 dark:focus:ring-2 dark:focus:ring-indigo-300 transition-all text-gray-700 font-medium placeholder-gray-400"
                 onkeyup="filterTable()">
         </div>
 
