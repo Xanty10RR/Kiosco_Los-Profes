@@ -2557,7 +2557,7 @@ function render_subject_cards($cards)
             </div>
             <input type="text" id="smartSearch"
                 placeholder="Buscar por estudiante, asignatura o id..."
-                class="w-full pl-12 pr-4 py-4 bg-white border-2 border-gray-100 rounded-2xl shadow-sm outline-none focus:border-indigo-500 focus:ring-4 focus:ring-indigo-100 transition-all text-gray-700 font-medium placeholder-gray-400"
+                class="w-full pl-12 pr-4 py-4 bg-white border-2 border-gray-100 rounded-2xl shadow-sm outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100 dark:focus:border-indigo-500 dark:focus:ring-2 dark:focus:ring-indigo-100 transition-all text-gray-700 font-medium placeholder-gray-400"
                 onkeyup="filterTable()">
         </div>
 
