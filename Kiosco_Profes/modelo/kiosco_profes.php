@@ -286,15 +286,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
 
         // 5. Cabeceras para descarga limpia
         header('Content-Type: application/vnd.ms-excel; charset=utf-8');
-        header('Content-Disposition: attachment; filename=Reporte_Filtrado_' . date('d-m-Y') . '.xls');
+        header('Content-Disposition: attachment; filename="Reporte_Filtrado_' . date('d-m-Y') . '.xls"');
         header('Cache-Control: max-age=0');
-        header('Content-Disposition: attachment; filename="Reporte_Filtrado_' . date('d-m-Y') . '.html"');
 
         //BOM para UTF-8
         echo "\xEF\xBB\xBF";
-        echo '<html xmlns:x="urn:schemas-microsoft-com:office:exel">';
-        echo '<head><meta charset="UTF-8"></head><body>';
-        echo '<table border="1">';
+        echo '<html xmlns:o="urn:schemas-microsoft-com:office:ofice" xmlns:x="urn:schemas-microsoft-com:office:exel" xmlns="http://www.w3.org/TR/REC-html40">';
+        echo '<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head><body>';
+        echo '<table border="1" x:str>';
         echo '<tr>
             <th>ID</th>
             <th>ESTUDIANTE</th>
@@ -317,7 +316,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
             echo '<td>' . mb_strtoupper($row['other_subject'] ?: 'N/A', 'UTF-8') . '</td>';
             echo '<td>' . date('d/m/Y', strtotime($row['date'])) . '</td>';
             echo '<td>' . date('h:i A', strtotime($row['time'])) . '</td>';
-            echo '<td>' . str_replace(["\r\n", "\n", "\r"], '  ', $row['proof_details'] ?: 'Sin detalles de pago') . '</td>';
+            echo '<td>' . str_replace(["\r\n", "\n", "\r"], '', $row['proof_details'] ?: 'Sin detalles de pago') . '</td>';
             echo '<td>' . strtoupper($row['status']) . '</td>';
             echo '</tr>';
         }
@@ -2604,9 +2603,9 @@ function render_subject_cards($cards)
         <div class="rounded-2xl mb-4 scrollbar-hide touch-pan-x">
             <div class="overflow-x-auto">
 
-                <table class="hidden md:table w-full text-center"><!-- borré border-separete colocarlo si se mira mejor -->
+                <table class="hidden md:table w-full text-center">
                     <thead class="bg-white/50 dark:bg-gray-800">
-                        <tr class="">
+                        <tr>
                             <th class="px-6 py-4 text-[12px] font-black uppercase text-gray-800 dark:text-gray-200 tracking-widest">ID</th>
                             <th class="px-6 py-4 text-[12px] font-black uppercase text-gray-800 dark:text-gray-200 tracking-widest">Estudiante</th>
                             <th class="px-6 py-4 text-[12px] font-black uppercase text-gray-800 dark:text-gray-200 tracking-widest">Asignatura</th>
