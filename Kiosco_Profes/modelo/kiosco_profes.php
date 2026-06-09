@@ -248,11 +248,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
     }
 }
 
-
     // --- Lógica para Exportar Informe CSV Organizado ---
     if (isset($_GET['action']) && $_GET['action'] === 'export_xls') {
+
         //Limpiar buffer para evitar errores de descarga
         while (ob_get_level()) ob_end_clean();
+
         // 1. Obtener filtros de la URL
         $current_filter = $_GET['filter'] ?? 'ALL';
         $search = $_GET['search'] ?? '';
@@ -316,7 +317,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
             echo '<td>' . mb_strtoupper($row['other_subject'] ?: 'N/A', 'UTF-8') . '</td>';
             echo '<td>' . date('d/m/Y', strtotime($row['date'])) . '</td>';
             echo '<td>' . date('h:i A', strtotime($row['time'])) . '</td>';
-            echo '<td>' . str_replace(["\r\n", "\n", "\r"], ' | ', $row['proof_details'] ?: 'Sin detalles de pago') . '</td>';
+            echo '<td>' . str_replace(["\r\n", "\n", "\r"], '  ', $row['proof_details'] ?: 'Sin detalles de pago') . '</td>';
             echo '<td>' . strtoupper($row['status']) . '</td>';
             echo '</tr>';
         }
