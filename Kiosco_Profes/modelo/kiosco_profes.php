@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 // ==================================================================================
 // CONFIGURACIÓN Y UTILIDADES PHP
 // ==================================================================================
@@ -249,69 +249,81 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
 }
 
 
-// --- Lógica para Exportar Informe CSV Organizado ---
-if (isset($_GET['action']) && $_GET['action'] === 'export_csv') {
-    // 1. Obtener filtros de la URL
-    $current_filter = $_GET['filter'] ?? 'ALL';
-    $search = $_GET['search'] ?? '';
+    // --- Lógica para Exportar Informe CSV Organizado ---
+    if (isset($_GET['action']) && $_GET['action'] === 'export_xls') {
+        //Limpiar buffer para evitar errores de descarga
+        while (ob_get_level()) ob_end_clean();
+        // 1. Obtener filtros de la URL
+        $current_filter = $_GET['filter'] ?? 'ALL';
+        $search = $_GET['search'] ?? '';
 
-    // 2. Construir consulta dinámica
-    $query = "SELECT id, student_name, student_contact, subject, other_subject, date, time, status FROM appointments WHERE 1=1";
-    $query = "SELECT id, student_name, student_contact, subject, date, time, status, reference_pay FROM appointments";
-    $params = [];
+        //Forzar UTF-8 en la conexión PDO
+        $pdo->exec("SET NAMES 'utf8mb4'");
 
-    // Filtro por Estado (Botones/Cards)
-    if ($current_filter !== 'ALL') {
-        $query .= " AND status = :status";
-        $params['status'] = $current_filter;
+        // 2. Construir consulta dinámica
+        $query = "SELECT id, student_name, student_contact, subject, other_subject, date, time, proof_details, status FROM appointments WHERE 1=1";
+        $params = [];
+
+        // Filtro por Estado (Botones/Cards)
+        if ($current_filter !== 'ALL') {
+            $query .= " AND status = :status";
+            $params['status'] = $current_filter;
+        }
+
+        // Filtro por Buscador (Nombre o Materia)
+        if (!empty($search)) {
+            $query .= " AND (student_name LIKE :search OR subject LIKE :search OR other_subject LIKE :search OR id LIKE :search OR proof_details LIKE :search)";
+            $params['search'] = "%$search%";
+        }
+
+        $query .= " ORDER BY date DESC";
+
+        // 3. Ejecutar
+        $stmt = $pdo->prepare($query);
+        $stmt->execute($params);
+        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        // 5. Cabeceras para descarga limpia
+        header('Content-Type: application/vnd.ms-excel; charset=utf-8');
+        header('Content-Disposition: attachment; filename=Reporte_Filtrado_' . date('d-m-Y') . '.xls');
+        header('Cache-Control: max-age=0');
+        header('Content-Disposition: attachment; filename="Reporte_Filtrado_' . date('d-m-Y') . '.html"');
+
+        //BOM para UTF-8
+        echo "\xEF\xBB\xBF";
+        echo '<html xmlns:x="urn:schemas-microsoft-com:office:exel">';
+        echo '<head><meta charset="UTF-8"></head><body>';
+        echo '<table border="1">';
+        echo '<tr>
+            <th>ID</th>
+            <th>ESTUDIANTE</th>
+            <th>CONTACTO</th>
+            <th>ASIGNATURA</th>
+            <th>DETALLE MATERIA</th>
+            <th>FECHA</th>
+            <th>HORA</th>
+            <th>COMPROBANTE / REFERENCIA PAGO</th>
+            <th>ESTADO</th>
+         </tr>';
+
+        // Escribir datos organizados
+        foreach ($results as $row) {
+            echo '<tr>';
+            echo '<td>' . $row['id'] . '</td>';
+            echo '<td>' . mb_strtoupper($row['student_name'], 'UTF-8') . '</td>';
+            echo '<td>' . mb_strtoupper($row['student_contact'], 'UTF-8') . '</td>';
+            echo '<td>' . mb_strtoupper($row['subject'], 'UTF-8') . '</td>';
+            echo '<td>' . mb_strtoupper($row['other_subject'] ?: 'N/A', 'UTF-8') . '</td>';
+            echo '<td>' . date('d/m/Y', strtotime($row['date'])) . '</td>';
+            echo '<td>' . date('h:i A', strtotime($row['time'])) . '</td>';
+            echo '<td>' . str_replace(["\r\n", "\n", "\r"], ' | ', $row['proof_details'] ?: 'Sin detalles de pago') . '</td>';
+            echo '<td>' . strtoupper($row['status']) . '</td>';
+            echo '</tr>';
+        }
+
+        echo '</table></body></html>';
+        exit();
     }
-
-    // Filtro por Buscador (Nombre o Materia)
-    if (!empty($search)) {
-        $query .= " AND (student_name LIKE :search OR subject LIKE :search OR other_subject LIKE :search OR id LIKE :search)";
-        $params['search'] = "%$search%";
-    }
-
-    $query .= " ORDER BY date DESC, time DESC";
-
-    // 3. Ejecutar
-    $stmt = $pdo->prepare($query);
-    $stmt->execute($params);
-    $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-    // 4. Limpiar buffer para evitar errores de descarga
-    if (ob_get_length()) ob_end_clean();
-
-    // 5. Cabeceras para descarga limpia
-    header('Content-Type: text/csv; charset=utf-8');
-    header('Content-Disposition: attachment; filename=Reporte_Filtrado_' . date('d-m-Y') . '.csv');
-
-    $output = fopen('php://output', 'w');
-
-    // Soporte para Excel (Tildes y Ñ) y forzar separador
-    fprintf($output, chr(0xEF) . chr(0xBB) . chr(0xBF));
-    fputs($output, "sep=,\n");
-
-    // Cabeceras de las columnas
-    fputcsv($output, ['ID', 'ESTUDIANTE', 'CONTACTO', 'ASIGNATURA', 'DETALLE MATERIA', 'FECHA', 'HORA', 'ESTADO']);
-
-    // Escribir datos organizados
-    foreach ($results as $row) {
-        fputcsv($output, [
-            $row['id'],
-            mb_strtoupper($row['student_name'], 'UTF-8'),
-            $row['student_contact'],
-            $row['subject'],
-            $row['other_subject'] ?: 'N/A',
-            date('d/m/Y', strtotime($row['date'])),
-            date('h:i A', strtotime($row['time'])),
-            strtoupper($row['status'])
-        ]);
-    }
-
-    fclose($output);
-    exit();
-}
 
 /**
  * Obtiene una sola cita por ID (útil para el administrador al editar).
@@ -2556,7 +2568,7 @@ function render_subject_cards($cards)
                 </svg>
             </div>
             <input type="text" id="smartSearch"
-                placeholder="Buscar por estudiante, asignatura o id..."
+                placeholder="Buscar por estudiante, asignatura, id o comprobante de pago..."
                 class="w-full pl-12 pr-4 py-4 bg-white border-2 border-gray-100 rounded-2xl shadow-sm outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-300 dark:focus:border-indigo-500 dark:focus:ring-2 dark:focus:ring-indigo-300 transition-all text-gray-700 font-medium placeholder-gray-400"
                 onkeyup="filterTable()">
         </div>
@@ -2568,7 +2580,7 @@ function render_subject_cards($cards)
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
             </svg>
-            Descargar Informe CSV
+            Descargar Informe XLS
         </button>
 
         <script>
@@ -2581,7 +2593,7 @@ function render_subject_cards($cards)
                 const filtroEstado = urlParams.get('filter') || 'ALL';
 
                 // 3. Redirigir enviando ambos filtros
-                window.location.href = `?action=export_csv&filter=${filtroEstado}&search=${encodeURIComponent(buscador)}`;
+                window.location.href = `?action=export_xls&filter=${filtroEstado}&search=${encodeURIComponent(buscador)}`;
             }
         </script>
     </div>
