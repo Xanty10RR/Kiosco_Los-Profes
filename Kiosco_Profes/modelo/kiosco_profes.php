@@ -2443,7 +2443,7 @@ function render_subject_cards($cards)
             }
 ?>
 
-    <div class="mt-4 py-4 border-l-4 border-indigo-500 pl-4 bg-white/50 dark:bg-gray-800 rounded-r-2xl shadow-sm flex items-center justify-between">
+    <div class="mt-4 py-4 border-l-4 border-indigo-500 pl-4 bg-gray-200 dark:bg-gray-800 rounded-r-2xl shadow-sm flex items-center justify-between">
         <div class="flex items-center gap-4">
             <div class="relative">
                 <div class="w-12 h-12 bg-gradient-to-tr from-indigo-600 to-purple-500 rounded-full flex items-center justify-center text-white text-xl font-bold shadow-md">
