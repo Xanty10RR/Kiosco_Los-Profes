@@ -3158,6 +3158,7 @@ function render_subject_cards($cards)
 </script>
 
 </body>
+
 <div id="modalSlide" class="fixed inset-0 z-[60] hidden bg-black/60 backdrop-blur-sm p-4 flex items-center justify-center">
     <div class="bg-white rounded-[2.5rem] w-full max-w-md p-8 shadow-2xl scale-up-center">
         <h2 class="text-2xl font-black mb-6">Nuevo Banner</h2>
