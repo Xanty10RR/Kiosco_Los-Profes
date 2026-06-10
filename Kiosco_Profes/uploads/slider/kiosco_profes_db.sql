@@ -23,9 +23,8 @@ SET time_zone = "+00:00";
 
 -- --------------------------------------------------------
 
---
+
 -- Estructura de tabla para la tabla `appointments`
---
 
 DROP TABLE IF EXISTS `appointments`;
 CREATE TABLE IF NOT EXISTS `appointments` (
