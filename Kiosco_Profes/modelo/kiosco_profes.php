@@ -35,7 +35,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['action']) && $_POST['action'] === 'add_slide') {
         $title = $_POST['title'];
         $file = $_FILES['slide_image'];
-        
+
+        if(!isset($_FILES['slide_image']) || $_FILES['slide_image']['error'] !==UPLOAD_ERR_OK) {
+            die('Error: Debes subir una imagen');
+        }
+
+        $allowed_types = ['image/jpeg', 'image/png', 'image/gif', 'image/webp'];
+        $file_type = $_FILES['slide_image']['type'];
+    
+        if (!in_array($file_type, $allowed_types)) {
+            die('Error: Solo se permiten imágenes JPG, PNG, GIF o WEBP');
+        }
+    
+        // Validar tamaño: máximo 5MB
+        if ($_FILES['slide_image']['size'] > 5 * 1024 * 1024) {
+            die('Error: La imagen es muy pesada. Maximo 5MB.');
+        }
+
         // Ruta fisica para guardar el archivo
         $target_dir = __DIR__ . '/../uploads/slider';
 
@@ -46,7 +62,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         $file_extension = pathinfo($file["name"], PATHINFO_EXTENSION);
         $new_filename = uniqid() . '.' . $file_extension;
-        $target_file = $target_dir . $new_filename;
+        $target_file = $target_dir . '/' . $new_filename;
 
         // Ruta relativa para guardar en BD y usar en el HTML
         $db_path = 'uploads/slider/' . $new_filename;
@@ -67,6 +83,28 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $color = $_POST['subject_color'];
         $stmt = $pdo->prepare("INSERT INTO subjects_list (name, color_hex) VALUES (?, ?)");
         $stmt->execute([$name, $color]);
+    }
+    
+    // Eliminar del servidor
+    if (isset($_POST['delete_type']) && $_POST['delete_type'] === 'slide') {
+        $id = $_POST['id'];
+
+        // Busca que img borrar
+        $stmt = $pdo->prepare("SELECT image_path FROM slider_content WHERE id = ?");
+        $stmt->execute([$id]);
+        $slide = $stmt->fetch();
+        
+        // Borra la img
+        if ($slide && file_exists(__DIR__ . '/../' . $slide['image_path'])) {
+            unlink(__DIR__ . '/../' . $slide['image_path']); // Borra del servidor
+        }
+
+        // Borra la img de la bd
+        $pdo->prepare("DELETE  FROM slider_content WHERE id = ?")->execute([$_POST['id']]);
+
+        // Mensaje de hecho
+        header("Location: kiosco_profes.php?vista=slides&deleted=1");
+        exit;
     }
 
     // 3. Eliminar (Simple)
@@ -3173,13 +3211,13 @@ function render_subject_cards($cards)
 
 </body>
 
-<div id="modalSlide" class="fixed inset-0 z-[60]  bg-black/60 dark:bg-black/80 backdrop-blur-sm p-4 flex items-center justify-center">
+<div id="modalSlide" class="fixed inset-0 z-[60] hidden bg-black/60 dark:bg-black/80 backdrop-blur-sm p-4 flex items-center justify-center">
     <div class="bg-white dark:bg-zinc-900 border dark:border-zinc-800 rounded-[2.5rem] w-full max-w-md p-8 shadow-2xl scale-up-center">
         <h2 class="text-2xl font-black text-gray-800 dark:text-gray-100 mb-6">Nuevo Banner</h2>
         <form method="POST" enctype="multipart/form-data" class="space-y-5">
             <input type="hidden" name="action" value="add_slide">
-            <div class="bg-gray-50 dark:bg-zinc-800 p-6 rounded-3xl border-2 border-dashed border-gray-200  dark:border-zinc-700 text-center hover:border-indigo-500 dark:hover:border-zinc-500 transition overflow-hidden">
-                <input type="file" name="slide_image" required class="text-sm text-gray-700 dark:text-zinc-300 file:mr-4 file:py-2 file:px-4 rounded-full file:border-0 file:bg-indigo-600 file:text-white hover:file:bg-indigo-700 w-full">
+            <div class="bg-gray-50 dark:bg-zinc-800 p-6 rounded-3xl border-2 border-dashed border-gray-200 dark:border-zinc-700 text-center hover:border-indigo-500 dark:hover:border-zinc-500 transition overflow-hidden">
+                <input type="file" name="slide_image" accept="image/*" required class="text-sm text-gray-700 dark:text-zinc-300 file:mr-4 file:py-2 file:px-4 rounded-full file:border-0 file:bg-indigo-600 file:text-white hover:file:bg-indigo-700 w-full">
             </div>
             <input type="text" name="title" placeholder="Título del banner" class="w-full p-4 bg-gray-100 dark:bg-zinc-800 text-black dark:text-white placeholder-gray-400 dark:placeholder-zinc-500 rounded-2xl outline-none font-bold border border-transparent dark:border-zinc-700 focus:border-indigo-500" required>
             <div class="flex gap-3">
