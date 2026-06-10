@@ -35,15 +35,29 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['action']) && $_POST['action'] === 'add_slide') {
         $title = $_POST['title'];
         $file = $_FILES['slide_image'];
+        
+        // Ruta fisica para guardar el archivo
+        $target_dir = __DIR__ . '/../uploads/slider';
 
-        $target_dir = "uploads/slider/";
+        // Si no exise la carpea la crea
+        if (!is_dir($target_dir)) {
+            mkdir($target_dir, 0777, true);
+        }
+
         $file_extension = pathinfo($file["name"], PATHINFO_EXTENSION);
         $new_filename = uniqid() . '.' . $file_extension;
         $target_file = $target_dir . $new_filename;
 
+        // Ruta relativa para guardar en BD y usar en el HTML
+        $db_path = 'uploads/slider/' . $new_filename;
+
         if (move_uploaded_file($file["tmp_name"], $target_file)) {
             $stmt = $pdo->prepare("INSERT INTO slider_content (image_path, title) VALUES (?, ?)");
-            $stmt->execute([$target_file, $title]);
+            $stmt->execute([$db_path, $title]);
+            header("Location: kiosco_profes.php?vista=slides&success=1"); // Recarga para evitar reenvio
+            exit;
+        } else {
+            die("Error: No se pudo subir la imagen. Revisa los permisos de la carpeta.");
         }
     }
 
@@ -3159,18 +3173,18 @@ function render_subject_cards($cards)
 
 </body>
 
-<div id="modalSlide" class="fixed inset-0 z-[60] hidden bg-black/60 backdrop-blur-sm p-4 flex items-center justify-center">
-    <div class="bg-white rounded-[2.5rem] w-full max-w-md p-8 shadow-2xl scale-up-center">
-        <h2 class="text-2xl font-black mb-6">Nuevo Banner</h2>
+<div id="modalSlide" class="fixed inset-0 z-[60]  bg-black/60 dark:bg-black/80 backdrop-blur-sm p-4 flex items-center justify-center">
+    <div class="bg-white dark:bg-zinc-900 border dark:border-zinc-800 rounded-[2.5rem] w-full max-w-md p-8 shadow-2xl scale-up-center">
+        <h2 class="text-2xl font-black text-gray-800 dark:text-gray-100 mb-6">Nuevo Banner</h2>
         <form method="POST" enctype="multipart/form-data" class="space-y-5">
             <input type="hidden" name="action" value="add_slide">
-            <div class="bg-gray-50 p-6 rounded-3xl border-2 border-dashed border-gray-200 text-center">
-                <input type="file" name="slide_image" required class="text-sm">
+            <div class="bg-gray-50 dark:bg-zinc-800 p-6 rounded-3xl border-2 border-dashed border-gray-200  dark:border-zinc-700 text-center hover:border-indigo-500 dark:hover:border-zinc-500 transition overflow-hidden">
+                <input type="file" name="slide_image" required class="text-sm text-gray-700 dark:text-zinc-300 file:mr-4 file:py-2 file:px-4 rounded-full file:border-0 file:bg-indigo-600 file:text-white hover:file:bg-indigo-700 w-full">
             </div>
-            <input type="text" name="title" placeholder="Título del banner" class="w-full p-4 bg-gray-100 rounded-2xl outline-none font-bold" required>
+            <input type="text" name="title" placeholder="Título del banner" class="w-full p-4 bg-gray-100 dark:bg-zinc-800 text-black dark:text-white placeholder-gray-400 dark:placeholder-zinc-500 rounded-2xl outline-none font-bold border border-transparent dark:border-zinc-700 focus:border-indigo-500" required>
             <div class="flex gap-3">
-                <button type="submit" class="flex-1 py-4 bg-indigo-600 text-white font-black rounded-2xl shadow-lg">GUARDAR</button>
-                <button type="button" onclick="this.closest('#modalSlide').classList.add('hidden')" class="flex-1 py-4 bg-gray-100 text-gray-500 font-bold rounded-2xl">Cerrar</button>
+                <button type="submit" class="flex-1 py-4 bg-indigo-600 hover:bg-indigo-700 text-white font-black rounded-2xl shadow-lg transition">GUARDAR</button>
+                <button type="button" onclick="this.closest('#modalSlide').classList.add('hidden')" class="flex-1 py-4 bg-gray-100 dark:bg-zinc-800 hover:bg-gray-200 dark:hover:bg-zinc-700 text-gray-500 dark:text-zinc-300 font-bold rounded-2xl transition">Cerrar</button>
             </div>
         </form>
     </div>
