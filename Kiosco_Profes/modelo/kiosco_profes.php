@@ -3295,11 +3295,14 @@ function render_subject_cards($cards)
     const urlParams = new URLSearchParams(window.location.search);
 
     if (urlParams.has('success') || urlParams.get('msg') === 'success') {
-        Toast.fire({
+        Swal.fire({
+            title: '¡Operación Exitosa!',
+            text: 'Los cambios se han procesado correctamente.',
             icon: 'success',
-            title: '¡Operación exitosa!',
-            background: '#ecfdf5',
-            color: '#059669'
+            confirmButtonColor: '#6366f1',
+            showClass: {
+                popup: 'animate__animated animate__fadeInUp'
+            }
         });
     }
 
