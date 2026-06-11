@@ -2725,7 +2725,7 @@ function render_subject_cards($cards)
                                             </a>
 
                                             <?php if ($app['status'] !== 'PAID'): ?>
-                                                <form method="POST" class="inline" onsubmit="return confirm('¿Confirmar pago y liberar Asesoria manualmente?');">
+                                                <form method="POST" class="inline" onsubmit="event.preventDefault(); confirmSubmit(this, '¿Confirmar pago?', 'Se liberará la asesoría manualmente.', 'success', 'Sí, confirmar');">
                                                     <input type="hidden" name="action" value="confirm_payment_manual">
                                                     <input type="hidden" name="id" value="<?php echo $app['id']; ?>">
                                                     <button type="submit" class="p-3 bg-emerald-100 text-emerald-600 rounded-2xl hover:bg-emerald-600 hover:text-white transition-all shadow-sm" title="Liberar Asesoria">
@@ -2742,7 +2742,7 @@ function render_subject_cards($cards)
                                                 </div>
                                             <?php endif; ?>
 
-                                            <form method="POST" class="inline" onsubmit="return confirm('¿Eliminar permanentemente?');">
+                                            <form method="POST" class="inline" onsubmit="event.preventDefault(); confirmSubmit(this, '¿Eliminar permanentemente?', 'Esta acción no se puede deshacer.', 'warning', 'Sí, eliminar');">
                                                 <input type="hidden" name="action" value="admin_delete">
                                                 <input type="hidden" name="appointment_id" value="<?php echo $app['id']; ?>">
                                                 <button type="submit" class="p-3 bg-red-100 text-red-600 rounded-2xl hover:bg-red-600 hover:text-white transition-all shadow-sm">
@@ -2795,7 +2795,7 @@ function render_subject_cards($cards)
                             <div class="flex gap-2">
                                 <a href="?edit=<?php echo $app['id']; ?>" class="flex-1 py-3 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-200 text-center rounded-xl font-black text-[10px] uppercase">Editar</a>
                                 <?php if ($app['status'] === 'PENDING_VALIDATION'): ?>
-                                    <form method="POST" class="flex-1">
+                                    <form method="POST" class="flex-1" onsubmit="event.preventDefault(); confirmSubmit(this, '¿Confirmar Pago?', 'Se liberará la asesoría manualmente.', 'success', 'Confirmar');">
                                         <input type="hidden" name="action" value="update_status">
                                         <input type="hidden" name="appointment_id" value="<?php echo $app['id']; ?>">
                                         <input type="hidden" name="status" value="PAID">
@@ -2845,7 +2845,7 @@ function render_subject_cards($cards)
 
                     <div class="flex gap-2 mt-4">
                         <a href="?edit=<?php echo $app['id']; ?>" class="flex-1 bg-gray-100 dark:bg-gray-700 text-indigo-600 dark:text-indigo-400 text-center py-2.5 rounded-xl font-bold text-xs">Editar</a>
-                        <form method="POST" class="flex-1" onsubmit="return confirm('¿Borrar?');">
+                        <form method="POST" class="flex-1" onsubmit="event.preventDefault(); confirmSubmit(this, '¿Eliminar asesoría?', 'Se borrará el registro permanentemente.', 'warning', 'Borrar');">
                             <input type="hidden" name="action" value="admin_delete">
                             <input type="hidden" name="appointment_id" value="<?php echo $app['id']; ?>">
                             <button class="w-full bg-red-50 dark:bg-red-900/30 text-red-500 dark:text-red-400 py-2.5 rounded-xl font-bold text-xs text-center">Eliminar</button>
@@ -2965,6 +2965,25 @@ function render_subject_cards($cards)
     let sliderTrack;
     let dots;
     const slideDuration = 5000; // 5 segundos
+
+    // Función para confirmaciones con SweetAlert2
+    function confirmSubmit(form, title, text, icon, confirmText) {
+        Swal.fire({
+            title: title,
+            text: text,
+            icon: icon,
+            showCancelButton: true,
+            confirmButtonColor: icon === 'warning' ? '#ef4444' : '#10b981',
+            cancelButtonColor: '#6366f1',
+            confirmButtonText: confirmText,
+            cancelButtonText: 'Cancelar',
+            reverseButtons: true
+        }).then((result) => {
+            if (result.isConfirmed) {
+                form.submit();
+            }
+        });
+    }
 
     function updateSlider() {
         if (!sliderTrack) return;
