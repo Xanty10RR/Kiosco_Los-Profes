@@ -1452,6 +1452,11 @@ function render_subject_cards($cards)
             backdrop-filter: blur(3px);
         }
 
+        /* Hace que los iconos de fecha y hora sean blancos en modo oscuro */
+        .dark input::-webkit-calendar-picker-indicator {
+            filter: invert(1);
+        }
+
         img,
         svg {
             max-width: 100%;
@@ -2856,11 +2861,11 @@ function render_subject_cards($cards)
     <!-- Modal de Edición de Cita (Admin) -->
     <?php if ($appointment_to_edit): ?>
         <div id="edit-modal" class="modal-overlay fixed inset-0 z-50 flex items-center justify-center p-4">
-            <div class="bg-white rounded-xl shadow-2xl max-w-lg w-full p-6 relative">
-                <h3 class="text-2xl font-bold text-indigo-700 mb-4 border-b pb-2">Editar Asesoria #<?php echo $appointment_to_edit['id']; ?></h3>
+            <div class="bg-white dark:bg-gray-800 rounded-xl shadow-2xl max-w-lg w-full p-6 relative border dark:border-gray-700">
+                <h3 class="text-center text-2xl font-bold text-indigo-700 dark:text-indigo-400 mb-4 border-b dark:border-gray-700 pb-2">Editar Asesoria #<?php echo $appointment_to_edit['id']; ?></h3>
 
                 <a href="?view=<?php echo $VIEWS['ADMIN_DASHBOARD']; ?>&filter=<?php echo $filter; ?>"
-                    class="absolute top-4 right-4 text-gray-400 hover:text-gray-600">
+                    class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 dark:text-gray-500 dark:hover:text-gray-300">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                     </svg>
@@ -2872,9 +2877,9 @@ function render_subject_cards($cards)
                     <input type="hidden" name="filter" value="<?php echo $filter; ?>">
 
                     <div>
-                        <label for="edit_subject" class="block text-sm font-medium text-gray-700">Asignatura</label>
+                        <label for="edit_subject" class="block text-sm font-bold text-gray-700 dark:text-gray-300">Asignatura</label>
                         <select id="edit_subject" name="subject" onchange="toggleOtherSubjectAdmin(this.value, 'edit')"
-                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-2"
+                            class="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-2"
                             required>
                             <?php foreach ($ASSIGNATURES as $sub): ?>
                                 <option value="<?php echo htmlspecialchars($sub); ?>"
@@ -2887,45 +2892,45 @@ function render_subject_cards($cards)
                             <input type="text" id="edit_other_subject" name="other_subject"
                                 placeholder="Especifique la asignatura"
                                 value="<?php echo htmlspecialchars($appointment_to_edit['other_subject'] ?? ''); ?>"
-                                class="block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-2">
+                                class="block w-full rounded-md border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-2">
                         </div>
                     </div>
 
                     <div class="flex space-x-4">
                         <div class="flex-1">
-                            <label for="edit_date" class="block text-sm font-medium text-gray-700">Fecha</label>
+                            <label for="edit_date" class="block text-sm font-bold text-gray-700 dark:text-gray-300">Fecha</label>
                             <input type="date" id="edit_date" name="date"
                                 value="<?php echo htmlspecialchars($appointment_to_edit['date']); ?>"
-                                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-2"
+                                class="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-2"
                                 required>
                         </div>
                         <div class="flex-1">
-                            <label for="edit_time" class="block text-sm font-medium text-gray-700">Hora</label>
+                            <label for="edit_time" class="block text-sm font-bold text-gray-700 dark:text-gray-300">Hora</label>
                             <input type="time" id="edit_time" name="time"
                                 value="<?php echo htmlspecialchars($appointment_to_edit['time']); ?>"
-                                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-2"
+                                class="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-2"
                                 required>
                         </div>
                     </div>
 
                     <div>
-                        <label for="edit_student_name" class="block text-sm font-medium text-gray-700">Nombre del Estudiante</label>
+                        <label for="edit_student_name" class="block text-sm font-bold text-gray-700 dark:text-gray-300">Nombre del Estudiante</label>
                         <input type="text" id="edit_student_name" name="student_name"
                             value="<?php echo htmlspecialchars($appointment_to_edit['student_name']); ?>"
-                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-2"
+                            class="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-2"
                             required>
                     </div>
 
                     <div>
-                        <label for="edit_student_contact" class="block text-sm font-medium text-gray-700">Email / Teléfono de Contacto</label>
+                        <label for="edit_student_contact" class="block text-sm font-bold text-gray-700 dark:text-gray-300">Email / Teléfono de Contacto</label>
                         <input type="text" id="edit_student_contact" name="student_contact"
                             value="<?php echo htmlspecialchars($appointment_to_edit['student_contact']); ?>"
-                            class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-2"
+                            class="mt-1 block w-full rounded-md border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-white shadow-sm focus:border-indigo-500 focus:ring-indigo-500 p-2"
                             required>
                     </div>
 
                     <button type="submit"
-                        class="w-full py-3 px-4 border border-transparent rounded-lg shadow-lg text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700 transition duration-150">
+                        class="w-full py-3 px-4 border border-transparent rounded-lg shadow-lg text-base font-bold text-white bg-indigo-600 hover:bg-indigo-700 transition duration-150">
                         Guardar Cambios
                     </button>
                 </form>
