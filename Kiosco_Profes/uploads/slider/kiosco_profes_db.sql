@@ -23,8 +23,9 @@ SET time_zone = "+00:00";
 
 -- --------------------------------------------------------
 
-
+--
 -- Estructura de tabla para la tabla `appointments`
+--
 
 DROP TABLE IF EXISTS `appointments`;
 CREATE TABLE IF NOT EXISTS `appointments` (
@@ -47,7 +48,6 @@ CREATE TABLE IF NOT EXISTS `appointments` (
   KEY `idx_expires_at` (`expires_at`)
 ) ENGINE=MyISAM AUTO_INCREMENT=31 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
--- Estructura de tabla para la tabla `administradores`
 CREATE TABLE IF NOT EXISTS `administradores` (
 `id` int(11) NOT NULL AUTO_INCREMENT,
 `email` varchar(100) NOT NULL UNIQUE,
@@ -60,20 +60,11 @@ PRIMARY KEY (`id`)
 
 INSERT INTO `administradores` (`email`, `password`, `nombre`, `rol`) VALUES ('admin@kiosco.com', '$2y$10$TKh8H1.PfQx37YgCzwiKb.KjNyWgaHb9cbcoQgdIVFlYg7B77UdFm', 'san', 'superadmin');
 
--- Estructura de tabla para la tabla `slider_content`
-CREATE TABLE `slider_content` (
-    `id` int(11) NOT NULL AUTO_INCREMENT,
-    `image_path` varchar(255) NOT NULL,
-    `title` varchar(255) NOT NULL,
-    `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP(),
-    PRIMARY KEY (`id`)
-) ENGINE=INNODB DEFAULT CHARSET=utf8mb4;
-
 --
 -- Volcado de datos para la tabla `appointments`
 --
 
-INSERT INTO `appointments` (`id`, `student_session_id`, `subject`, `other_subject`, `date`, `time`, `student_name`, `student_contact`, `status`, `proof_details`, `created_at`, `expires_at`) VALUES
+/*INSERT INTO `appointments` (`id`, `student_session_id`, `subject`, `other_subject`, `date`, `time`, `student_name`, `student_contact`, `status`, `proof_details`, `created_at`, `expires_at`) VALUES
 (4, 'student_693b4d223f116', 'Ciencias Sociales', '', '2025-12-12', '10:00:00', 'adriana perea', '31477899889', 'PAID', '1234', '2025-12-12 00:26:11', NULL),
 (2, 'student_693b4d223f116', 'Química', NULL, '2025-12-11', '10:00:00', 'Carlos Andrés ', '315876890989', 'confirmed', '3456', '2025-12-11 23:46:41', NULL),
 (5, 'student_693b4d223f116', 'Matemáticas', '', '2025-12-12', '10:00:00', 'sofia rivera', '3147987665', 'PAID', '6546546', '2025-12-12 00:34:51', NULL),
@@ -91,7 +82,7 @@ INSERT INTO `appointments` (`id`, `student_session_id`, `subject`, `other_subjec
 (30, 'student_695290311e022', 'Matemáticas', '', '2025-12-29', '10:00:00', 'Felipe Sánchez ', '3145666788', 'PAID', '567676', '2025-12-29 15:34:26', NULL),
 (26, '997829fb9aeb5421654b59fc8ee1cdc7', 'Matemáticas', NULL, '2025-12-15', '02:13:00', 'Carlos Andrés Restrepo', '3145567878', 'Pendiente', NULL, '2025-12-24 10:13:21', NULL),
 (28, 'student_694c22679ebee', 'Inglés', '', '2025-12-24', '10:00:00', 'jhon', '6676767', 'PAID', 'yyyuuuuuuuuu7778\r\n', '2025-12-24 18:30:24', NULL);
-COMMIT;
+COMMIT;*/
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

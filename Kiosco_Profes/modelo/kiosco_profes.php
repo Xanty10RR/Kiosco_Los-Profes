@@ -17,8 +17,9 @@ define('DB_NAME', 'kiosco_profes_db'); // Asegúrese de que esta DB exista (ejec
 $pdo = null;
 $db_connected = false;
 $error_message = '';
-// Cambie el pueto de 3306 a 3307
+
 try {
+    // Conexión forzada al puerto 3307 que es el que tienes activo en XAMPP
     $pdo = new PDO("mysql:host=" . DB_HOST . ";port=3307;dbname=" . DB_NAME . ";charset=utf8", DB_USER, DB_PASS);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $db_connected = true;
@@ -329,7 +330,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
             $params['search'] = "%$search%";
         }
 
-        $query .= " ORDER BY date DESC";
+        $query .= " ORDER BY date DESC, time DESC";
 
         // 3. Ejecutar
         $stmt = $pdo->prepare($query);

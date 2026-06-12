@@ -6,7 +6,7 @@
 session_start();
 
 // --- 1. Configuración de Credenciales (¡Cuidado con 'root' en producción!) ---
-define('DB_HOST', 'localhost');
+define('DB_HOST', '127.0.0.1');
 define('DB_USER', 'root');
 define('DB_PASS', '');
 define('DB_NAME', 'kiosco_profes_db');
@@ -17,7 +17,8 @@ $db_connected = false;
 $error_message = '';
 
 try {
-    $pdo = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME . ";charset=utf8", DB_USER, DB_PASS);
+    // Se agrega el puerto 3307 a la cadena de conexión
+    $pdo = new PDO("mysql:host=" . DB_HOST . ";port=3307;dbname=" . DB_NAME . ";charset=utf8", DB_USER, DB_PASS);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $db_connected = true;
 } catch (PDOException $e) {
