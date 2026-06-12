@@ -694,7 +694,7 @@ if (isset($_POST['action']) && $_POST['action'] === 'admin_edit' && $is_admin &&
             $error_message = "Fallo al actualizar la Asesoria ID: $appointment_id.";
         } else {
             // Éxito: Redirigir al dashboard
-            header('Location: ' . strtok($_SERVER["REQUEST_URI"], '?') . "?view={$VIEWS['ADMIN_DASHBOARD']}&filter={$filter_to_return}");
+            header('Location: ' . strtok($_SERVER["REQUEST_URI"], '?') . "?view={$VIEWS['ADMIN_DASHBOARD']}&filter={$filter_to_return}&msg=edited");
             exit;
         }
     } else {
@@ -2742,7 +2742,7 @@ function render_subject_cards($cards)
                                                 </div>
                                             <?php endif; ?>
 
-                                            <form method="POST" class="inline" onsubmit="event.preventDefault(); confirmSubmit(this, '¿Eliminar permanentemente?', 'Esta acción no se puede deshacer.', 'warning', 'Sí, eliminar');">
+                                            <form method="POST" class="inline" onsubmit="event.preventDefault(); confirmSubmit(this, '¿Eliminar asesoría?', 'Esta acción no se puede deshacer.', 'warning', 'Sí, eliminar');">
                                                 <input type="hidden" name="action" value="admin_delete">
                                                 <input type="hidden" name="appointment_id" value="<?php echo $app['id']; ?>">
                                                 <button type="submit" class="p-3 bg-red-100 text-red-600 rounded-2xl hover:bg-red-600 hover:text-white transition-all shadow-sm">
@@ -2871,7 +2871,7 @@ function render_subject_cards($cards)
                     </svg>
                 </a>
 
-                <form method="POST" action="" id="admin-edit-form" class="space-y-4">
+                <form method="POST" action="" id="admin-edit-form" class="space-y-4" onsubmit="event.preventDefault(); confirmSubmit(this, '¿Guardar cambios?', 'Se ha editado la asesoría correctamente.', 'question', 'Confirmar');">
                     <input type="hidden" name="action" value="admin_edit">
                     <input type="hidden" name="appointment_id" value="<?php echo $appointment_to_edit['id']; ?>">
                     <input type="hidden" name="filter" value="<?php echo $filter; ?>">
@@ -3279,20 +3279,21 @@ function render_subject_cards($cards)
     }
 </style>
 <script>
-    const Toast = Swal.mixin({
-        toast: true,
-        position: 'top-end',
-        showConfirmButton: false,
-        timer: 3000,
-        timerProgressBar: true,
-        didOpen: (toast) => {
-            toast.addEventListener('mouseenter', Swal.stopTimer)
-            toast.addEventListener('mouseleave', Swal.resumeTimer)
-        }
-    });
-
-    // Detectar mensajes en la URL
+    // 1. Definir urlParams al inicio para que esté disponible en todos los checks
     const urlParams = new URLSearchParams(window.location.search);
+
+    // 2. Verificar mensajes de éxito
+    if (urlParams.get('msg') === 'edited') {
+        Swal.fire({
+            title: '¡Editado!',
+            text: 'La Asesoria ha sido actualizada correctamente.',
+            icon: 'success',
+            confirmButtonColor: '#6366f1',
+            showClass: {
+                popup: 'animate__animated animate__fadeInUp'
+            }
+        });
+    }
 
     if (urlParams.has('success') || urlParams.get('msg') === 'success') {
         Swal.fire({
@@ -3316,6 +3317,16 @@ function render_subject_cards($cards)
                 popup: 'animate__animated animate__fadeInUp'
             }
         });
+    }
+
+    // Limpiar la URL para evitar que los mensajes se repitan al recargar (F5)
+    if (urlParams.has('msg') || urlParams.has('success')) {
+        const cleanParams = new URLSearchParams(window.location.search);
+        cleanParams.delete('msg');
+        cleanParams.delete('success');
+        const newSearch = cleanParams.toString();
+        const newUrl = window.location.pathname + (newSearch ? '?' + newSearch : '');
+        window.history.replaceState({}, document.title, newUrl);
     }
 </script>
 
