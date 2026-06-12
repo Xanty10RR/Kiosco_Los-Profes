@@ -46,7 +46,7 @@ CREATE TABLE IF NOT EXISTS `appointments` (
   KEY `status` (`status`),
   KEY `idx_student_session_id` (`student_session_id`(250)),
   KEY `idx_expires_at` (`expires_at`)
-) ENGINE=MyISAM AUTO_INCREMENT=31 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
+) ENGINE=INNODB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
 CREATE TABLE IF NOT EXISTS `administradores` (
 `id` int(11) NOT NULL AUTO_INCREMENT,
