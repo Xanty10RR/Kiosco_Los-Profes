@@ -72,7 +72,6 @@
             // Definir estilos y textos de estado
             $status_details = [
                 'PENDING_PAYMENT' => ['text' => 'Pendiente Pago', 'bg' => 'bg-yellow-200 text-yellow-800', 'color' => 'yellow'],
-                'PENDING_VALIDATION' => ['text' => 'Pendiente Validación', 'bg' => 'bg-blue-200 text-blue-800', 'color' => 'blue'],
                 'PAID' => ['text' => 'CONFIRMADO / PAGADA', 'bg' => 'bg-green-200 text-green-800', 'color' => 'green'],
                 'CANCELLED' => ['text' => 'Cancelada / Expirada', 'bg' => 'bg-red-200 text-red-800', 'color' => 'red'],
             ];
