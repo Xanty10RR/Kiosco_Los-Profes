@@ -48,6 +48,7 @@ CREATE TABLE IF NOT EXISTS `appointments` (
   KEY `idx_expires_at` (`expires_at`)
 ) ENGINE=INNODB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
+-- Estructura para la tabla administradores
 CREATE TABLE IF NOT EXISTS `administradores` (
 `id` int(11) NOT NULL AUTO_INCREMENT,
 `email` varchar(100) NOT NULL UNIQUE,
@@ -59,6 +60,15 @@ PRIMARY KEY (`id`)
 ) ENGINE=INNODB DEFAULT CHARSET=utf8mb4;
 
 INSERT INTO `administradores` (`email`, `password`, `nombre`, `rol`) VALUES ('admin@kiosco.com', '$2y$10$TKh8H1.PfQx37YgCzwiKb.KjNyWgaHb9cbcoQgdIVFlYg7B77UdFm', 'san', 'superadmin');
+
+-- Estructura para la tabla slider_content
+CREATE TABLE `slider_content` (
+    `id` int(11) NOT NULL AUTO_INCREMENT,
+    `image_path` varchar(255) NOT NULL,
+    `title` varchar(255) NOT NULL,
+    `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP(),
+    PRIMARY KEY (`id`)
+) ENGINE=INNODB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `appointments`
