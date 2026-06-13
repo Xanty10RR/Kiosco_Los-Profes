@@ -2241,7 +2241,7 @@ function render_subject_cards($cards)
                                     <div class="relative z-10 flex items-center gap-5 mb-10">
                                         <div class="border-l-4 border-emerald-500 pl-6 py-2">
                                             <h1 class="text-2xl md:text-3xl font-black text-slate-900 dark:text-white tracking-tighter leading-tight">
-                                                ¡Casi hemos terminado!+
+                                                ¡Casi hemos terminado!
                                                 <span class="block text-slate-900 dark:text-emerald-400 font-bold text-sm md:text-base uppercase tracking-[0.15em] mt-1">
                                                     Envía la referencia del comprobante para confirmar la asesoría:
                                                 </span>
