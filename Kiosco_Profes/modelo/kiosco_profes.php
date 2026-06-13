@@ -789,8 +789,8 @@ if ($is_admin) {
     // Buscar si el estudiante tiene una cita activa
     $current_appointment = get_current_appointment($student_session_id, $pdo);
 
-    if ($current_appointment && $view_param !== $VIEWS['SCHEDULE_VIEW'] && $view_param !== $VIEWS['ADMIN_LOGIN']) {
-        // Si hay cita activa, forzar a la vista de pago A MENOS que se pida ir al catálogo o login
+    if ($current_appointment && $view_param !== $VIEWS['ADMIN_LOGIN']) {
+        // Si hay cita activa, forzar a la vista de pago (excepto para login administrativo)
         $current_view = $VIEWS['PAYMENT_VIEW'];
     } elseif ($view_param === $VIEWS['ADMIN_LOGIN']) {
         $current_view = $VIEWS['ADMIN_LOGIN'];
@@ -1976,7 +1976,7 @@ function render_subject_cards($cards)
                             </div>
                         </div>
 
-                        <?php if ($status !== 'PENDING_PAYMENT'): ?>
+                        <?php if ($status === 'PAID' || $status === 'CANCELLED'): ?>
                             <a href="?view=<?php echo $VIEWS['SCHEDULE_VIEW']; ?>" class="bg-white text-center text-black px-7 py-3.5 rounded-2xl font-black text-xs uppercase tracking-[0.2em] hover:shadow-2xl hover:-translate-y-1 active:scale-95 transition-all duration-300 relative z-10 shadow-xl border border-transparent">
                                 Agendar nueva Asesoría
                             </a>
@@ -3126,7 +3126,7 @@ function render_subject_cards($cards)
 
     };
 </script>
-<?php if (!$is_admin): // Solo se muestra si NO es administrador 
+<?php if (!$is_admin): // Solo se muestra si NO es administrador
 ?>
     <div class="fixed bottom-6 right-6 z-[100] flex flex-col items-end">
 

@@ -44,7 +44,6 @@ CREATE TABLE IF NOT EXISTS `appointments` (
   PRIMARY KEY (`id`),
   KEY `student_session_id` (`student_session_id`(250)),
   KEY `status` (`status`),
-  KEY `idx_student_session_id` (`student_session_id`(250)),
   KEY `idx_expires_at` (`expires_at`)
 ) ENGINE=INNODB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
@@ -60,6 +59,15 @@ PRIMARY KEY (`id`)
 ) ENGINE=INNODB DEFAULT CHARSET=utf8mb4;
 
 INSERT INTO `administradores` (`email`, `password`, `nombre`, `rol`) VALUES ('admin@kiosco.com', '$2y$10$TKh8H1.PfQx37YgCzwiKb.KjNyWgaHb9cbcoQgdIVFlYg7B77UdFm', 'san', 'superadmin');
+
+-- Estructura para la tabla subjects_list
+CREATE TABLE IF NOT EXISTS `subjects_list` (
+  `id` int NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) NOT NULL,
+  `color_hex` varchar(50) NOT NULL,
+  `is_active` tinyint(1) DEFAULT '1',
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- Estructura para la tabla slider_content
 CREATE TABLE `slider_content` (
