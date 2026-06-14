@@ -30,7 +30,7 @@ try {
 }
 
 // --- GESTIÓN DE SLIDER Y ASIGNATURAS ---
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && $db_connected) {
 
     // 1. Agregar Slide
     if (isset($_POST['action']) && $_POST['action'] === 'add_slide') {
@@ -802,6 +802,7 @@ if ($is_admin) {
 
 
 // --- 7. Datos para el Slider Show ---
+// 1. Iniciamos el arreglo con las imágenes predeterminadas que están en /assets/
 $SLIDER_IMAGES = [
     [
         'url' => '../assets/r4.jpg',
@@ -823,9 +824,27 @@ $SLIDER_IMAGES = [
         'caption' => 'Fortalece tu comprensión lectora e inglés de forma práctica, clara y efectiva.',
         'cta' => 'Quiero mejorar',
         'color' => 'bg-gradient-to-r from-rose-600 to-red-500'
-    ],
+    ]
 ];
 
+// 2. Si la base de datos está conectada, le sumamos las imágenes dinámicas
+if ($db_connected) {
+    try {
+        $stmt_slides = $pdo->query("SELECT * FROM slider_content ORDER BY id DESC");
+        while ($row = $stmt_slides->fetch(PDO::FETCH_ASSOC)) {
+            // Agregamos cada fila de la BD al arreglo existente
+            $SLIDER_IMAGES[] = [
+                'url'     => '../' . $row['image_path'],
+                'title'   => $row['title'],
+                'caption' => $row['title'],
+                'cta'     => 'Agenda tu asesoría',
+                'color'   => 'bg-gradient-to-r from-indigo-600 to-indigo-500'
+            ];
+        }
+    } catch (PDOException $e) {
+        // Si falla la BD, el slider simplemente se queda con las 3 originales
+    }
+}
 
 // --- 8. Función para Renderizar el Slider Show ---
 /**
