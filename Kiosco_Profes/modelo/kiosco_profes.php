@@ -86,37 +86,35 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $db_connected) {
         $stmt->execute([$name, $color]);
     }
     
-    // Eliminar del servidor
-    if (isset($_POST['delete_type']) && $_POST['delete_type'] === 'slide') {
-        $id = $_POST['id'];
-
-        // Busca que img borrar
-        $stmt = $pdo->prepare("SELECT image_path FROM slider_content WHERE id = ?");
-        $stmt->execute([$id]);
-        $slide = $stmt->fetch();
-        
-        // Borra la img
-        if ($slide && file_exists(__DIR__ . '/../' . $slide['image_path'])) {
-            unlink(__DIR__ . '/../' . $slide['image_path']); // Borra del servidor
-        }
-
-        // Borra la img de la bd
-        $pdo->prepare("DELETE  FROM slider_content WHERE id = ?")->execute([$_POST['id']]);
-
-        // Mensaje de hecho
-        header("Location: " . $_SERVER['PHP_SELF'] . "?view=admin_dashboard&msg=deleted");
-        exit;
-    }
-
-    // 3. Eliminar (Simple)
+    // 3. Eliminar Slide
+    // Buscamos la ruta de la imagen para borrar el archivo físico
+    // 3. Eliminar (Consolidado: Slide y Asignaturas)
     if (isset($_POST['delete_type'])) {
         $id = $_POST['id'];
+
         if ($_POST['delete_type'] === 'slide') {
+            // Buscamos la ruta de la imagen para borrar el archivo físico
+            $stmt = $pdo->prepare("SELECT image_path FROM slider_content WHERE id = ?");
+            $stmt->execute([$id]);
+            $slide = $stmt->fetch();
+            
+            if ($slide && file_exists(__DIR__ . '/../' . $slide['image_path'])) {
+                unlink(__DIR__ . '/../' . $slide['image_path']); // Borra el archivo real
+            }
+
+            // 2. Borramos el registro de la base de datos
             $stmt = $pdo->prepare("DELETE FROM slider_content WHERE id = ?");
-        } else {
+            $stmt->execute([$id]);
+
+            header("Location: " . $_SERVER['PHP_SELF'] . "?view=admin_dashboard&msg=deleted");
+            exit;
+        } elseif ($_POST['delete_type'] === 'subject') {
             $stmt = $pdo->prepare("DELETE FROM subjects_list WHERE id = ?");
+            $stmt->execute([$id]);
+            header("Location: " . $_SERVER['PHP_SELF'] . "?view=admin_dashboard&success=1");
+            exit;
         }
-        $stmt->execute([$id]);
+        
     }
 }
 
