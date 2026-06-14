@@ -119,6 +119,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt->execute([$id]);
     }
 }
+
 // --- 3. Variables y Constantes de la Aplicación ---
 // Mantenemos la lista de asignaturas para la lógica, aunque la vista principal use las tarjetas.
 $ASSIGNATURES = [
@@ -300,9 +301,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
         exit();
     }
 }
-
-    // --- Lógica para Exportar Informe CSV Organizado ---
-    if (isset($_GET['action']) && $_GET['action'] === 'export_xls') {
+    
+// --- Lógica para Exportar Informe CSV Organizado ---
+if (isset($_GET['action']) && $_GET['action'] === 'export_xls') {
 
         //Limpiar buffer para evitar errores de descarga
         while (ob_get_level()) ob_end_clean();
@@ -3236,7 +3237,7 @@ function render_subject_cards($cards)
 
 </body>
 
-<div id="modalSlide" class="fixed inset-0 z-[60] hidden bg-black/60 dark:bg-black/80 backdrop-blur-sm p-4 flex items-center justify-center">
+<div id="modalSlide" class="fixed inset-0 z-[60]  bg-black/60 dark:bg-black/80 backdrop-blur-sm p-4 flex items-center justify-center">
     <div class="bg-white dark:bg-zinc-900 border dark:border-zinc-800 rounded-[2.5rem] w-full max-w-md p-8 shadow-2xl scale-up-center">
         <h2 class="text-2xl font-black text-gray-800 dark:text-gray-100 mb-6">Nuevo Banner</h2>
         <form method="POST" enctype="multipart/form-data" class="space-y-5">
