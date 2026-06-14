@@ -831,6 +831,15 @@ $SLIDER_IMAGES = [
 if ($db_connected) {
     try {
         $stmt_slides = $pdo->query("SELECT * FROM slider_content ORDER BY id DESC");
+
+        // Definimos los estilos de degradado para intercalar (Azul, Verde, Rojo)
+        $color_options = [
+            'bg-gradient-to-r from-indigo-600 to-indigo-500',  // Azul/Indigo
+            'bg-gradient-to-r from-emerald-600 to-green-500', // Verde
+            'bg-gradient-to-r from-rose-600 to-red-500'      // Rojo
+        ];
+
+        $i = count($SLIDER_IMAGES); // Continuamos la secuencia después de las 3 imágenes fijas
         while ($row = $stmt_slides->fetch(PDO::FETCH_ASSOC)) {
             // Agregamos cada fila de la BD al arreglo existente
             $SLIDER_IMAGES[] = [
@@ -838,8 +847,9 @@ if ($db_connected) {
                 'title'   => $row['title'],
                 'caption' => $row['title'],
                 'cta'     => 'Agenda tu asesoría',
-                'color'   => 'bg-gradient-to-r from-indigo-600 to-indigo-500'
+                'color'   => $color_options[$i % 3]
             ];
+            $i++;
         }
     } catch (PDOException $e) {
         // Si falla la BD, el slider simplemente se queda con las 3 originales
