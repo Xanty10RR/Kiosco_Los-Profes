@@ -880,7 +880,10 @@ function render_slider_show($images)
                     <img
                         src="<?= htmlspecialchars($image['url']) ?>"
                         alt="<?= htmlspecialchars($image['caption']) ?>"
-                        class="absolute inset-0 w-full h-full object-cover object-center">
+                    class="absolute inset-0 w-full h-full object-cover object-center transform hover:scale-110 transition-transform duration-[8000ms]">
+
+                <!-- Capa de color (Azul, Verde, Rojo) con mezcla para resaltar la imagen -->
+                <div class="absolute inset-0 <?= htmlspecialchars($image['color']) ?> opacity-45 mix-blend-multiply"></div>
 
                     <?php /* Corregimos la validación de sesión y verificamos que la imagen tenga un ID (solo las de BD se pueden borrar) */ ?>
                     <?php if (isset($_SESSION['is_admin']) && $_SESSION['is_admin'] === true && isset($image['id'])): ?>
@@ -908,8 +911,8 @@ function render_slider_show($images)
 
                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
 
-                    <div class="relative z-10 h-full flex items-center justify-center">
-                        <h3 class="text-white text-3xl font-bold">
+                    <div class="relative z-10 h-full flex flex-col items-center justify-center p-6 text-center">
+                        <h3 class="text-white text-2xl md:text-4xl font-black uppercase tracking-tight drop-shadow-2xl leading-tight">
                             <?= htmlspecialchars($image['caption']) ?>
                         </h3>
                     </div>
@@ -943,7 +946,6 @@ function render_slider_show($images)
     </div>
 <?php
 }
-
 
 // --- 9. Función para Renderizar las Tarjetas de Asignaturas ---
 /**
