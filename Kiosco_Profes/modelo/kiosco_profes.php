@@ -37,17 +37,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $db_connected) {
         $title = $_POST['title'];
         $file = $_FILES['slide_image'];
 
-        if(!isset($_FILES['slide_image']) || $_FILES['slide_image']['error'] !==UPLOAD_ERR_OK) {
+        if (!isset($_FILES['slide_image']) || $_FILES['slide_image']['error'] !== UPLOAD_ERR_OK) {
             die('Error: Debes subir una imagen');
         }
 
         $allowed_types = ['image/jpeg', 'image/png', 'image/gif', 'image/webp', 'image/avif'];
         $file_type = $_FILES['slide_image']['type'];
-    
+
         if (!in_array($file_type, $allowed_types)) {
             die('Error: Solo se permiten imágenes JPG, PNG, GIF, WEBP o AVIF');
         }
-    
+
         // Validar tamaño: máximo 5MB
         if ($_FILES['slide_image']['size'] > 5 * 1024 * 1024) {
             die('Error: La imagen es muy pesada. Maximo 5MB.');
@@ -71,7 +71,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $db_connected) {
         if (move_uploaded_file($file["tmp_name"], $target_file)) {
             $stmt = $pdo->prepare("INSERT INTO slider_content (image_path, title) VALUES (?, ?)");
             $stmt->execute([$db_path, $title]);
-            header("Location: " . $_SERVER['PHP_SELF'] . "?view=admin_dashboard&success=1"); 
+            header("Location: " . $_SERVER['PHP_SELF'] . "?view=admin_dashboard&success=1");
             exit;
         } else {
             die("Error: No se pudo subir la imagen. Revisa los permisos de la carpeta.");
@@ -85,7 +85,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $db_connected) {
         $stmt = $pdo->prepare("INSERT INTO subjects_list (name, color_hex) VALUES (?, ?)");
         $stmt->execute([$name, $color]);
     }
-    
+
     // 3. Eliminar Slide
     // Buscamos la ruta de la imagen para borrar el archivo físico
     // 3. Eliminar (Consolidado: Slide y Asignaturas)
@@ -97,7 +97,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $db_connected) {
             $stmt = $pdo->prepare("SELECT image_path FROM slider_content WHERE id = ?");
             $stmt->execute([$id]);
             $slide = $stmt->fetch();
-            
+
             if ($slide && file_exists(__DIR__ . '/../' . $slide['image_path'])) {
                 unlink(__DIR__ . '/../' . $slide['image_path']); // Borra el archivo real
             }
@@ -114,7 +114,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $db_connected) {
             header("Location: " . $_SERVER['PHP_SELF'] . "?view=admin_dashboard&success=1");
             exit;
         }
-        
     }
 }
 
@@ -202,7 +201,6 @@ $is_admin = isset($_SESSION['is_admin']) && $_SESSION['is_admin'] === true;
 
 // Inicializar estado de la cita actual
 $current_appointment = null;
-
 
 // --- PROCESAR LIBERACIÓN MANUAL ---
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['action'] === 'confirm_payment_manual') {
@@ -299,54 +297,54 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action']) && $_POST['
         exit();
     }
 }
-    
+
 // --- Lógica para Exportar Informe CSV Organizado ---
 if (isset($_GET['action']) && $_GET['action'] === 'export_xls') {
 
-        //Limpiar buffer para evitar errores de descarga
-        while (ob_get_level()) ob_end_clean();
+    //Limpiar buffer para evitar errores de descarga
+    while (ob_get_level()) ob_end_clean();
 
-        // 1. Obtener filtros de la URL
-        $current_filter = $_GET['filter'] ?? 'ALL';
-        $search = $_GET['search'] ?? '';
+    // 1. Obtener filtros de la URL
+    $current_filter = $_GET['filter'] ?? 'ALL';
+    $search = $_GET['search'] ?? '';
 
-        //Forzar UTF-8 en la conexión PDO
-        $pdo->exec("SET NAMES 'utf8mb4'");
+    //Forzar UTF-8 en la conexión PDO
+    $pdo->exec("SET NAMES 'utf8mb4'");
 
-        // 2. Construir consulta dinámica
-        $query = "SELECT id, student_name, student_contact, subject, other_subject, date, time, proof_details, status FROM appointments WHERE 1=1";
-        $params = [];
+    // 2. Construir consulta dinámica
+    $query = "SELECT id, student_name, student_contact, subject, other_subject, date, time, proof_details, status FROM appointments WHERE 1=1";
+    $params = [];
 
-        // Filtro por Estado (Botones/Cards)
-        if ($current_filter !== 'ALL') {
-            $query .= " AND status = :status";
-            $params['status'] = $current_filter;
-        }
+    // Filtro por Estado (Botones/Cards)
+    if ($current_filter !== 'ALL') {
+        $query .= " AND status = :status";
+        $params['status'] = $current_filter;
+    }
 
-        // Filtro por Buscador (Nombre o Materia)
-        if (!empty($search)) {
-            $query .= " AND (student_name LIKE :search OR subject LIKE :search OR other_subject LIKE :search OR id LIKE :search OR proof_details LIKE :search)";
-            $params['search'] = "%$search%";
-        }
+    // Filtro por Buscador (Nombre o Materia)
+    if (!empty($search)) {
+        $query .= " AND (student_name LIKE :search OR subject LIKE :search OR other_subject LIKE :search OR id LIKE :search OR proof_details LIKE :search)";
+        $params['search'] = "%$search%";
+    }
 
-        $query .= " ORDER BY date DESC, time DESC";
+    $query .= " ORDER BY date DESC, time DESC";
 
-        // 3. Ejecutar
-        $stmt = $pdo->prepare($query);
-        $stmt->execute($params);
-        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+    // 3. Ejecutar
+    $stmt = $pdo->prepare($query);
+    $stmt->execute($params);
+    $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        // 5. Cabeceras para descarga limpia
-        header('Content-Type: application/vnd.ms-excel; charset=utf-8');
-        header('Content-Disposition: attachment; filename="Reporte_Filtrado_' . date('d-m-Y') . '.xls"');
-        header('Cache-Control: max-age=0');
+    // 5. Cabeceras para descarga limpia
+    header('Content-Type: application/vnd.ms-excel; charset=utf-8');
+    header('Content-Disposition: attachment; filename="Reporte_Filtrado_' . date('d-m-Y') . '.xls"');
+    header('Cache-Control: max-age=0');
 
-        //BOM para UTF-8
-        echo "\xEF\xBB\xBF";
-        echo '<html xmlns:o="urn:schemas-microsoft-com:office:ofice" xmlns:x="urn:schemas-microsoft-com:office:exel" xmlns="http://www.w3.org/TR/REC-html40">';
-        echo '<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head><body>';
-        echo '<table border="1" x:str>';
-        echo '<tr>
+    //BOM para UTF-8
+    echo "\xEF\xBB\xBF";
+    echo '<html xmlns:o="urn:schemas-microsoft-com:office:ofice" xmlns:x="urn:schemas-microsoft-com:office:exel" xmlns="http://www.w3.org/TR/REC-html40">';
+    echo '<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head><body>';
+    echo '<table border="1" x:str>';
+    echo '<tr>
             <th>ID</th>
             <th>ESTUDIANTE</th>
             <th>CONTACTO</th>
@@ -358,24 +356,24 @@ if (isset($_GET['action']) && $_GET['action'] === 'export_xls') {
             <th>ESTADO</th>
          </tr>';
 
-        // Escribir datos organizados
-        foreach ($results as $row) {
-            echo '<tr>';
-            echo '<td>' . $row['id'] . '</td>';
-            echo '<td>' . mb_strtoupper($row['student_name'], 'UTF-8') . '</td>';
-            echo '<td>' . mb_strtoupper($row['student_contact'], 'UTF-8') . '</td>';
-            echo '<td>' . mb_strtoupper($row['subject'], 'UTF-8') . '</td>';
-            echo '<td>' . mb_strtoupper($row['other_subject'] ?: 'N/A', 'UTF-8') . '</td>';
-            echo '<td>' . date('d/m/Y', strtotime($row['date'])) . '</td>';
-            echo '<td>' . date('h:i A', strtotime($row['time'])) . '</td>';
-            echo '<td>' . str_replace(["\r\n", "\n", "\r"], '', $row['proof_details'] ?: 'Sin detalles de pago') . '</td>';
-            echo '<td>' . strtoupper($row['status']) . '</td>';
-            echo '</tr>';
-        }
-
-        echo '</table></body></html>';
-        exit();
+    // Escribir datos organizados
+    foreach ($results as $row) {
+        echo '<tr>';
+        echo '<td>' . $row['id'] . '</td>';
+        echo '<td>' . mb_strtoupper($row['student_name'], 'UTF-8') . '</td>';
+        echo '<td>' . mb_strtoupper($row['student_contact'], 'UTF-8') . '</td>';
+        echo '<td>' . mb_strtoupper($row['subject'], 'UTF-8') . '</td>';
+        echo '<td>' . mb_strtoupper($row['other_subject'] ?: 'N/A', 'UTF-8') . '</td>';
+        echo '<td>' . date('d/m/Y', strtotime($row['date'])) . '</td>';
+        echo '<td>' . date('h:i A', strtotime($row['time'])) . '</td>';
+        echo '<td>' . str_replace(["\r\n", "\n", "\r"], '', $row['proof_details'] ?: 'Sin detalles de pago') . '</td>';
+        echo '<td>' . strtoupper($row['status']) . '</td>';
+        echo '</tr>';
     }
+
+    echo '</table></body></html>';
+    exit();
+}
 
 /**
  * Obtiene una sola cita por ID (útil para el administrador al editar).
@@ -783,7 +781,13 @@ if (isset($_POST['action']) && $_POST['action'] === 'update_status' && $is_admin
 $view_param = $_GET['view'] ?? $VIEWS['SCHEDULE_VIEW'];
 
 if ($is_admin) {
-    $current_view = $VIEWS['ADMIN_DASHBOARD'];
+    // Si es administrador, respetamos la vista que pida (ej. schedule para ver el slider)
+    // Pero si no pide ninguna, lo enviamos al Dashboard por defecto.
+    if (isset($_GET['view'])) {
+        $current_view = $_GET['view'];
+    } else {
+        $current_view = $VIEWS['ADMIN_DASHBOARD'];
+    }
 } else {
     // Buscar si el estudiante tiene una cita activa
     $current_appointment = get_current_appointment($student_session_id, $pdo);
@@ -841,6 +845,7 @@ if ($db_connected) {
         while ($row = $stmt_slides->fetch(PDO::FETCH_ASSOC)) {
             // Agregamos cada fila de la BD al arreglo existente
             $SLIDER_IMAGES[] = [
+                'id'      => $row['id'], // Agregamos el ID para poder eliminarlo luego
                 'url'     => '../' . $row['image_path'],
                 'title'   => $row['title'],
                 'caption' => $row['title'],
@@ -860,51 +865,78 @@ if ($db_connected) {
  */
 function render_slider_show($images)
 {
-    if (empty($images)) return;
+    if (empty($images)) {
+        return;
+    }
 ?>
     <div id="slider-container" class="max-w-4xl mx-auto relative overflow-hidden rounded-[2rem] shadow-2xl border-4 border-white/10">
+
         <div id="slider-track" class="flex transition-transform duration-500 ease-in-out">
+
             <?php foreach ($images as $index => $image): ?>
-                <div class="slider-item flex-shrink-0 w-full h-[300px] md:h-[400px] relative overflow-hidden" data-index="<?php echo $index; ?>">
 
-                    <!-- La propiedad object-cover asegura que la imagen llene el espacio sin estirarse -->
-                    <img src="<?php echo htmlspecialchars($image['url']); ?>" 
-                        alt="<?php echo htmlspecialchars($image['caption']); ?>" 
-                        class="absolute inset-0 w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-[2000ms]">
+                <div class="slider-item group flex-shrink-0 w-full h-[300px] md:h-[400px] relative overflow-hidden">
 
-                    <!-- Capa de color con mezcla para un look más moderno -->
-                    <div class="absolute inset-0 <?php echo htmlspecialchars($image['color']); ?> mix-blend-multiply opacity-40"></div>
-                    <!-- Gradiente oscuro inferior para que el texto blanco siempre sea legible -->
+                    <img
+                        src="<?= htmlspecialchars($image['url']) ?>"
+                        alt="<?= htmlspecialchars($image['caption']) ?>"
+                        class="absolute inset-0 w-full h-full object-cover object-center">
+
+                    <?php /* Corregimos la validación de sesión y verificamos que la imagen tenga un ID (solo las de BD se pueden borrar) */ ?>
+                    <?php if (isset($_SESSION['is_admin']) && $_SESSION['is_admin'] === true && isset($image['id'])): ?>
+
+                        <form
+                            method="POST"
+                            onsubmit="return confirm('¿Eliminar este banner?')"
+                            class="absolute top-4 right-4 z-30 opacity-0 group-hover:opacity-100 transition-all duration-300 transform scale-90 group-hover:scale-100">
+
+                            <input type="hidden" name="delete_type" value="slide">
+                            <input type="hidden" name="id" value="<?= $image['id'] ?>">
+
+                            <button
+                                type="submit"
+                                class="bg-red-600 hover:bg-red-700 text-white p-2 rounded-full shadow-lg">
+                                🗑️
+                            </button>
+
+                        </form>
+
+                    <?php endif; ?>
+
                     <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
 
-                    <div class="relative p-6 md:p-12 h-full flex flex-col justify-center items-center text-center z-10">
-                        <h3 class="text-xl md:text-3xl font-extrabold text-white drop-shadow-lg leading-tight">
-                            <?php echo htmlspecialchars($image['caption']); ?>
+                    <div class="relative z-10 h-full flex items-center justify-center">
+                        <h3 class="text-white text-3xl font-bold">
+                            <?= htmlspecialchars($image['caption']) ?>
                         </h3>
-                        <p class="mt-2 text-sm md:text-lg text-gray-200 font-medium">¡Agenda tu sesión ahora!</p>
                     </div>
+
                 </div>
+
             <?php endforeach; ?>
+
         </div>
 
-        <!-- Flechas de navegación -->
-        <button onclick="changeSlide(-1)" class="absolute top-1/2 left-4 transform -translate-y-1/2 bg-black bg-opacity-30 hover:bg-opacity-50 text-white p-3 rounded-full z-10 transition duration-300 hidden md:block" aria-label="Anterior">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
-            </svg>
-        </button>
-        <button onclick="changeSlide(1)" class="absolute top-1/2 right-4 transform -translate-y-1/2 bg-black bg-opacity-30 hover:bg-opacity-50 text-white p-3 rounded-full z-10 transition duration-300 hidden md:block" aria-label="Siguiente">
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-            </svg>
-        </button>
+    </div>
 
-        <!-- Puntos de navegación -->
-        <div class="absolute bottom-4 left-0 right-0 flex justify-center space-x-2">
-            <?php for ($i = 0; $i < count($images); $i++): ?>
-                <button onclick="goToSlide(<?php echo $i; ?>)" class="dot w-3 h-3 rounded-full bg-white bg-opacity-50 hover:bg-opacity-100 transition duration-300" data-slide-index="<?php echo $i; ?>"></button>
-            <?php endfor; ?>
-        </div>
+    <!-- Flechas de navegación -->
+    <button onclick="changeSlide(-1)" class="absolute top-1/2 left-4 transform -translate-y-1/2 bg-black bg-opacity-30 hover:bg-opacity-50 text-white p-3 rounded-full z-10 transition duration-300 hidden md:block" aria-label="Anterior">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+        </svg>
+    </button>
+    <button onclick="changeSlide(1)" class="absolute top-1/2 right-4 transform -translate-y-1/2 bg-black bg-opacity-30 hover:bg-opacity-50 text-white p-3 rounded-full z-10 transition duration-300 hidden md:block" aria-label="Siguiente">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+        </svg>
+    </button>
+
+    <!-- Puntos de navegación -->
+    <div class="absolute bottom-4 left-0 right-0 flex justify-center space-x-2">
+        <?php for ($i = 0; $i < count($images); $i++): ?>
+            <button onclick="goToSlide(<?php echo $i; ?>)" class="dot w-3 h-3 rounded-full bg-white bg-opacity-50 hover:bg-opacity-100 transition duration-300" data-slide-index="<?php echo $i; ?>"></button>
+        <?php endfor; ?>
+    </div>
     </div>
 <?php
 }
@@ -2555,6 +2587,14 @@ function render_subject_cards($cards)
                     <span class="bg-indigo-100 text-indigo-700 text-[10px] px-2 py-0.5 rounded-full font-black uppercase tracking-wider">
                         <?php echo htmlspecialchars($_SESSION['admin_rol'] ?? 'Invitado'); ?>
                     </span>
+                    <!-- Enlace corregido: Icono y texto dentro de la etiqueta <a> -->
+                    <a href="?view=schedule" class="ml-4 inline-flex items-center gap-1 text-indigo-600 dark:text-indigo-400 text-[10px] font-black uppercase tracking-wider hover:underline">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                        </svg>
+                        Ver Kiosco Live
+                    </a>
                 </div>
             </div>
         </div>
@@ -2654,7 +2694,7 @@ function render_subject_cards($cards)
         <div class="mb-6 relative group">
             <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none"
                 <svg class="w-5 h-5 text-indigo-500 group-focus-within:text-indigo-600 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                 </svg>
             </div>
             <input type="text" id="smartSearch"
@@ -3167,29 +3207,29 @@ function render_subject_cards($cards)
 
     };
 </script>
-    <div class="fixed bottom-6 right-6 z-[100] flex flex-col items-end">
-        <div class="mb-3 bg-white border border-gray-100 px-4 py-2 rounded-2xl shadow-xl animate-bounce hidden md:block">
-            <p class="text-xs font-semibold text-gray-600 flex items-center">
-                <span class="flex h-2 w-2 mr-2">
-                    <span class="animate-ping absolute inline-flex h-2 w-2 rounded-full bg-green-400 opacity-75"></span>
-                    <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
-                </span>
-                ¡Logremos tus objetivos académicos juntos! 🚀
-            </p>
-        </div>
-
-        <a href="https://wa.me/573164876650?text=Hola!%20Vengo%20del%20Kiosco%20de%20Asesorías%20y%20necesito%20apoyo%20con%20una%20materia."
-            target="_blank"
-            rel="noopener noreferrer"
-            class="flex items-center justify-center w-16 h-16 bg-[#25D366] rounded-full shadow-[0_10px_25px_rgba(37,211,102,0.4)] hover:shadow-[0_15px_30px_rgba(37,211,102,0.6)] transition-all duration-300 transform hover:scale-110 active:scale-95 group relative">
-
-            <svg class="w-9 h-9 text-white group-hover:rotate-12 transition-transform duration-300" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.148-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
-            </svg>
-
-            <span class="absolute inset-0 rounded-full bg-green-500 opacity-20 animate-ping"></span>
-        </a>
+<div class="fixed bottom-6 right-6 z-[100] flex flex-col items-end">
+    <div class="mb-3 bg-white border border-gray-100 px-4 py-2 rounded-2xl shadow-xl animate-bounce hidden md:block">
+        <p class="text-xs font-semibold text-gray-600 flex items-center">
+            <span class="flex h-2 w-2 mr-2">
+                <span class="animate-ping absolute inline-flex h-2 w-2 rounded-full bg-green-400 opacity-75"></span>
+                <span class="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+            </span>
+            ¡Logremos tus objetivos académicos juntos! 🚀
+        </p>
     </div>
+
+    <a href="https://wa.me/573164876650?text=Hola!%20Vengo%20del%20Kiosco%20de%20Asesorías%20y%20necesito%20apoyo%20con%20una%20materia."
+        target="_blank"
+        rel="noopener noreferrer"
+        class="flex items-center justify-center w-16 h-16 bg-[#25D366] rounded-full shadow-[0_10px_25px_rgba(37,211,102,0.4)] hover:shadow-[0_15px_30px_rgba(37,211,102,0.6)] transition-all duration-300 transform hover:scale-110 active:scale-95 group relative">
+
+        <svg class="w-9 h-9 text-white group-hover:rotate-12 transition-transform duration-300" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.148-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
+        </svg>
+
+        <span class="absolute inset-0 rounded-full bg-green-500 opacity-20 animate-ping"></span>
+    </a>
+</div>
 <script>
     function filterTable() {
         const input = document.getElementById("smartSearch");
