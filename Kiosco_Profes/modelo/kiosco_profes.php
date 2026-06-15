@@ -2590,13 +2590,13 @@ function render_subject_cards($cards)
                     <span class="bg-indigo-100 text-indigo-700 text-[10px] px-2 py-0.5 rounded-full font-black uppercase tracking-wider">
                         <?php echo htmlspecialchars($_SESSION['admin_rol'] ?? 'Invitado'); ?>
                     </span>
-                    <!-- Enlace corregido: Icono y texto dentro de la etiqueta <a> -->
-                    <a href="?view=schedule" class="ml-4 inline-flex items-center gap-1 text-indigo-600 dark:text-indigo-400 text-[10px] font-black uppercase tracking-wider hover:underline">
+                    <!-- Ver slider desde la vista administrador y eliminar imagenes -->
+                    <a href="?view=schedule" class="mx-auto mt-2 text-center flex gap-1 text-indigo-600 dark:text-indigo-400 text-[10px] font-black uppercase tracking-wider hover:underline">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 0 1 0-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178Z" />
                             <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
                         </svg>
-                        Ver Kiosco Live
+                        VER KIOSCO LIVE
                     </a>
                 </div>
             </div>
