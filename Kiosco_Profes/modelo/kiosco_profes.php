@@ -862,18 +862,22 @@ function render_slider_show($images)
 {
     if (empty($images)) return;
 ?>
-    <div id="slider-container" class="max-w-4xl mx-auto relative overflow-hidden rounded-xl shadow-2xl">
+    <div id="slider-container" class="max-w-4xl mx-auto relative overflow-hidden rounded-[2rem] shadow-2xl border-4 border-white/10">
         <div id="slider-track" class="flex transition-transform duration-500 ease-in-out">
             <?php foreach ($images as $index => $image): ?>
-                <div class="slider-item flex-shrink-0 w-full aspect-video md:aspect-[21/9] relative" data-index="<?php echo $index; ?>">
+                <div class="slider-item flex-shrink-0 w-full h-[300px] md:h-[400px] relative overflow-hidden" data-index="<?php echo $index; ?>">
 
-                    <img src="<?php echo htmlspecialchars($image['url']); ?>"
-                        alt="<?php echo htmlspecialchars($image['caption']); ?>"
-                        class="absolute inset-0 w-full h-full object-cover opacity-70">
+                    <!-- La propiedad object-cover asegura que la imagen llene el espacio sin estirarse -->
+                    <img src="<?php echo htmlspecialchars($image['url']); ?>" 
+                        alt="<?php echo htmlspecialchars($image['caption']); ?>" 
+                        class="absolute inset-0 w-full h-full object-cover object-center transform hover:scale-105 transition-transform duration-[2000ms]">
 
-                    <div class="absolute inset-0 <?php echo htmlspecialchars($image['color']); ?> opacity-70"></div>
+                    <!-- Capa de color con mezcla para un look más moderno -->
+                    <div class="absolute inset-0 <?php echo htmlspecialchars($image['color']); ?> mix-blend-multiply opacity-40"></div>
+                    <!-- Gradiente oscuro inferior para que el texto blanco siempre sea legible -->
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
 
-                    <div class="relative p-6 md:p-12 h-full flex flex-col justify-center items-center text-center">
+                    <div class="relative p-6 md:p-12 h-full flex flex-col justify-center items-center text-center z-10">
                         <h3 class="text-xl md:text-3xl font-extrabold text-white drop-shadow-lg leading-tight">
                             <?php echo htmlspecialchars($image['caption']); ?>
                         </h3>
