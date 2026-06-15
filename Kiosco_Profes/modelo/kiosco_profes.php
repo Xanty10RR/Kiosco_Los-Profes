@@ -41,11 +41,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && $db_connected) {
             die('Error: Debes subir una imagen');
         }
 
-        $allowed_types = ['image/jpeg', 'image/png', 'image/gif', 'image/webp'];
+        $allowed_types = ['image/jpeg', 'image/png', 'image/gif', 'image/webp', 'image/avif'];
         $file_type = $_FILES['slide_image']['type'];
     
         if (!in_array($file_type, $allowed_types)) {
-            die('Error: Solo se permiten imágenes JPG, PNG, GIF o WEBP');
+            die('Error: Solo se permiten imágenes JPG, PNG, GIF, WEBP o AVIF');
         }
     
         // Validar tamaño: máximo 5MB
